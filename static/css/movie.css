@@ -1,0 +1,18 @@
+.movie_text {
+    overflow: hidden;
+    pointer-events: none;
+    width: 50rem;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    resize: none; /* optional: prevents the user from resizing the textarea */
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .movie_text_div {
+    height: 100%;
+  }

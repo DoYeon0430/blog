@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>여긴 메인</h1>
+<a href="{% url 'myprofile:twenty' %}">20살</a>
+<a href="{% url 'myprofile:twentyone' %}">21살</a>
+<a href="{% url 'myprofile:twentytwo' %}">22살</a>
+<a href="{% url 'myprofile:twentythree' %}">23살</a>
+{{myprofile_home}}
+{% endblock %}

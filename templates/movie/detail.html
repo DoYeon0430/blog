@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{detail.subject}}</h1>   
+
+<div class="movie_text_div">
+    <textarea class="movie_text" readonly>{{ detail.content }}</textarea>
+</div>
+
+
+{% for g in detail.genre_set.all %}
+    {% if g.movie %}
+        Movie
+    {% endif %}
+{% endfor %}
+
+
+
+{% endblock %}

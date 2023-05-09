@@ -1,0 +1,54 @@
+.home_intro {
+    border-bottom: 10px solid #2F4F4F;
+}
+
+.img_text {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    border: 2px solid gainsboro;
+    border-radius: 3px;
+}
+
+#slider {
+    overflow: hidden; /* 슬라이더 밖으로 이미지가 나가지 않도록 설정 */
+    margin: 0 auto; /* 중앙에 정렬 */
+  }
+  
+#slider img {
+    float: left; /* 이미지를 왼쪽으로 배치 */
+}
+
+
+
+
+
+@media (min-width: 1501px) and (max-width: 10000px) {
+    .home_img {
+        height: 65rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+    .home_img {
+        height: 40rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .home_img {
+        height: 30rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 700px) {
+    .home_img {
+        height: 20rem;
+        width: 100%;
+    }
+}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="slider" style="border-bottom: 10px solid #2F4F4F;">
+    <img src="{% static 'img/sea.jpg' %}" alt="My Image" class="home_img">
+    <img src="{% static 'img/flower.jpg' %}" alt="My Image" class="home_img">
+    <img src="{% static 'img/post.jpg' %}" alt="My Image" class="home_img">
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="home_intro pt-3 pb-3 col-lg-6">
+        <h2>Introduce</h2>
+        <div style="margin: 0px 13px;">
+            <a>어릴때부터 영화 PD를 꿈꾸며 예체능계열과 공학계열을 배우고 있습니다. 정보처리 산업기사를 준비할 때 배워놓은 파이썬으로 블로그 제작을 해봤습니다.</a>
+        </div>
+    </div>
+
+    <div class="home_intro pt-3 col-lg-6" >
+        <h2>Major</h2>
+        <ul>  
+            <li>서울영상고등학교 영상콘텐츠전공</li>
+            <li>경기대학교 기계공학전공</li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<div class="home_intro container pt-3 pb-3">
+    <h2>Now Go</h2>
+    
+    <div class="row">
+    <div class="col-lg-3">
+        <div>나의 소개</div>
+        <ul style="font-size: small;">
+            <li>20살</li>
+            <li>21살</li>
+            <li>22살</li>
+            <li>23살</li>
+        </ul>
+    </div>
+
+    <div class="col-lg-3">
+        <div>영화 현장 이야기</div>
+        <ul style="font-size: small;">
+            <li>영화 제작 과정</li>
+            <li>pre-production 하는일</li>
+            <li>production 하는일</li>
+        </ul>
+    </div>
+
+    <div class="col-lg-3">
+        <div>내가 본 영화 후기</div>
+        <ul style="font-size: small;">
+            <li>국내 영화</li>
+            <li>OTT 오리지널</li>
+        </ul>
+    </div>
+
+    <div class="col-lg-3">
+        <div>개인 공부 정리</div>
+        <ul style="font-size: small;">
+            <li>예체능계열(고등학교)</li>
+            <li>공학계열(대학교)</li>
+        </ul>
+    </div>
+
+    </div>
+</div>
+
+<div class="home_intro container pt-3">
+    <h2>Programming</h2>
+    <ul>
+        <li>Python</li>
+        <li>AWS</li>
+    </ul>
+</div>
+
+{{myprofile_home}}
+{% endblock %}

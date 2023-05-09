@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if main %}
+    <ul>
+    {% for m in main %}
+        <li><a href="{% url 'movie:detail' m.id %}">{{ m.subject }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>질문이 없습니다.</p>
+{% endif %}
+
+{% endblock %}
