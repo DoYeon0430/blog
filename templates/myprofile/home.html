@@ -2,80 +2,94 @@
 {% load static %}
 {% block content %}
 
-<div id="slider" style="border-bottom: 10px solid #2F4F4F;">
-    <img src="{% static 'img/sea.jpg' %}" alt="My Image" class="home_img">
-    <img src="{% static 'img/flower.jpg' %}" alt="My Image" class="home_img">
-    <img src="{% static 'img/post.jpg' %}" alt="My Image" class="home_img">
-</div>
-
 <div class="container">
     <div class="row">
-    <div class="home_intro pt-3 pb-3 col-lg-6">
-        <h2>Introduce</h2>
-        <div style="margin: 0px 13px;">
-            <a>어릴때부터 영화 PD를 꿈꾸며 예체능계열과 공학계열을 배우고 있습니다. 정보처리 산업기사를 준비할 때 배워놓은 파이썬으로 블로그 제작을 해봤습니다.</a>
+        <div class="home_intro pt-3 pb-3 col-lg-6">
+            <h3 class="home_bigtext">Introduce</h3>
+            <div style="margin: 0px 13px;">
+                <div class="home_smalltext">어릴적부터 영화 PD를 꿈꿔왔고 대학 졸업전까지 공학계열과 예체능계열 등을 배우며 영화 기획에 필요한 감각적 트렌드를 학습 할 예정입니다. <br>블로그는 정보처리산업기사를 준비할 때 배운 파이썬으로 부족하지만 제작해봤습니다. <br>개인 블로그를 통해 성장하는 모습을 담고 싶습니다.</div>
+            </div>
+            <div style="font-size: medium; font-weight: 700; text-align: right; color: black; padding-top: 2rem;">예술은 당신이 일상을 벗어날 수 <br>있는 모든 것이다. - 앤디 워홀</div>
         </div>
-    </div>
-
-    <div class="home_intro pt-3 col-lg-6" >
-        <h2>Major</h2>
-        <ul>  
-            <li>서울영상고등학교 영상콘텐츠전공</li>
-            <li>경기대학교 기계공학전공</li>
-        </ul>
-    </div>
+        
+        <div class="home_intro pt-3 col-lg-6" >
+            <h3 class="home_bigtext">Major</h3>
+            <ul class="home_smalltext">  
+                <li>서울영상고등학교 영상콘텐츠전공</li>
+                <li>경기대학교 기계공학전공</li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <div class="home_intro container pt-3 pb-3">
-    <h2>Now Go</h2>
+    <h3 class="home_bigtext">My Art</h3>
+    <div style="text-align: center;">
+        <img src="{% static 'img/home_art.png' %}" alt="My Image" class="home_art">
+        <h6><예술활동증명 확인서></h6>
+    </div>
+</div>
+<div class="home_intro container pt-3 pb-3">
+    <h3 class="home_bigtext">Let's Go</h3>
     
     <div class="row">
     <div class="col-lg-3">
-        <div>나의 소개</div>
-        <ul style="font-size: small;">
-            <li>20살</li>
-            <li>21살</li>
-            <li>22살</li>
-            <li>23살</li>
+        <div style="font-weight: 600;"><a href="{% url 'myprofile:main' %}" style="text-decoration: none;color: black;">나의 기록</a></div>
+        <ul style="font-size: medium;">
+            <li><a href="{% url 'myprofile:school' %}" class="home_li";>학교</a></li>
+            <li><a href="{% url 'myprofile:work' %}" class="home_li";>경력</a></li>
+            <li><a href="{% url 'myprofile:ilcense' %}" class="home_li";>자격증</a></li>
+            <li><a href="{% url 'myprofile:hobby' %}" class="home_li";>취미</a></li>
         </ul>
     </div>
 
     <div class="col-lg-3">
-        <div>영화 현장 이야기</div>
-        <ul style="font-size: small;">
-            <li>영화 제작 과정</li>
-            <li>pre-production 하는일</li>
-            <li>production 하는일</li>
+        <div style="font-weight: 600;" >영화 현장 이야기</div>
+        <ul style="font-size: medium;">
+            <li><a href="{% url 'mywork:produce' %}" class="home_li";>영화 제작 과정</a></li>
+            <li><a href="{% url 'mywork:preproduction' %}" class="home_li";>pre-production 하는일</a></li>
+            <li><a href="{% url 'mywork:production' %}" class="home_li";>production 하는일</a></li>
         </ul>
     </div>
 
     <div class="col-lg-3">
-        <div>내가 본 영화 후기</div>
-        <ul style="font-size: small;">
-            <li>국내 영화</li>
-            <li>OTT 오리지널</li>
+        <div style="font-weight: 600;" >내가 본 영화 후기</div>
+        <ul style="font-size: medium;">
+            <li><a href="{% url 'movie:main' %}" class="home_li";>국내영화</a></li>
+            <li><a href="{% url 'movie:main' %}"  class="home_li";>OTT 오리지널시리즈</a></li>
         </ul>
     </div>
 
     <div class="col-lg-3">
-        <div>개인 공부 정리</div>
-        <ul style="font-size: small;">
-            <li>예체능계열(고등학교)</li>
-            <li>공학계열(대학교)</li>
+        <div style="font-weight: 600;" >개인 공부 정리</div>
+        <ul style="font-size: medium;">
+            <li><a href="/" class="home_li";>예체능계열</a></li>
+            <li><a href="/" class="home_li";>공학계열(1학년이라 제작X)</a></li>
         </ul>
     </div>
 
     </div>
 </div>
 
-<div class="home_intro container pt-3">
-    <h2>Programming</h2>
-    <ul>
-        <li>Python</li>
-        <li>AWS</li>
-    </ul>
-</div>
+<div class="container pb-3">
+    <div class="row">
 
+    <div class="home_intro container pt-3 col-lg-6">
+        <h3 class="home_bigtext">SNS 바로가기</h3>
+        <ul>
+            <li><a href="https://www.instagram.com/doyeon0430/" class="home_li";>인스타그램</a></li>
+            <li><a href="https://github.com/DoYeon0430" class="home_li";>깃허브</a></li>
+        </ul>
+    </div>
+
+    <div class="home_intro container pt-3 col-lg-6">
+        <h3 class="home_bigtext">블로그 개발 언어</h3>
+        <ul>
+            <li>파이썬</li>
+            <li>아마존 클라우드</li>
+        </ul>
+    </div>
+    </div>
+</div>
 {{myprofile_home}}
 {% endblock %}

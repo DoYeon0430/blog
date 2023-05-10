@@ -1,10 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+<div class="container pt-3 pb-3">
+  <h3 class="home_bigtext">Information</h3>
+  <ul class="home_smalltext">  
+    <li><strong>이름</strong>: 김도연</li>
+    <li><strong>생년월일</strong>: 01.03.11</li>
+    <li><strong>MBTI</strong>: INFJ</li>
+  </ul>
+  <ul class="home_smalltext">  
+    <li><strong>상업영화</strong> 1편 참여</li>
+    <li><strong>단편영화</strong> 2편 참여</li>
+    <li><strong>드라마</strong> 1편 (현재 프로덕션 연기)</li>
+    <li><strong>대한민국 공군</strong> 826기 전산병</li>
+</ul>
+</div>
 
-<h1>여긴 메인</h1>
-<a href="{% url 'myprofile:twenty' %}">20살</a>
-<a href="{% url 'myprofile:twentyone' %}">21살</a>
-<a href="{% url 'myprofile:twentytwo' %}">22살</a>
-<a href="{% url 'myprofile:twentythree' %}">23살</a>
-{{myprofile_home}}
+<div class="container">
+    <div class="myprofile_home_sub">원하시는 분야를 클릭하세요.</div>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
+        <a href="{% url 'myprofile:school' %}" class="d-block text-center myprofile_home">학교</a>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
+        <a href="{% url 'myprofile:work' %}" class="d-block text-center myprofile_home">경력</a>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
+        <a href="{% url 'myprofile:ilcense' %}" class="d-block text-center myprofile_home">자격증</a>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
+        <a href="{% url 'myprofile:hobby' %}" class="d-block text-center myprofile_home">취미</a>
+      </div>
+    </div>
+</div>
+  
 {% endblock %}

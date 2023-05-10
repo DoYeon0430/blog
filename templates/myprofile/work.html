@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container pt-3" style="background-color: #f6f6f6;">
+    <h3 class="home_bigtext pt-1">경력<div style="font-size: medium; color: black; padding-top: 2px;">코로나19 유행과 팬데믹 시대</div></h3>
+    <div style="margin: 0px 13px;">
+        <div class="myprofile_img_text">[2020년] 여의도 호프집 아르바이트</div>
+        <img src="{% static 'img/work_hope.jpg' %}" alt="My Image" class="work_main_img">
+        <div class="home_smalltext">고등학교 졸업 후 첫 알바. 코로나 덕분에 비대면 강의라 대학수업과 병행하며 일했다. 주로 서빙과 홀 관리, 주방보조를 맡았다.</div>
+
+        <div class="myprofile_img_text">[2020년] 불광동 관공서 아르바이트</div>
+        <img src="{% static 'img/work_parttime.jpg' %}" alt="My Image" class="work_main_img">
+        <div class="home_smalltext">1학기 마치고 짧게 했던 단기 알바. 뽑히기 어렵다는데 한번에 붙어서 기분이 좋았다. 주민센터 안에서 사무보조와 온도체크를 했다.</div>
+
+        <div class="myprofile_img_text">[2020년~2021년] 상업영화 계약직 </div>
+        <img src="{% static 'img/work_movie.jpg' %}" alt="My Image" class="work_camera_img">
+        <div class="home_smalltext">첫 직장 생활. 많이 힘들었지만 이른 나이에 영화 제작 과정을 배울수 있어서 진로를 준비하는데 도움이 되었다.</div>
+
+        <div class="myprofile_img_text">[2021년~2023년] 대한민국 공군 전산직</div>
+        <img src="{% static 'img/work_rokaf.jpg' %}" alt="My Image" class="work_main_img">
+        <div class="home_smalltext">미디어 분야인줄 알고 지원했는데 정보체계관라병 보직을 받았다. 다행히 군번이 잘 풀려서 일병 말쯤에 왕고가 되었지만 비전공자 선임으로써 업무적 부담감이 컸다. 그래서 네트워크와 통신 공부를 열심히 했다.</div>
+    </div>
+    <div class="py-5 text-end">
+        <a href="{% url 'myprofile:main' %}" class="px-5 myprofile_home">돌아가기</a>
+    </div>
+</div>
+{{myprofile_home}}
+{% endblock %}

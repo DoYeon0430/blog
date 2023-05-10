@@ -9,18 +9,18 @@ def main(request):
     main = {'main':'Doyeon0430'}
     return render(request,'myprofile/main.html', main)
 
-def twenty(request):
-    twenty = {'twenty':'Doyeon0430'}
-    return render(request,'myprofile/twenty.html', twenty)
+def work(request):
+    work = {'work':'Doyeon0430'}
+    return render(request,'myprofile/work.html', work)
 
-def twentyone(request):
-    twentyone = {'twentyone':'Doyeon0430'}
-    return render(request,'myprofile/twentyone.html', twentyone)
+def ilcense(request):
+    ilcense = {'ilcense':'Doyeon0430'}
+    return render(request,'myprofile/ilcense.html', ilcense)
 
-def twentytwo(request):
-    twentytwo = {'twentytwo':'Doyeon0430'}
-    return render(request,'myprofile/twentytwo.html', twentytwo)
+def hobby(request):
+    hobby = {'hobby':'Doyeon0430'}
+    return render(request,'myprofile/hobby.html', hobby)
 
-def twentythree(request):
-    twentythree = {'twentythree':'Doyeon0430'}
-    return render(request,'myprofile/twentythree.html', twentythree)
+def school(request):
+    school = {'school':'Doyeon0430'}
+    return render(request,'myprofile/school.html', school)

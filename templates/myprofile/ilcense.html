@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container pt-3" style="background-color: #f6f6f6;">
+    <h3 class="home_bigtext pt-1">자격증<div style="font-size: medium; color: black; padding-top: 2px;">군대 포상휴가를 받기 위한 도전</div></h3>
+    <div style="margin: 0px 13px;">
+        <div class="myprofile_img_text">[2021년] 네트워크관리사 2급</div>
+        <div style="text-align: center;">
+            <img src="{% static 'img/ilcense_network.PNG' %}" alt="My Image" class="ilcense_paper_img">
+        </div>
+        <div class="home_smalltext">군대 선임들이 자격증을 취득하고 휴가를 받는 모습이 부러워서 처음 도전해봤다. OSI 1~4계층과 서브넷마스크를 자세히 배워서 업무에 도움이 컸다. 휴가도 하루 받아서 기분까지 좋았다.</div>
+
+        <div class="myprofile_img_text">[2021년] 정보기기운용기능사</div>
+        <img src="{% static 'img/ilcense_row.PNG' %}" alt="My Image" class="work_camera_img">
+        <div class="home_smalltext">어쩌다보니 부서 최고 선임이 되면서 후임이 업무를 물어 볼 때마다 능숙하게 알아야 하는 부담감이 컸다. 그래서 이론을 공부하려 했으나 조교님이 기능사 준비를 추천해주셔서 국가검정시험을 보게 되었다.</div>
+
+        <div class="myprofile_img_text">[2022년] 컴퓨터활용능력 1급 </div>
+        <img src="{% static 'img/ilcense_computer.PNG' %}" alt="My Image" class="work_camera_img">
+        <div class="home_smalltext">6개월간 병사 대표를 할 때 행정업무만 하다보니 엑셀을 자주 사용했고 시험을 응시하면 외출을 나갈 수 있기에 자연스레 준비했다.</div>
+
+        <div class="myprofile_img_text">[2023년] 정보처리산업기사</div>
+        <img src="{% static 'img/ilcense_middle.PNG' %}" alt="My Image" class="work_camera_img">
+        <div class="home_smalltext">기능사+군경력1년으로 시험을 응시했다. 가끔 컴활 1급과 비교글을 보는데 이게 2~3배는 어렵다. 그래도 정처산기 공부하면서 파이썬을 배우며 이 블로그를 만들게 됐다. 시험결과는 6월 9일날 나오지만 가채점 85점 합격을 받았다. </div>
+    </div>
+    <div class="py-5 text-end">
+        <a href="{% url 'myprofile:main' %}" class="px-5 myprofile_home">돌아가기</a>
+    </div>
+</div>
+{{myprofile_home}}
+{% endblock %}

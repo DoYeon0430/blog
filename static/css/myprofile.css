@@ -1,0 +1,212 @@
+.hobby_movie_img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.5rem;
+    border: 2px solid rgb(158, 158, 158);
+}
+
+@media (min-width: 1501px) and (max-width: 10000px) {
+    .myprofile_home {
+        font-size: large;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        text-decoration: none;
+        background-color: rgb(73, 64, 66);
+        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+    
+    .myprofile_home:hover {
+        background-color: black;
+      }
+
+      .myprofile_home_sub{
+        padding-top: 1rem;
+        text-align: center;
+        font-size: large; 
+        font-weight: 600;
+    }
+
+    .myprofile_img_text {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .work_main_img{
+        width: 100%;
+        height: 45rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+    
+    .work_camera_img{
+        width: 100%;
+        height: 43rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+
+    .ilcense_paper_img{
+        width: 40%;
+        height: 40rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+    .myprofile_home {
+        font-size: large;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        text-decoration: none;
+        background-color: rgb(73, 64, 66);
+        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+    
+    .myprofile_home:hover {
+        background-color: black;
+      }
+
+      .myprofile_home_sub{
+        padding-top: 1rem;
+        text-align: center;
+        font-size: large; 
+        font-weight: 600;
+    }
+
+    .myprofile_img_text {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .work_main_img{
+        width: 100%;
+        height: 45rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+    
+    .work_camera_img{
+        width: 100%;
+        height: 35rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+
+    .ilcense_paper_img{
+        width: 40%;
+        height: 40rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 1000px) {
+    .myprofile_home {
+        font-size: large;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        text-decoration: none;
+        background-color: rgb(73, 64, 66);
+        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+    
+    .myprofile_home:hover {
+        background-color: black;
+      }
+
+      .myprofile_home_sub{
+        padding-top: 1rem;
+        text-align: center;
+        font-size: large; 
+        font-weight: 600;
+    }
+
+    .myprofile_img_text {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .work_main_img{
+        width: 100%;
+        height: 20rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+    
+    .work_camera_img{
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+
+    .ilcense_paper_img{
+        width: 70%;
+        height: 30rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+}
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+    .myprofile_home {
+        font-size: large;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        text-decoration: none;
+        background-color: rgb(73, 64, 66);
+        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+    
+    .myprofile_home:hover {
+        background-color: black;
+      }
+
+    .myprofile_home_sub{
+        padding-top: 1rem;
+        text-align: center;
+        font-size: large; 
+        font-weight: 600;
+    }
+
+    .myprofile_img_text {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .work_main_img{
+        width: 100%;
+        height: 20rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+    
+    .work_camera_img{
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+
+    .ilcense_paper_img{
+        width: 70%;
+        height: 20rem;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgb(158, 158, 158);
+    }
+}

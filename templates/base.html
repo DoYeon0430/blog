@@ -12,15 +12,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/movie.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/homeimg.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
 
 </head>
 <body>
 <nav class="navbar">
     <div class="logo">
-        <a href="/">Doyeon0430 블로그</a>
+        <a href="/">Doyeon0430</a>
     </div>
     <ul class="nav-links">
-        <li><a href="{% url 'myprofile:main' %}">&nbsp 나의 소개</a></li>
+        <li><a href="{% url 'myprofile:main' %}">&nbsp 나의 기록</a></li>
         <li><a href="{% url 'mywork:main' %}">&nbsp 영화 현장 이야기</a></li>
         <li><a href="{% url 'movie:main' %}">&nbsp 영화 감상 후기</a></li>
         <li><a href="/">&nbsp 개인공부 정리</a></li>
@@ -31,11 +32,20 @@
         <div class="bar"></div>
     </div>
 </nav>
-    
+<div id="slider">
+    <img src="{% static 'img/sea1.jpg' %}" alt="My Image" class="home_img">
+    <img src="{% static 'img/ilsan.jpg' %}" alt="My Image" class="home_img">
+    <img src="{% static 'img/post1.jpg' %}" alt="My Image" class="home_img">
+</div>
+
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 {% block content %}
 {% endblock %}
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
+
+<div>
+    <div class="py-3" style="text-align: center; font-size: small;">김도연 | Doyeon0430 | etc</div>
+</div>
 </body>
 <script type="text/javascript" src="/static/js/main.js"></script>
 <script type="text/javascript" src="/static/js/imgslider.js"></script>
