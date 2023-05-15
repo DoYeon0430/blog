@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container background_design" >
+    <div class="container pt-3 pb-3">
+
+        <div class="container">
+            <div class="row justify-content-end my-3">
+                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                    <div class="input-group">
+                        <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
+                        <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% for m in page_obj %}
+            <div class="row home_intro" OnClick="location.href ='{% url "movie:detail" m.id %}'" style="cursor:pointer;">
+                <div class="col-5 movie_col" >
+                    <div>
+                        {% if m.photo %}
+                            <img class="movie_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-7 movie_col">
+                    <div class="movie_title">
+                        <a href="{% url 'movie:detail' m.id %}"><{{ m.subject }}> 후기</a>
+                    </div>
+
+                    <div class="movie_content">
+                        {% if m.content|length > 40 %}
+                            {{ m.content|truncatechars:40 }}<b> 더보기</b>
+                        {% else %}
+                            {{ m.content }}
+                        {% endif %}
+                    </div>
+
+                    <div class="movie_date">
+                        {% for genre in m.genre_set.all %}
+                            {% if genre.movie == '상업영화' %}
+                                <a>· 상업영화</a>
+                            {% elif genre.movie == 'OTT 오리지널' %}
+                                <a>· OTT 오리지널 시리즈</a>
+                            {% elif genre.movie == '드라마' %}
+                                <a>· 드라마</a>
+                            {% else %}
+                                <a>· 입력안함</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>            
+                    <div class="movie_date">
+                        <span>· 개봉 {{ m.Screening|date:"Y. m. d" }}</span>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    
+    
+        
+        
+
+    <div>
+        {% if page_obj.paginator.num_pages > 1 %}
+            <div class="pagination" style="display: block; text-align: center;">
+                <span class="step-links">
+
+                    <!-- 이전 페이지 -->
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><</a>
+                    {% else %}
+                        <a class="disabled" style="pointer-events: none"><</a>
+                    {% endif %}
+
+                    <!-- 이전 페이지 -2 생성 -->
+                    {% if page_obj.has_next == 0 %}
+                    {% if page_obj.number != 2 %}
+                        <a href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
+                    {% endif %}
+                    {% endif %}
+
+                    <!-- 페이지 리스트 -->
+                    {% for page_number in page_obj.paginator.page_range %}
+                    {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
+                        {% if page_number == page_obj.number %}
+                        <a class="current_page" style="color:white">{{page_number}}</a>
+                        {% else %}
+                        <a href="?page={{ page_number }}">{{page_number}}</a>
+                        {% endif %}
+                    {% endif %}
+                    {% endfor %}
+
+                    <!-- 다음 페이지 +2 생성 -->
+                    {% if page_obj.has_previous == 0 %}
+                    {% if django_list.count >= 10 %}
+                        <a href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
+                    {% endif %}
+                    {% endif %}
+                    
+                    <!-- 다음 페이지 -->
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" id="prev-page-link">></a>
+                    {% else %}
+                        <a class="disabled" style="pointer-events: none">></a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </div>
+    
+    </div>
+    
+</div>
+<form id="searchForm" method="get" action="{% url 'movie:main' %}">
+    <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+    <input type="hidden" id="page" name="page" value="{{ page }}">
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container background_design" >
+    <div class="container pt-3 pb-3">
+        <div class="detail_subject">
+            {{network.subject}}
+        </div>
+        <div class="detail_date">
+            <div>
+                <strong>Doyeon0430</strong> ·  {{network.create_date|date:"Y년 m월 d일"}}</div>
+        </div>
+        <div class="detail_main">
+            <a href="{% url 'engineer:network_main' %}">#network</a>
+        </div>
+        <div class="text-center">
+            {% if network.photo %}
+                <img class="detail_img" src="{{ network.photo.url }}" alt="{{ m.subject }} 이미지">
+            {% endif %}
+        </div>
+        {{network.htmlcontent|safe}}
+        <div style="display: flex;">
+            <div class="detail_url" style="flex: 1;">
+                <div>
+                    <a href="mailto:kim73916@naver.com"><img class="detail_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
+                    <a href="https://www.instagram.com/doyeon0430/"><img class="detail_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
+                    <a href="https://github.com/DoYeon0430"><img class="detail_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
+                    <a href="{% url 'myprofile:main' %}"><img class="detail_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
+                </div>   
+            </div>
+            <div class="detail_border" style="flex: 1;">
+                <a href="{% url 'engineer:network_main' %}">
+                    <div style="padding-top: 0.2rem; border-bottom: 1px solid black; ">
+                        <strong>메인으로</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

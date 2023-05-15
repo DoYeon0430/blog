@@ -1,37 +1,55 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container pt-3 pb-3">
-  <h3 class="home_bigtext">Information</h3>
-  <ul class="home_smalltext">  
-    <li><strong>이름</strong>: 김도연</li>
-    <li><strong>생년월일</strong>: 01.03.11</li>
-    <li><strong>MBTI</strong>: INFJ</li>
-  </ul>
-  <ul class="home_smalltext">  
-    <li><strong>상업영화</strong> 1편 참여</li>
-    <li><strong>단편영화</strong> 2편 참여</li>
-    <li><strong>드라마</strong> 1편 (현재 프로덕션 연기)</li>
-    <li><strong>대한민국 공군</strong> 826기 전산병</li>
-</ul>
-</div>
 
-<div class="container">
-    <div class="myprofile_home_sub">원하시는 분야를 클릭하세요.</div>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
-        <a href="{% url 'myprofile:school' %}" class="d-block text-center myprofile_home">학교</a>
+
+<div class="container background_design">
+  <div class="container" >
+      <div class="mywork_name_name">Doyeon0430</div>
+      <div class="mywork_name_content">어릴적부터 영화 PD를 꿈꿨고 소재 이야기를 뽑아내기 위해 졸업전까지 공학계열과 예체능계열 등 학습 할 예정입니다. 나중에 제 시나리오로 영화를 제작하고 싶습니다.</div>
+      <div class="mywork_name_url">
+        <a href="mailto:kim73916@naver.com"><img class="mywork_name_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
+        <a href="https://www.instagram.com/doyeon0430/"><img class="mywork_name_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
+        <a href="https://github.com/DoYeon0430"><img class="mywork_name_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
+        <a href="{% url 'myprofile:home' %}"><img class="mywork_name_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
+      </div> 
+  </div>
+
+  <div class="row  mywork_name_table" style="border-top: 10px solid rgb(220, 218, 218);">
+      <div class="container mywork_name_table px-3 py-3">
+        <div>인적사항</div>
+        <ul class="mywork_name_ul">
+          <li>김도연</li>
+          <li>01.03.11</li>
+          <li>174cm / 68kg / INFJ</li>
+        </ul>
+  
+        <div>전공</div>
+        <ul class="mywork_name_ul">
+          <li>서울영상고등학교 영상콘텐츠전공</li>
+          <li>경기대학교 기계공학전공</li>
+        </ul>
+  
+        <div>작품</div>
+        <ul class="mywork_name_ul">
+          <li>상업영화 1편 참여</li>
+          <li>단편영화 2편 참여</li>
+          <li>드라마 1편 참여 (크랭크인 연기)</li>
+          <li>시놉시스 제작 단계 (4개월째 진행 중)</li>
+        </ul>
+  
+        <div>병역</div>
+        <ul class="mywork_name_ul">
+          <li>대한민국 공군 826기 정보체계관리병</li>
+        </ul>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
-        <a href="{% url 'myprofile:work' %}" class="d-block text-center myprofile_home">경력</a>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
-        <a href="{% url 'myprofile:ilcense' %}" class="d-block text-center myprofile_home">자격증</a>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 py-3 px-3">
-        <a href="{% url 'myprofile:hobby' %}" class="d-block text-center myprofile_home">취미</a>
+  </div>
+
+    <div class="row py-3 mywork_name_table" style="border-top: 10px solid rgb(220, 218, 218);">
+      <img src="{% static 'img/home_art.png' %}" alt="My Image" class="home_art">
+      <div class="container py-2 mywork_name_content" style="border-bottom: 0px;">
+        <div style="text-align: right; font-weight: 600; padding: 0rem 1rem;">"지식은 우리가 하늘을 나는 날개이다."<br>- 윌리엄 셰익스피어</div>
       </div>
     </div>
 </div>
-  
 {% endblock %}

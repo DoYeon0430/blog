@@ -5,20 +5,25 @@
     border: 2px solid rgb(158, 158, 158);
 }
 
-@media (min-width: 1501px) and (max-width: 10000px) {
+@media (min-width: 1499px) and (max-width: 10000px) {
     .myprofile_home {
         font-size: large;
-        color: rgb(255, 255, 255);
+        color: #E0EBED;
         font-weight: 600;
         text-decoration: none;
-        background-color: rgb(73, 64, 66);
-        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        background-color: #92B3B7;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         padding: 10px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
     }
-    
-    .myprofile_home:hover {
-        background-color: black;
-      }
+      
+      .myprofile_home:hover {
+        background-color: rgb(169, 115, 45);
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
 
       .myprofile_home_sub{
         padding-top: 1rem;
@@ -32,44 +37,28 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
-    }
-
-    .work_main_img{
-        width: 100%;
-        height: 45rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-    
-    .work_camera_img{
-        width: 100%;
-        height: 43rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-
-    .ilcense_paper_img{
-        width: 40%;
-        height: 40rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
     }
 }
 
-@media (min-width: 1001px) and (max-width: 1500px) {
+@media (min-width: 999px) and (max-width: 1500px) {
     .myprofile_home {
         font-size: large;
-        color: rgb(255, 255, 255);
+        color: #E0EBED;
         font-weight: 600;
         text-decoration: none;
-        background-color: rgb(73, 64, 66);
-        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        background-color: #92B3B7;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         padding: 10px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
     }
-    
-    .myprofile_home:hover {
-        background-color: black;
-      }
+      
+      .myprofile_home:hover {
+        background-color: rgb(169, 115, 45);
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
 
       .myprofile_home_sub{
         padding-top: 1rem;
@@ -83,45 +72,29 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
-    }
-
-    .work_main_img{
-        width: 100%;
-        height: 45rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-    
-    .work_camera_img{
-        width: 100%;
-        height: 35rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-
-    .ilcense_paper_img{
-        width: 40%;
-        height: 40rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
     }
 }
 
 
-@media (min-width: 576px) and (max-width: 1000px) {
+@media (min-width: 574px) and (max-width: 1000px) {
     .myprofile_home {
         font-size: large;
-        color: rgb(255, 255, 255);
+        color: #E0EBED;
         font-weight: 600;
         text-decoration: none;
-        background-color: rgb(73, 64, 66);
-        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        background-color: #92B3B7;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         padding: 10px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
     }
-    
-    .myprofile_home:hover {
-        background-color: black;
-      }
+      
+      .myprofile_home:hover {
+        background-color: rgb(169, 115, 45);
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
 
       .myprofile_home_sub{
         padding-top: 1rem;
@@ -135,46 +108,31 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
-    }
-
-    .work_main_img{
-        width: 100%;
-        height: 20rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-    
-    .work_camera_img{
-        width: 100%;
-        height: 15rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-
-    .ilcense_paper_img{
-        width: 70%;
-        height: 30rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
     }
 }
 
 
 @media (min-width: 100px) and (max-width: 575px) {
+
     .myprofile_home {
         font-size: large;
-        color: rgb(255, 255, 255);
-        font-weight: 600;
+        color: #E0EBED;
+        font-weight: 600;;
         text-decoration: none;
-        background-color: rgb(73, 64, 66);
-        box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.2);
+        background-color: #92B3B7;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         padding: 10px;
+        transition: all 0.3s ease;
+        border-radius: 10px;
     }
-    
-    .myprofile_home:hover {
-        background-color: black;
-      }
-
+      
+      .myprofile_home:hover {
+        background-color: rgb(169, 115, 45);
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+      
     .myprofile_home_sub{
         padding-top: 1rem;
         text-align: center;
@@ -187,26 +145,5 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
-    }
-
-    .work_main_img{
-        width: 100%;
-        height: 20rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-    
-    .work_camera_img{
-        width: 100%;
-        height: 15rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
-    }
-
-    .ilcense_paper_img{
-        width: 70%;
-        height: 20rem;
-        margin-bottom: 0.5rem;
-        border: 2px solid rgb(158, 158, 158);
     }
 }

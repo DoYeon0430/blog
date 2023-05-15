@@ -1,9 +1,12 @@
 from django.contrib import admin
-from .models import Movie, genre
+from .models import Movie, Genre
 
-class QuestionAdmin(admin.ModelAdmin):
-    search_fields = ['subject']
+class GenreInline(admin.TabularInline):
+    model = Genre
+    extra = 0
 
-admin.site.register(Movie,QuestionAdmin)
-admin.site.register(genre)
-# Register your models here.
+class MovieAdmin(admin.ModelAdmin):
+    inlines = [GenreInline, ]
+
+admin.site.register(Movie, MovieAdmin)
+admin.site.register(Genre)

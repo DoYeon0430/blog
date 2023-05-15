@@ -16,15 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from myprofile import views
-from mywork import views
-from movie import views
-from license import views
+from engineer import views
+from django.conf import settings
+from django.conf.urls.static import static
+from filebrowser.sites import site
 
 urlpatterns = [
+    #TINYMCE 이미지 업로드 시 보안문제 해결 url
+    path('admin/engineer/physics/add/upload_image',views.upload_image, name='upload_image'),
+    path('admin/engineer/django/add/upload_image',views.upload_image, name='upload_image'),
+    path('admin/engineer/network/add/upload_image',views.upload_image, name='upload_image'),
+    path('admin/movie/movie/add/upload_image',views.upload_image, name='upload_image'),
+    path('admin/mywork/mywork/add/upload_image',views.upload_image, name='upload_image'),
+
     path('admin/', admin.site.urls),
     path('', include('myprofile.urls')),
     path('myprofile/', include('myprofile.urls')),
     path('mywork/', include('mywork.urls')),
     path('movie/', include('movie.urls')), 
+    path('engineer/', include('engineer.urls')), 
+    path('tinymce/', include('tinymce.urls')),
+    path('admin/filebrowser/', site.urls),
+    path('admin/engineer/django/2/change/upload_image', views.upload_image, name="upload_image"),
+    path('admin/engineer/physics/add/upload_image',views.upload_image, name='upload_image'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

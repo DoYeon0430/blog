@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container background_design" >
+    <div class="pt-1 pb-3">
+        <div class="row text-center">
+            <div class="col-3 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "engineer:main" %}'">
+                <div>TOTAL</div>
+            </div>
+            <div class="col-3 bar_menu drag_prevent" OnClick="location.href ='{% url "engineer:physics_main" %}'">
+                <div>PHYSICS</div>
+            </div>
+            <div class="col-3 bar_menu drag_prevent" OnClick="location.href ='{% url "engineer:django_main" %}'">
+                <div>DJANGO</div>
+            </div>
+            <div class="col-3 bar_menu drag_prevent" OnClick="location.href ='{% url "engineer:network_main" %}'">
+                <div>NETWORK</div>
+            </div>
+        </div>
+
+        <div class="row pt-1">
+            <div class="col-lg-4 text-center cols" OnClick="location.href ='{% url "engineer:physics_main" %}'">
+                <div class="mt-3 textimg">
+                    <img class="engineer_image" src="{% static 'img/physics.jpg' %}" alt="물리학 이미지">
+                    <div  class="textsubject">
+                        <div>
+                            Physics Mechanics
+                        </div>
+                        <div class="text_content">※ 대학교 전공이 2학년때부터 들어가서 현재는 업로드 안합니다. ※</div>
+                        <div class="text_bottom">                             
+                            <span>총 게시글 {{physics.count}}</span>
+                            <a>입장하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 text-center cols" OnClick="location.href ='{% url "engineer:django_main" %}'">
+                <div class="mt-3 textimg">
+                    <img class="engineer_image" src="{% static 'img/django.jpg' %}" alt="디장고 이미지">
+                    <div class="textsubject">
+                        <div>
+                            Django 4.2.1 Framework
+                        </div>
+                        <div class="text_content">파이썬으로 만들어진 프레임워크입니다. 개인적으로 코딩은 Django만 사용해서 정리해봤습니다.</div>
+                        <div class="text_bottom">
+                            <span>총 게시글 {{django.count}}</span>
+                            <a>입장하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 text-center cols" OnClick="location.href ='{% url "engineer:network_main" %}'">
+                <div class="mt-3 textimg">
+                    <img class="engineer_image" src="{% static 'img/network.jpg' %}" alt="네트워크 이미지">
+                    <div class="textsubject">
+                        <div>
+                            network & security
+                        </div>
+                        <div class="text_content">네트워크와 보안은 군대 업무 중 필요할 때 공부했는데 Django 쓸 때 필요해서 틈틈이 보는 중입니다.</div>
+                        <div class="text_bottom">                            
+                            <span>총 게시글 {{network.count}}</span>
+                            <a>입장하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

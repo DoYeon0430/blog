@@ -1,0 +1,382 @@
+.mywork_image {
+  width: 100%;
+}
+.mywork_text{
+  cursor:pointer;
+}
+
+.mywork_border{
+  border-bottom: 2px solid rgb(203, 199, 199);
+}
+
+.mywork_border_last {
+  border-bottom: 2px solid rgb(203, 199, 199);
+}
+
+.btn {
+  font-weight: 600;
+  background-color: #010101;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #080808;
+  color: #fff;
+}
+
+
+
+@media (min-width: 1701px) and (max-width: 10000px) {
+  .mywork_content{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: gray;
+  }
+
+  .mywork_title a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mywork_date{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 1.2rem;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    color: gray;
+  }
+
+  .mywork_date span{
+    font-size: 1rem;
+    border-bottom: 2px solid rgb(148, 19, 19);
+    font-weight: 600;
+    color: rgb(148, 19, 19);
+  }
+
+  .mywork_name_name{
+    font-weight: 900;
+    font-size: 2.5rem;
+    padding: 1rem 0.3rem 0rem 0.3rem;
+  }
+
+  .mywork_name_content{
+      font-size: 1.1rem;
+      padding: 0.3rem 0.3rem 1rem 0.3rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .mywork_name_url{
+    padding: 1rem 0.3rem 1.5rem 0.3rem;
+  }
+
+  .mywork_name_url_img{
+    width: 40px;
+    height: 40px;
+    margin-right: 1.5rem;
+  }
+
+  .mywork_name_ul{
+    padding: 0rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  
+  .mywork_name_table div{
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 0.5rem 0rem 0.1rem 0.3rem;
+  }
+
+  .mywork_col{
+    padding: 0.5rem 0px 0rem 0px;
+  }
+  
+}
+
+@media (min-width: 1001px) and (max-width: 1702px) {
+  .mywork_content{
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: gray;
+  }
+
+  .mywork_title a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mywork_date{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 0.9rem;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    color: gray;
+  }
+
+  .mywork_date span{
+    font-size: 1rem;
+    border-bottom: 2px solid rgb(148, 19, 19);
+    font-weight: 600;
+    color: rgb(148, 19, 19);
+  }
+
+  .mywork_name_name{
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 1rem 0.3rem 0rem 0.3rem;
+  }
+
+  .mywork_name_content{
+      font-size: 1rem;
+      padding: 0.3rem 0.3rem 1rem 0.3rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .mywork_name_url{
+    padding: 1rem 0.3rem 1.5rem 0.3rem;
+  }
+
+  .mywork_name_url_img{
+    width: 35px;
+    height: 35px;
+    margin-right: 1rem;
+  }
+
+  .mywork_name_ul{
+    padding: 0rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .mywork_name_table div{
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding: 0.5rem 0rem 0.1rem 0.3rem;
+  }
+
+  .mywork_col{
+    padding: 0.5rem 0px 0rem 0px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .mywork_content{
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: gray;
+  }
+
+  .mywork_title a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mywork_date{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    color: gray;
+  }
+
+  .mywork_date span{
+    font-size: 0.8rem;
+    border-bottom: 2px solid rgb(148, 19, 19);
+    font-weight: 600;
+    color: rgb(148, 19, 19);
+  }
+
+  .mywork_name_name{
+    font-weight: 900;
+    font-size: 1.7rem;
+    padding: 1rem 0.3rem 0rem 0.3rem;
+  }
+
+  .mywork_name_content{
+      font-size: 0.9rem;
+      padding: 0.3rem 0.3rem 0.7rem 0.3rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .mywork_name_url{
+    padding: 0.7rem 0.3rem 1.3rem 0.3rem;
+  }
+
+  .mywork_name_url_img{
+    width: 35px;
+    height: 35px;
+    margin-right: 0.8rem;
+  }
+
+  .mywork_name_ul{
+    padding: 0rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .mywork_name_table div{
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 0.5rem 0rem 0.1rem 0.3rem;
+  }
+
+  .mywork_col{
+    padding: 0rem 0px 1rem 0px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 700px) {
+  .mywork_content{
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: gray;
+  }
+
+  .mywork_title a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mywork_date{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    color: gray;
+  }
+
+  .mywork_date span{
+    font-size: 0.8rem;
+    border-bottom: 2px solid rgb(148, 19, 19);
+    font-weight: 600;
+    color: rgb(148, 19, 19);
+  }
+
+  .mywork_name_name{
+    font-weight: 900;
+    font-size: 1.7rem;
+    padding: 1rem 0.3rem 0rem 0.3rem;
+  }
+
+  .mywork_name_content{
+      font-size: 0.9rem;
+      padding: 0.3rem 0.3rem 0.7rem 0.3rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .mywork_name_url{
+    padding: 0.7rem 0.3rem 1.3rem 0.3rem;
+  }
+
+  .mywork_name_url_img{
+    width: 35px;
+    height: 35px;
+    margin-right: 0.8rem;
+  }
+
+  .mywork_name_ul{
+    padding: 0rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .mywork_name_table div{
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 0.5rem 0rem 0.1rem 0.3rem;
+  }
+
+  .mywork_col{
+    padding: 0rem 0px 1rem 0px;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 500px) {
+  .mywork_content{
+    padding: 0.3rem 0px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: gray;
+  }
+
+  .mywork_title a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mywork_date{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    color: gray;
+  }
+
+  .mywork_date span{
+    font-size: 0.8rem;
+    border-bottom: 2px solid rgb(148, 19, 19);
+    font-weight: 600;
+    color: rgb(148, 19, 19);
+  }
+
+  .mywork_name_name{
+    font-weight: 900;
+    font-size: 1.7rem;
+    padding: 0.7rem 0.3rem 0rem 0.3rem;
+  }
+
+  .mywork_name_content{
+      font-size: 0.9rem;
+      padding: 0.3rem 0.3rem 0.7rem 0.3rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .mywork_name_url{
+    padding: 0.7rem 0.3rem 1.3rem 0.3rem;
+  }
+
+  .mywork_name_url_img{
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+
+  .mywork_name_ul{
+    padding: 0rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .mywork_name_table div{
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 0.5rem 0rem 0.1rem 0.3rem;
+  }
+
+  .mywork_col{
+    padding: 0rem 0px 1rem 0px;
+  }
+}
+  
+  

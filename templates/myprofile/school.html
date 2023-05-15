@@ -2,13 +2,15 @@
 {% load static %}
 {% block content %}
 
-<div class="container pt-3" style="background-color: #f6f6f6;">
-    <h3 class="home_bigtext pt-1">학교<div style="font-size: medium; color: black; padding-top: 2px;">아직 1학년이라 쓸 내용이 없다.</div></h3>
+<div class="container background_design">
+    <div class="container pt-3 pb-3">
+    <h3 class="home_bigtext pt-1">학교<div style="font-size: medium; color: black; padding-top: 2px;">경험이 없어서 쓸 내용이 없다.</div></h3>
     <div style="text-align: center;">
         <img src="{% static 'img/main_pic.jpg' %}" alt="My Image" style="width: 20rem; height: 10rem; border: 2px solid rgb(158, 158, 158);">
     </div>
     <div class="py-5 text-end">
         <a href="{% url 'myprofile:main' %}" class="px-5 myprofile_home">돌아가기</a>
+    </div>
     </div>
 </div>
 

@@ -2,16 +2,24 @@
 {% load static %}
 {% block content %}
 
-<div class="container pt-3" style="background-color: #f6f6f6;">
+<div class="container background_design">
+    <div class="container pt-3 pb-3">
     <h3 class="home_bigtext pt-1">취미<div style="font-size: medium; color: black; padding-top: 2px;">여가에 즐길 수 있는 정기적인 활동</div></h3>
     <div style="margin: 0px 13px;">
         <div class="myprofile_img_text">[영화 시청]</div>
         <img src="{% static 'img/hobby_movie.jpg' %}" alt="My Image" class="hobby_movie_img">
-        <div class="home_smalltext">혼자서 영화 보는것을 좋아한다. 성수기 시즌에는 일주일에 한편은 보는것 같다. 하지만 요즘은 재미있는 영화가 별로 안나온다ㅠ</div>
+        <div class="home_smalltext">혼자서 영화 보는것을 좋아한다. 
+            성수기 시즌에는 일주일에 한편은 보는것 같다. 
+            하지만 요즘은 재미있는 영화가 별로 안나온다.
+        </div>
 
         <div class="myprofile_img_text">[온라인 게임]</div>
         <img src="{% static 'img/hobby_lol.PNG' %}" alt="My Image" class="work_camera_img">
-        <div class="home_smalltext">2013년부터 10년 넘게 리그오브레전드만 한다. 최근에는 마스터까지 올라갔다가 다이아로 떨어졌다. 종종 여유있을 때 하고 라인은 바텀이랑 서폿을 간다.</div>
+        <div class="home_smalltext">2013년부터 10년 넘게 리그오브레전드만 한다. 
+            최근에는 마스터까지 올라갔다가 다이아로 떨어졌다. 
+            종종 여유있을 때 하며 라인은 바텀이랑 서폿을 간다.
+            돈도 안들고 가성비 좋음!
+        </div>
         
         <div class="myprofile_img_text">[자전거 타기]</div>
         <img src="{% static 'img/hobby_road.jpg' %}" alt="My Image" class="hobby_movie_img">
@@ -19,6 +27,7 @@
     </div>
     <div class="py-5 text-end">
         <a href="{% url 'myprofile:main' %}" class="px-5 myprofile_home">돌아가기</a>
+    </div>
     </div>
 </div>
 {{myprofile_home}}

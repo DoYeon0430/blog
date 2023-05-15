@@ -1,18 +1,440 @@
 .movie_text {
-    overflow: hidden;
-    pointer-events: none;
-    width: 50rem;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    box-sizing: border-box;
-    border: none;
-    background-color: transparent;
-    resize: none; /* optional: prevents the user from resizing the textarea */
-    padding: 10px;
-    font-size: 16px;
+  overflow: hidden;
+  pointer-events: none;
+  width: 50rem;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  resize: none; /* optional: prevents the user from resizing the textarea */
+  padding: 10px;
+  font-size: 16px;
+}
+
+.movie_text_div {
+  height: 100%;
+}
+
+.movie_col {
+  display: grid;
+  align-items: center;
+  height: auto; /* 부모 요소의 높이를 지정해야 합니다. */
+}
+
+.movie_image {
+  margin: auto; /* 수평 가운데 정렬을 위해 margin을 auto로 설정합니다. */
+}
+
+
+@media (min-width: 1701px) and (max-width: 10000px) {
+  .movie_image {
+    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
+    width: 100%;
+    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
+  }
+
+  .movie_col{
+    padding: 1rem 0px;
+  }
+
+  .movie_title {
+    padding: 1rem 2rem;
+  }
+
+  .movie_title a {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
   }
   
-  .movie_text_div {
-    height: 100%;
+  .movie_date{
+    font-size: 1.5rem;
+    padding: 0px 2rem;
+    color: #815256;
   }
+
+  .movie_content{
+    font-size: 1.4rem;
+    padding: 0rem 3rem 5rem 3rem;
+  }
+
+  .movie_content a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .pagination{
+    padding: 2rem 0px 1rem 0px;
+  }
+
+  .pagination a {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .current_page {
+    background-color: rgb(190, 101, 50); 
+    border: 2px solid rgb(190, 101, 50); 
+    color: white;
+    border-radius: 30px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+
+  .movie_button{
+    text-align: right;
+    padding: 5rem 0.5rem 0px 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .movie_button a{
+    font-size: 1.4rem;
+    padding: 0.7rem 2.1rem;
+    background-color: rgb(52, 44, 46);
+    border: 1px solid rgb(52, 44, 46);
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1702px) {
+  .movie_image {
+    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
+    width: 100%;
+    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
+  }
+
+  .movie_col{
+    padding: 1rem 0px;
+  }
+
+  .movie_title {
+    padding: 1rem 2rem;
+  }
+
+  .movie_title a {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .movie_date{
+    font-size: 1.4rem;
+    padding: 0px 2rem;
+    color: #815256;
+  }
+
+  .movie_content{
+    font-size: 1.2rem;
+    padding: 0rem 2rem 5rem 2rem;
+  }
+
+  .movie_content a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .pagination a {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .current_page {
+    background-color: rgb(190, 101, 50); 
+    border: 2px solid rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+
+  .pagination{
+    padding: 1.5rem 0px 1rem 0px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+
+  .movie_button{
+    text-align: right;
+    padding: 2.5rem 0px 0px 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .movie_button a{
+    font-size: 1.3rem;
+    padding: 0.6rem 1.8rem;
+    background-color: rgb(52, 44, 46);
+    border: 1px solid rgb(52, 44, 46);
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .movie_image {
+    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
+    width: 100%;
+    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
+  }
+
+  .movie_col{
+    padding: 1rem 0px;
+  }
+
+  .movie_title {
+    padding: 0rem 1rem;
+  }
+
+  .movie_title a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .movie_date{
+    font-size: 1.1rem;
+    padding: 0px 1rem;
+    color: #815256;
+  }
+
+  .movie_content{
+    font-size: 1rem;
+    padding: 1rem 1rem;
+  }
+
+  .movie_content a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .pagination{
+    padding: 1.5rem 0px 1rem 0px;
+  }
+
+  .pagination a {
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .current_page {
+    background-color: rgb(190, 101, 50); 
+    border: 2px solid rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+
+  .movie_button{
+    text-align: right;
+    padding: 0px 0px 0px 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .movie_button a{
+    font-size: 1.1rem;
+    padding: 0.4rem 1.2rem;
+    background-color: rgb(52, 44, 46);
+    border: 1px solid rgb(52, 44, 46);
+  }
+}
+
+@media (min-width: 501px) and (max-width: 700px) {
+  .movie_image {
+    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
+    width: 100%;
+    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
+  }
+
+  .movie_col{
+    padding: 1rem 0px;
+  }
+
+  .movie_title {
+    padding: 0px 1rem;
+  }
+
+  .movie_title a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .movie_date{
+    font-size: 1rem;
+    padding: 0px 1rem;
+    color: #815256;
+  }
+
+  .movie_content{
+    display:none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .movie_content a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .pagination{
+    padding: 1.5rem 0px 1rem 0px;
+  }
+
+  .pagination a {
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .current_page {
+    background-color: rgb(190, 101, 50); 
+    border: 2px solid rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+
+  .movie_button{
+    text-align: right;
+    padding: 0px 0px 0px 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .movie_button a{
+    font-size: 0.9rem;
+    padding: 0.2rem 1rem;
+    background-color: rgb(52, 44, 46);
+    border: 1px solid rgb(52, 44, 46);
+  }
+}
+
+@media (min-width: 100px) and (max-width: 500px) {
+  .movie_image {
+    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
+    width: 100%;
+    height: auto;
+    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
+  }
+
+  .movie_col{
+    padding: 1rem 0px 1rem 0px;
+  }
+
+  .movie_title {
+    padding-left: 0.9rem;
+  }
+
+  .movie_title a {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .movie_date{
+    font-size: 0.8rem;
+    padding: 0px 1rem;
+    color: #815256;
+  }
+  
+  .movie_content{
+    display: none;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .movie_content a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .pagination{
+    padding: 1.5rem 0px 1rem 0px;
+  }
+
+  .pagination a {
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .current_page {
+    background-color: rgb(190, 101, 50); 
+    border: 2px solid rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .movie_button{
+    text-align: right;
+    padding: 0px 0px 0px 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .movie_button a{
+    font-size: 0.8rem;
+    padding: 0.3rem 1.3rem;
+    background-color: rgb(52, 44, 46);
+    border: 1px solid rgb(52, 44, 46);
+  }
+}

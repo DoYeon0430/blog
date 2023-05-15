@@ -9,18 +9,10 @@ def main(request):
     main = {'main':'Doyeon0430'}
     return render(request,'myprofile/main.html', main)
 
-def work(request):
-    work = {'work':'Doyeon0430'}
-    return render(request,'myprofile/work.html', work)
+def introduce(request):
+    introduce = {'introduce':'Doyeon0430'}
+    return render(request,'myprofile/introduce.html', introduce)
 
-def ilcense(request):
-    ilcense = {'ilcense':'Doyeon0430'}
-    return render(request,'myprofile/ilcense.html', ilcense)
-
-def hobby(request):
-    hobby = {'hobby':'Doyeon0430'}
-    return render(request,'myprofile/hobby.html', hobby)
-
-def school(request):
-    school = {'school':'Doyeon0430'}
-    return render(request,'myprofile/school.html', school)
+def story(request):
+    story = {'story':'Doyeon0430'}
+    return render(request,'myprofile/story.html', story)

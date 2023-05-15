@@ -1,0 +1,561 @@
+.bar_menu{
+    border-bottom: 4px solid rgb(222, 217, 217);
+    padding: 0.5rem 0px 0.8rem 0px;
+    cursor:pointer;
+}
+
+.bar_click{
+    border-bottom: 4px solid #293F48;
+    color: #293F48;
+    font-weight:bolder;
+}
+
+.textimg{
+    background-color: #faf8f8;
+    cursor:pointer
+}
+
+.cols{
+    margin-bottom: 1.5rem;
+}
+
+.textsubject{
+    text-align: left;
+    padding: 0.5rem 1rem 0 1rem;
+    font-size: 1.1rem;
+}
+
+.text_content{
+    padding: 0.5rem 0 2rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+}
+
+.text_bottom{
+    border-top: 2px solid rgb(191, 181, 181);
+    padding: 0.7rem 0;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    color: #911712;
+    font-size: 0.9rem;
+}
+
+.text_bottom a{
+    border-bottom: 2px solid #911712;
+}
+
+.text_bottom span{
+    color: #1f4975;
+}
+
+
+@media (min-width: 1501px) and (max-width: 10000px) {
+    .engineer_image {
+        height: 20rem;
+        width: 100%;
+    }
+
+    .bar_menu div{
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .django_image{
+        width: 60%;
+        height: 30rem;
+    }
+
+    .django_title{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .django_content{
+        font-size: 1.1rem;
+        padding: 0.5rem 0rem 0rem 0rem;
+        font-weight: 500;
+    }
+
+    .django_date{
+        padding: 0.5rem 0.5rem 0rem 0.5rem;
+        color: gray;
+        font-size: 1.2rem;
+        color: gray;
+    }
+
+    .django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .detail_subject{
+        font-size: 2.8rem;
+        font-weight: 900;
+    }
+
+    .detail_date{
+        font-size: 1.3rem;
+        padding: 1rem 0rem 1.5rem 0.5rem;
+    }
+
+    .detail_main{
+        padding: 0rem 0rem 0rem 2rem;
+    }
+
+    .detail_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+    }
+
+    .detail_img{
+        text-align: center;
+        padding: 2rem 0rem;
+        width: 60%;
+        height: auto;
+    }
+
+    .detail_border{
+        border-top: 1px solid black;
+        text-align: right;
+        font-size: 1.4rem;
+        padding: 0.7rem 0rem;
+        margin-right: 3rem;
+    }
+
+    .detail_border a{
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 0.3rem;
+    }
+
+    .detail_url{
+        border-top: 1px solid black;
+        padding: 1.5rem 0rem;
+        text-align: left;
+    }
+
+    .detail_url a{
+        padding-left: 1rem;
+    }
+
+    .detail_url_img{
+        width: 40px;
+        height: 40px;
+    }
+
+    
+}
+
+@media (min-width: 991px) and (max-width: 1502px) {
+    .engineer_image {
+        height: 20rem;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .bar_menu div{
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .django_image{
+        width: 60%;
+        height: 27rem;
+    }
+
+    .django_title{
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .django_content{
+        font-size: 1rem;
+        padding: 0.5rem 0rem 0rem 0rem;
+        font-weight: 500;
+    }
+
+    .django_date{
+        padding: 0.5rem 0.5rem 0rem 0.5rem;
+        color: gray;
+        font-size: 1rem;
+        color: gray;
+    }
+
+    .django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .detail_subject{
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+
+    .detail_date{
+        font-size: 1.2rem;
+        padding: 1rem 0rem 1rem 0.5rem;
+    }
+
+    .detail_main{
+        padding: 0rem 0rem 0rem 1.5rem;
+    }
+
+    .detail_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+    }
+
+    .detail_img{
+        text-align: center;
+        padding: 2rem 0rem;
+        width: 60%;
+        height: auto;
+    }
+
+    .detail_border{
+        border-top: 1px solid black;
+        text-align: right;
+        font-size: 1.4rem;
+        padding: 0.7rem 0rem;
+        margin-right: 3rem;
+    }
+
+    .detail_border a{
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 0.3rem;
+    }
+
+    .detail_url{
+        border-top: 1px solid black;
+        padding: 1.5rem 0rem;
+        text-align: left;
+    }
+
+    .detail_url a{
+        padding-left: 1rem;
+    }
+
+    .detail_url_img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 992px) {
+    .engineer_image {
+        height: 30rem;
+        width: 100%;
+    }
+
+    .bar_menu div{
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .django_image{
+        width: 100%;
+        height: 23rem;
+    }
+
+    .django_title{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .django_content{
+        font-size: 1rem;
+        padding: 0.5rem 0rem 0rem 0rem;
+        font-weight: 500;
+    }
+
+    .django_date{
+        padding: 0.5rem 0.5rem 0rem 0.5rem;
+        color: gray;
+        font-size: 0.9rem;
+        color: gray;
+    }
+
+    .django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .detail_subject{
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .detail_date{
+        font-size: 1.1rem;
+        padding: 1rem 0rem 1rem 0.5rem;
+    }
+
+    .detail_main{
+        padding: 0rem 0rem 0rem 1rem;
+    }
+
+    .detail_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        font-size: 1rem;
+    }
+
+    .detail_img{
+        text-align: center;
+        padding: 2rem 0rem;
+        width: 80%;
+        height: auto;
+    }
+
+    .detail_border{
+        border-top: 1px solid black;
+        text-align: right;
+        font-size: 1.4rem;
+        padding: 1rem 0rem;
+        margin-right: 3rem;
+    }
+
+    .detail_border a{
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 0.3rem;
+    }
+
+    .detail_url{
+        border-top: 1px solid black;
+        padding: 1.5rem 0rem;
+        text-align: left;
+    }
+
+    .detail_url a{
+        padding-left: 1rem;
+    }
+
+    .detail_url_img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 701px) {
+    .engineer_image {
+        height: 20rem;
+        width: 100%;
+    }
+
+    .bar_menu div{
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .django_image{
+        width: 100%;
+        height: 18rem;
+    }
+
+    .django_title{
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .django_content{
+        font-size: 1rem;
+        padding: 0.5rem 0rem 0rem 0rem;
+        font-weight: 500;
+    }
+
+    .django_date{
+        padding: 0.3rem 0.5rem 0rem 0.5rem;
+        color: gray;
+        font-size: 0.9rem;
+        color: gray;
+    }
+
+    .django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .detail_subject{
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .detail_date{
+        font-size: 1rem;
+        padding: 0.8rem 0rem 0.8rem 0.5rem;
+    }
+
+    .detail_main{
+        padding: 0rem 0rem 0rem 2rem;
+    }
+
+    .detail_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        font-size: 0.9rem;
+    }
+
+    .detail_img{
+        text-align: center;
+        padding: 2rem 0rem;
+        width: 80%;
+        height: auto;
+    }
+
+    .detail_border{
+        border-top: 1px solid black;
+        text-align: right;
+        font-size: 1.4rem;
+        padding: 0.3rem 0rem;
+        margin-right: 3rem;
+    }
+
+    .detail_border a{
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 0.3rem;
+    }
+
+    .detail_url{
+        border-top: 1px solid black;
+        padding: 1.5rem 0rem;
+        text-align: left;
+    }
+
+    .detail_url a{
+        padding-left: 0.5rem;
+    }
+
+    .detail_url_img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 501px) {
+    .engineer_image {
+        height: 15rem;
+        width: 100%;
+    }
+
+    .bar_menu div{
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    .django_image{
+        width: 100%;
+        height: 14rem;
+    }
+
+    .django_title{
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .django_content{
+        font-size: 0.8rem;
+        padding: 0.5rem 0rem 0rem 0.1rem;
+        font-weight: 500;
+    }
+
+    .django_date{
+        padding: 0.3rem 0.5rem 0rem 0.5rem;
+        color: gray;
+        font-size: 0.9rem;
+        color: gray;
+    }
+
+    .django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+        padding-bottom: 0.8rem;
+    }
+
+    .detail_subject{
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .detail_date{
+        font-size: 0.9rem;
+        padding: 0.5rem 0rem 0.5rem 0.5rem;
+    }
+
+    .detail_main{
+        padding: 0.5rem 0rem 0rem 1rem;
+    }
+
+    .detail_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        border: 1px solid gray;
+    }
+
+    .detail_img{
+        text-align: center;
+        padding: 2rem 0rem;
+        width: 80%;
+        height: auto;
+    }
+
+    .detail_border{
+        border-top: 1px solid black;
+        text-align: right;
+        font-size: 1.2rem;
+        padding: 0.3rem 0.1rem;
+    }
+
+    .detail_border a{
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 0.3rem;
+    }
+
+    .detail_url{
+        border-top: 1px solid black;
+        padding: 1.5rem 0rem;
+        text-align: left;
+    }
+
+    .detail_url a{
+        padding-left: 0.2rem;
+    }
+
+    .detail_url_img{
+        width: 30px;
+        height: 30px;
+    }
+}

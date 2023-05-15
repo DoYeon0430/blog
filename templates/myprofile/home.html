@@ -2,94 +2,108 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="home_intro pt-3 pb-3 col-lg-6">
-            <h3 class="home_bigtext">Introduce</h3>
-            <div style="margin: 0px 13px;">
-                <div class="home_smalltext">어릴적부터 영화 PD를 꿈꿔왔고 대학 졸업전까지 공학계열과 예체능계열 등을 배우며 영화 기획에 필요한 감각적 트렌드를 학습 할 예정입니다. <br>블로그는 정보처리산업기사를 준비할 때 배운 파이썬으로 부족하지만 제작해봤습니다. <br>개인 블로그를 통해 성장하는 모습을 담고 싶습니다.</div>
+<div class="container background_design" >
+    <div class="container">
+        <div class="mywork_name_name">Doyeon0430</div>
+        <div class="mywork_name_content">어릴적부터 영화 PD를 꿈꿨고 소재 이야기를 뽑아내기 위해 졸업전까지 공학계열과 예체능계열 등 학습 할 예정입니다. 나중에 제 시나리오로 영화를 제작하고 싶습니다.</div>
+        <div class="mywork_name_url">
+          <a href="mailto:kim73916@naver.com"><img class="mywork_name_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
+          <a href="https://www.instagram.com/doyeon0430/"><img class="mywork_name_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
+          <a href="https://github.com/DoYeon0430"><img class="mywork_name_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
+          <a href="{% url 'myprofile:main' %}"><img class="mywork_name_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
+        </div> 
+    </div>
+    <div class="home_intro">
+        <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
+            <div class="col-4 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
+                <div>글</div>
             </div>
-            <div style="font-size: medium; font-weight: 700; text-align: right; color: black; padding-top: 2rem;">예술은 당신이 일상을 벗어날 수 <br>있는 모든 것이다. - 앤디 워홀</div>
+            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:story" %}'">
+                <div>태그</div>
+            </div>
+            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:introduce" %}'">
+                <div>소개</div>
+            </div>
         </div>
-        
-        <div class="home_intro pt-3 col-lg-6" >
-            <h3 class="home_bigtext">Major</h3>
-            <ul class="home_smalltext">  
-                <li>서울영상고등학교 영상콘텐츠전공</li>
-                <li>경기대학교 기계공학전공</li>
-            </ul>
+    <div class="row mywork_text py-2" OnClick="location.href ='{% url "mywork:detail" 1 %}'">
+        <div class="col-12">
+            <div class="py-3">
+                <img class="django_image" src="{% static 'img/home_movie.jpg' %}" alt="영화 이미지">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="mywork_col">
+                <div class="django_content">
+                    <a>"세계에 공통되는 대표적인 인류의 문화"</a>
+                </div>
+                <div class="django_title ">
+                    <a>상업영화 제작하는 4단계 알아보기</a>
+                </div>
+                <div class="django_date">
+                    <a>2023년 5월 15일</a>
+                </div>
+                <div class="detail_main pt-3">
+                    <a href="{% url 'mywork:main' %}" style="margin-right: 0.5rem;">#영화</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="home_intro container pt-3 pb-3">
-    <h3 class="home_bigtext">My Art</h3>
-    <div style="text-align: center;">
-        <img src="{% static 'img/home_art.png' %}" alt="My Image" class="home_art">
-        <h6><예술활동증명 확인서></h6>
-    </div>
-</div>
-<div class="home_intro container pt-3 pb-3">
-    <h3 class="home_bigtext">Let's Go</h3>
-    
-    <div class="row">
-    <div class="col-lg-3">
-        <div style="font-weight: 600;"><a href="{% url 'myprofile:main' %}" style="text-decoration: none;color: black;">나의 기록</a></div>
-        <ul style="font-size: medium;">
-            <li><a href="{% url 'myprofile:school' %}" class="home_li";>학교</a></li>
-            <li><a href="{% url 'myprofile:work' %}" class="home_li";>경력</a></li>
-            <li><a href="{% url 'myprofile:ilcense' %}" class="home_li";>자격증</a></li>
-            <li><a href="{% url 'myprofile:hobby' %}" class="home_li";>취미</a></li>
-        </ul>
-    </div>
+    <div class="row mywork_text py-2" OnClick="location.href ='{% url "movie:detail" 7 %}'">
+        <div class="col-12">
+            <div class="py-3">
+                <img class="django_image" src="{% static 'img/dream.jpg' %}" alt="박보영 이미지">
+            </div>
+        </div>
 
-    <div class="col-lg-3">
-        <div style="font-weight: 600;" >영화 현장 이야기</div>
-        <ul style="font-size: medium;">
-            <li><a href="{% url 'mywork:produce' %}" class="home_li";>영화 제작 과정</a></li>
-            <li><a href="{% url 'mywork:preproduction' %}" class="home_li";>pre-production 하는일</a></li>
-            <li><a href="{% url 'mywork:production' %}" class="home_li";>production 하는일</a></li>
-        </ul>
+        <div class=" col-12">
+            <div class="mywork_col">
+                <div class="django_content">
+                    <a>"홈리스 월드컵 실화 이야기"</a>
+                </div>
+                <div class="django_title ">
+                    <a><영화 드림> 감상 후기</a>
+                </div>
+                <div class="django_date">
+                    <a>개봉 2023. 4. 26</a>
+                </div>
+                <div class="detail_main pt-3">
+                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#상업영화</a>
+                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#드라마</a>
+                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#OTT 오리지널</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-lg-3">
-        <div style="font-weight: 600;" >내가 본 영화 후기</div>
-        <ul style="font-size: medium;">
-            <li><a href="{% url 'movie:main' %}" class="home_li";>국내영화</a></li>
-            <li><a href="{% url 'movie:main' %}"  class="home_li";>OTT 오리지널시리즈</a></li>
-        </ul>
-    </div>
+    <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" 5 %}'">
+        <div class="col-12">
+            <div class="py-3">
+                <img class="django_image" src="{% static 'img/django_code.jpg' %}" alt="디장고 이미지">
+            </div>
+        </div>
 
-    <div class="col-lg-3">
-        <div style="font-weight: 600;" >개인 공부 정리</div>
-        <ul style="font-size: medium;">
-            <li><a href="/" class="home_li";>예체능계열</a></li>
-            <li><a href="/" class="home_li";>공학계열(1학년이라 제작X)</a></li>
-        </ul>
-    </div>
-
-    </div>
-</div>
-
-<div class="container pb-3">
-    <div class="row">
-
-    <div class="home_intro container pt-3 col-lg-6">
-        <h3 class="home_bigtext">SNS 바로가기</h3>
-        <ul>
-            <li><a href="https://www.instagram.com/doyeon0430/" class="home_li";>인스타그램</a></li>
-            <li><a href="https://github.com/DoYeon0430" class="home_li";>깃허브</a></li>
-        </ul>
-    </div>
-
-    <div class="home_intro container pt-3 col-lg-6">
-        <h3 class="home_bigtext">블로그 개발 언어</h3>
-        <ul>
-            <li>파이썬</li>
-            <li>아마존 클라우드</li>
-        </ul>
+        <div class=" col-12 mb-2">
+            <div class="mywork_col">
+                <div class="django_title ">
+                    <a>[Django] tinymce 사용시 이미지 업로드 오류</a>
+                </div>
+                <div class="django_content">
+                    <a>csrf_exemp를 사용하여 로컬 이미지 가져오기</a>
+                </div>
+                <div class="django_date">
+                    <a>2023년 5월 15일
+                    </a>
+                </div>
+                <div class="detail_main pt-3">
+                    <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
+                    <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
+                    <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
 </div>
-{{myprofile_home}}
+
 {% endblock %}

@@ -3,7 +3,7 @@ body {
 }
 
 .home_intro {
-  border-bottom: 5px solid #22192a;
+  border-bottom: 1px solid rgb(203, 199, 199);
 }
 
 .home_li {
@@ -12,19 +12,27 @@ body {
 
 .home_li:hover {
   font-weight: 600;
-  color: blue;
+  font-style: italic;
+  color: #FF689F;
 }
 
-@media (min-width: 1700px) and (max-width: 10000px) {
+.drag_prevent{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+
+@media (min-width: 1798px) and (max-width: 10000px) {
   .home_bigtext {
     font-size: xx-large;
     text-align: left;
-    border-left: 5px solid rgb(177, 23, 23);
+    border-left: 5px solid #FF8868;
     display: inline-block;
     padding-bottom: 5px;
     padding-left: 5px;
     margin-bottom: 1rem;
-    color: rgb(177, 23, 23);
+    color: #FF8868;
     font-weight: 700;
   }
 
@@ -32,61 +40,63 @@ body {
     font-size: medium;
   }
 
-  .home_intro {
-    padding-left: 1rem;
-  }
-
   .home_art {
     width: 70%;
     height: 55rem;
   }
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 50px;
-    }
-
-      
-    .navbar .logo a {
-        font-size: 30px;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
-        margin-left: 15rem;
-    }
-      
-
+  .navbar {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-top: 5px solid rgb(178, 176, 176, 0.3);
+  }
+  .logo {
+    padding: 1.2rem 0px;
+    text-align: center;
+  }
+  .logo a img {
+    width: 220px; 
+    height: auto;
+    margin-top: 2px;
+  }
     .nav-links {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-right: 10rem;
+    }
+
+    .nav_text{
+      display: none;
     }
 
     .nav-links li a:hover {
       font-weight: 600;
-      color: red;
+      padding-bottom: 0.3rem;
+      color: #181717;
+      border-bottom: 3px solid #181717;
     }
     
       
       .nav-links li {
         display: block;
       }
-      
+
       .navbar ul {
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
 
       .nav-links a {
-        font-weight: 500;
+        font-weight: 600;
         text-decoration: none;
         color: #333;
-        font-size: 1.1rem;
-        margin: 0 10px;
-        margin-right: 3rem;
+        font-size: 1.3rem;
+        margin: 0 50px;
+        padding: 3px 3rem;
       }
       
       .hamburger-menu {
@@ -96,15 +106,15 @@ body {
     
 }
 
-@media (min-width: 1301px) and (max-width: 1699px) {
+@media (min-width: 1301px) and (max-width: 1799px) {
   .home_bigtext {
     text-align: left;
-    border-left: 5px solid rgb(177, 23, 23);
+    border-left: 5px solid #FF8868;
     display: inline-block;
     padding-bottom: 5px;
     padding-left: 5px;
     margin-bottom: 1rem;
-    color: rgb(177, 23, 23);
+    color: #FF8868;
     font-weight: 700;
   }
 
@@ -112,42 +122,44 @@ body {
     font-size: small;
   }
 
-  .home_intro {
-    padding-left: 1rem;
-  }
-
   .home_art {
     width: 70%;
     height: 55rem;
   }
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 50px;
-    }
-
-      
-    .navbar .logo a {
-        font-size: 30px;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
-        margin-left: 5rem;
-    }
-      
-
+  .navbar {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-top: 5px solid rgb(178, 176, 176, 0.3);
+  }
+  .logo {
+    padding: 0.9rem 0px;
+    text-align: center;
+  }
+  .logo a img {
+    width: 210px; 
+    height: auto;
+    margin-top: 2px;
+  }
     .nav-links {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-right: 3rem;
+    }
+
+    .nav_text{
+      display: none;
     }
 
     .nav-links li a:hover {
       font-weight: 600;
-      color: red;
+      padding-bottom: 0.3rem;
+      color: #181717;
+      border-bottom: 3px solid #181717;
     }
       
       .nav-links li {
@@ -160,12 +172,13 @@ body {
       }
       
       .nav-links a {
-        font-weight: 500;
+        font-weight: 600;
         text-decoration: none;
         color: #333;
         font-size: 1.1rem;
-        margin: 0 10px;
-        margin-right: 3rem;
+        margin: 0 50px;
+        margin-right: 3.5rem;
+        padding: 3px 3px;
       }
       
       .hamburger-menu {
@@ -175,15 +188,15 @@ body {
     
 }
 
-@media (min-width: 1001px) and (max-width: 1300px) {
+@media (min-width: 1100px) and (max-width: 1300px) {
   .home_bigtext {
     text-align: left;
-    border-left: 5px solid rgb(177, 23, 23);
+    border-left: 5px solid #FF8868;
     display: inline-block;
     padding-bottom: 5px;
     padding-left: 5px;
     margin-bottom: 1rem;
-    color: rgb(177, 23, 23);
+    color: #FF8868;
     font-weight: 700;
   }
 
@@ -191,30 +204,29 @@ body {
     font-size: small;
   }
 
-  .home_intro {
-    padding-left: 1rem;
-  }
-
   .home_art {
     width: 70%;
     height: 55rem;
   }
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 50px;
-    }
-
-      
-    .navbar .logo a {
-        font-size: 26px;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
-    }
-      
+  .navbar {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-top: 5px solid rgb(178, 176, 176, 0.3);
+  }
+  .logo {
+    padding: 0.8rem 0px;
+    text-align: center;
+  }
+  .logo a img {
+    width: 180px; 
+    height: auto;
+    margin-top: 2px;
+  }
 
     .nav-links {
         display: flex;
@@ -224,7 +236,9 @@ body {
 
     .nav-links li a:hover {
       font-weight: 600;
-      color: red;
+      padding-bottom: 0.3rem;
+      color: #181717;
+      border-bottom: 3px solid #181717;
     }
       
       .nav-links li {
@@ -235,14 +249,17 @@ body {
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
+      .nav_text{
+        display: none;
+      }
       
       .nav-links a {
-        font-weight: 500;
+        font-weight: 600;
         text-decoration: none;
         color: #333;
         font-size: 1.1rem;
-        margin: 0 10px;
-        margin-right: 1rem;
+        margin: 0 20px;
+        padding: 3px 1.5rem;
       }
       
       .hamburger-menu {
@@ -253,45 +270,44 @@ body {
 }
 
 
-@media (min-width: 100px) and (max-width: 1000px) {
+@media (min-width: 100px) and (max-width: 1100px) {
     .home_bigtext {
       text-align: left;
-      border-left: 5px solid rgb(177, 23, 23);
+      border-left: 5px solid #FF8868;
       display: inline-block;
       padding-bottom: 5px;
       padding-left: 6px;
       margin-bottom: 1rem;
-      color: rgb(177, 23, 23);
+      color: #FF8868;
       font-weight: 700;
+      font-size: 1.4rem;
     }
 
     .home_smalltext {
       font-size: small;
     }
 
-    .home_intro {
-      padding-left: 1rem;
-    }
-
     .home_art {
       width: 100%;
       height: 25rem;
     }
-
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-        padding: 25px 20px;
-        background-color: rgb(255, 255, 255);
+    .logo {
+      padding: 0.9rem 0px;
+      text-align: center;
     }
-
-    .navbar .logo a {
-        font-size: 23px;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
+    .logo a img {
+      width: 160px; 
+      height: auto;
+      margin-top: 2px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+      padding: 0.9rem 20px;
+      background-color: #181717;
+      position: relative; /* 네비게이션을 relative 위치로 지정 */
     }
 
     .nav-links {
@@ -313,41 +329,52 @@ body {
     .nav-links.show {
         opacity: 0.9;
         display: block;
-        margin-top: 5.3rem;
-        background-color: 	#494949;
+        margin-top: 3.5rem;
+        background-color: 	#EEEEEE;
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
         pointer-events : none;
     }
     .nav-links li a {
         font-size: 13px;
-        color: #F0FFF0;
-        font-weight: 600;
+        color: #000000;
+        font-weight: 800;
         text-align: left;
         display: block;
         width: 100%;
         text-decoration: none;
-        background-color: #494949;
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
         pointer-events : auto;
-        padding: 10px 0px;
-        
+        padding: 10px 0px 10px 0.5rem;
     }
-    .hamburger-menu {
-        display: none;
-        cursor: pointer;
+
+    .nav-links li{
+      background-color: #EEEEEE;
+    }
+
+    .nav_text{
+      text-decoration: none;
+      color: #E1DCEA;
+      font-size: large;
+      font-weight: 700;
+      font-style: italic;
     }
       
     .bar {
         width: 30px;
-        height: 5px;
-        background-color: #333;
-        margin: 5px 0;
-        border-radius: 5px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 8px 0;
+        border-radius: 1px;
     }
       
     .hamburger-menu {
-        display: block;
-    }
+      display: block;
+      position: absolute; /* 햄버거 버튼을 absolute 위치로 지정 */
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      cursor: pointer;
+  }
     .hamburger-menu.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -355,7 +382,7 @@ body {
         transform: translateY(12px) rotate(45deg);
     }
     .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-10px) rotate(-45deg);
     }
     
     

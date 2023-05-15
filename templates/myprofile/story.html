@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container background_design" >
+    <div class="container">
+        <div class="mywork_name_name">Doyeon0430</div>
+        <div class="mywork_name_content">어릴적부터 영화 PD를 꿈꿨고 소재 이야기를 뽑아내기 위해 졸업전까지 공학계열과 예체능계열 등 학습 할 예정입니다. 나중에 제 시나리오로 영화를 제작하고 싶습니다.</div>
+        <div class="mywork_name_url">
+          <a href="mailto:kim73916@naver.com"><img class="mywork_name_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
+          <a href="https://www.instagram.com/doyeon0430/"><img class="mywork_name_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
+          <a href="https://github.com/DoYeon0430"><img class="mywork_name_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
+          <a href="{% url 'myprofile:main' %}"><img class="mywork_name_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
+        </div> 
+    </div>
+    <div class="home_intro">
+        <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
+            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
+                <div>글</div>
+            </div>
+            <div class="col-4 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "myprofile:story" %}'">
+                <div>태그</div>
+            </div>
+            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:introduce" %}'">
+                <div>소개</div>
+            </div>
+        </div>
+        <div>
+            <div class="mywork_col">
+                <div class="detail_main " style="overflow-x: auto; white-space: nowrap; padding-bottom: 2rem; margin-top: 1rem;">
+                    <a href="{% url 'myprofile:main' %}" style="display: inline-block; margin-right: 0.5rem;">#Doyeon0430</a>
+                    <a href="{% url 'mywork:main' %}" style="display: inline-block; margin-right: 0.5rem;">#영화 이야기</a>
+                    <a href="{% url 'movie:main' %}" style="display: inline-block; margin-right: 0.5rem;">#OTT 오리지널</a>
+                    <a href="{% url 'movie:main' %}" style="display: inline-block; margin-right: 0.5rem;">#상업영화</a>
+                    <a href="{% url 'movie:main' %}" style="display: inline-block; margin-right: 0.5rem;">#드라마</a>
+                    <a href="{% url 'engineer:django_main' %}" style="display: inline-block; margin-right: 0.5rem;">#Django</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

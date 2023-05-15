@@ -11,43 +11,69 @@
 #slider {
     overflow: hidden; /* 슬라이더 밖으로 이미지가 나가지 않도록 설정 */
     margin: 0 auto; /* 중앙에 정렬 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 0px 0px;
   }
   
 #slider img {
-    float: left; /* 이미지를 왼쪽으로 배치 */
+    float: center; /* 이미지를 왼쪽으로 배치 */
+}
+
+.background_design {
+    background-color: white; 
+    box-shadow: 15px 15px 15px rgba(10, 10, 10, 0.1), inset 0px -5px 10px rgba(10, 10, 10, 0.1);
 }
 
 
 
 
 
-@media (min-width: 1501px) and (max-width: 10000px) {
+@media (min-width: 1701px) and (max-width: 10000px) {
     .home_img {
-        height: 55rem;
+        height: 35rem;
         width: 100%;
-        padding-bottom: 1rem;
+      }
+    
+
+    .background_design{
+        margin-bottom: 1rem;
     }
 }
 
-@media (min-width: 1001px) and (max-width: 1500px) {
+@media (min-width: 1100px) and (max-width: 1702px) {
     .home_img {
-        height: 40rem;
+        height: 35rem;
         width: 100%;
-        padding-bottom: 1rem;
+    }
+
+    .background_design{
+        margin-bottom: 1rem;
     }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
+@media (min-width: 701px) and (max-width: 1100px) {
     .home_img {
-        height: 30rem;
+        height: 25rem;
         width: 100%;
-        padding-bottom: 1rem;
+    }
+
+    .background_design{
+        margin-bottom: 1rem;
     }
 }
 
-@media (min-width: 100px) and (max-width: 700px) {
+@media (min-width: 501px) and (max-width: 700px) {
     .home_img {
-        height: 14rem;
+        height: 18rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 500px) {
+    .home_img {
+        height: 12rem;
         width: 100%;
     }
 }

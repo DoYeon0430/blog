@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Mywork
 
-# Register your models here.
+
+admin.site.register(Mywork)

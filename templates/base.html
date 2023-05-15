@@ -13,41 +13,51 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/movie.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/homeimg.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mywork.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/engineer.css' %}">
 </head>
 <body>
+<div class="logo container drag_prevent">
+    <a href="{% url 'myprofile:home' %}"><img src="{% static 'img/logo.jpg' %}" alt="My Image"></a>
+</div>
 <nav class="navbar">
-    <div class="logo">
-        <a href="/">Doyeon0430</a>
-    </div>
-    <ul class="nav-links">
-        <li><a href="{% url 'myprofile:main' %}">&nbsp 나의 기록</a></li>
-        <li><a href="{% url 'mywork:main' %}">&nbsp 영화 현장 이야기</a></li>
-        <li><a href="{% url 'movie:main' %}">&nbsp 영화 감상 후기</a></li>
-        <li><a href="/">&nbsp 개인공부 정리</a></li>
+    <ul class="nav-links drag_prevent">
+        <li><a href="{% url 'myprofile:main' %}">나의 기록</a></li>
+        <li><a href="{% url 'mywork:main' %}">영화 이야기</a></li>
+        <li><a href="{% url 'movie:main' %}">영화 감상 후기</a></li>
+        <li><a href="{% url 'engineer:main' %}">기초 공학 정리</a></li>
     </ul>
+    <a href="{% url 'myprofile:home' %}" class="nav_text drag_prevent">My Movie Story</a>
     <div class="hamburger-menu">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
 </nav>
-<div id="slider">
-    <img src="{% static 'img/sea1.jpg' %}" alt="My Image" class="home_img">
-    <img src="{% static 'img/ilsan.jpg' %}" alt="My Image" class="home_img">
-    <img src="{% static 'img/post1.jpg' %}" alt="My Image" class="home_img">
+<div id="slider" class="container-xl">
+    <img src="{% static 'img/movieimg1.jpg' %}" alt="My Image" class="home_img">
+    <img src="{% static 'img/movieimg5.jpg' %}" alt="My Image" class="home_img">
+    <img src="{% static 'img/movieimg3.jpg' %}" alt="My Image" class="home_img">
 </div>
 
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 {% block content %}
 {% endblock %}
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
-
-<div>
-    <div class="py-3" style="text-align: center; font-size: small;">김도연 | Doyeon0430 | etc</div>
+<div style="background-color: rgb(188, 188, 188);">
+    <div class="container"  style="padding: 0px 1rem; font-weight: 600;">
+        <div class="pt-3" style="text-align: right; font-size: small;">Python 3.10.11 | Django 4.2.1</div>
+        <div style="text-align: right; font-size: small;">Non Commercial Blog | Pngwing</div>
+        <div style="text-align: right; font-size: small;"><a href="/admin" style="color: blue; text-decoration: none;">DataBase supervision</a></div>
+        <div class="pb-2 pt-2 " style="text-align: center; font-size: medium; color: rgb(99, 99, 99);">Copyright © 2023 by Doyeon0430</div>
+    </div>
 </div>
 </body>
 <script type="text/javascript" src="/static/js/main.js"></script>
 <script type="text/javascript" src="/static/js/imgslider.js"></script>
 <script type="text/javascript" src="/static/js/movie_text.js"></script>
+<script type="text/javascript" src="/static/js/movie_pag.js"></script>
+<script type="text/javascript" src="/static/js/mywork_main.js"></script>
+<script type="text/javascript" src="/static/js/mywork_main_1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </html>

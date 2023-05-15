@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container background_design" >
+    <div class="container pt-3 pb-3">
+        <div class="text-end mywork_content px-1" style="color:#f05650">"{{detail.content}}"</div>
+        <div class="detail_subject">
+            {{detail.subject}}    
+        </div>
+        <div class="detail_date pb-4"  style="color:#5B5BDA;">
+            <div>
+                <strong>Doyeon0430</strong> | {{detail.create_date|date:"Y년 m월 d일"}}</div>
+        </div>
+        {{detail.htmlcontent|safe}}
+        <div style="display: flex;">
+            <div class="detail_url" style="flex: 1;">
+                <div>
+                    <a href="mailto:kim73916@naver.com"><img class="detail_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
+                    <a href="https://www.instagram.com/doyeon0430/"><img class="detail_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
+                    <a href="https://github.com/DoYeon0430"><img class="detail_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
+                    <a href="{% url 'myprofile:main' %}"><img class="detail_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
+                </div>   
+            </div>
+            <div class="detail_border" style="flex: 1;">
+                <a href="{% url 'mywork:main' %}">
+                    <div style="padding-top: 1rem; border-bottom: 1px solid black; ">
+                        <strong>메인으로</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
