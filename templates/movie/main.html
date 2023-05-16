@@ -7,7 +7,7 @@
 
         <div class="container">
             <div class="row justify-content-end my-3">
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-8 col-sm-6 col-md-4 col-lg-3">
                     <div class="input-group">
                         <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
                         <button type="button" id="btn_search" class="btn btn-primary">검색</button>
@@ -18,7 +18,7 @@
 
         {% for m in page_obj %}
             <div class="row home_intro" OnClick="location.href ='{% url "movie:detail" m.id %}'" style="cursor:pointer;">
-                <div class="col-5 movie_col" >
+                <div class="col-4 movie_col" >
                     <div>
                         {% if m.photo %}
                             <img class="movie_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
@@ -26,14 +26,14 @@
                     </div>
                 </div>
 
-                <div class="col-7 movie_col">
+                <div class="col-8 movie_col">
                     <div class="movie_title">
-                        <a href="{% url 'movie:detail' m.id %}"><{{ m.subject }}> 후기</a>
+                        <a href="{% url 'movie:detail' m.id %}">[{{ m.subject }}] 후기</a>
                     </div>
 
                     <div class="movie_content">
-                        {% if m.content|length > 40 %}
-                            {{ m.content|truncatechars:40 }}<b> 더보기</b>
+                        {% if m.content|length > 60 %}
+                            {{ m.content|truncatechars:60 }}
                         {% else %}
                             {{ m.content }}
                         {% endif %}

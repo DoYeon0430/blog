@@ -4,23 +4,23 @@
 <div class="container background_design">
     <div class="pt-1 pb-3">
         <div class="row text-center pb-2">
-            <div class="col-3 bar_menu drag_prevent" OnClick="location.href ='{% url "engineer:main" %}'">
+            <div class="col-3 bar_menu" OnClick="location.href ='{% url "engineer:main" %}'">
                 <div>TOTAL</div>
             </div>
-            <div class="col-3 bar_menu drag_prevent" OnClick="location.href ='{% url "engineer:physics_main" %}'">
+            <div class="col-3 bar_menu" OnClick="location.href ='{% url "engineer:physics_main" %}'">
                 <div>PHYSICS</div>
             </div>
-            <div class="col-3 bar_menu drag_prevent" OnClick="location.href ='{% url "engineer:django_main" %}'">
+            <div class="col-3 bar_menu" OnClick="location.href ='{% url "engineer:django_main" %}'">
                 <div>DJANGO</div>
             </div>
-            <div class="col-3 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "engineer:network_main" %}'">
+            <div class="col-3 bar_menu bar_click" OnClick="location.href ='{% url "engineer:network_main" %}'">
                 <div>NETWORK</div>
             </div>
         </div>
 
         <div class="container px-3">
             <div class="row justify-content-end my-3">
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-8 col-sm-6 col-md-4 col-lg-3">
                     <div class="input-group">
                         <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
                         <button type="button" id="btn_search" class="btn btn-primary">검색</button>
@@ -46,7 +46,13 @@
                         <a>{{ m.subject }}</a>
                     </div>
                     <div class="django_content">
-                        <a>{{ m.content }}</a>
+                        <a>                        
+                            {% if m.content|length > 55 %}
+                                {{ m.content|truncatechars:55 }} 더보기
+                            {% else %}
+                                {{ m.content }}
+                            {% endif %}
+                        </a>
                     </div>
                     <div class="django_date">
                         <a>{{ m.create_date|date:"Y년 m월 d일" }} · 조회 {{m.hits}} · 

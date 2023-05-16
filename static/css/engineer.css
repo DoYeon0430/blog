@@ -92,12 +92,12 @@
     }
 
     .detail_subject{
-        font-size: 2.8rem;
+        font-size: 2rem;
         font-weight: 900;
     }
 
     .detail_date{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         padding: 1rem 0rem 1.5rem 0.5rem;
     }
 
@@ -196,12 +196,12 @@
     }
 
     .detail_subject{
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 900;
     }
 
     .detail_date{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding: 1rem 0rem 1rem 0.5rem;
     }
 
@@ -297,12 +297,12 @@
     }
 
     .detail_subject{
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 900;
     }
 
     .detail_date{
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         padding: 1rem 0rem 1rem 0.5rem;
     }
 
