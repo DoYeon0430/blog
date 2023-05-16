@@ -20,6 +20,8 @@ from engineer import views
 from django.conf import settings
 from django.conf.urls.static import static
 from filebrowser.sites import site
+from django.urls import re_path as url
+from django.views.static import serve
 
 urlpatterns = [
     #TINYMCE 이미지 업로드 시 보안문제 해결 url
@@ -30,6 +32,8 @@ urlpatterns = [
     path('admin/mywork/mywork/add/upload_image',views.upload_image, name='upload_image'),
 
     path('admin/', admin.site.urls),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve, {'document_root':settings.STATIC_ROOT}),
     path('', include('myprofile.urls')),
     path('myprofile/', include('myprofile.urls')),
     path('mywork/', include('mywork.urls')),
