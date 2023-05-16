@@ -18,7 +18,7 @@
 
         {% for m in page_obj %}
             <div class="row home_intro" OnClick="location.href ='{% url "movie:detail" m.id %}'" style="cursor:pointer;">
-                <div class="col-4 movie_col" >
+                <div class="col-5 movie_col" >
                     <div>
                         {% if m.photo %}
                             <img class="movie_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="col-8 movie_col">
+                <div class="col-7 movie_col">
                     <div class="movie_title">
                         <a href="{% url 'movie:detail' m.id %}">[{{ m.subject }}] 후기</a>
                     </div>
