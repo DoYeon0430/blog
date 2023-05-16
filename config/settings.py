@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','54.225.71.199']
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
@@ -131,7 +131,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
 ]
 
 # Default primary key field type
