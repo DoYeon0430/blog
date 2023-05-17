@@ -33,7 +33,7 @@
 
                     <div class="movie_content">
                         {% if m.content|length > 60 %}
-                            {{ m.content|truncatechars:60 }}
+                            {{ m.content|truncatechars:60 }}... 더보기
                         {% else %}
                             {{ m.content }}
                         {% endif %}
