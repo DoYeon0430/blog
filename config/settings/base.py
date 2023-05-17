@@ -151,22 +151,22 @@ TINYMCE_DEFAULT_CONFIG = {
     'selector': 'textarea',
     'theme': 'silver',
     'plugins': '''
-            textcolor save link image media preview codesample contextmenu
-            table code lists fullscreen  insertdatetime  nonbreaking
-            contextmenu directionality searchreplace wordcount visualblocks
-            visualchars code fullscreen autolink lists  charmap print  hr
-            anchor pagebreak
-            ''',
+        advlist autolink lists link image charmap print preview hr anchor
+        pagebreak searchreplace wordcount visualblocks visualchars code
+        fullscreen insertdatetime media nonbreaking save table contextmenu
+        directionality emoticons template paste textcolor colorpicker textpattern codesample
+    ''',
     'toolbar1': '''
-            fullscreen preview bold italic underline | fontselect,
-            fontsizeselect  | forecolor backcolor | alignleft alignright |
-            aligncenter alignjustify | indent outdent | bullist numlist table |
-            | link image media | codesample |
-            ''',
+        fullscreen preview bold italic underline | fontselect,
+        fontsizeselect | forecolor backcolor | alignleft alignright |
+        aligncenter alignjustify | indent outdent | bullist numlist table |
+        | link image media | codesample
+    ''',
     'toolbar2': '''
-            visualblocks visualchars |
-            charmap hr pagebreak nonbreaking anchor |  code |
-            ''',
+        visualblocks visualchars | charmap emoticons | insertdatetime
+        | hr nonbreaking | template | pagebreak restoredraft | code
+    ''',
+    'fontsize_formats': "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 24pt 36pt",
     'contextmenu': 'formats | link image',
     'menubar': True,
     'statusbar': True,
