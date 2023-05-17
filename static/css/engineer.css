@@ -27,33 +27,33 @@
 
 .text_content{
     padding: 0.5rem 0 2rem 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: black;
 }
 
 .text_bottom{
     border-top: 2px solid rgb(191, 181, 181);
-    padding: 0.7rem 0;
+    padding: 0.7rem 0.5rem;
     display: flex;
     font-weight: 600;
     justify-content: space-between;
     color: #911712;
-    font-size: 0.9rem;
 }
 
 .text_bottom a{
-    border-bottom: 2px solid #911712;
+    font-size: 1rem;
 }
 
 .text_bottom span{
     color: #1f4975;
+    font-size: 1rem;
 }
 
 
 @media (min-width: 1501px) and (max-width: 10000px) {
     .engineer_image {
-        height: 20rem;
+        height: 17rem;
         width: 100%;
     }
 
@@ -156,7 +156,7 @@
 
 @media (min-width: 991px) and (max-width: 1502px) {
     .engineer_image {
-        height: 20rem;
+        height: 14rem;
         width: 100%;
         font-weight: bold;
     }
@@ -258,7 +258,7 @@
 
 @media (min-width: 700px) and (max-width: 992px) {
     .engineer_image {
-        height: 30rem;
+        height: 25rem;
         width: 100%;
     }
 
