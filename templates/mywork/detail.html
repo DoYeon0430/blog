@@ -12,6 +12,11 @@
             <div>
                 <strong>Doyeon0430</strong> | {{detail.create_date|date:"Y년 m월 d일"}}</div>
         </div>
+        <div class="text-center">
+            {% if detail.photo %}
+                <img class="detail_img" src="{{ detail.photo.url }}" alt="{{ detail.subject }} 이미지">
+            {% endif %}
+        </div>
         {{detail.htmlcontent|safe}}
         <div style="display: flex;">
             <div class="detail_url" style="flex: 1;">
