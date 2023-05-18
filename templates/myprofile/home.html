@@ -25,59 +25,42 @@
                 <div>소개</div>
             </div>
         </div>
-    <div class="row mywork_text py-2" OnClick="location.href ='{% url "movie:detail" 2 %}'">
-        <div class="col-12">
-            <div class="py-3">
-                <img class="django_image" src="{% static 'img/deal.jfif' %}" alt="영화 교섭 이미지">
-            </div>
-        </div>
-        <div class=" col-12">
-            <div class="mywork_col">
-                <div class="django_content">
-                    <a>"샘물교회 선교단 아프가니스탄 피랍 사건"</a>
-                </div>
-                <div class="django_title ">
-                    <a><영화 교섭> 감상 후기</a>
-                </div>
-                <div class="django_date">
-                    <a>개봉 2023. 1. 18</a>
-                </div>
-                <div class="detail_main pt-3">
-                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#상업영화</a>
-                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#드라마</a>
-                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#OTT 오리지널</a>
+    {% for item in movie_content %}
+        <div class="row mywork_text py-2" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
+            <div class="col-12">
+                <div class="py-3">
+                    {% if item.movie.photo %}
+                    <img class="django_image" src="{{ item.movie.photo.url }}" alt="{{ item.movie.subject }} 이미지">
+                    {% endif %}
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row mywork_text py-2" OnClick="location.href ='{% url "movie:detail" 1 %}'">
-        <div class="col-12">
-            <div class="py-3">
-                <img class="django_image" src="{% static 'img/dream.jpg' %}" alt="영화 드림 이미지">
-            </div>
-        </div>
-        <div class=" col-12">
-            <div class="mywork_col">
-                <div class="django_content">
-                    <a>"홈리스 월드컵 실화 이야기"</a>
-                </div>
-                <div class="django_title ">
-                    <a><영화 드림> 감상 후기</a>
-                </div>
-                <div class="django_date">
-                    <a>개봉 2023. 4. 26</a>
-                </div>
-                <div class="detail_main pt-3">
-                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#상업영화</a>
-                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#드라마</a>
-                    <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#OTT 오리지널</a>
+            <div class=" col-12">
+                <div class="mywork_col">
+                    <div class="django_content">
+                        <a>"{{ item.movie.content }}"</a>
+                    </div>
+                    <div class="django_title ">
+                        <a><영화 {{ item.movie.subject }}> 감상 후기</a>
+                    </div>
+                    <div class="django_date">
+                        <a>개봉 {{item.movie.create_date|date:"Y. m. d"}} |
+                        {% for genre in item.movie.genres.all %}
+                            {{ genre }}
+                        {% endfor %}
+                           </a>
+                    </div>
+                    <div class="detail_main pt-3">
+                        <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#상업영화</a>
+                        <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#드라마</a>
+                        <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#OTT 오리지널</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" 2 %}'">
+    {% endfor %}
+  
+    {% for item in django_content %}
+    <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
         <div class="col-12">
             <div class="py-3">
                 <img class="django_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
@@ -86,14 +69,17 @@
         <div class=" col-12 mb-2">
             <div class="mywork_col">
                 <div class="django_title ">
-                    <a>[Django] Ubuntu 20.04에서 SSL 인증하고 HTTPS 적용하기</a>
+                    <a>{{ item.django.subject }}</a>
                 </div>
                 <div class="django_content">
-                    <a>AWS HTTPS 방화벽 추가와 Let's Encrypt로 Nginx 설정</a>
+                    {% if item.django.content|length > 60 %}
+                        {{ item.django.content|truncatechars:60 }}... 더보기
+                    {% else %}
+                        {{ item.django.content }} 
+                    {% endif %}
                 </div>
                 <div class="django_date">
-                    <a>2023년 5월 16일
-                    </a>
+                    <a>{{item.django.create_date|date:"Y. m. d"}}</a>
                 </div>
                 <div class="detail_main pt-3">
                     <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
@@ -103,33 +89,7 @@
             </div>
         </div>
     </div>
-
-    <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" 1 %}'">
-        <div class="col-12">
-            <div class="py-3">
-                <img class="django_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
-            </div>
-        </div>
-        <div class=" col-12 mb-2">
-            <div class="mywork_col">
-                <div class="django_title ">
-                    <a>[Django] PostgreSQL과 연동하고 AWS에 업로드하기</a>
-                </div>
-                <div class="django_content">
-                    <a>AWS에서 ubuntu 20.04 환경으로 데이터베이스를 연결 </a>
-                </div>
-                <div class="django_date">
-                    <a>2023년 5월 16일
-                    </a>
-                </div>
-                <div class="detail_main pt-3">
-                    <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
-                    <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
-                    <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
     </div>
 </div>
 

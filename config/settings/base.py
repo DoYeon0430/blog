@@ -29,11 +29,12 @@ SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','54.225.71.199']
 
-DEBUG = False
+DEBUG = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'myprofile.apps.MyprofileConfig',
     'mywork.apps.MyworkConfig',
     'tinymce',
     'engineer.apps.EngineerConfig',

@@ -14,7 +14,7 @@ class EngineerForm(forms.ModelForm):
 # Post 클래스는 해당하는 Photo 객체를 리스트로 관리하는 한다. 
 class PhysicsAdmin(admin.ModelAdmin):
     form = EngineerForm 
-
+    search_fields = ['subject', 'content']
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'engineerkey':
             kwargs['queryset'] = Engineer.objects.all()
@@ -24,7 +24,7 @@ class PhysicsAdmin(admin.ModelAdmin):
 
 class DjangoAdmin(admin.ModelAdmin):
     form = EngineerForm
-
+    search_fields = ['subject', 'content']
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'engineerkey':
             kwargs['queryset'] = Engineer.objects.all()
@@ -34,7 +34,7 @@ class DjangoAdmin(admin.ModelAdmin):
 
 class NetworkAdmin(admin.ModelAdmin):
     form = EngineerForm
-
+    search_fields = ['subject', 'content']
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'engineerkey':
             kwargs['queryset'] = Engineer.objects.all()

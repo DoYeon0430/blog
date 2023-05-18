@@ -6,6 +6,8 @@ class GenreInline(admin.TabularInline):
     extra = 0
 
 class MovieAdmin(admin.ModelAdmin):
+    actions = ['delete_selected']
+    search_fields = ['subject', 'content']
     inlines = [GenreInline, ]
 
 admin.site.register(Movie, MovieAdmin)
