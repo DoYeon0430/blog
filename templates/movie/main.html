@@ -40,17 +40,7 @@
                     </div>
 
                     <div class="movie_date">
-                        {% for genre in m.genre_set.all %}
-                            {% if genre.movie == '상업영화' %}
-                                <a>· 상업영화</a>
-                            {% elif genre.movie == 'OTT 오리지널' %}
-                                <a>· OTT 오리지널 시리즈</a>
-                            {% elif genre.movie == '드라마' %}
-                                <a>· 드라마</a>
-                            {% else %}
-                                <a>· 입력안함</a>
-                            {% endif %}
-                        {% endfor %}
+                        · {% for genre in m.genres.all %}{{ genre }}{% endfor %}
                     </div>            
                     <div class="movie_date">
                         <span>· 개봉 {{ m.Screening|date:"Y. m. d" }}</span>
