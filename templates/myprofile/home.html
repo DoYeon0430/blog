@@ -43,7 +43,7 @@
                         <a><영화 {{ item.movie.subject }}> 감상 후기</a>
                     </div>
                     <div class="django_date">
-                        <a>개봉 {{item.movie.create_date|date:"Y. m. d"}} |
+                        <a>개봉 {{item.movie.Screening|date:"Y. m. d"}} |
                         {% for genre in item.movie.genres.all %}
                             {{ genre }}
                         {% endfor %}
