@@ -50,10 +50,10 @@
                         <a><{{ item.movie.subject }}> 감상 후기</a>
                     </div>
                     <div class="django_date">
-                        <a>개봉 {{item.movie.Screening|date:"Y. m. d"}} |
+                        <a>
                         {% for genre in item.movie.genres.all %}
                             {{ genre }}
-                        {% endfor %}
+                        {% endfor %} | {{item.movie.create_date|date:"Y년 m월 d일"}}
                            </a>
                     </div>
                     <div class="detail_main pt-3">
@@ -88,7 +88,7 @@
                     {% endif %}
                 </div>
                 <div class="django_date">
-                    <a>{{item.django.create_date|date:"Y. m. d"}}</a>
+                    <a>{{item.django.create_date|date:"Y년 m월 d일"}}</a>
                 </div>
                 <div class="detail_main pt-3">
                     <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
