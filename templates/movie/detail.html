@@ -5,7 +5,7 @@
 <div class="container background_design" >
     <div class="container pt-3 pb-3 draggable">
         <div class="detail_subject">
-           < {% for genre in detail.genres.all %}{{ genre }}{% endfor %} > {{ detail.subject }} 후기    
+           [{% for genre in detail.genres.all %}{{ genre }}{% endfor %}] {{ detail.subject }} 후기    
         </div>
         <div class="detail_date" style="color:#5B5BDA;">
             <div>
