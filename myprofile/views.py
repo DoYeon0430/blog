@@ -16,6 +16,6 @@ def introduce(request):
     introduce = {'introduce':'Doyeon0430'}
     return render(request,'myprofile/introduce.html', introduce)
 
-def story(request):
-    story = {'story':'Doyeon0430'}
-    return render(request,'myprofile/story.html', story)
+def tag(request):
+    tag = {'tag':'Doyeon0430'}
+    return render(request,'myprofile/tag.html', tag)
