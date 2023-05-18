@@ -40,10 +40,10 @@
                     </div>
 
                     <div class="movie_date">
-                        · {% for genre in m.genres.all %}{{ genre }}{% endfor %}
+                        · {% for genre in m.genres.all %}{{ genre }}{% endfor %} ({{ m.Screening|date:"Y. m. d" }})
                     </div>            
                     <div class="movie_date">
-                        <span>· 개봉 {{ m.Screening|date:"Y. m. d" }}</span>
+                        <span>· {{ m.create_date|date:"Y년 m월 d일" }}</span>
                     </div>
                 </div>
             </div>
