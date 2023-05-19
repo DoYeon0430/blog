@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    {% for item in movie_content %}
-    {% if forloop.counter >= movie_content|length|sub:2  and forloop.counter <= movie_content|length %}
+    {% for item in movie_content reversed  %}
+        {% if forloop.revcounter >= movie_content|length|sub:2 and forloop.revcounter <= movie_content|length %}
         <div class="row mywork_text py-2" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
             <div class="col-12">
                 <div class="py-3">
@@ -51,9 +51,7 @@
                     </div>
                     <div class="django_date">
                         <a>
-                        {% for genre in item.movie.genres.all %}
-                            {{ genre }}
-                        {% endfor %} | {{item.movie.create_date|date:"Y년 m월 d일"}}
+                            {{ item.movie.genre }} | {{item.movie.create_date|date:"Y년 m월 d일"}}
                         </a>
                     </div>
                     <div class="detail_main pt-3">
@@ -67,40 +65,40 @@
     {% endif %}
     {% endfor %}
 
-    {% for item in django_content %}
-    {% if forloop.counter >= django_content|length|sub:2  and forloop.counter <= django_content|length %}
-    <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
-        <div class="col-12">
-            <div class="py-3">
-                <img class="django_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
-            </div>
-        </div>
-        <div class=" col-12 mb-2">
-            <div class="mywork_col">
-                <div class="django_title ">
-                    <a>{{ item.django.subject }}</a>
-                </div>
-                <div class="django_content">
-                    {% if item.django.content|length > 60 %}
-                        {{ item.django.content|truncatechars:60 }}... 더보기
-                    {% else %}
-                        {{ item.django.content }} 
-                    {% endif %}
-                </div>
-                <div class="django_date">
-                    <a>
-                        Python | {{item.django.create_date|date:"Y년 m월 d일"}}
-                    </a>
-                </div>
-                <div class="detail_main pt-3">
-                    <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
-                    <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
-                    <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
+    {% for item in django_content reversed  %}
+        {% if forloop.revcounter >= django_content|length|sub:2 and forloop.revcounter <= django_content|length %}
+        <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
+            <div class="col-12">
+                <div class="py-3">
+                    <img class="django_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
                 </div>
             </div>
+            <div class=" col-12 mb-2">
+                <div class="mywork_col">
+                    <div class="django_title ">
+                        <a>{{ item.django.subject }}</a>
+                    </div>
+                    <div class="django_content">
+                        {% if item.django.content|length > 60 %}
+                            {{ item.django.content|truncatechars:60 }}... 더보기
+                        {% else %}
+                            {{ item.django.content }} 
+                        {% endif %}
+                    </div>
+                    <div class="django_date">
+                        <a>
+                            Python | {{item.django.create_date|date:"Y년 m월 d일"}}
+                        </a>
+                    </div>
+                    <div class="detail_main pt-3">
+                        <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
+                        <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
+                        <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    {% endif %}
+        {% endif %}
     {% endfor %}
     </div>
 </div>
