@@ -67,6 +67,7 @@
 
     {% for item in reversed_django_content %}
         {% if forloop.counter <= 3 %}
+        {{forloop.counter}}
             <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
                 <div class="col-12">
                     <div class="py-3">
