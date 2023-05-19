@@ -3,8 +3,10 @@ from .models import List_movie, List_django
 # Create your views here.
 def home(request):
     movie_content = List_movie.objects.all()
+    reversed_movie_content =reversed(movie_content)
     django_content = List_django.objects.all()
-    content = {'movie_content': movie_content,  'django_content':django_content}
+    reversed_django_content =reversed(django_content)
+    content = {'reversed_movie_content': reversed_movie_content,  'reversed_django_content':reversed_django_content}
     return render(request, 'myprofile/home.html', content)
 
 
