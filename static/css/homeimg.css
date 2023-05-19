@@ -30,7 +30,7 @@
 
 
 
-@media (min-width: 1701px) and (max-width: 10000px) {
+@media (min-width: 1701px) {
     .home_img {
         height: 35rem;
         width: 100%;
@@ -71,7 +71,7 @@
     }
 }
 
-@media (min-width: 100px) and (max-width: 500px) {
+@media (max-width: 500px) {
     .home_img {
         height: 12rem;
         width: 100%;

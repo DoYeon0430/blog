@@ -27,7 +27,7 @@ body {
   user-select:text;
 }
 
-@media (min-width: 1798px) and (max-width: 10000px) {
+@media (min-width: 1798px)  {
   .home_bigtext {
     font-size: xx-large;
     text-align: left;
@@ -288,7 +288,7 @@ body {
 }
 
 
-@media (min-width: 100px) and (max-width: 1100px) {
+@media (max-width: 1100px) {
     .home_bigtext {
       text-align: left;
       border-left: 5px solid #FF8868;

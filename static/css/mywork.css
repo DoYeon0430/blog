@@ -32,7 +32,7 @@
 
 
 
-@media (min-width: 1701px) and (max-width: 10000px) {
+@media (min-width: 1701px) {
   .mywork_content{
     font-size: 1.1rem;
     text-decoration: none;
@@ -309,7 +309,7 @@
   }
 }
 
-@media (min-width: 100px) and (max-width: 500px) {
+@media (max-width: 500px) {
   .mywork_content{
     padding: 0.3rem 0px;
     font-size: 0.8rem;

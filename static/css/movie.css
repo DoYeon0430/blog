@@ -28,7 +28,7 @@
 }
 
 
-@media (min-width: 1701px) and (max-width: 10000px) {
+@media (min-width: 1701px)  {
   .movie_image {
     display: block;
     margin-left: auto;
@@ -359,7 +359,7 @@
   }
 }
 
-@media (min-width: 100px) and (max-width: 500px) {
+@media (max-width: 500px) {
   .movie_image {
     float: left; /* 이미지를 오른쪽으로 정렬합니다. */
     width: 100%;

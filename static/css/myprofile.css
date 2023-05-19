@@ -5,7 +5,7 @@
     border: 2px solid rgb(158, 158, 158);
 }
 
-@media (min-width: 1499px) and (max-width: 10000px) {
+@media (min-width: 1499px)  {
     .myprofile_home {
         font-size: large;
         color: #E0EBED;
@@ -112,7 +112,7 @@
 }
 
 
-@media (min-width: 100px) and (max-width: 575px) {
+@media  (max-width: 575px) {
 
     .myprofile_home {
         font-size: large;
