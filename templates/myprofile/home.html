@@ -54,7 +54,7 @@
                         {% for genre in item.movie.genres.all %}
                             {{ genre }}
                         {% endfor %} | {{item.movie.create_date|date:"Y년 m월 d일"}}
-                           </a>
+                        </a>
                     </div>
                     <div class="detail_main pt-3">
                         <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#상업영화</a>
@@ -88,7 +88,9 @@
                     {% endif %}
                 </div>
                 <div class="django_date">
-                    <a>{{item.django.create_date|date:"Y년 m월 d일"}}</a>
+                    <a>
+                        Python | {{item.django.create_date|date:"Y년 m월 d일"}}
+                    </a>
                 </div>
                 <div class="detail_main pt-3">
                     <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
