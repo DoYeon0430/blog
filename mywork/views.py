@@ -23,5 +23,9 @@ def main(request):
 
 def detail(request, mywork_id):
     detail = get_object_or_404(Mywork, pk=mywork_id)
-    context = {'detail':detail}
+    client_ip = request.META['REMOTE_ADDR']
+    context = {
+        'detail': detail,
+        'client_ip': client_ip,
+    }
     return render(request, 'mywork/detail.html',context)
