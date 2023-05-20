@@ -5,7 +5,7 @@ class Movie(models.Model):
     subject = models.CharField(max_length=200)
     content = models.CharField(max_length=200)
     htmlcontent = HTMLField()
-    Screening = models.DateTimeField()
+    screening = models.DateTimeField()
     create_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to='movie/')
     genre = models.CharField(max_length=20, choices=[('상업영화', '상업영화'), ('OTT 오리지널', 'OTT 오리지널'), ('드라마','드라마')])
