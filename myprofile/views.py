@@ -35,7 +35,7 @@ def home(request):
             'reversed_network_count':reversed_network_count
         }
 
-    elif tag == '프로그래밍':
+    elif tag == '파이썬':
         mywork_content = List_mywork.objects.all()
         reversed_mywork_content = list(reversed(mywork_content))
         movie_content = List_movie.objects.all()

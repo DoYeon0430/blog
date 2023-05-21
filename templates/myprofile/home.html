@@ -29,11 +29,11 @@
 
     <div class="myprofile_main_div">
         <a href="?tag=대표글" class="myprofile_main_div_a1" id="a1" >영화</a> ·
-        <a href="?tag=프로그래밍" class="myprofile_main_div_a2" id="a2" >파이썬</a>
+        <a href="?tag=파이썬" class="myprofile_main_div_a2" id="a2" >파이썬</a>
     </div>
 
     <div class="row">
-        <div class="col-12 myprofile_form_div">
+        <div class="col-12 myprofile_form_div" id="myprofileFormDiv">
             {% for item in reversed_movie_content %}
             <div class="row mywork_text py-1" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
                 <div class="col-12">
@@ -56,13 +56,19 @@
                     </div>
                 </div>
             </div>
-    {% endfor %}
+            {% endfor %}
         </div>
+    </div> 
+    {% if request.GET.tag != '파이썬' %}
+    <div class="text-end pt-3" style="cursor: pointer;">
+        <img class="button_design" id="scrollButtonback" src="{% static 'img/left.png' %}">
+        <img class="button_design" id="scrollButtongo" src="{% static 'img/right.png' %}">
     </div>
+    {% endif %}
 
     {% for item in reversed_mywork_content %}
     {% if forloop.revcounter <= 3 %}
-            <div class="row mywork_text py-2"  OnClick="location.href='{% url 'mywork:detail' item.mywork.id %}'">
+            <div class="row mywork_text"  OnClick="location.href='{% url 'mywork:detail' item.mywork.id %}'">
                 <div class="col-12">
                     <div class="py-3">
                         {% if item.mywork.photo %}
@@ -87,7 +93,7 @@
                                 영화 | {{item.mywork.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
-                        <div class="detail_main pt-3">
+                        <div class="detail_main py-3">
                             <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#영화 이야기</a>
                         </div>
                     </div>

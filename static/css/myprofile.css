@@ -79,7 +79,7 @@
     }
 
     .myprofile_form_div::-webkit-scrollbar {
-        height: 10px;
+        height: 5px;
     }
 
     .myprofile_form_div::-webkit-scrollbar-track {
@@ -97,7 +97,7 @@
     }
 
     .myprofile_title{
-        font-size: 2rem;
+        font-size: 1.8rem;
         padding-left: 0.6rem;
         padding-top: 0.3rem;
         font-weight: 600;
@@ -107,8 +107,12 @@
         padding-left: 1.1rem;
         padding-top: 0.3rem;
         color: gray;
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: gray;
+    }
+
+    .button_design{
+        width: 45px;
     }
 }
 
@@ -186,7 +190,7 @@
     }
 
     .myprofile_form_div::-webkit-scrollbar {
-        height: 8px;
+        height: 5px;
     }
 
     .myprofile_form_div::-webkit-scrollbar-track {
@@ -204,7 +208,7 @@
     }
 
     .myprofile_title{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         padding-left: 0.6rem;
         padding-top: 0.3rem;
         font-weight: 600;
@@ -214,9 +218,14 @@
         padding-left: 1.1rem;
         padding-top: 0.3rem;
         color: gray;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: gray;
     }
+
+    .button_design{
+        width: 45px;
+    }
+
 }
 
 
@@ -294,7 +303,7 @@
     }
 
     .myprofile_form_div::-webkit-scrollbar {
-        height: 8px;
+        height: 5px;
     }
 
     .myprofile_form_div::-webkit-scrollbar-track {
@@ -312,7 +321,7 @@
     }
 
     .myprofile_title{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding-left: 0.6rem;
         padding-top: 0.3rem;
         font-weight: 600;
@@ -322,8 +331,13 @@
         padding-left: 1.1rem;
         padding-top: 0.3rem;
         color: gray;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: gray;
+    }
+
+    .button_design{
+        display: none;
+        width: 40px;
     }
 }
 
@@ -403,7 +417,7 @@
     }
 
     .myprofile_form_div::-webkit-scrollbar {
-        height: 8px;
+        height: 5px;
     }
 
     .myprofile_form_div::-webkit-scrollbar-track {
@@ -433,5 +447,10 @@
         color: gray;
         font-size: 0.8rem;
         color: gray;
+    }
+
+    .button_design{
+        display: none;
+        width: 40px;
     }
 }
