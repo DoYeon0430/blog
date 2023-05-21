@@ -39,25 +39,76 @@
         font-weight: 700;
     }
 
-    .myprofile_form_div{
-        padding: 0.5rem 0rem 0rem 1rem;
-        display: flex;
-        overflow-x: auto; 
-        white-space: nowrap; 
-        padding-bottom: 1rem; 
-        margin-top: 0.5rem;
+    .myprofile_main_div{
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
+    }
+    .myprofile_main_div_a1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
     }
 
-    .myprofile_form_a{
+    .myprofile_main_div_a2{
         text-decoration: none;
-        color: rgb(145, 66, 66);
-        font-weight: 600;
+        color: gray;
+    }
+
+    .myprofile_main_div_js_1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
+    }
+
+    .myprofile_main_div_js_2{
+        text-decoration: none;
+        color: gray;
+        border-bottom: 0px;
+    }
+
+    .myprofile_form_div {
+        padding: 0.5rem 0rem 0rem 0.5rem;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: gray;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-thumb {
+        background-color: rgb(215, 208, 208);
         border-radius: 5px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-        border: 1px solid gray;
-        display: inline-block; 
-        margin-right: 1rem;
+    }
+
+    .myprofile_image {
+        width: 40rem;
+        height: 28rem;
+    }
+
+    .myprofile_title{
+        font-size: 2rem;
+        padding-left: 0.6rem;
+        padding-top: 0.3rem;
+        font-weight: 600;
+    }
+
+    .myprofile_date{
+        padding-left: 1.1rem;
+        padding-top: 0.3rem;
+        color: gray;
+        font-size: 1.2rem;
+        color: gray;
     }
 }
 
@@ -95,25 +146,76 @@
         font-weight: 700;
     }
 
-    .myprofile_form_div{
-        padding: 0.5rem 0rem 0rem 1rem;
-        display: flex;
-        overflow-x: auto; 
-        white-space: nowrap; 
-        padding-bottom: 1rem; 
-        margin-top: 0.5rem;
+    .myprofile_main_div{
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
+    }
+    .myprofile_main_div_a1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
     }
 
-    .myprofile_form_a{
+    .myprofile_main_div_a2{
         text-decoration: none;
-        color: rgb(145, 66, 66);
-        font-weight: 600;
+        color: gray;
+    }
+
+    .myprofile_main_div_js_1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
+    }
+
+    .myprofile_main_div_js_2{
+        text-decoration: none;
+        color: gray;
+        border-bottom: 0px;
+    }
+
+    .myprofile_form_div {
+        padding: 0.5rem 0rem 0rem 0.5rem;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: gray;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-thumb {
+        background-color: rgb(215, 208, 208);
         border-radius: 5px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-        border: 1px solid gray;
-        display: inline-block; 
-        margin-right: 1rem;
+    }
+
+    .myprofile_image {
+        width: 30rem;
+        height: 20rem;
+    }
+
+    .myprofile_title{
+        font-size: 1.8rem;
+        padding-left: 0.6rem;
+        padding-top: 0.3rem;
+        font-weight: 600;
+    }
+
+    .myprofile_date{
+        padding-left: 1.1rem;
+        padding-top: 0.3rem;
+        color: gray;
+        font-size: 1rem;
+        color: gray;
     }
 }
 
@@ -152,25 +254,76 @@
         font-weight: 700;
 
     }
-    .myprofile_form_div{
-        padding: 0.5rem 0rem 0rem 1rem;
-        display: flex;
-        overflow-x: auto; 
-        white-space: nowrap; 
-        padding-bottom: 1rem; 
-        margin-top: 0.5rem;
+    .myprofile_main_div{
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
+    }
+    .myprofile_main_div_a1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
     }
 
-    .myprofile_form_a{
+    .myprofile_main_div_a2{
         text-decoration: none;
-        color: rgb(145, 66, 66);
-        font-weight: 600;
+        color: gray;
+    }
+
+    .myprofile_main_div_js_1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
+    }
+
+    .myprofile_main_div_js_2{
+        text-decoration: none;
+        color: gray;
+        border-bottom: 0px;
+    }
+
+    .myprofile_form_div {
+        padding: 0.5rem 0rem 0rem 0.5rem;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: gray;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-thumb {
+        background-color: rgb(215, 208, 208);
         border-radius: 5px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-        border: 1px solid gray;
-        display: inline-block; 
-        margin-right: 1rem;
+    }
+
+    .myprofile_image {
+        width: 15rem;
+        height: 11rem;
+    }
+
+    .myprofile_title{
+        font-size: 1.5rem;
+        padding-left: 0.6rem;
+        padding-top: 0.3rem;
+        font-weight: 600;
+    }
+
+    .myprofile_date{
+        padding-left: 1.1rem;
+        padding-top: 0.3rem;
+        color: gray;
+        font-size: 0.9rem;
+        color: gray;
     }
 }
 
@@ -210,24 +363,75 @@
         font-weight: 700;
     }
 
-    .myprofile_form_div{
-        padding: 0.5rem 0rem 0rem 1rem;
-        display: flex;
-        overflow-x: auto; 
-        white-space: nowrap; 
-        padding-bottom: 1rem; 
-        margin-top: 0.5rem;
+    .myprofile_main_div{
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
+    }
+    .myprofile_main_div_a1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
     }
 
-    .myprofile_form_a{
+    .myprofile_main_div_a2{
         text-decoration: none;
-        color: rgb(145, 66, 66);
-        font-weight: 600;
+        color: gray;
+    }
+
+    .myprofile_main_div_js_1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
+    }
+
+    .myprofile_main_div_js_2{
+        text-decoration: none;
+        color: gray;
+        border-bottom: 0px;
+    }
+
+    .myprofile_form_div {
+        padding: 0.5rem 0rem 0rem 0.5rem;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: gray;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-thumb {
+        background-color: rgb(215, 208, 208);
         border-radius: 5px;
-        padding: 0.3rem 0.6rem;
+    }
+
+    .myprofile_image {
+        width: 15rem;
+        height: 11rem;
+    }
+
+    .myprofile_title{
+        font-size: 1.1rem;
+        padding-left: 0.6rem;
+        padding-top: 0.3rem;
+        font-weight: 600;
+    }
+
+    .myprofile_date{
+        padding-left: 1.1rem;
+        padding-top: 0.3rem;
+        color: gray;
         font-size: 0.8rem;
-        border: 1px solid gray;
-        display: inline-block; 
-        margin-right: 1rem;
+        color: gray;
     }
 }

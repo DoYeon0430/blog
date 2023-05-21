@@ -17,7 +17,7 @@
     <div class="home_intro">
         <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
             <div class="col-4 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
-                <div>글</div>
+                <div>최신글</div>
             </div>
             <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:tag" %}'">
                 <div>태그</div>
@@ -27,57 +27,42 @@
         </div>
     </div>
 
-    <div>
-        <div style="margin-bottom: -1rem; ">
-            <div class="myprofile_form_div">
-                <a href="?tag=전체보기" class="myprofile_form_a">전체보기 ({{reversed_mywork_count|add:reversed_movie_count|add:reversed_django_count}})</a>
-                <a href="?tag=영화이야기" class="myprofile_form_a">영화 이야기 ({{reversed_mywork_count}})</a>
-                <a href="?tag=영화감상후기" class="myprofile_form_a">영화 감상후기 ({{reversed_movie_count}})</a>
-                <a href="?tag=Physics" class="myprofile_form_a">Physics ({{reversed_physics_count}})</a>
-                <a href="?tag=Django" class="myprofile_form_a">Django ({{reversed_django_count}})</a>
-                <a href="?tag=Network" class="myprofile_form_a">Network ({{reversed_network_count}})</a>
-            </div>
-        </div>
+    <div class="myprofile_main_div">
+        <a href="?tag=대표글" class="myprofile_main_div_a1" id="a1" >영화</a> ·
+        <a href="?tag=프로그래밍" class="myprofile_main_div_a2" id="a2" >파이썬</a>
     </div>
-    
-    {% for item in reversed_movie_content %}
-            <div class="row mywork_text py-2" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
+
+    <div class="row">
+        <div class="col-12 myprofile_form_div">
+            {% for item in reversed_movie_content %}
+            <div class="row mywork_text py-1" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
                 <div class="col-12">
-                    <div class="py-3">
+                    <div class="px-2">
                         {% if item.movie.photo %}
-                        <img class="django_image" src="{{ item.movie.photo.url }}" alt="{{ item.movie.subject }} 이미지">
+                        <img class="myprofile_image" src="{{ item.movie.photo.url }}" alt="{{ item.movie.subject }} 이미지">
                         {% endif %}
                     </div>
                 </div>
                 <div class=" col-12">
                     <div class="mywork_col">
-                        <div class="django_content">
-                            {% if item.movie.content|length > 60 %}
-                                "{{ item.movie.content|truncatechars:60 }}... 더보기"
-                            {% else %}
-                                "{{ item.movie.content }}"
-                            {% endif %}
+                        <div class="myprofile_title">
+                            <a>[{{ item.movie.subject }}] 감상 후기</a>
                         </div>
-                        <div class="django_title ">
-                            <a><{{ item.movie.subject }}> 감상 후기</a>
-                        </div>
-                        <div class="django_date">
+                        <div class="myprofile_date">
                             <a>
                                 {{ item.movie.genre }} | {{item.movie.create_date|date:"Y년 m월 d일"}}
                             </a>
-                        </div>
-                        <div class="detail_main pt-3">
-                            <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#상업영화</a>
-                            <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#드라마</a>
-                            <a href="{% url 'movie:main' %}" style="margin-right: 0.5rem;">#OTT 오리지널</a>
                         </div>
                     </div>
                 </div>
             </div>
     {% endfor %}
+        </div>
+    </div>
 
     {% for item in reversed_mywork_content %}
-            <div class="row mywork_text py-2" OnClick="location.href='{% url 'mywork:detail' item.mywork.id %}'">
+    {% if forloop.revcounter <= 3 %}
+            <div class="row mywork_text py-2"  OnClick="location.href='{% url 'mywork:detail' item.mywork.id %}'">
                 <div class="col-12">
                     <div class="py-3">
                         {% if item.mywork.photo %}
@@ -108,10 +93,12 @@
                     </div>
                 </div>
             </div>
+    {% endif %}
     {% endfor %}
 
     {% for item in reversed_physics_content %}
-            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:physics" item.physics.id %}'">
+    {% if forloop.revcounter <= 3 %}
+            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:physics" item.physics.id %}'">
                 <div class="col-12">
                     <div class="py-3">
                         <img class="django_image" src="{% static 'img/physicsimg.jpg' %}" alt="물리학 이미지">
@@ -131,7 +118,7 @@
                         </div>
                         <div class="django_date">
                             <a>
-                                물리학 | {{item.physics.create_date|date:"Y년 m월 d일"}}
+                                Python | {{item.physics.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
                         <div class="detail_main pt-3">
@@ -142,10 +129,12 @@
                     </div>
                 </div>
             </div>
+    {% endif %}
     {% endfor %}
 
     {% for item in reversed_django_content %}
-            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
+    {% if forloop.revcounter <= 5 %}
+            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
                 <div class="col-12">
                     <div class="py-3">
                         <img class="django_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
@@ -176,11 +165,12 @@
                     </div>
                 </div>
             </div>
+    {% endif %}
     {% endfor %}
 
-    
     {% for item in reversed_network_content %}
-            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:network" item.network.id %}'">
+    {% if forloop.revcounter <= 3 %}
+            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:network" item.network.id %}'">
                 <div class="col-12">
                     <div class="py-3">
                         <img class="django_image" src="{% static 'img/network.jpg' %}" alt="네트워크 이미지">
@@ -200,7 +190,7 @@
                         </div>
                         <div class="django_date">
                             <a>
-                                물리학 | {{item.network.create_date|date:"Y년 m월 d일"}}
+                                Python | {{item.network.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
                         <div class="detail_main pt-3">
@@ -211,7 +201,9 @@
                     </div>
                 </div>
             </div>
+    {% endif %}
     {% endfor %}
+
     </div>
 </div>
 {% endblock %}
