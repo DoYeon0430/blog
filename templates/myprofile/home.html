@@ -29,11 +29,13 @@
 
     <div>
         <div style="margin-bottom: -1rem; ">
-            <div class="myprofile_form_div" style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem; margin-top: 0.5rem;">
-                <a href="?tag=전체보기" class="myprofile_form_a" style="display: inline-block; margin-right: 0.5rem;">전체보기 ({{reversed_mywork_count|add:reversed_movie_count|add:reversed_django_count}})</a>
-                <a href="?tag=영화감상후기" class="myprofile_form_a" style="display: inline-block; margin-right: 0.5rem;">영화 감상후기 ({{reversed_movie_count}})</a>
-                <a href="?tag=영화이야기" class="myprofile_form_a" style="display: inline-block; margin-right: 0.5rem;">영화 이야기 ({{reversed_mywork_count}})</a>
-                <a href="?tag=Django" class="myprofile_form_a" style="display: inline-block; margin-right: 0.5rem;">Django ({{reversed_django_count}})</a>
+            <div class="myprofile_form_div">
+                <a href="?tag=전체보기" class="myprofile_form_a">전체보기 ({{reversed_mywork_count|add:reversed_movie_count|add:reversed_django_count}})</a>
+                <a href="?tag=영화이야기" class="myprofile_form_a">영화 이야기 ({{reversed_mywork_count}})</a>
+                <a href="?tag=영화감상후기" class="myprofile_form_a">영화 감상후기 ({{reversed_movie_count}})</a>
+                <a href="?tag=Physics" class="myprofile_form_a">Physics ({{reversed_physics_count}})</a>
+                <a href="?tag=Django" class="myprofile_form_a">Django ({{reversed_django_count}})</a>
+                <a href="?tag=Network" class="myprofile_form_a">Network ({{reversed_network_count}})</a>
             </div>
         </div>
     </div>
@@ -108,6 +110,40 @@
             </div>
     {% endfor %}
 
+    {% for item in reversed_physics_content %}
+            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:physics" item.physics.id %}'">
+                <div class="col-12">
+                    <div class="py-3">
+                        <img class="django_image" src="{% static 'img/physicsimg.jpg' %}" alt="물리학 이미지">
+                    </div>
+                </div>
+                <div class=" col-12 mb-2">
+                    <div class="mywork_col">
+                        <div class="django_title ">
+                            <a>{{ item.physics.subject }}</a>
+                        </div>
+                        <div class="django_content">
+                            {% if item.physics.content|length > 60 %}
+                                {{ item.physics.content|truncatechars:60 }}... 더보기
+                            {% else %}
+                                {{ item.physics.content }} 
+                            {% endif %}
+                        </div>
+                        <div class="django_date">
+                            <a>
+                                물리학 | {{item.physics.create_date|date:"Y년 m월 d일"}}
+                            </a>
+                        </div>
+                        <div class="detail_main pt-3">
+                            <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
+                            <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
+                            <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
     {% for item in reversed_django_content %}
             <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
                 <div class="col-12">
@@ -130,6 +166,41 @@
                         <div class="django_date">
                             <a>
                                 Python | {{item.django.create_date|date:"Y년 m월 d일"}}
+                            </a>
+                        </div>
+                        <div class="detail_main pt-3">
+                            <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
+                            <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
+                            <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
+    
+    {% for item in reversed_network_content %}
+            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:network" item.network.id %}'">
+                <div class="col-12">
+                    <div class="py-3">
+                        <img class="django_image" src="{% static 'img/network.jpg' %}" alt="네트워크 이미지">
+                    </div>
+                </div>
+                <div class=" col-12 mb-2">
+                    <div class="mywork_col">
+                        <div class="django_title ">
+                            <a>{{ item.network.subject }}</a>
+                        </div>
+                        <div class="django_content">
+                            {% if item.network.content|length > 60 %}
+                                {{ item.network.content|truncatechars:60 }}... 더보기
+                            {% else %}
+                                {{ item.network.content }} 
+                            {% endif %}
+                        </div>
+                        <div class="django_date">
+                            <a>
+                                물리학 | {{item.network.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
                         <div class="detail_main pt-3">
