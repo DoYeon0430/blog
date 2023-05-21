@@ -38,6 +38,21 @@
         text-align: center;
         font-weight: 700;
     }
+
+    .myprofile_form_a{
+        padding: 1rem 0rem 0rem 0.5rem;
+    }
+
+    .myprofile_form_a a{
+        margin: 0px 0.5rem;
+        text-decoration: none;
+        color: rgb(66, 67, 145);
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 0.3rem 0.8rem;
+        font-size: 1rem;
+        border: 1px solid gray;
+    }
 }
 
 @media (min-width: 999px) and (max-width: 1500px) {
@@ -72,6 +87,21 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
+    }
+
+    .myprofile_form_a{
+        padding: 1rem 0rem 0rem 0.5rem;
+    }
+
+    .myprofile_form_a a{
+        margin: 0px 0.5rem;
+        text-decoration: none;
+        color: rgb(66, 67, 145);
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 0.3rem 0.8rem;
+        font-size: 1rem;
+        border: 1px solid gray;
     }
 }
 
@@ -109,6 +139,20 @@
         text-align: center;
         font-weight: 700;
     }
+
+    .myprofile_form_a{
+        padding: 0.5rem 0rem 0rem 1rem;
+    }
+
+    .myprofile_form_a a{
+        text-decoration: none;
+        color: rgb(66, 67, 145);
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        border: 1px solid gray;
+    }
 }
 
 
@@ -145,5 +189,19 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
+    }
+
+    .myprofile_form_a{
+        padding: 0.5rem 0rem 0rem 1rem;
+    }
+
+    .myprofile_form_a a{
+        text-decoration: none;
+        color: rgb(66, 67, 145);
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        border: 1px solid gray;
     }
 }

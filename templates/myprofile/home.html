@@ -6,7 +6,7 @@
 <div class="container background_design" >
     <div class="container">
         <div class="mywork_name_name">Doyeon0430</div>
-        <div class="mywork_name_content">어릴적부터 영화를 꿈꾸며 다양한 스토리를 창작하기 위해 물리학 이론과 공학계열 트렌드를 배우고 있어요. 나중에 제 시나리오로 영화를 제작하고 싶어요.</div>
+        <div class="mywork_name_content">어릴적부터 영화를 꿈꾸며 다양한 스토리를 창작하기 위해 물리학 이론과 공학계열 트렌드를 배우고 있어요. </div>
         <div class="mywork_name_url">
           <a href="mailto:kim73916@naver.com"><img class="mywork_name_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
           <a href="https://www.instagram.com/doyeon0430/"><img class="mywork_name_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
@@ -27,8 +27,18 @@
         </div>
     </div>
 
+    <div>
+        <div>
+            <div class="myprofile_form_a" style="overflow-x: auto; white-space: nowrap; padding-bottom: 1.2rem; margin-top: rem;">
+                <a href="?tag=전체보기" style="display: inline-block; margin-right: 0.5rem;">전체보기 ({{reversed_mywork_count|add:reversed_movie_count|add:reversed_django_count}})</a>
+                <a href="?tag=영화감상후기" style="display: inline-block; margin-right: 0.5rem;">영화 감상후기 ({{reversed_movie_count}})</a>
+                <a href="?tag=영화이야기" style="display: inline-block; margin-right: 0.5rem;">영화 이야기 ({{reversed_mywork_count}})</a>
+                <a href="?tag=Django" style="display: inline-block; margin-right: 0.5rem;">Django ({{reversed_django_count}})</a>
+            </div>
+        </div>
+    </div>
+    
     {% for item in reversed_movie_content %}
-        {% if forloop.counter <= 3 %}
             <div class="row mywork_text py-2" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
                 <div class="col-12">
                     <div class="py-3">
@@ -62,11 +72,43 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+    {% endfor %}
+
+    {% for item in reversed_mywork_content %}
+            <div class="row mywork_text py-2" OnClick="location.href='{% url 'mywork:detail' item.mywork.id %}'">
+                <div class="col-12">
+                    <div class="py-3">
+                        {% if item.mywork.photo %}
+                        <img class="django_image" src="{{ item.mywork.photo.url }}" alt="{{ item.mywork.subject }} 이미지">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class=" col-12">
+                    <div class="mywork_col">
+                        <div class="django_content">
+                            {% if item.mywork.content|length > 60 %}
+                                "{{ item.mywork.content|truncatechars:60 }}... 더보기"
+                            {% else %}
+                                "{{ item.mywork.content }}"
+                            {% endif %}
+                        </div>
+                        <div class="django_title">
+                            <a>{{ item.mywork.subject }}</a>
+                        </div>
+                        <div class="django_date">
+                            <a>
+                                영화 | {{item.mywork.create_date|date:"Y년 m월 d일"}}
+                            </a>
+                        </div>
+                        <div class="detail_main pt-3">
+                            <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#영화 이야기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     {% endfor %}
 
     {% for item in reversed_django_content %}
-        {% if forloop.counter <= 3 %}
             <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
                 <div class="col-12">
                     <div class="py-3">
@@ -98,9 +140,7 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
     {% endfor %}
     </div>
 </div>
-
 {% endblock %}
