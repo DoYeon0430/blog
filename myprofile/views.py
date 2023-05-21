@@ -84,9 +84,6 @@ def home(request):
         content = {
             'reversed_movie_content': reversed_movie_content,  
             'reversed_mywork_content': reversed_mywork_content,
-            'reversed_physics_content': reversed_physics_content,
-            'reversed_django_content': reversed_django_content,
-            'reversed_network_content': reversed_network_content,
 
             'reversed_mywork_count': reversed_mywork_count,
             'reversed_movie_count': reversed_movie_count,
