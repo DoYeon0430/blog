@@ -40,18 +40,24 @@
     }
 
     .myprofile_form_div{
-        padding: 1rem 0rem 0rem 0.5rem;
+        padding: 0.5rem 0rem 0rem 1rem;
+        display: flex;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding-bottom: 1rem; 
+        margin-top: 0.5rem;
     }
 
     .myprofile_form_a{
-        margin: 0px 0.5rem;
         text-decoration: none;
-        color: rgb(66, 67, 145);
+        color: rgb(145, 66, 66);
         font-weight: 600;
         border-radius: 5px;
-        padding: 0.3rem 0.8rem;
-        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
         border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 1rem;
     }
 }
 
@@ -90,18 +96,24 @@
     }
 
     .myprofile_form_div{
-        padding: 1rem 0rem 0rem 0.5rem;
+        padding: 0.5rem 0rem 0rem 1rem;
+        display: flex;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding-bottom: 1rem; 
+        margin-top: 0.5rem;
     }
 
     .myprofile_form_a{
-        margin: 0px 0.5rem;
         text-decoration: none;
-        color: rgb(66, 67, 145);
+        color: rgb(145, 66, 66);
         font-weight: 600;
         border-radius: 5px;
-        padding: 0.3rem 0.8rem;
-        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
         border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 1rem;
     }
 }
 
@@ -138,20 +150,27 @@
         margin-bottom: 0.5rem;
         text-align: center;
         font-weight: 700;
-    }
 
+    }
     .myprofile_form_div{
         padding: 0.5rem 0rem 0rem 1rem;
+        display: flex;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding-bottom: 1rem; 
+        margin-top: 0.5rem;
     }
 
     .myprofile_form_a{
         text-decoration: none;
-        color: rgb(66, 67, 145);
+        color: rgb(145, 66, 66);
         font-weight: 600;
         border-radius: 5px;
-        padding: 0.3rem 0.8rem;
+        padding: 0.3rem 0.6rem;
         font-size: 0.8rem;
         border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 1rem;
     }
 }
 
@@ -202,7 +221,7 @@
 
     .myprofile_form_a{
         text-decoration: none;
-        color: rgb(66, 67, 145);
+        color: rgb(145, 66, 66);
         font-weight: 600;
         border-radius: 5px;
         padding: 0.3rem 0.6rem;
