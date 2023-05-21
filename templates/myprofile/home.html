@@ -26,7 +26,6 @@
                 <div>소개</div>
         </div>
     </div>
-
     <div class="myprofile_main_div">
         <a href="?tag=대표글" class="myprofile_main_div_a1" id="a1" >영화</a> ·
         <a href="?tag=파이썬" class="myprofile_main_div_a2" id="a2" >파이썬</a>
@@ -102,48 +101,13 @@
     {% endif %}
     {% endfor %}
 
-    {% for item in reversed_physics_content %}
-    {% if forloop.revcounter <= 3 %}
-            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:physics" item.physics.id %}'">
-                <div class="col-12">
-                    <div class="py-3">
-                        <img class="django_image" src="{% static 'img/physicsimg.jpg' %}" alt="물리학 이미지">
-                    </div>
-                </div>
-                <div class=" col-12 mb-2">
-                    <div class="mywork_col">
-                        <div class="django_title ">
-                            <a>{{ item.physics.subject }}</a>
-                        </div>
-                        <div class="django_content">
-                            {% if item.physics.content|length > 60 %}
-                                {{ item.physics.content|truncatechars:60 }}... 더보기
-                            {% else %}
-                                {{ item.physics.content }} 
-                            {% endif %}
-                        </div>
-                        <div class="django_date">
-                            <a>
-                                Python | {{item.physics.create_date|date:"Y년 m월 d일"}}
-                            </a>
-                        </div>
-                        <div class="detail_main pt-3">
-                            <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
-                            <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
-                            <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    {% endif %}
-    {% endfor %}
-
     {% for item in reversed_django_content %}
-    {% if forloop.revcounter <= 5 %}
             <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
                 <div class="col-12">
                     <div class="py-3">
-                        <img class="django_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
+                        {% if item.django.photo %}
+                            <img class="django_image" src="{{ item.django.photo.url }}" alt="디장고 이미지">
+                        {% endif %}
                     </div>
                 </div>
                 <div class=" col-12 mb-2">
@@ -171,45 +135,7 @@
                     </div>
                 </div>
             </div>
-    {% endif %}
     {% endfor %}
-
-    {% for item in reversed_network_content %}
-    {% if forloop.revcounter <= 3 %}
-            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:network" item.network.id %}'">
-                <div class="col-12">
-                    <div class="py-3">
-                        <img class="django_image" src="{% static 'img/network.jpg' %}" alt="네트워크 이미지">
-                    </div>
-                </div>
-                <div class=" col-12 mb-2">
-                    <div class="mywork_col">
-                        <div class="django_title ">
-                            <a>{{ item.network.subject }}</a>
-                        </div>
-                        <div class="django_content">
-                            {% if item.network.content|length > 60 %}
-                                {{ item.network.content|truncatechars:60 }}... 더보기
-                            {% else %}
-                                {{ item.network.content }} 
-                            {% endif %}
-                        </div>
-                        <div class="django_date">
-                            <a>
-                                Python | {{item.network.create_date|date:"Y년 m월 d일"}}
-                            </a>
-                        </div>
-                        <div class="detail_main pt-3">
-                            <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#Django</a>
-                            <a href="{% url 'engineer:network_main' %}" style="margin-right: 0.5rem;">#Network</a>
-                            <a href="{% url 'engineer:physics_main' %}" style="margin-right: 0.5rem;">#Physics</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    {% endif %}
-    {% endfor %}
-
     </div>
 </div>
 {% endblock %}

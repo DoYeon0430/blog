@@ -5,6 +5,14 @@ from movie.models import Movie
 from engineer.models import Physics,Django,Network
 from mywork.models import Mywork
 
+class Views(models.Model):
+    count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return "조회수"
+
+
+
 class List_mywork(models.Model):
     mywork = models.ForeignKey(Mywork, on_delete=models.CASCADE)
 

@@ -30,9 +30,7 @@
             <a href="{% url 'engineer:physics_main' %}">#physics</a>
         </div>
         <div class="text-center">
-            {% if physics.photo %}
-                <img class="detail_img" src="{{ physics.photo.url }}" alt="{{ m.subject }} 이미지">
-            {% endif %}
+            <img class="detail_img" src="{% static 'img/physicsimg.jpg' %}" alt="{{ m.subject }} 이미지">
         </div>
         {{physics.htmlcontent|safe}}
         <div style="display: flex;">

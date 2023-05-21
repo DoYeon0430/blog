@@ -1,10 +1,26 @@
 from django.shortcuts import render
-from .models import List_movie, List_django, List_mywork, List_network, List_physics
+from .models import List_movie, List_django, List_mywork, List_network, List_physics, Views
+from datetime import datetime, timedelta
+from django.http import HttpResponse
+
 # Create your views here.
 def home(request):
 
     tag = request.GET.get('tag')  # 쿼리 매개변수 'tag'의 값을 가져옴
+    main_view = Views.objects.get(pk=3)
 
+    cookie_name = f'main_'
+    if cookie_name not in request.COOKIES:
+        main_view.count += 1
+        main_view.save()
+
+        expires = datetime.utcnow() + timedelta(days=1)
+        expires = expires.strftime('%a, %d-%b-%Y %H:%M:%S GMT')
+
+        response = HttpResponse(render(request, 'myprofile/main.html', {'main_view': main_view}))
+        response.set_cookie(cookie_name, 'true', expires=expires)
+        return response 
+    
     # 필요한 작업 수행
     if tag == '대표글':
         mywork_content = List_mywork.objects.all()
@@ -32,7 +48,8 @@ def home(request):
             'reversed_movie_count': reversed_movie_count,
             'reversed_django_count': reversed_django_count,
             'reversed_physics_count':reversed_physics_count,
-            'reversed_network_count':reversed_network_count
+            'reversed_network_count':reversed_network_count,
+            'main_view': main_view
         }
 
     elif tag == '파이썬':
@@ -60,7 +77,8 @@ def home(request):
             'reversed_movie_count': reversed_movie_count,
             'reversed_django_count': reversed_django_count,
             'reversed_physics_count':reversed_physics_count,
-            'reversed_network_count':reversed_network_count
+            'reversed_network_count':reversed_network_count,
+            'main_view': main_view
         }
         
     else:
@@ -89,7 +107,8 @@ def home(request):
             'reversed_movie_count': reversed_movie_count,
             'reversed_django_count': reversed_django_count,
             'reversed_physics_count':reversed_physics_count,
-            'reversed_network_count':reversed_network_count
+            'reversed_network_count':reversed_network_count,
+            'main_view': main_view
         }
         
     return render(request, 'myprofile/home.html', content)
@@ -100,7 +119,8 @@ def main(request):
     return render(request,'myprofile/main.html', main)
 
 def introduce(request):
-    introduce = {'introduce':'Doyeon0430'}
+    main_view = Views.objects.get(pk=3)
+    introduce = {'main_view':main_view}
     return render(request,'myprofile/introduce.html', introduce)
 
 def tag(request):
