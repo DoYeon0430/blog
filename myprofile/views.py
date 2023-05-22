@@ -17,7 +17,7 @@ def home(request):
         expires = datetime.utcnow() + timedelta(days=1)
         expires = expires.strftime('%a, %d-%b-%Y %H:%M:%S GMT')
 
-        response = HttpResponse(render(request, 'myprofile/main.html', {'main_view': main_view}))
+        response = HttpResponse(render(request, 'myprofile/home.html', {'main_view': main_view}))
         response.set_cookie(cookie_name, 'true', expires=expires)
         return response 
     
