@@ -5,23 +5,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-
-    tag = request.GET.get('tag')  # 쿼리 매개변수 'tag'의 값을 가져옴
+    tag = request.GET.get('tag')
     main_view = Views.objects.get(pk=3)
 
-    cookie_name = f'main_'
-    if cookie_name not in request.COOKIES:
-        main_view.count += 1
-        main_view.save()
-
-        expires = datetime.utcnow() + timedelta(days=1)
-        expires = expires.strftime('%a, %d-%b-%Y %H:%M:%S GMT')
-
-        response = HttpResponse(render(request, 'myprofile/home.html', {'main_view': main_view}))
-        response.set_cookie(cookie_name, 'true', expires=expires)
-        return response 
-    
-    # 필요한 작업 수행
     if tag == '대표글':
         mywork_content = List_mywork.objects.all()
         reversed_mywork_content = list(reversed(mywork_content))
@@ -41,14 +27,13 @@ def home(request):
         reversed_network_count = len(reversed_network_content)
 
         content = {
-            'reversed_movie_content': reversed_movie_content,  
+            'reversed_movie_content': reversed_movie_content,
             'reversed_mywork_content': reversed_mywork_content,
-
             'reversed_mywork_count': reversed_mywork_count,
             'reversed_movie_count': reversed_movie_count,
             'reversed_django_count': reversed_django_count,
-            'reversed_physics_count':reversed_physics_count,
-            'reversed_network_count':reversed_network_count,
+            'reversed_physics_count': reversed_physics_count,
+            'reversed_network_count': reversed_network_count,
             'main_view': main_view
         }
 
@@ -72,12 +57,11 @@ def home(request):
 
         content = {
             'reversed_django_content': reversed_django_content,
-
             'reversed_mywork_count': reversed_mywork_count,
             'reversed_movie_count': reversed_movie_count,
             'reversed_django_count': reversed_django_count,
-            'reversed_physics_count':reversed_physics_count,
-            'reversed_network_count':reversed_network_count,
+            'reversed_physics_count': reversed_physics_count,
+            'reversed_network_count': reversed_network_count,
             'main_view': main_view
         }
         
@@ -100,20 +84,18 @@ def home(request):
         reversed_network_count = len(reversed_network_content)
 
         content = {
-            'reversed_movie_content': reversed_movie_content,  
+            'reversed_movie_content': reversed_movie_content,
             'reversed_mywork_content': reversed_mywork_content,
-
             'reversed_mywork_count': reversed_mywork_count,
             'reversed_movie_count': reversed_movie_count,
             'reversed_django_count': reversed_django_count,
-            'reversed_physics_count':reversed_physics_count,
-            'reversed_network_count':reversed_network_count,
+            'reversed_physics_count': reversed_physics_count,
+            'reversed_network_count': reversed_network_count,
             'main_view': main_view
         }
         
     return render(request, 'myprofile/home.html', content)
-
-
+    
 def main(request):  
     main = {'main':'Doyeon0430'}
     return render(request,'myprofile/main.html', main)
