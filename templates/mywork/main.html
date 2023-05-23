@@ -24,12 +24,12 @@
 
         <div class="col-xl-10 pt-2 col-12 {% if forloop.last %} mywork_border_last{% endif %} mywork_border">
             <div class="mywork_col">
-                <h1 class="mywork_title">
+                <h2 class="mywork_title">
                     {{ m.subject }}
-                </h1>
-                <h2 class="mywork_content">
-                    {{ m.content }}
                 </h2>
+                <h3 class="mywork_content">
+                    {{ m.content }}
+                </h3>
                 <div class="mywork_date">
                     <a>{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</a>
                     <span>내용보기</span>
