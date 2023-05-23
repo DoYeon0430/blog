@@ -48,7 +48,7 @@ def home(request):
         response.set_cookie(cookie_name, 'true', expires=expires)
         return response
 
-    if tag == '대표글':
+    if tag == '영화':
         mywork_content = List_mywork.objects.all()
         reversed_mywork_content = list(reversed(mywork_content))
         movie_content = List_movie.objects.all()

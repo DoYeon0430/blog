@@ -2,7 +2,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const tag = urlParams.get('tag');
     // Add the "a" class to the corresponding <a> tag
-    if (tag === '대표글') {
+    if (tag === '영화') {
         const a1 = document.getElementById('a1');
         const a2 = document.getElementById('a2');
         a1.classList.add('myprofile_main_div_js_1');

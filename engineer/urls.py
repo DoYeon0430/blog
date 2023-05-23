@@ -5,7 +5,7 @@ from . import views
 app_name = 'engineer'
 
 urlpatterns = [
-    path('main/', views.main, name='main'),
+    path('', views.main, name='main'),
     path('physics/',views.physics_main, name='physics_main'),
     path('django/',views.django_main, name='django_main'),
     path('network/',views.network_main, name='network_main'),
