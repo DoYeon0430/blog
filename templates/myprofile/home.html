@@ -44,9 +44,9 @@
                 </div>
                 <div class=" col-12">
                     <div class="mywork_col">
-                        <h1 class="myprofile_title">
+                        <h2 class="myprofile_title">
                             [{{ item.movie.subject }}] 감상 후기
-                        </h1>
+                        </h2>
                         <div class="myprofile_date">
                             <a>
                                 {{ item.movie.genre }} | {{item.movie.create_date|date:"Y년 m월 d일"}}
@@ -83,9 +83,9 @@
                                 "{{ item.mywork.content }}"
                             {% endif %}
                         </h2>
-                        <h1 class="django_title">
+                        <h2 class="django_title">
                             {{ item.mywork.subject }}
-                        </h1>
+                        </h2>
                         <div class="django_date">
                             <a>
                                 영화 | {{item.mywork.create_date|date:"Y년 m월 d일"}}
@@ -110,9 +110,9 @@
                 </div>
                 <div class=" col-12 mb-2">
                     <div class="mywork_col">
-                        <h1 class="django_title">
+                        <h2 class="django_title">
                             {{ item.django.subject }}
-                        </h1>
+                        </h2>
                         <h2 class="django_content">
                             {% if item.django.content|length > 60 %}
                                 {{ item.django.content|truncatechars:60 }}... 더보기
