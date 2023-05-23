@@ -19,12 +19,13 @@
         </div>
     </div>
     <div class="container mt-3 pb-3 draggable">
-        <div class="detail_subject">
+        <h1 class="detail_subject">
             {{physics.subject}}
-        </div>
+        </h1>
         <div class="detail_date">
-            <div>
-                <strong>Doyeon0430</strong> ·  {{physics.create_date|date:"Y년 m월 d일"}}</div>
+            <a>
+                <strong>Doyeon0430</strong> ·  {{physics.create_date|date:"Y년 m월 d일"}}
+            </a>
         </div>
         <div class="detail_main">
             <a href="{% url 'engineer:physics_main' %}">#physics</a>

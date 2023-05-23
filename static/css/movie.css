@@ -44,9 +44,6 @@
 
   .movie_title {
     padding: 0rem 2rem;
-  }
-
-  .movie_title a {
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -128,9 +125,6 @@
 
   .movie_title {
     padding: 0rem 2rem;
-  }
-
-  .movie_title a {
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -209,9 +203,6 @@
 
   .movie_title {
     padding: 0rem 1rem;
-  }
-
-  .movie_title a {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -291,9 +282,6 @@
 
   .movie_title {
     padding: 0px 1rem;
-  }
-
-  .movie_title a {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -373,9 +361,6 @@
 
   .movie_title {
     padding-left: 0.9rem;
-  }
-
-  .movie_title a {
     font-size: 1.1rem;
     font-weight: 900;
     margin-bottom: 10px;

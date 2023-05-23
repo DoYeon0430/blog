@@ -27,17 +27,17 @@
                 </div>
 
                 <div class="col-7 movie_col">
-                    <div class="movie_title">
-                        <a href="{% url 'movie:detail' m.id %}">[{{ m.subject }}] 후기</a>
-                    </div>
+                    <h1 class="movie_title">
+                        [{{ m.subject }}] 후기
+                    </h1>
 
-                    <div class="movie_content">
+                    <h2 class="movie_content">
                         {% if m.content|length > 60 %}
                             {{ m.content|truncatechars:60 }}... 더보기
                         {% else %}
                             {{ m.content }}
                         {% endif %}
-                    </div>
+                    </h2>
 
                     <div class="movie_date">
                         · {{ m.genre }}

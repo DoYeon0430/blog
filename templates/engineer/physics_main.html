@@ -42,18 +42,16 @@
 
             <div class=" col-12">
                 <div class="mywork_col">
-                    <div class="django_title ">
-                        <a>{{ m.subject }}</a>
-                    </div>
-                    <div class="django_content">
-                        <a>                        
-                            {% if m.content|length > 55 %}
-                                {{ m.content|truncatechars:55 }} 더보기
-                            {% else %}
-                                {{ m.content }}
-                            {% endif %}
-                        </a>
-                    </div>
+                    <h1 class="django_title ">
+                        {{ m.subject }}
+                    </h1>
+                    <h2 class="django_content">             
+                        {% if m.content|length > 55 %}
+                            {{ m.content|truncatechars:55 }} 더보기
+                        {% else %}
+                            {{ m.content }}
+                        {% endif %}         
+                    </h2>
                     <div class="django_date">
                         <a>{{ m.create_date|date:"Y년 m월 d일" }} · 조회 {{m.hits}} · 
                             {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글
