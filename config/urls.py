@@ -32,7 +32,7 @@ urlpatterns = [
     path('admin/movie/movie/add/upload_image',views.upload_image, name='upload_image'),
     path('admin/mywork/mywork/add/upload_image',views.upload_image, name='upload_image'),
 
-    path('robots.txt',  TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
+    path('robots.txt/',  TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 
     path('admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
