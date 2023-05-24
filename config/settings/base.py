@@ -171,7 +171,7 @@ TINYMCE_DEFAULT_CONFIG = {
         visualblocks visualchars | charmap emoticons | insertdatetime
         | hr nonbreaking | template | pagebreak restoredraft | code
     ''',
-    'fontsize_formats': "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 24pt 36pt",
+    'fontsize_formats': "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 19pt 20pt 21pt 22pt 23pt 24pt 36pt",
     'contextmenu': 'formats | link image',
     'menubar': True,
     'statusbar': True,
