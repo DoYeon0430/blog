@@ -18,7 +18,9 @@ class Physics(models.Model):
 
     def __str__(self):
         return self.subject
-
+    
+    def get_absolute_url(self):
+        return f'/physics/{self.pk}/'
 
 class Django(models.Model):
     engineerkey = models.OneToOneField(Engineer, on_delete=models.CASCADE)
@@ -31,6 +33,9 @@ class Django(models.Model):
 
     def __str__(self):
         return self.subject
+    
+    def get_absolute_url(self):
+        return f'/django/{self.pk}/'
     
 
 
@@ -45,3 +50,6 @@ class Network(models.Model):
 
     def __str__(self):
         return self.subject
+    
+    def get_absolute_url(self):
+        return f'/network/{self.pk}/'

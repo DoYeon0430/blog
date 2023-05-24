@@ -23,9 +23,23 @@ from filebrowser.sites import site
 from django.urls import re_path as url
 from django.views.static import serve
 from django.views.generic import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from mywork import sitemaps
+from mywork.sitemaps import MyworkSitemap
+from movie.sitemaps import MovieSitemap
+from engineer.sitemaps import PhysicsSitemap, DjangoSitemap, NetworkSitemap
+sitemaps = {
+    'mywork': MyworkSitemap,
+    'movie': MovieSitemap,
+    'physics': PhysicsSitemap,
+    'django': DjangoSitemap,
+    'network': NetworkSitemap
+}
 
 urlpatterns = [
     path('robots.txt',  TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+
     #TINYMCE 이미지 업로드 시 보안문제 해결 url
     path('admin/engineer/physics/add/upload_image',views.upload_image, name='upload_image'),
     path('admin/engineer/django/add/upload_image',views.upload_image, name='upload_image'),
