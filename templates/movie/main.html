@@ -31,13 +31,13 @@
                         [{{ m.subject }}] 후기
                     </h2>
 
-                    <h3 class="movie_content">
+                    <h2 class="movie_content">
                         {% if m.content|length > 60 %}
                             {{ m.content|truncatechars:60 }}... 더보기
                         {% else %}
                             {{ m.content }}
                         {% endif %}
-                    </h3>
+                    </h2>
 
                     <div class="movie_date">
                         · {{ m.genre }}
