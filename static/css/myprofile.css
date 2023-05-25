@@ -105,7 +105,7 @@
 
     .myprofile_date{
         padding-left: 1.1rem;
-        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
         color: gray;
         font-size: 1rem;
         color: gray;
@@ -210,13 +210,11 @@
     .myprofile_title{
         font-size: 1.6rem;
         padding-left: 0.6rem;
-        padding-top: 0.3rem;
         font-weight: 600;
     }
 
     .myprofile_date{
         padding-left: 1.1rem;
-        padding-top: 0.3rem;
         color: gray;
         font-size: 0.9rem;
         color: gray;
@@ -323,13 +321,12 @@
     .myprofile_title{
         font-size: 1.3rem;
         padding-left: 0.6rem;
-        padding-top: 0.3rem;
+        padding-top: 0.5rem;
         font-weight: 600;
     }
 
     .myprofile_date{
         padding-left: 1.1rem;
-        padding-top: 0.3rem;
         color: gray;
         font-size: 0.8rem;
         color: gray;
@@ -437,13 +434,11 @@
     .myprofile_title{
         font-size: 1.1rem;
         padding-left: 0.6rem;
-        padding-top: 0.3rem;
         font-weight: 600;
     }
 
     .myprofile_date{
         padding-left: 1.1rem;
-        padding-top: 0.3rem;
         color: gray;
         font-size: 0.8rem;
         color: gray;
