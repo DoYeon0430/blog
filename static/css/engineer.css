@@ -102,7 +102,7 @@
     }
 
     .detail_main{
-        padding: 0rem 0rem 0rem 2rem;
+        padding: 1rem 0rem 0rem 2rem;
     }
 
     .detail_main a{
@@ -206,7 +206,7 @@
     }
 
     .detail_main{
-        padding: 0rem 0rem 0rem 1.5rem;
+        padding: 1rem 0rem 0rem 1.5rem;
     }
 
     .detail_main a{
@@ -307,7 +307,7 @@
     }
 
     .detail_main{
-        padding: 0rem 0rem 0rem 1rem;
+        padding: 0.5rem 0rem 0rem 1rem;
     }
 
     .detail_main a{
@@ -317,7 +317,7 @@
         border-radius: 20px;
         padding: 0.3rem 1rem;
         border: 1px solid gray;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .detail_img{
@@ -409,7 +409,7 @@
     }
 
     .detail_main{
-        padding: 0rem 0rem 0rem 2rem;
+        padding: 0.5rem 0rem 0rem 2rem;
     }
 
     .detail_main a{
