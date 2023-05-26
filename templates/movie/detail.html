@@ -8,7 +8,7 @@
         <h1 class="detail_subject">
            <{{ detail.genre }}> {{ detail.subject }} 후기    
         </h1>
-        <div class="detail_date" style="color:#5B5BDA;">
+        <div class="detail_date" >
             <a>
                 <strong>Doyeon0430</strong> | {{detail.create_date|date:"Y년 m월 d일"}}
             </a>
@@ -17,6 +17,69 @@
             <a href="{% url 'movie:main' %}">#{{ detail.genre }}</a>
         </div>
         {{detail.htmlcontent|safe}}
+
+        <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
+        <ul class="chat_sub_content"  id="comment-form">
+          {% for comment in comments %}
+            <span>{{ comment.username }}</span>
+            <div style="white-space: pre-line">{{ comment.content|safe }}</div>
+            <p class="text-end draggable_off">{{ comment.create_date|date:"y/m/d H:i" }} | 
+              <a class="delete-comment" style="color: red; text-decoration: none; cursor: pointer;" 
+              data-comment-id="{{ comment.pk }}">삭제</a>
+            </p>
+        
+            <form class="row delete-form" style="display: none;" method="POST">
+              {% csrf_token %}
+              <div class="col-4 col-lg-9"></div>
+              <input type="hidden" name="comment_id" value="{{ comment.pk }}">
+              <div class="col-5 col-lg-2 pr-1" style="padding-right:0rem">
+                <input type="password" name="password" class="form-control mb-3" placeholder="PW">
+              </div>
+              <div class="col-3 col-lg-1 pl-0" style="padding-left:0rem">
+                <button type="submit" class="btn btn-dark bg-danger w-100">입력</button>
+              </div>
+            </form>
+        
+
+          {% empty %}
+            <div>댓글이 없습니다.</div>
+          {% endfor %}
+        </ul>
+
+        <p class="chat_subejct pt-3">간편 댓글 작성</p> 
+        <form method="post" style="border-bottom:3px solid rgb(0, 0, 0);" class="pb-3">
+          {% csrf_token %}
+          <div class="row pb-1">
+            <div class="col-6 chat_content">
+              <input type="text" name="username" id="username" 
+                class="form-control" 
+                value="{{ form.username.value|default_if_none:'' }}"
+                placeholder="임시 ID"
+              >
+            </div>
+            <div class="col-6 chat_content">
+              <input type="password" name="password" id="password" 
+                class="form-control" 
+                value="{{ form.password.value|default_if_none:'' }}"
+                placeholder="임시 PW"
+              >
+            </div>
+                  
+            <div class="col-12 chat_content">
+              <textarea name="content" id="content" 
+                class="form-control" 
+                rows="3" style="resize: none;"
+                placeholder="내용을 입력하세요."
+              >{{ form.content.value|default_if_none:'' }}</textarea>
+        
+              <div class="text-end pt-3">
+                <button type="submit" class="btn btn-dark px-3 bg-success">댓글 작성</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+
         <div style="display: flex;">
             <div class="detail_url" style="flex: 1;">
                 <div>
@@ -38,5 +101,15 @@
     </div>
 </div>
 
-{% endblock %}
+{% if form.errors %}
+<script>
+  // JavaScript 코드를 이용하여 경고 메시지 표시
+  document.addEventListener('DOMContentLoaded', function() {
+    var errorMessage = '잘못된 내용입니다.'; // 경고 메시지 내용
+    alert(errorMessage); // 경고 메시지 표시
+    history.replaceState({}, document.title, window.location.href.split('?')[0]); // URL 파라미터 제거
+  });
+</script>
+{% endif %}
 
+{% endblock %}

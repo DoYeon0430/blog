@@ -15,3 +15,13 @@ class Movie(models.Model):
     
     def get_absolute_url(self):
         return f'/movie/{self.pk}/'
+    
+class Comment(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='comments')
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    content = HTMLField()
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'[{self.movie.pk}. {self.movie.subject}] {self.username}님'
