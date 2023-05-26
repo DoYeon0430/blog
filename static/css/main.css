@@ -27,6 +27,13 @@ body {
   user-select:text;
 }
 
+.draggable_off{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+
 @media (min-width: 1798px)  {
   .home_bigtext {
     font-size: xx-large;

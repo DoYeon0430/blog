@@ -122,7 +122,6 @@
     }
 
     .detail_border{
-        border-top: 1px solid black;
         text-align: right;
         font-size: 1.4rem;
         padding: 0.7rem 0rem;
@@ -137,7 +136,6 @@
     }
 
     .detail_url{
-        border-top: 1px solid black;
         padding: 1.5rem 0rem;
         text-align: left;
     }
@@ -151,7 +149,38 @@
         height: 40px;
     }
 
+    .chat_subejct{
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+    }
     
+    .chat_sub_content{
+        padding-left: 1rem;
+    }
+
+    .chat_sub_content span{
+        display: block;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .chat_sub_content div{
+        font-size: 1rem;
+    }
+
+    .chat_sub_content p{
+        font-size: 0.8rem;
+        color: gray;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .chat_content{
+        padding-bottom: 1rem;
+    }
 }
 
 @media (min-width: 991px) and (max-width: 1502px) {
@@ -226,7 +255,6 @@
     }
 
     .detail_border{
-        border-top: 1px solid black;
         text-align: right;
         font-size: 1.4rem;
         padding: 0.7rem 0rem;
@@ -241,7 +269,6 @@
     }
 
     .detail_url{
-        border-top: 1px solid black;
         padding: 1.5rem 0rem;
         text-align: left;
     }
@@ -253,6 +280,39 @@
     .detail_url_img{
         width: 40px;
         height: 40px;
+    }
+
+    .chat_subejct{
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+    }
+    
+    .chat_sub_content{
+        padding-left: 1rem;
+    }
+
+    .chat_sub_content span{
+        display: block;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .chat_sub_content div{
+        font-size: 1rem;
+    }
+
+    .chat_sub_content p{
+        font-size: 0.8rem;
+        color: gray;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .chat_content{
+        padding-bottom: 1rem;
     }
 }
 
@@ -328,7 +388,6 @@
     }
 
     .detail_border{
-        border-top: 1px solid black;
         text-align: right;
         font-size: 1.4rem;
         padding: 1rem 0rem;
@@ -343,7 +402,6 @@
     }
 
     .detail_url{
-        border-top: 1px solid black;
         padding: 1.5rem 0rem;
         text-align: left;
     }
@@ -355,6 +413,39 @@
     .detail_url_img{
         width: 40px;
         height: 40px;
+    }
+
+    .chat_subejct{
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+    }
+    
+    .chat_sub_content{
+        padding-left: 1rem;
+    }
+
+    .chat_sub_content span{
+        display: block;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .chat_sub_content div{
+        font-size: 1rem;
+    }
+
+    .chat_sub_content p{
+        font-size: 0.8rem;
+        color: gray;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .chat_content{
+        padding-bottom: 1rem;
     }
 }
 
@@ -430,7 +521,6 @@
     }
 
     .detail_border{
-        border-top: 1px solid black;
         text-align: right;
         font-size: 1.4rem;
         padding: 0.3rem 0rem;
@@ -445,7 +535,6 @@
     }
 
     .detail_url{
-        border-top: 1px solid black;
         padding: 1.5rem 0rem;
         text-align: left;
     }
@@ -457,6 +546,39 @@
     .detail_url_img{
         width: 40px;
         height: 40px;
+    }
+
+    .chat_subejct{
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+    }
+    
+    .chat_sub_content{
+        padding-left: 1rem;
+    }
+
+    .chat_sub_content span{
+        display: block;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .chat_sub_content div{
+        font-size: 1rem;
+    }
+
+    .chat_sub_content p{
+        font-size: 0.8rem;
+        color: gray;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .chat_content{
+        padding-bottom: 1rem;
     }
 }
 
@@ -531,7 +653,6 @@
     }
 
     .detail_border{
-        border-top: 1px solid black;
         text-align: right;
         font-size: 1.2rem;
         padding: 0.3rem 0.1rem;
@@ -545,7 +666,6 @@
     }
 
     .detail_url{
-        border-top: 1px solid black;
         padding: 1.5rem 0rem;
         text-align: left;
     }
@@ -558,4 +678,38 @@
         width: 30px;
         height: 30px;
     }
+
+    .chat_subejct{
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+    }
+    
+    .chat_sub_content{
+        padding-left: 1rem;
+    }
+
+    .chat_sub_content span{
+        display: block;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .chat_sub_content div{
+        font-size: 1rem;
+    }
+
+    .chat_sub_content p{
+        font-size: 0.8rem;
+        color: gray;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .chat_content{
+        padding-bottom: 1rem;
+    }
+
 }

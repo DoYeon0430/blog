@@ -13,3 +13,13 @@ class Mywork(models.Model):
     
     def get_absolute_url(self):
         return f'/mywork/{self.pk}/'
+    
+class Comment(models.Model):
+    mywork = models.ForeignKey(Mywork, on_delete=models.CASCADE, related_name='comments')
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    content = HTMLField()
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'[{self.mywork.pk}. {self.mywork.subject}] {self.username}님'

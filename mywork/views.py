@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Mywork
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Mywork, Comment
 from django.core.paginator import Paginator
 from django.db.models import Q
+from .forms import CommentForm
 
 def main(request):
     page = request.GET.get('page','1')
@@ -21,7 +22,38 @@ def main(request):
 
     return render(request, 'mywork/main.html', {'page_obj': page_obj, 'page':page, 'kw':kw})
 
+
 def detail(request, mywork_id):
     detail = get_object_or_404(Mywork, pk=mywork_id)
-    context = {'detail': detail,}
-    return render(request, 'mywork/detail.html',context)
+    comments = Comment.objects.filter(mywork=detail.pk)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        password = request.POST.get('password')
+        comment_id = request.POST.get('comment_id')
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.mywork = detail
+            comment.save()
+            form = CommentForm()  # Clear the form after saving the comment
+            return redirect('mywork:detail', mywork_id=mywork_id)  # Redirect to GET view
+        
+        try:
+            comment = Comment.objects.get(pk=comment_id)
+            if password == comment.password:  # 비밀번호가 일치하는 경우
+                comment.delete()  # 데이터베이스에서 댓글 삭제
+                return redirect('mywork:detail', mywork_id=mywork_id)  # Redirect to GET view
+            
+        except Comment.DoesNotExist:
+            pass
+
+    else:
+        form = CommentForm()
+
+    context = {'detail': detail, 'comments': comments, 'form': form}
+
+    return render(request, 'mywork/detail.html', context)
+
+
+
