@@ -682,8 +682,8 @@
     .chat_subejct{
         font-size: 1.3rem;
         font-weight: 600;
-        border-bottom: 1px solid black;
         padding-bottom: 0.5rem;
+        border-bottom: 1px solid black;
     }
     
     .chat_sub_content{

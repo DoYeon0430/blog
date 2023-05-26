@@ -25,19 +25,20 @@
           {% for comment in comments %}
             <span>{{ comment.username }}</span>
             <div style="white-space: pre-line">{{ comment.content|safe }}</div>
-            <p class="text-end draggable_off">{{ comment.create_date|date:"y/m/d H:m" }} | 
+            <p class="text-end draggable_off">{{ comment.create_date|date:"y/m/d H:i" }} | 
               <a class="delete-comment" style="color: red; text-decoration: none; cursor: pointer;" 
               data-comment-id="{{ comment.pk }}">삭제</a>
             </p>
         
             <form class="row delete-form" style="display: none;" method="POST">
               {% csrf_token %}
+              <div class="col-4 col-lg-9"></div>
               <input type="hidden" name="comment_id" value="{{ comment.pk }}">
-              <div class="col-9 pr-1" style="padding-right:0rem">
+              <div class="col-5 col-lg-2 pr-1" style="padding-right:0rem">
                 <input type="password" name="password" class="form-control mb-3" placeholder="PW">
               </div>
-              <div class="col-3 pl-0" style="padding-left:0rem">
-                <button type="submit" class="btn btn-dark w-100">입력</button>
+              <div class="col-3 col-lg-1 pl-0" style="padding-left:0rem">
+                <button type="submit" class="btn btn-dark bg-danger w-100">입력</button>
               </div>
             </form>
         
@@ -75,7 +76,7 @@
               >{{ form.content.value|default_if_none:'' }}</textarea>
         
               <div class="text-end pt-3">
-                <button type="submit" class="btn btn-dark">등록하기</button>
+                <button type="submit" class="btn btn-dark px-3 bg-primary">댓글 작성</button>
               </div>
             </div>
           </div>
