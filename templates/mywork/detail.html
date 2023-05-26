@@ -20,7 +20,7 @@
         </div>
         {{detail.htmlcontent|safe}}
 
-        <p class="chat_subejct pt-5">댓글 ({{ comments.count }})</p>
+        <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
         <ul class="chat_sub_content">
           {% for comment in comments %}
             <span>{{ comment.username }}</span>
