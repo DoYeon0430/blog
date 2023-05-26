@@ -15,3 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var expandLink = document.getElementById('expand-link');
+    var closeLink = document.getElementById('close-link');
+    var commentForm = document.getElementById('comment-form');
+  
+    expandLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      expandLink.style.display = 'none';
+      closeLink.style.display = 'inline-block';
+      commentForm.style.display = 'block';
+    });
+  
+    closeLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      closeLink.style.display = 'none';
+      expandLink.style.display = 'inline-block';
+      commentForm.style.display = 'none';
+    });
+  });
