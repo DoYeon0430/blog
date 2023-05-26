@@ -21,12 +21,7 @@
         {{detail.htmlcontent|safe}}
 
         <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
-        <div class="draggable_off" style="text-align: center; padding-bottom: 1.5rem; font-weight: bolder; cursor: pointer;">
-          <a id="expand-link" class="expand-link" style="text-decoration: none; color: #CE1088; border-bottom: 1px solid #CE1088;">펼치기</a>
-          <a id="close-link" class="close-link" style="text-decoration: none; color: #CE1088; border-bottom: 1px solid #CE1088; display: none;">숨기기</a>
-        </div>
-        
-        <ul class="chat_sub_content" style="display: none;" id="comment-form">
+        <ul class="chat_sub_content"  id="comment-form">
           {% for comment in comments %}
             <span>{{ comment.username }}</span>
             <div style="white-space: pre-line">{{ comment.content|safe }}</div>
