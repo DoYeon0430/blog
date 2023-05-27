@@ -171,14 +171,14 @@ TINYMCE_DEFAULT_CONFIG = {
         visualblocks visualchars | charmap emoticons | insertdatetime
         | hr nonbreaking | template | pagebreak restoredraft | code
     ''',
-    'fontsize_formats': "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 19pt 20pt 21pt 22pt 23pt 24pt 36pt",
+    'fontsize_formats': "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 19pt 20pt 21pt 22pt 23pt 24pt 28pt 36pt",
     'contextmenu': 'formats | link image',
     'menubar': True,
     'statusbar': True,
     'theme_advanced_resizing': True,
     'image_class_list' : [{'title':"Fluid",'value':'img-fluid','style':{} }],
     'image_caption':True,
-    'width': '50%',
+    'width': '80%',
     'height': 600,
     "images_upload_url": "upload_image",
 }
