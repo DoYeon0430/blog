@@ -165,7 +165,7 @@ TINYMCE_DEFAULT_CONFIG = {
         fullscreen preview bold italic underline | fontselect,
         fontsizeselect | forecolor backcolor | alignleft alignright |
         aligncenter alignjustify | indent outdent | bullist numlist table |
-        | link image media | codesample
+        superscript | link image media | codesample
     ''',
     'toolbar2': '''
         visualblocks visualchars | charmap emoticons | insertdatetime
@@ -179,6 +179,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'image_class_list' : [{'title':"Fluid",'value':'img-fluid','style':{} }],
     'image_caption':True,
     'width': '80%',
-    'height': 600,
+    'height': 1000,
     "images_upload_url": "upload_image",
 }
