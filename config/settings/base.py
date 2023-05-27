@@ -162,14 +162,14 @@ TINYMCE_DEFAULT_CONFIG = {
         directionality emoticons template paste textcolor colorpicker textpattern codesample
     ''',
     'toolbar1': '''
-        fullscreen preview bold italic underline | fontselect,
+        fullscreen preview bold italic underline superscript | fontselect,
         fontsizeselect | forecolor backcolor | alignleft alignright |
         aligncenter alignjustify | indent outdent | bullist numlist table |
-        superscript | link image media | codesample
+        link image media | codesample
     ''',
     'toolbar2': '''
         visualblocks visualchars | charmap emoticons | insertdatetime
-        | hr nonbreaking | template | pagebreak restoredraft | code | h1 h2 h3 h4 h5 h6
+        | hr nonbreaking | template | pagebreak restoredraft | h1 h2 h3 h4 h5 h6 | code
     ''',
     'fontsize_formats': "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 19pt 20pt 21pt 22pt 23pt 24pt 28pt 36pt",
     'contextmenu': 'formats | link image',
