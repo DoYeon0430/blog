@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Physics, Django, Network
+from django.shortcuts import render, get_object_or_404,redirect
+from .models import Physics, Django, Network ,Comment_physics, Comment_django, Comment_network
 from django.core.paginator import Paginator
+from .forms import Comment_physicsForm, Comment_djangoForm, Comment_networkForm
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
@@ -19,7 +20,33 @@ def main(request):
 
 def physics(request, study_id):
     physics = get_object_or_404(Physics, pk=study_id)
-    context = {'physics':physics}
+    comments = Comment_physics.objects.filter(physics=physics.pk)
+
+    if request.method == 'POST':
+        form = Comment_physicsForm(request.POST)
+        password = request.POST.get('password')
+        comment_id = request.POST.get('comment_id')
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.physics = physics
+            comment.save()
+            form = Comment_physicsForm()  # Clear the form after saving the comment
+            return redirect('engineer:physics', study_id=study_id)  # Redirect to GET view
+        
+        try:
+            comment = Comment_physics.objects.get(pk=comment_id)
+            if password == comment.password:  # 비밀번호가 일치하는 경우
+                comment.delete()  # 데이터베이스에서 댓글 삭제
+                return redirect('engineer:physics', study_id=study_id)  # Redirect to GET view
+            
+        except Comment_physics.DoesNotExist:
+            pass
+
+    else:
+        form = Comment_physicsForm()
+
+    context = {'physics':physics, 'comments':comments, 'form':form}
 
     response = render(request, 'engineer/physics.html', context)
 
@@ -59,9 +86,34 @@ def physics_main(request):
 
 
 def django(request, study_id):
-    django_pop = Django.objects.all()
     django = get_object_or_404(Django, pk=study_id)
-    context = {'django':django, 'django_pop':django_pop}
+    comments = Comment_django.objects.filter(django=django.pk)
+    
+    if request.method == 'POST':
+        form = Comment_djangoForm(request.POST)
+        password = request.POST.get('password')
+        comment_id = request.POST.get('comment_id')
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.django = django
+            comment.save()
+            form = Comment_djangoForm()  # Clear the form after saving the comment
+            return redirect('engineer:django', study_id=study_id)  # Redirect to GET view
+        
+        try:
+            comment = Comment_django.objects.get(pk=comment_id)
+            if password == comment.password:  # 비밀번호가 일치하는 경우
+                comment.delete()  # 데이터베이스에서 댓글 삭제
+                return redirect('engineer:django', study_id=study_id)  # Redirect to GET view
+            
+        except Comment_django.DoesNotExist:
+            pass
+
+    else:
+        form = Comment_djangoForm()
+
+    context = {'django':django, 'comments':comments, 'form':form}
 
     response = render(request, 'engineer/django.html', context)
 
@@ -103,7 +155,33 @@ def django_main(request):
 
 def network(request, study_id):
     network = get_object_or_404(Network, pk=study_id)
-    context = {'network': network}
+    comments = Comment_network.objects.filter(network=network.pk)
+
+    if request.method == 'POST':
+        form = Comment_networkForm(request.POST)
+        password = request.POST.get('password')
+        comment_id = request.POST.get('comment_id')
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.network = network
+            comment.save()
+            form = Comment_networkForm()  # Clear the form after saving the comment
+            return redirect('engineer:network', study_id=study_id)  # Redirect to GET view
+        
+        try:
+            comment = Comment_network.objects.get(pk=comment_id)
+            if password == comment.password:  # 비밀번호가 일치하는 경우
+                comment.delete()  # 데이터베이스에서 댓글 삭제
+                return redirect('engineer:network', study_id=study_id)  # Redirect to GET view
+            
+        except Comment_network.DoesNotExist:
+            pass
+
+    else:
+        form = Comment_networkForm()
+
+    context = {'network': network, 'comments': comments, 'form': form}
 
     response = render(request, 'engineer/network.html', context)
 

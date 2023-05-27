@@ -7,6 +7,7 @@ class Engineer(models.Model):
     def __str__(self):
         return str(self.id)
     
+
 class Physics(models.Model):
     engineerkey = models.OneToOneField(Engineer, on_delete=models.CASCADE)
     subject = models.CharField(max_length=200)
@@ -21,6 +22,17 @@ class Physics(models.Model):
     
     def get_absolute_url(self):
         return f'/physics/{self.pk}/'
+
+class Comment_physics(models.Model):
+    physics = models.ForeignKey(Physics, on_delete=models.CASCADE, related_name='comments')
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    content = HTMLField()
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'[{self.physics.pk}. {self.physics.subject}] {self.username}님'
+
 
 class Django(models.Model):
     engineerkey = models.OneToOneField(Engineer, on_delete=models.CASCADE)
@@ -37,6 +49,15 @@ class Django(models.Model):
     def get_absolute_url(self):
         return f'/django/{self.pk}/'
     
+class Comment_django(models.Model):
+    django = models.ForeignKey(Django, on_delete=models.CASCADE, related_name='comments')
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    content = HTMLField()
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'[{self.django.pk}. {self.django.subject}] {self.username}님'
 
 
 class Network(models.Model):
@@ -53,3 +74,13 @@ class Network(models.Model):
     
     def get_absolute_url(self):
         return f'/network/{self.pk}/'
+
+class Comment_network(models.Model):
+    network = models.ForeignKey(Network, on_delete=models.CASCADE, related_name='comments')
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    content = HTMLField()
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'[{self.network.pk}. {self.network.subject}] {self.username}님'

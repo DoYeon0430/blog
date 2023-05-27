@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from .models import Engineer, Physics, Django, Network
+from .models import Engineer, Physics, Django, Network, Comment_physics, Comment_django, Comment_network
 from tinymce.widgets import TinyMCE
 from django.db import models
 
@@ -71,3 +71,6 @@ admin.site.register(Engineer, EngineerAdmin)
 admin.site.register(Physics, PhysicsAdmin)
 admin.site.register(Django, DjangoAdmin)
 admin.site.register(Network, NetworkAdmin)
+admin.site.register(Comment_physics)
+admin.site.register(Comment_django)
+admin.site.register(Comment_network)
