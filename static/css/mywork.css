@@ -102,7 +102,7 @@
   
 }
 
-@media (min-width: 1001px) and (max-width: 1702px) {
+@media (min-width: 1499px) and (max-width: 1702px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
@@ -171,7 +171,7 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
+@media (min-width: 999px) and (max-width: 1500px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
@@ -240,7 +240,7 @@
   }
 }
 
-@media (min-width: 501px) and (max-width: 700px) {
+@media (min-width: 574px) and (max-width: 1000px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
@@ -310,7 +310,7 @@
   
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575px) {
   .mywork_content{
     padding: 0.3rem 0px;
     font-size: 0.8rem;
