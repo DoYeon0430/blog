@@ -45,7 +45,7 @@
         <div class="bar"></div>
     </div>
 </nav>
-<div id="slider" class="container-xl">
+<div id="slider" class="container">
     <img src="{% static 'img/movieimg5.jpg' %}" alt="My Image" class="home_img">
     <img src="{% static 'img/movieimg1.jpg' %}" alt="My Image" class="home_img">
     <img src="{% static 'img/movieimg3.jpg' %}" alt="My Image" class="home_img">
@@ -63,6 +63,7 @@
         <div class="pb-2 pt-2 " style="text-align: center; font-size: medium; color: rgb(99, 99, 99);">Copyright © 2023 by Doyeon0430</div>
     </div>
 </div>
+<a id="scrollTopLink" href="#" style="position: fixed; bottom: 1.5rem; right: 1.5rem; display: none;"><img style="width: 40px; height: 40px; opacity: 0.7;" src="{% static 'img/top.png' %}" alt="My Image"></a>
 </body>
 <script type="text/javascript" src="/static/js/main.js"></script>
 <script type="text/javascript" src="/static/js/imgslider.js"></script>
@@ -73,4 +74,20 @@
 <script type="text/javascript" src="/static/js/myprofile_form.js"></script>
 <script type="text/javascript" src="/static/js/form.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', function() {
+      // 현재 스크롤 위치
+      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  
+      // 스크롤이 1px 이상 내려갔을 때
+      if (scrollPosition > 0) {
+        // 링크 보이기
+        document.getElementById("scrollTopLink").style.display = "block";
+      } else {
+        // 링크 숨기기
+        document.getElementById("scrollTopLink").style.display = "none";
+      }
+    });
+</script>
 </html>
