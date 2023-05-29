@@ -138,8 +138,8 @@
   }
 
   .movie_content{
-    font-size: 1.2rem;
-    padding: 0rem 3rem 2rem 3rem;
+    font-size: 1.1rem;
+    padding: 0rem 2rem 2rem 3rem;
   }
 
   .movie_content a{
@@ -190,7 +190,7 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
+@media (min-width: 701px) and (max-width: 992px) {
   .movie_image {
     float: left; /* 이미지를 오른쪽으로 정렬합니다. */
     width: 100%;
@@ -269,7 +269,7 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 992px) {
+@media (min-width: 501px) and (max-width: 700px) {
   .movie_image {
     float: left; /* 이미지를 오른쪽으로 정렬합니다. */
     width: 100%;
@@ -282,7 +282,7 @@
 
   .movie_title {
     padding: 0px 1rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 10px;
     text-decoration: none;
@@ -369,7 +369,7 @@
   }
   
   .movie_date{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 0px 1rem;
   }
   
