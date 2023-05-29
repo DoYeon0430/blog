@@ -198,7 +198,7 @@
     .django_image{
         padding-bottom: 0.5rem;
         width: 60%;
-        height: 27rem;
+        height: 30rem;
     }
 
     .django_title{
@@ -462,6 +462,7 @@
     }
 
     .django_image{
+        padding-bottom: 0.5rem;
         width: 100%;
         height: 18rem;
     }
