@@ -5,7 +5,7 @@
     border: 2px solid rgb(158, 158, 158);
 }
 
-@media (min-width: 1499px)  {
+@media (min-width: 1503px)  {
     .myprofile_home {
         font-size: large;
         color: #E0EBED;
@@ -115,7 +115,118 @@
     }
 }
 
-@media (min-width: 999px) and (max-width: 1500px) {
+@media (min-width: 993px) and (max-width: 1502px) {
+    .myprofile_home {
+        font-size: large;
+        color: #E0EBED;
+        font-weight: 600;
+        text-decoration: none;
+        background-color: #92B3B7;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+      
+      .myprofile_home:hover {
+        background-color: rgb(169, 115, 45);
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+      .myprofile_home_sub{
+        padding-top: 1rem;
+        text-align: center;
+        font-size: large; 
+        font-weight: 600;
+    }
+
+    .myprofile_img_text {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .myprofile_main_div{
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
+    }
+    .myprofile_main_div_a1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
+    }
+
+    .myprofile_main_div_a2{
+        text-decoration: none;
+        color: gray;
+    }
+
+    .myprofile_main_div_js_1{
+        text-decoration: none;
+        color: rgb(120, 33, 33);
+        border-bottom: 2px solid rgb(120, 33, 33);
+    }
+
+    .myprofile_main_div_js_2{
+        text-decoration: none;
+        color: gray;
+        border-bottom: 0px;
+    }
+
+    .myprofile_form_div {
+        padding: 0.5rem 0rem 0rem 0.5rem;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: gray;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .myprofile_form_div::-webkit-scrollbar-thumb {
+        background-color: rgb(215, 208, 208);
+        border-radius: 5px;
+    }
+
+    .myprofile_image {
+        padding-bottom: 0.5rem;
+        width: 40rem;
+        height: 28rem;
+    }
+
+    .myprofile_title{
+        font-size: 1.8rem;
+        padding-left: 0.6rem;
+        font-weight: 600;
+    }
+
+    .myprofile_date{
+        padding-left: 1.1rem;
+        padding-bottom: 0.3rem;
+        color: gray;
+        font-size: 1rem;
+        color: gray;
+    }
+
+    .button_design{
+        width: 45px;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 992px) {
     .myprofile_home {
         font-size: large;
         color: #E0EBED;
@@ -227,7 +338,7 @@
 }
 
 
-@media (min-width: 574px) and (max-width: 1000px) {
+@media (min-width: 501px) and (max-width: 700px) {
     .myprofile_home {
         font-size: large;
         color: #E0EBED;
@@ -340,7 +451,7 @@
 }
 
 
-@media  (max-width: 575px) {
+@media  (max-width: 500px) {
 
     .myprofile_home {
         font-size: large;

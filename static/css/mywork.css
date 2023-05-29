@@ -32,7 +32,7 @@
 
 
 
-@media (min-width: 1701px) {
+@media (min-width: 1503px) {
   .mywork_content{
     font-size: 1.1rem;
     text-decoration: none;
@@ -120,7 +120,7 @@
   }
 }
 
-@media (min-width: 1499px) and (max-width: 1702px) {
+@media (min-width: 993px) and (max-width: 1502px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
@@ -185,7 +185,7 @@
   }
 
   .mywork_col{
-    padding: 0.5rem 0px 0rem 0px;
+    padding: 0rem 0px 0rem 0px;
   }
 
   .home_mywork_title{
@@ -208,7 +208,7 @@
   }
 }
 
-@media (min-width: 999px) and (max-width: 1500px) {
+@media (min-width: 701px) and (max-width: 992px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
@@ -297,7 +297,7 @@
   
 }
 
-@media (min-width: 501px) and (max-width: 1000px) {
+@media (min-width: 501px) and (max-width: 700px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
