@@ -297,7 +297,7 @@
   
 }
 
-@media (min-width: 574px) and (max-width: 1000px) {
+@media (min-width: 501px) and (max-width: 1000px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
@@ -389,7 +389,7 @@
   
 }
 
-@media (max-width: 575px) {
+@media (max-width: 500px) {
   .mywork_content{
     padding: 0.3rem 0px;
     font-size: 0.8rem;
