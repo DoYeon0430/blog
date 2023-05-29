@@ -75,18 +75,18 @@
                     </div>
                 </div>
                 <div class=" col-12">
-                    <div class="mywork_col">
-                        <h2 class="django_content">
+                    <div class="home_mywork_col">
+                        <h2 class="home_mywork_content">
                             {% if item.mywork.content|length > 60 %}
                                 "{{ item.mywork.content|truncatechars:60 }}... 더보기"
                             {% else %}
                                 "{{ item.mywork.content }}"
                             {% endif %}
                         </h2>
-                        <h2 class="django_title">
+                        <h2 class="home_mywork_title">
                             {{ item.mywork.subject }}
                         </h2>
-                        <div class="django_date">
+                        <div class="home_mywork_date">
                             <a>
                                 영화 | {{item.mywork.create_date|date:"Y년 m월 d일"}}
                             </a>

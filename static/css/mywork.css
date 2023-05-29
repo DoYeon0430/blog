@@ -100,6 +100,24 @@
     padding: 0.5rem 0px 0rem 0px;
   }
   
+  .home_mywork_title{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .home_mywork_content{
+    font-size: 1.1rem;
+    margin: 0.5rem 0rem 0.3rem 0.1rem;
+    font-weight: 500;
+  }
+
+  .home_mywork_date{
+    padding: 0.3rem 0.5rem 0rem 0.5rem;
+    color: gray;
+    font-size: 1rem;
+    color: gray;
+  }
 }
 
 @media (min-width: 1499px) and (max-width: 1702px) {
@@ -168,6 +186,25 @@
 
   .mywork_col{
     padding: 0.5rem 0px 0rem 0px;
+  }
+
+  .home_mywork_title{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .home_mywork_content{
+    font-size: 1.1rem;
+    margin: 0.5rem 0rem 0.5rem 0.1rem;
+    font-weight: 500;
+  }
+
+  .home_mywork_date{
+    padding: 0.3rem 0.5rem 0rem 0.5rem;
+    color: gray;
+    font-size: 1rem;
+    color: gray;
   }
 }
 
@@ -238,6 +275,26 @@
   .mywork_col{
     padding: 0rem 0px 1rem 0px;
   }
+
+  .home_mywork_title{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .home_mywork_content{
+    font-size: 1rem;
+    margin: 0.3rem 0rem 0.3rem 0.1rem;
+    font-weight: 500;
+  }
+
+  .home_mywork_date{
+    padding: 0.3rem 0.5rem 0rem 0.5rem;
+    color: gray;
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
 }
 
 @media (min-width: 574px) and (max-width: 1000px) {
@@ -306,6 +363,28 @@
 
   .mywork_col{
     padding: 0rem 0px 1rem 0px;
+  }
+
+  .home_mywork_title{
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .home_mywork_content{
+    font-size: 0.9rem;
+    margin: 0.3rem 0rem 0.3rem 0.1rem;
+    font-weight: 500;
+  }
+
+  .home_mywork_date{
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    color: gray;
+    font-size: 1rem;
+    color: gray;
+  }
+  
+  .home_mywork_col{
+    padding: 0.3rem 0px 0.5rem 0px;
   }
   
 }
@@ -377,6 +456,28 @@
 
   .mywork_col{
     padding: 0.5rem 0px 0.5rem 0px;
+  }
+
+  .home_mywork_title{
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .home_mywork_content{
+    font-size: 0.8rem;
+    margin: 0.3rem 0rem 0.3rem 0.1rem;
+    font-weight: 500;
+  }
+
+  .home_mywork_date{
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    color: gray;
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
+  .home_mywork_col{
+    padding: 0.3rem 0px 0.5rem 0px;
   }
 }
   

@@ -68,6 +68,7 @@
     }
 
     .django_title{
+        margin-bottom: 0rem;
         font-size: 2rem;
         font-weight: 600;
     }
@@ -88,7 +89,6 @@
     .django_image_div{
         text-align: left;
         padding-top: 5rem;
-        padding-bottom: 0.8rem;
     }
 
     .detail_subject{
@@ -202,6 +202,7 @@
     }
 
     .django_title{
+        margin-bottom: 0rem;
         font-size: 1.8rem;
         font-weight: 600;
     }
@@ -222,7 +223,6 @@
     .django_image_div{
         text-align: left;
         padding-top: 5rem;
-        padding-bottom: 0.5rem;
     }
 
     .detail_subject{
@@ -335,7 +335,8 @@
     }
 
     .django_title{
-        font-size: 1.5rem;
+        margin-bottom: 0rem;
+        font-size: 1.6rem;
         font-weight: 600;
     }
 
@@ -355,7 +356,6 @@
     .django_image_div{
         text-align: left;
         padding-top: 5rem;
-        padding-bottom: 0.8rem;
     }
 
     .detail_subject{
@@ -462,12 +462,12 @@
     }
 
     .django_image{
-        padding-bottom: 0.5rem;
         width: 100%;
         height: 18rem;
     }
 
     .django_title{
+        margin-bottom: 0rem;
         font-size: 1.4rem;
         font-weight: 600;
     }
@@ -599,6 +599,7 @@
     }
 
     .django_title{
+        margin-bottom: 0rem;
         font-size: 1.4rem;
         font-weight: 600;
     }
@@ -619,7 +620,6 @@
     .django_image_div{
         text-align: left;
         padding-top: 5rem;
-        padding-bottom: 0.5rem;
     }
 
     .detail_subject{
