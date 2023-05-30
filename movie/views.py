@@ -4,7 +4,6 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from .forms import CommentForm
 from mywork.models import Mywork
-from engineer.models import Physics, Django, Network
 
 def main(request):
     page = request.GET.get('page','1')
@@ -27,9 +26,6 @@ def main(request):
 def detail(request, movie_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
-    physics_data = Physics.objects.all().order_by('-create_date')
-    django_data = Django.objects.all().order_by('-create_date')
-    network_data = Network.objects.all().order_by('-create_date')
 
     detail = get_object_or_404(Movie, pk=movie_id)
     comments = Comment.objects.filter(movie=detail.pk)
@@ -60,9 +56,6 @@ def detail(request, movie_id):
 
     context = {'mywork_data':mywork_data, 
                'movie_data':movie_data, 
-               'physics_data':physics_data,
-               'django_data':django_data,
-               'network_data':network_data,
                'detail': detail, 
                'comments': comments, 
                'form': form

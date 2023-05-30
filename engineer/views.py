@@ -19,6 +19,10 @@ def main(request):
     return render(request, 'engineer/main.html', context)
 
 def physics(request, study_id):
+    physics_data = Physics.objects.all().order_by('-create_date')
+    django_data = Django.objects.all().order_by('-create_date')
+    network_data = Network.objects.all().order_by('-create_date')
+    
     physics = get_object_or_404(Physics, pk=study_id)
     comments = Comment_physics.objects.filter(physics=physics.pk)
 
@@ -46,7 +50,14 @@ def physics(request, study_id):
     else:
         form = Comment_physicsForm()
 
-    context = {'physics':physics, 'comments':comments, 'form':form}
+    context = {
+        'physics_data':physics_data,
+        'django_data':django_data,
+        'network_data':network_data,
+        'physics':physics, 
+        'comments':comments, 
+        'form':form
+        }
 
     response = render(request, 'engineer/physics.html', context)
 
@@ -86,6 +97,10 @@ def physics_main(request):
 
 
 def django(request, study_id):
+    physics_data = Physics.objects.all().order_by('-create_date')
+    django_data = Django.objects.all().order_by('-create_date')
+    network_data = Network.objects.all().order_by('-create_date')
+
     django = get_object_or_404(Django, pk=study_id)
     comments = Comment_django.objects.filter(django=django.pk)
     
@@ -113,7 +128,14 @@ def django(request, study_id):
     else:
         form = Comment_djangoForm()
 
-    context = {'django':django, 'comments':comments, 'form':form}
+    context = {
+        'physics_data':physics_data,
+        'django_data':django_data,
+        'network_data':network_data,
+        'django':django, 
+        'comments':comments, 
+        'form':form
+        }
 
     response = render(request, 'engineer/django.html', context)
 
@@ -154,6 +176,10 @@ def django_main(request):
 
 
 def network(request, study_id):
+    physics_data = Physics.objects.all().order_by('-create_date')
+    django_data = Django.objects.all().order_by('-create_date')
+    network_data = Network.objects.all().order_by('-create_date')
+
     network = get_object_or_404(Network, pk=study_id)
     comments = Comment_network.objects.filter(network=network.pk)
 
@@ -181,7 +207,14 @@ def network(request, study_id):
     else:
         form = Comment_networkForm()
 
-    context = {'network': network, 'comments': comments, 'form': form}
+    context = {
+        'physics_data':physics_data,
+        'django_data':django_data,
+        'network_data':network_data,
+        'network': network, 
+        'comments': comments, 
+        'form': form
+        }
 
     response = render(request, 'engineer/network.html', context)
 

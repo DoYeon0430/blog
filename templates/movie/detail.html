@@ -113,8 +113,8 @@
     <div class="col-lg-3 mb-3 sidebar_main">
       <div style="position: sticky; top: 2rem; padding: 1.5rem 0rem 0rem 1rem;">
         <div>
-          <a href="{% url 'myprofile:home' %}" class="sidebar_tag">전체 글 
-            ({{ movie_data.count|add:mywork_data.count|add:physics_data.count|add:django_data.count|add:network_data.count }})
+          <a href="{% url 'myprofile:home' %}" class="sidebar_tag">영화 글 
+            ({{ movie_data.count|add:mywork_data.count }})
           </a>
           <a href="{% url 'mywork:main' %}" class="sidebar_tag">영화 이야기 ({{mywork_data.count}})</a>   
           {% for m in mywork_data %}
