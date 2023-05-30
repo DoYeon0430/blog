@@ -14,8 +14,8 @@
 {% load engineer_filter %}
 {% block content %}
 <div class="container background_design">
-    <div class="pt-1 pb-3">
-        <div class="row text-center pb-2">
+    <div class="pt-1">
+        <div class="row text-center">
             <div class="col-3 bar_menu" OnClick="location.href ='{% url "engineer:main" %}'">
                 <div>TOTAL</div>
             </div>
@@ -29,98 +29,130 @@
                 <div>NETWORK</div>
             </div>
         </div>
+    </div>
 
-        <div class="container px-3">
-            <div class="row justify-content-end my-3">
-                <div class="col-8 col-sm-6 col-md-4 col-lg-3">
-                    <div class="input-group">
-                        <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
-                        <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+    <div class="row">
+        <div class="container col-lg-9 pt-3 pb-3 draggable">
+            <div class="container px-3">
+                <div class="row justify-content-end my-3">
+                    <div class="col-8 col-sm-6 col-md-4 col-lg-3">
+                        <div class="input-group">
+                            <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
+                            <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        {% for m in page_obj %}
-        <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" m.id %}'">
+            {% for m in page_obj %}
+            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:django" m.id %}'">
 
-            <div class="col-12">
-                <div class="django_image_div {% if forloop.first %} pt-3 {% endif %}">
-                    {% if m.photo %}
-                        <img class="django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
-                    {% endif %}
-                </div>
-            </div>
-
-            <div class=" col-12">
-                <div class="mywork_col">
-                    <h2 class="django_title">
-                        {{ m.subject }}
-                    </h2>
-                    <h3 class="django_content">             
-                        {% if m.content|length > 55 %}
-                            {{ m.content|truncatechars:55 }} 더보기
-                        {% else %}
-                            {{ m.content }}
+                <div class="col-12">
+                    <div class="engineer_django_image_div {% if forloop.first %} pt-3 {% endif %}">
+                        {% if m.photo %}
+                            <img class="engineer_django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
                         {% endif %}
-                    </h3>
-                    <div class="django_date">
-                        <a>{{ m.create_date|date:"Y년 m월 d일" }} · 조회 {{m.hits}} · 
-                            {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글
-                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        {% endfor %}
 
-        <div>
-            {% if page_obj.paginator.num_pages > 1 %}
-                <div class="pagination" style="display: block; text-align: center;">
-                    <span class="step-links">
-    
-                        <!-- 이전 페이지 -->
-                        {% if page_obj.has_previous %}
-                            <a href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><</a>
-                        {% else %}
-                            <a class="disabled" style="pointer-events: none"><</a>
-                        {% endif %}
-    
-                        <!-- 이전 페이지 -2 생성 -->
-                        {% if page_obj.has_next == 0 %}
-                        {% if page_obj.number != 2 %}
-                            <a href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
-                        {% endif %}
-                        {% endif %}
-    
-                        <!-- 페이지 리스트 -->
-                        {% for page_number in page_obj.paginator.page_range %}
-                        {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
-                            {% if page_number == page_obj.number %}
-                            <a class="current_page" style="color:white">{{page_number}}</a>
+                <div class=" col-12">
+                    <div class="mywork_col">
+                        <h2 class="django_title">
+                            {{ m.subject }}
+                        </h2>
+                        <h3 class="django_content">             
+                            {% if m.content|length > 55 %}
+                                {{ m.content|truncatechars:55 }} 더보기
                             {% else %}
-                            <a href="?page={{ page_number }}">{{page_number}}</a>
+                                {{ m.content }}
                             {% endif %}
-                        {% endif %}
-                        {% endfor %}
-
-                        <!-- 다음 페이지 +2 생성 -->
-                        {% if page_obj.has_previous == 0 %}
-                        {% if django_list.count >= 10 %}
-                            <a href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
-                        {% endif %}
-                        {% endif %}
-                        
-                        <!-- 다음 페이지 -->
-                        {% if page_obj.has_next %}
-                            <a href="?page={{ page_obj.next_page_number }}" id="prev-page-link">></a>
-                        {% else %}
-                            <a class="disabled" style="pointer-events: none">></a>
-                        {% endif %}
-                    </span>
+                        </h3>
+                        <div class="django_date">
+                            <a>{{ m.create_date|date:"Y년 m월 d일" }} · 조회 {{m.hits}} · 
+                                {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            {% endif %}
+            </div>
+            {% endfor %}
+
+            <div>
+                {% if page_obj.paginator.num_pages > 1 %}
+                    <div class="pagination" style="display: block; text-align: center;">
+                        <span class="step-links">
+        
+                            <!-- 이전 페이지 -->
+                            {% if page_obj.has_previous %}
+                                <a href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><</a>
+                            {% else %}
+                                <a class="disabled" style="pointer-events: none"><</a>
+                            {% endif %}
+        
+                            <!-- 이전 페이지 -2 생성 -->
+                            {% if page_obj.has_next == 0 %}
+                            {% if page_obj.number != 2 %}
+                                <a href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
+                            {% endif %}
+                            {% endif %}
+        
+                            <!-- 페이지 리스트 -->
+                            {% for page_number in page_obj.paginator.page_range %}
+                            {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
+                                {% if page_number == page_obj.number %}
+                                <a class="current_page" style="color:white">{{page_number}}</a>
+                                {% else %}
+                                <a href="?page={{ page_number }}">{{page_number}}</a>
+                                {% endif %}
+                            {% endif %}
+                            {% endfor %}
+
+                            <!-- 다음 페이지 +2 생성 -->
+                            {% if page_obj.has_previous == 0 %}
+                            {% if django_list.count >= 10 %}
+                                <a href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
+                            {% endif %}
+                            {% endif %}
+                            
+                            <!-- 다음 페이지 -->
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}" id="prev-page-link">></a>
+                            {% else %}
+                                <a class="disabled" style="pointer-events: none">></a>
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endif %}
+            </div>
         </div>
+        <div class="col-lg-3 sidebar_main" style="background-color: #ffffff; ">
+            <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
+              <div>
+                <a href="{% url 'engineer:main' %}" class="sidebar_tag">총 게시글 : {{ physics_data.count|add:django_data.count|add:network_data.count }}개
+                </a>
+                <a href="{% url 'engineer:physics_main' %}" class="sidebar_tag">- 물리학 ({{physics_data.count}}) -</a>   
+                {% for m in physics_data %}
+                <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for">
+                  {{ m.subject}}
+                </a>
+                {% endfor %}
+        
+                <a href="{% url 'engineer:django_main' %}" class="sidebar_tag">- 프로그래밍 ({{django_data.count}}) -</a>
+                {% for m in django_data %}
+                <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                  {{ m.subject}}
+                </a>
+                {% endfor %}
+        
+                <a href="{% url 'engineer:network_main' %}" class="sidebar_tag">- 네트워크 ({{network_data.count}}) -</a>
+                {% for m in network_data %}
+                <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+                  {{ m.subject}}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
     </div>
 </div>
 

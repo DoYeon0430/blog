@@ -127,29 +127,28 @@
       </div>
   </div>
   <div class="col-lg-3 sidebar_main" style="background-color: #ffffff; ">
-    <div style="position: sticky; top: 2rem; padding: 1.5rem 0rem 0rem 1rem;">
+    <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
       <div>
-        <a href="{% url 'engineer:main' %}" class="sidebar_tag">분류 글 
-          ({{ physics_data.count|add:django_data.count|add:network_data.count }})
+        <a href="{% url 'engineer:main' %}" class="sidebar_tag">총 게시글 : {{ physics_data.count|add:django_data.count|add:network_data.count }}개
         </a>
-        <a href="{% url 'engineer:physics_main' %}" class="sidebar_tag">물리학 ({{physics_data.count}})</a>   
+        <a href="{% url 'engineer:physics_main' %}" class="sidebar_tag">- 물리학 ({{physics_data.count}}) -</a>   
         {% for m in physics_data %}
         <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for">
-          {{ m.subject }}
-        </a>
-        {% endfor %}
-
-        <a href="{% url 'engineer:django_main' %}" class="sidebar_tag">프로그래밍 ({{django_data.count}})</a>
-        {% for m in django_data %}
-        <a href="{% url 'engineer:django' m.id %}" class="sidebar_for" 
-          {% if django.id == m.id %} 
-          style="color: #4B89DC; font-weight: 600;"
-          {% endif %}>
           {{ m.subject}}
         </a>
         {% endfor %}
 
-        <a href="{% url 'engineer:network_main' %}" class="sidebar_tag">네트워크 ({{network_data.count}})</a>
+        <a href="{% url 'engineer:django_main' %}" class="sidebar_tag">- 프로그래밍 ({{django_data.count}}) -</a>
+        {% for m in django_data %}
+        <a href="{% url 'engineer:django' m.id %}" class="sidebar_for
+        {% if django.id == m.id %} 
+        bar_check
+        {% endif %}">
+          {{ m.subject}}
+        </a>
+        {% endfor %}
+
+        <a href="{% url 'engineer:network_main' %}" class="sidebar_tag">- 네트워크 ({{network_data.count}}) -</a>
         {% for m in network_data %}
         <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
           {{ m.subject}}

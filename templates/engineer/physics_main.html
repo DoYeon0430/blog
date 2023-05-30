@@ -14,8 +14,8 @@
 {% load engineer_filter %}
 {% block content %}
 <div class="container background_design">
-    <div class="pt-1 pb-3">
-        <div class="row text-center pb-2">
+    <div class="pt-1">
+        <div class="row text-center">
             <div class="col-3 bar_menu" OnClick="location.href ='{% url "engineer:main" %}'">
                 <div>TOTAL</div>
             </div>
@@ -30,6 +30,8 @@
             </div>
         </div>
 
+    <div class="row">
+        <div class="container col-lg-9 pt-3 pb-3 draggable">
         <div class="container px-3">
             <div class="row justify-content-end my-3">
                 <div class="col-8 col-sm-6 col-md-4 col-lg-3">
@@ -45,9 +47,9 @@
         <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:physics" m.id %}'">
 
             <div class="col-12">
-                <div class="django_image_div {% if forloop.first %} pt-3 {% endif %}">
+                <div class="engineer_django_image_div {% if forloop.first %} pt-3 {% endif %}">
                     {% if m.photo %}
-                        <img class="django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
+                        <img class="engineer_django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
                     {% endif %}
                 </div>
             </div>
@@ -122,8 +124,37 @@
             {% endif %}
         </div>
     </div>
+    <div class="col-lg-3 sidebar_main" style="background-color: #ffffff; ">
+        <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
+          <div>
+            <a href="{% url 'engineer:main' %}" class="sidebar_tag">총 게시글 : {{ physics_data.count|add:django_data.count|add:network_data.count }}개
+            </a>
+            <a href="{% url 'engineer:physics_main' %}" class="sidebar_tag">- 물리학 ({{physics_data.count}}) -</a>   
+            {% for m in physics_data %}
+            <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for">
+              {{ m.subject}}
+            </a>
+            {% endfor %}
+    
+            <a href="{% url 'engineer:django_main' %}" class="sidebar_tag">- 프로그래밍 ({{django_data.count}}) -</a>
+            {% for m in django_data %}
+            <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+              {{ m.subject}}
+            </a>
+            {% endfor %}
+    
+            <a href="{% url 'engineer:network_main' %}" class="sidebar_tag">- 네트워크 ({{network_data.count}}) -</a>
+            {% for m in network_data %}
+            <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+              {{ m.subject}}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
 </div>
-
+</div>
+</div>
 <form id="searchForm" method="get" action="{% url 'engineer:physics_main' %}">
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">

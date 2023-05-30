@@ -78,6 +78,10 @@ def physics(request, study_id):
     return response
 
 def physics_main(request):
+    physics_data = Physics.objects.all().order_by('-create_date')
+    django_data = Django.objects.all().order_by('-create_date')
+    network_data = Network.objects.all().order_by('-create_date')
+
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
     physics_list = Physics.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
@@ -92,7 +96,16 @@ def physics_main(request):
     paginator = Paginator(physics_list, 5) # 페이지당 5개의 객체를 보여줌
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
-    return render(request, 'engineer/physics_main.html', {'page_obj': page_obj, 'physics_list':physics_list, 'page':page, 'kw':kw})
+    return render(request, 'engineer/physics_main.html', 
+                  {
+                    'physics_data':physics_data,
+                    'django_data':django_data,
+                    'network_data':network_data,
+                    'page_obj': page_obj, 
+                   'physics_list':physics_list, 
+                   'page':page, 
+                   'kw':kw}
+                   )
 
 
 
@@ -157,6 +170,10 @@ def django(request, study_id):
 
 
 def django_main(request):
+    physics_data = Physics.objects.all().order_by('-create_date')
+    django_data = Django.objects.all().order_by('-create_date')
+    network_data = Network.objects.all().order_by('-create_date')
+
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
     django_list = Django.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
@@ -172,7 +189,15 @@ def django_main(request):
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
 
-    return render(request, 'engineer/django_main.html', {'page_obj': page_obj, 'django_list':django_list, 'page':page, 'kw':kw})
+    return render(request, 'engineer/django_main.html', {
+        'physics_data':physics_data,
+        'django_data':django_data,
+        'network_data':network_data,
+        'page_obj': page_obj, 
+        'django_list':django_list, 
+        'page':page, 
+        'kw':kw}
+        )
 
 
 def network(request, study_id):
@@ -236,6 +261,11 @@ def network(request, study_id):
 
 
 def network_main(request):
+    physics_data = Physics.objects.all().order_by('-create_date')
+    django_data = Django.objects.all().order_by('-create_date')
+    network_data = Network.objects.all().order_by('-create_date')
+
+
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
     network_list = Network.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
@@ -250,8 +280,15 @@ def network_main(request):
     paginator = Paginator(network_list, 5) # 페이지당 5개의 객체를 보여줌
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
-    return render(request, 'engineer/network_main.html', {'page_obj': page_obj, 'network_list':network_list, 'page':page, 'kw':kw})
-
+    return render(request, 'engineer/network_main.html', {
+        'physics_data':physics_data,
+        'django_data':django_data,
+        'network_data':network_data,
+        'page_obj': page_obj, 
+        'network_list':network_list, 
+        'page':page, 
+        'kw':kw}
+        )
 
 @csrf_exempt
 def upload_image(request):

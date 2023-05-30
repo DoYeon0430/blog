@@ -111,10 +111,9 @@
 
     </div>
     <div class="col-lg-3 mb-3 sidebar_main">
-      <div style="position: sticky; top: 2rem; padding: 1.5rem 0rem 0rem 1rem;">
+      <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
         <div>
-          <a href="{% url 'myprofile:home' %}" class="sidebar_tag">영화 글 
-            ({{ movie_data.count|add:mywork_data.count }})
+          <a href="{% url 'myprofile:home' %}" class="sidebar_tag">총 게시글 : {{ movie_data.count|add:mywork_data.count }}개
           </a>
           <a href="{% url 'mywork:main' %}" class="sidebar_tag">영화 이야기 ({{mywork_data.count}})</a>   
           {% for m in mywork_data %}
@@ -124,10 +123,10 @@
           {% endfor %}
           <a href="{% url 'movie:main' %}" class="sidebar_tag">영화 후기 ({{movie_data.count}})</a>
           {% for m in movie_data %}
-          <a href="{% url 'movie:detail' m.id %}" class="sidebar_for" 
-            {% if detail.id == m.id %} 
-            style="color: #4B89DC; font-weight: 600;"
-            {% endif %}>
+          <a href="{% url 'movie:detail' m.id %}" class="sidebar_for         
+          {% if detail.id == m.id %} 
+          bar_check
+          {% endif %}">
             · [{{ m.subject }}] 후기
           </a>
           {% endfor %}

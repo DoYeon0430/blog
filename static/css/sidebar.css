@@ -7,19 +7,24 @@
 .sidebar_tag{
     display: block;
     color: rgb(70, 67, 67);
-    padding-top: 1.1rem;
+    padding-top: 1.5rem;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: 1px solid gray;
+    margin: 0rem 2.5rem;
+    padding-bottom: 0.3rem;
+    text-align: center;
 }
 
-.sidebar_tag:hover {
-    text-decoration:underline;
-}
 
 .sidebar_tag:first-child {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding-bottom: 0.5rem;
+    border-bottom: 0px;
+    margin: 0px;
+    font-weight: 600;
+    color: indianred;
+    text-align: left;
 }
 
 .sidebar_for{
@@ -31,8 +36,14 @@
 }
 
 .sidebar_for:hover {
-    font-weight: 600;
+    font-style: italic;
     text-decoration:underline;
+    font-weight: 600;
+}
+
+.bar_check{
+    color: goldenrod; 
+    font-weight: 600;
 }
 
 @media (max-width: 992px) {

@@ -181,6 +181,16 @@
     .chat_content{
         padding-bottom: 1rem;
     }
+
+    .engineer_django_image{
+        width: 70%;
+        height: 28rem;
+    }
+
+    .engineer_django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+    }
 }
 
 @media (min-width: 993px) and (max-width: 1502px) {
@@ -315,6 +325,16 @@
     .chat_content{
         padding-bottom: 1rem;
     }
+
+    .engineer_django_image{
+        width: 70%;
+        height: 25rem;
+    }
+
+    .engineer_django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+    }
 }
 
 @media (min-width: 701px) and (max-width: 992px) {
@@ -447,6 +467,17 @@
 
     .chat_content{
         padding-bottom: 1rem;
+    }
+
+    .engineer_django_image{
+        padding-bottom: 0.5rem;
+        width: 100%;
+        height: 24rem;
+    }
+
+    .engineer_django_image_div{
+        text-align: left;
+        padding-top: 5rem;
     }
 }
 
@@ -582,6 +613,18 @@
     .chat_content{
         padding-bottom: 1rem;
     }
+
+    .engineer_django_image{
+        padding-bottom: 0.5rem;
+        width: 100%;
+        height: 18rem;
+    }
+
+    .engineer_django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+        padding-bottom: 0.5rem;
+    }
 }
 
 @media (max-width: 501px) {
@@ -714,4 +757,13 @@
         padding-bottom: 1rem;
     }
 
+    .engineer_django_image{
+        width: 100%;
+        height: 14rem;
+    }
+
+    .engineer_django_image_div{
+        text-align: left;
+        padding-top: 5rem;
+    }
 }
