@@ -4,7 +4,7 @@ from tinymce.models import HTMLField
 class Mywork(models.Model):
     subject = models.CharField(max_length=200)
     content = models.CharField(max_length=200)
-    meta = models.CharField(max_length=50)
+    meta = models.CharField(max_length=80)
     htmlcontent = HTMLField()
     photo = models.ImageField(upload_to='mywork/')
     create_date = models.DateTimeField(auto_now_add=True)
