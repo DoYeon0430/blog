@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-<title>영화 이야기 메인 사이트</title>
-<meta name="description" content="영화 관련 이론 및 이슈와 제 견해를 이야기하는 블로그입니다.">
+<title>영화 이야기 블로그</title>
+<meta name="title" content="영화 이야기 블로그">
+<meta name="description" content="영화 관련 이론 및 이슈와 개인적인 견해를 이야기하는 블로그입니다.">
 <link rel="icon" href="{% static 'img/favicon.ico' %}"/>
 
-<meta property="og:title" content="영화 이야기 메인 사이트" /> 
+<meta property="og:title" content="영화 이야기 블로그" /> 
 <meta property="og:url" content="https://www.doyeon0430.com{% url 'mywork:main' %}" />
 <meta property="og:type" content="blog" />
-<meta property="og:description" content="영화 관련 이론 및 이슈와 제 견해를 이야기하는 블로그입니다." /> 
+<meta property="og:description" content="영화 관련 이론 및 이슈와 개인적인 견해를 이야기하는 블로그입니다." /> 
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2014/02/02/17/40/photographs-256888_1280.jpg">
 {% endblock %}
 {% load mywork_filter %}
