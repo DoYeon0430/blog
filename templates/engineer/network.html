@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+<title>{{network.subject}}</title>
+<meta name="description" content="{{network.meta}}">
+<link rel="icon" href="{% static 'img/favicon.ico' %}"/>
+
+<meta property="og:title" content="{{network.subject}}" /> 
+<meta property="og:url" content="https://www.doyeon0430.com{% url 'engineer:network' network.id %}" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="{{network.meta}}" /> 
+<meta property="og:image" content="https://www.doyeon0430.com{{ network.photo.url }}">
+{% endblock %}
 {% block content %}
 
 <div class="container background_design" >

@@ -14,7 +14,7 @@
 }
 
 .sidebar_tag:hover {
-    color: #f05650;
+    text-decoration:underline;
 }
 
 .sidebar_tag:first-child {
@@ -31,7 +31,8 @@
 }
 
 .sidebar_for:hover {
-    color: #f05650;
+    font-weight: 600;
+    text-decoration:underline;
 }
 
 @media (max-width: 992px) {

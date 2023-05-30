@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+<title>{{django.subject}}</title>
+<meta name="description" content="{{django.meta}}">
+<link rel="icon" href="{% static 'img/favicon.ico' %}"/>
+
+<meta property="og:title" content="{{django.subject}}" /> 
+<meta property="og:url" content="https://www.doyeon0430.com{% url 'engineer:django' django.id %}" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="{{django.meta}}" /> 
+<meta property="og:image" content="https://www.doyeon0430.com{{ django.photo.url }}">
+{% endblock %}
 {% block content %}
 
 <div class="container background_design" >

@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>파이썬 프로그래밍 블로그 - Doyeon0430</title>
+<meta name="description" content="Django 및 웹 프로그래밍을 올리는 블로그입니다.">
+<link rel="icon" href="{% static 'img/favicon.ico' %}"/>
+
+<meta property="og:title" content="파이썬 프로그래밍 블로그 - Doyeon0430" /> 
+<meta property="og:url" content="https://www.doyeon0430.com{% url 'engineer:django_main' %}" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="Django 및 웹 프로그래밍을 올리는 블로그입니다." /> 
+<meta property="og:image" content="https://doyeon0430.com/static/img/django.webp">
+{% endblock %}
 {% load engineer_filter %}
 {% block content %}
 <div class="container background_design">

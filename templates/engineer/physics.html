@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+<title>{{physics.subject}}</title>
+<meta name="description" content="{{physics.meta}}">
+<link rel="icon" href="{% static 'img/favicon.ico' %}"/>
+
+<meta property="og:title" content="{{physics.subject}}" /> 
+<meta property="og:url" content="https://www.doyeon0430.com{% url 'engineer:physics' physics.id %}" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="{{physics.meta}}" /> 
+<meta property="og:image" content="https://www.doyeon0430.com{{ physics.photo.url }}">
+{% endblock %}
 {% block content %}
 
 <div class="container background_design" >

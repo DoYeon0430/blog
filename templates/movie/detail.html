@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
+{% block title %}
+<title>{{detail.content}}, {{ detail.subject }} 후기</title>
+<meta name="description" content="{{ detail.meta }}">
+<link rel="icon" href="{% static 'img/favicon.ico' %}"/>
 
-<div class="container" >
-  <div class="row" >
-    <div class="container col-lg-10 pt-3 pb-3 draggable background_design">
+<meta property="og:title" content="{{detail.content}}, {{ detail.subject }} 후기" /> 
+<meta property="og:url" content="https://www.doyeon0430.com{% url 'movie:detail' detail.id %}" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="{{ detail.meta }}" /> 
+<meta property="og:image" content="https://www.doyeon0430.com{{ detail.photo.url }}">
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="container col-lg-9 pt-3 pb-3 draggable background_design">
         <h2 class="text-end mywork_content px-1" style="color:#f05650">"{{detail.content}}"</h2>
         <h1 class="detail_subject">
            <{{ detail.genre }}> {{ detail.subject }} 후기    
@@ -100,25 +110,27 @@
         </div>
 
     </div>
-    <div class="col-lg-2 mb-3 sidebar_main">
+    <div class="col-lg-3 mb-3 sidebar_main">
       <div style="position: sticky; top: 2rem; padding: 1.5rem 0rem 0rem 1rem;">
         <div>
           <a href="{% url 'myprofile:home' %}" class="sidebar_tag">전체 글 
             ({{ movie_data.count|add:mywork_data.count|add:physics_data.count|add:django_data.count|add:network_data.count }})
           </a>
           <a href="{% url 'mywork:main' %}" class="sidebar_tag">영화 이야기 ({{mywork_data.count}})</a>   
+          {% for m in mywork_data %}
+          <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+            ·{{ m.subject }}
+          </a>
+          {% endfor %}
           <a href="{% url 'movie:main' %}" class="sidebar_tag">영화 후기 ({{movie_data.count}})</a>
           {% for m in movie_data %}
           <a href="{% url 'movie:detail' m.id %}" class="sidebar_for" 
             {% if detail.id == m.id %} 
-            style="color: #f05650;"
+            style="color: #4B89DC; font-weight: 600;"
             {% endif %}>
             · [{{ m.subject }}] 후기
           </a>
           {% endfor %}
-          <a href="{% url 'engineer:physics_main' %}" class="sidebar_tag">Physics ({{physics_data.count}})</a>
-          <a href="{% url 'engineer:django_main' %}" class="sidebar_tag">Django ({{django_data.count}})</a>
-          <a href="{% url 'engineer:network_main' %}" class="sidebar_tag">Network ({{network_data.count}})</a>
         </div>
       </div>
     </div>
