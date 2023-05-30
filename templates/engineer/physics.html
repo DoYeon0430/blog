@@ -13,11 +13,9 @@
 {% endblock %}
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="container col-lg-9 pt-3 pb-3 background_design" >
-        <div class="pt-1 pb-3">
-        <div class="row text-center pb-2">
+<div class="container background_design">
+      <div class="pt-1">
+        <div class="row text-center">
             <div class="col-3 bar_menu" OnClick="location.href ='{% url "engineer:main" %}'">
                 <div>TOTAL</div>
             </div>
@@ -31,106 +29,106 @@
                 <div>NETWORK</div>
             </div>
         </div>
-        <div class="container mt-3 pb-3 draggable">
-            <h1 class="detail_subject">
-                {{physics.subject}}
-            </h1>
-            <div class="detail_date">
-                <a>
-                    <strong>Doyeon0430</strong> ·  {{physics.create_date|date:"Y년 m월 d일"}}
-                </a>
-            </div>
-            <div class="detail_main">
-                <a href="{% url 'engineer:physics_main' %}">#physics</a>
-            </div>
-            <div class="text-center">
-                <img class="detail_img" src="{% static 'img/physicsimg.jpg' %}" alt="{{ m.subject }} 이미지">
-            </div>
-            {{physics.htmlcontent|safe}}
+      </div>
 
-            <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
-            <ul class="chat_sub_content"  id="comment-form">
-              {% for comment in comments %}
-                <span>{{ comment.username }}</span>
-                <div style="white-space: pre-line">{{ comment.content|safe }}</div>
-                <p class="text-end draggable_off">{{ comment.create_date|date:"y/m/d H:i" }} | 
-                  <a class="delete-comment" style="color: red; text-decoration: none; cursor: pointer;" 
-                  data-comment-id="{{ comment.pk }}">삭제</a>
-                </p>
-            
-                <form class="row delete-form" style="display: none;" method="POST">
-                  {% csrf_token %}
-                  <div class="col-4 col-lg-9"></div>
-                  <input type="hidden" name="comment_id" value="{{ comment.pk }}">
-                  <div class="col-5 col-lg-2 pr-1" style="padding-right:0rem">
-                    <input type="password" name="password" class="form-control mb-3" placeholder="PW">
-                  </div>
-                  <div class="col-3 col-lg-1 pl-0" style="padding-left:0rem">
-                    <button type="submit" class="btn btn-dark bg-danger w-100">입력</button>
-                  </div>
-                </form>
-            
+       <div class="row">
+    <div class="container col-lg-9 pt-3 pb-3 draggable">
+      <h1 class="detail_subject">
+          {{physics.subject}}
+      </h1>
+      <div class="detail_date">
+          <a>
+              <strong>Doyeon0430</strong> ·  {{physics.create_date|date:"Y년 m월 d일"}}
+          </a>
+      </div>
+      <div class="detail_main">
+          <a href="{% url 'engineer:physics_main' %}">#PHYSICS</a>
+      </div>
+      <div class="text-center">
+          <img class="detail_img" src="{% static 'img/physicsimg.jpg' %}" alt="{{ m.subject }} 이미지">
+      </div>
+      {{physics.htmlcontent|safe}}
 
-              {% empty %}
-                <div>댓글이 없습니다.</div>
-              {% endfor %}
-            </ul>
-
-            <p class="chat_subejct pt-3">간편 댓글 작성</p> 
-            <form method="post" style="border-bottom:3px solid rgb(0, 0, 0);" class="pb-3">
-              {% csrf_token %}
-              <div class="row pb-1">
-                <div class="col-6 chat_content">
-                  <input type="text" name="username" id="username" 
-                    class="form-control" 
-                    value="{{ form.username.value|default_if_none:'' }}"
-                    placeholder="닉네임"
-                  >
-                </div>
-                <div class="col-6 chat_content">
-                  <input type="password" name="password" id="password" 
-                    class="form-control" 
-                    value="{{ form.password.value|default_if_none:'' }}"
-                    placeholder="비밀번호"
-                  >
-                </div>
-                      
-                <div class="col-12 chat_content">
-                  <textarea name="content" id="content" 
-                    class="form-control" 
-                    rows="3" style="resize: none;"
-                    placeholder="내용을 입력하세요."
-                  >{{ form.content.value|default_if_none:'' }}</textarea>
-            
-                  <div class="text-end pt-3">
-                    <button type="submit" class="btn btn-dark px-3 bg-success">댓글 작성</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-            
-            <div style="display: flex;">
-                <div class="detail_url" style="flex: 1;">
-                    <div>
-                        <a href="mailto:kim73916@naver.com"><img class="detail_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
-                        <a href="https://www.instagram.com/doyeon0430/"><img class="detail_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
-                        <a href="https://github.com/DoYeon0430"><img class="detail_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
-                        <a href="{% url 'myprofile:main' %}"><img class="detail_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
-                    </div>   
-                </div>
-                <div class="detail_border" style="flex: 1;">
-                    <a href="{% url 'engineer:physics_main' %}">
-                        <div style="padding-top: 0.2rem; border-bottom: 1px solid black; ">
-                            <strong>메인으로</strong>
-                        </div>
-                    </a>
-                </div>
+      <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
+      <ul class="chat_sub_content"  id="comment-form">
+        {% for comment in comments %}
+          <span>{{ comment.username }}</span>
+          <div style="white-space: pre-line">{{ comment.content|safe }}</div>
+          <p class="text-end draggable_off">{{ comment.create_date|date:"y/m/d H:i" }} | 
+            <a class="delete-comment" style="color: red; text-decoration: none; cursor: pointer;" 
+            data-comment-id="{{ comment.pk }}">삭제</a>
+          </p>
+      
+          <form class="row delete-form" style="display: none;" method="POST">
+            {% csrf_token %}
+            <div class="col-4 col-lg-9"></div>
+            <input type="hidden" name="comment_id" value="{{ comment.pk }}">
+            <div class="col-5 col-lg-2 pr-1" style="padding-right:0rem">
+              <input type="password" name="password" class="form-control mb-3" placeholder="PW">
             </div>
+            <div class="col-3 col-lg-1 pl-0" style="padding-left:0rem">
+              <button type="submit" class="btn btn-dark bg-danger w-100">입력</button>
+            </div>
+          </form>
+      
 
+        {% empty %}
+          <div>댓글이 없습니다.</div>
+        {% endfor %}
+      </ul>
+
+      <p class="chat_subejct pt-3">간편 댓글 작성</p> 
+      <form method="post" style="border-bottom:3px solid rgb(0, 0, 0);" class="pb-3">
+        {% csrf_token %}
+        <div class="row pb-1">
+          <div class="col-6 chat_content">
+            <input type="text" name="username" id="username" 
+              class="form-control" 
+              value="{{ form.username.value|default_if_none:'' }}"
+              placeholder="닉네임"
+            >
+          </div>
+          <div class="col-6 chat_content">
+            <input type="password" name="password" id="password" 
+              class="form-control" 
+              value="{{ form.password.value|default_if_none:'' }}"
+              placeholder="비밀번호"
+            >
+          </div>
+                
+          <div class="col-12 chat_content">
+            <textarea name="content" id="content" 
+              class="form-control" 
+              rows="3" style="resize: none;"
+              placeholder="내용을 입력하세요."
+            >{{ form.content.value|default_if_none:'' }}</textarea>
+      
+            <div class="text-end pt-3">
+              <button type="submit" class="btn btn-dark px-3 bg-success">댓글 작성</button>
+            </div>
+          </div>
         </div>
-    </div>
-    </div>
-    <div class="col-lg-3 mb-3 sidebar_main">
+      </form>
+
+      <div style="display: flex;">
+          <div class="detail_url" style="flex: 1;">
+              <div>
+                  <a href="mailto:kim73916@naver.com"><img class="detail_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
+                  <a href="https://www.instagram.com/doyeon0430/"><img class="detail_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
+                  <a href="https://github.com/DoYeon0430"><img class="detail_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
+                  <a href="{% url 'myprofile:main' %}"><img class="detail_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
+              </div>   
+          </div>
+          <div class="detail_border" style="flex: 1;">
+              <a href="{% url 'engineer:physics_main' %}">
+                  <div style="padding-top: 1rem; border-bottom: 1px solid black; ">
+                      <strong>메인으로</strong>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 sidebar_main" style="background-color: #ffffff; ">
       <div style="position: sticky; top: 2rem; padding: 1.5rem 0rem 0rem 1rem;">
         <div>
           <a href="{% url 'engineer:main' %}" class="sidebar_tag">분류 글 
