@@ -65,33 +65,23 @@
     font-size: 1rem;
     margin-bottom: 20px;
   }
+  
 
+  /* page 버튼 */
   .pagination{
-    padding: 2rem 0px 1rem 0px;
+    padding: 2rem 0px 0rem 0px;
   }
 
-  .pagination a {
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 3px 8px;
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 700;
+  .page-link{
     color: rgb(0, 0, 0);
-  }
-
-  .current_page {
-    background-color: rgb(190, 101, 50); 
-    border: 2px solid rgb(190, 101, 50); 
-    color: white;
-    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
   
-  .pagination a:hover {
-    background-color: rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+  .page-link.active {
+    background-color: rgb(0, 0, 0);
   }
+  /* page 버튼 끝*/
 
   .movie_button{
     text-align: right;
@@ -138,7 +128,7 @@
 
   .movie_content{
     font-size: 1.1rem;
-    padding: 0rem 3rem 2rem 3rem;
+    padding: 0rem 3rem 0rem 3rem;
   }
 
   .movie_content a{
@@ -147,32 +137,21 @@
     margin-bottom: 20px;
   }
 
+   /* page 버튼 */ 
   .pagination{
-    padding: 2rem 0px 1rem 0px;
+    padding: 2rem 0px 0rem 0px;
   }
 
-  .pagination a {
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 3px 8px;
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 700;
+  .page-link{
     color: rgb(0, 0, 0);
-  }
-
-  .current_page {
-    background-color: rgb(190, 101, 50); 
-    border: 2px solid rgb(190, 101, 50); 
-    color: white;
-    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.3rem;
   }
   
-  .pagination a:hover {
-    background-color: rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+  .page-link.active {
+    background-color: rgb(0, 0, 0);
   }
+  /* page 버튼 끝*/
 
   .movie_button{
     text-align: right;
@@ -205,7 +184,7 @@
 
   .movie_title {
     padding: 0rem 2rem;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 10px;
     text-decoration: none;
@@ -213,13 +192,13 @@
   }
   
   .movie_date{
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0px 2rem;
   }
 
   .movie_content{
-    font-size: 1.1rem;
-    padding: 0rem 2rem 2rem 3rem;
+    font-size: 1rem;
+    padding: 0rem 2rem 0rem 3rem;
   }
 
   .movie_content a{
@@ -228,32 +207,21 @@
     margin-bottom: 20px;
   }
 
-  .pagination a {
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 3px 8px;
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    color: rgb(0, 0, 0);
-  }
-
-  .current_page {
-    background-color: rgb(190, 101, 50); 
-    border: 2px solid rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
-  }
-
+   /* page 버튼 */ 
   .pagination{
-    padding: 1.5rem 0px 1rem 0px;
+    padding: 2rem 0px 0rem 0px;
+  }
+
+  .page-link{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 1.2rem;
   }
   
-  .pagination a:hover {
-    background-color: rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+  .page-link.active {
+    background-color: rgb(0, 0, 0);
   }
+  /* page 버튼 끝*/
 
   .movie_button{
     text-align: right;
@@ -296,9 +264,8 @@
   }
 
   .movie_content{
-    display:none;
     font-size: 1rem;
-    padding: 1rem 1rem;
+    padding: 0rem 2rem 0rem 2rem;
   }
 
   .movie_content a{
@@ -307,32 +274,21 @@
     margin-bottom: 20px;
   }
 
+   /* page 버튼 */ 
   .pagination{
-    padding: 1.5rem 0px 1rem 0px;
+    padding: 2rem 0px 0rem 0px;
   }
 
-  .pagination a {
-    font-size: 1.1rem;
-    text-align: center;
-    padding: 3px 8px;
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 700;
+  .page-link{
     color: rgb(0, 0, 0);
-  }
-
-  .current_page {
-    background-color: rgb(190, 101, 50); 
-    border: 2px solid rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1rem;
   }
   
-  .pagination a:hover {
-    background-color: rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+  .page-link.active {
+    background-color: rgb(0, 0, 0);
   }
+  /* page 버튼 끝*/
 
   .movie_button{
     text-align: right;
@@ -386,31 +342,21 @@
     margin-bottom: 20px;
   }
 
+   /* page 버튼 */ 
   .pagination{
-    padding: 1.5rem 0px 1rem 0px;
+    padding: 2rem 0px 0rem 0px;
   }
 
-  .pagination a {
-    text-align: center;
-    padding: 3px 8px;
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 700;
+  .page-link{
     color: rgb(0, 0, 0);
-  }
-
-  .current_page {
-    background-color: rgb(190, 101, 50); 
-    border: 2px solid rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1rem;
   }
   
-  .pagination a:hover {
-    background-color: rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
+  .page-link.active {
+    background-color: rgb(0, 0, 0);
   }
+  /* page 버튼 끝*/
 
   .movie_button{
     text-align: right;
@@ -465,32 +411,22 @@
     margin-bottom: 20px;
   }
 
+   /* page 버튼 */ 
   .pagination{
-    padding: 1.5rem 0px 1rem 0px;
+    padding: 2rem 0px 0rem 0px;
   }
 
-  .pagination a {
-    text-align: center;
-    padding: 3px 8px;
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 700;
+  .page-link{
     color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 1rem;
   }
+  
+  .page-link.active {
+    background-color: rgb(0, 0, 0);
+  }
+    /* page 버튼 끝*/
 
-  .current_page {
-    background-color: rgb(190, 101, 50); 
-    border: 2px solid rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
-  }
-  
-  .pagination a:hover {
-    background-color: rgb(190, 101, 50); 
-    color: white;
-    border-radius: 15px;
-  }
-  
   .movie_button{
     text-align: right;
     padding: 0px 0px 0px 1rem;
