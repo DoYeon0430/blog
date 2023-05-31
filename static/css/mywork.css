@@ -27,13 +27,16 @@
   color: #fff;
 }
 
-
-
-@media (min-width: 1503px) {
+@media (min-width: 1400px) {
   .mywork_content{
     font-size: 1.1rem;
     text-decoration: none;
     color: gray;
+  }
+
+  .mywork_image {
+    width: 60%;
+    height: 29rem;
   }
 
   .mywork_title {
@@ -94,7 +97,7 @@
   }
 
   .mywork_col{
-    padding: 0.5rem 0px 0rem 0px;
+    padding: 0rem 0px 0rem 0px;
   }
   
   .home_mywork_title{
@@ -105,7 +108,7 @@
 
   .home_mywork_content{
     font-size: 1.1rem;
-    margin: 0.5rem 0rem 0.3rem 0.1rem;
+    margin: 0.5rem 0rem 0.5rem 0.1rem;
     font-weight: 500;
   }
 
@@ -117,11 +120,108 @@
   }
 }
 
-@media (min-width: 993px) and (max-width: 1502px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .mywork_content{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: gray;
+  }
+
+  .mywork_image {
+    width: 60%;
+    height: 29rem;
+  }
+
+  .mywork_title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .mywork_date{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 1rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    color: gray;
+  }
+
+  .mywork_date span{
+    font-size: 1rem;
+    border-bottom: 2px solid rgb(148, 19, 19);
+    font-weight: 600;
+    color: rgb(148, 19, 19);
+  }
+
+  .mywork_name_name{
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 1.5rem 0.3rem 0rem 0.3rem;
+  }
+
+  .mywork_name_content{
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem 2rem 1rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .mywork_name_url{
+    padding: 1.5rem 0.3rem 1.5rem 0.3rem;
+  }
+
+  .mywork_name_url_img{
+    width: 35px;
+    height: 35px;
+    margin-right: 1.1rem;
+  }
+
+  .mywork_name_ul{
+    padding: 0rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .mywork_name_table div{
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding: 0.5rem 0rem 0.1rem 0.3rem;
+  }
+
+  .mywork_col{
+    padding: 0rem 0px 0rem 0px;
+  }
+  
+  .home_mywork_title{
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .home_mywork_content{
+    font-size: 1.1rem;
+    margin: 0.5rem 0rem 0.5rem 0.1rem;
+    font-weight: 500;
+  }
+
+  .home_mywork_date{
+    padding: 0.3rem 0.5rem 0rem 0.5rem;
+    color: gray;
+    font-size: 1rem;
+    color: gray;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
     color: gray;
+  }
+
+  .mywork_image {
+    width: 70%;
+    height: 29rem;
   }
 
   .mywork_title {
@@ -188,7 +288,6 @@
   .home_mywork_title{
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 0.3rem;
   }
 
   .home_mywork_content{
@@ -205,11 +304,16 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
     color: gray;
+  }
+  
+  .mywork_image {
+    width: 100%;
+    height: 28rem;
   }
 
   .mywork_title {
@@ -270,7 +374,7 @@
   }
 
   .mywork_col{
-    padding: 0rem 0px 1rem 0px;
+    padding: 0rem 0px 0.5rem 0px;
   }
 
   .home_mywork_title{
@@ -294,11 +398,16 @@
   
 }
 
-@media (min-width: 501px) and (max-width: 700px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
   .mywork_content{
     font-size: 0.9rem;
     text-decoration: none;
     color: gray;
+  }
+
+  .mywork_image {
+    width: 100%;
+    height: 21rem;
   }
 
   .mywork_title {
@@ -359,7 +468,7 @@
   }
 
   .mywork_col{
-    padding: 0rem 0px 1rem 0px;
+    padding: 0rem 0px 0.5rem 0px;
   }
 
   .home_mywork_title{
@@ -386,7 +495,7 @@
   
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575.98px) {
   .mywork_content{
     padding: 0.3rem 0px;
     font-size: 0.8rem;
@@ -400,7 +509,12 @@
     text-decoration: none;
     color: black;
   }
-  
+
+  .mywork_image {
+    width: 100%;
+    height: 16rem;
+  }
+
   .mywork_date{
     display: flex;
     justify-content: space-between;

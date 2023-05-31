@@ -27,8 +27,7 @@
   margin: auto; /* 수평 가운데 정렬을 위해 margin을 auto로 설정합니다. */
 }
 
-
-@media (min-width: 1503px)  {
+@media (min-width: 1400px) {
   .movie_image {
     display: block;
     margin-left: auto;
@@ -37,10 +36,86 @@
     height: auto;
     border: 1px solid black;
   }
+  
+  .movie_col{
+    padding: 0.5rem 0px;
+  }
 
-  .mywork_image {
-    width: 60%;
-    height: 30rem;
+  .movie_title {
+    padding: 0rem 2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .movie_date{
+    font-size: 1rem;
+    padding: 0px 2rem;
+  }
+
+  .movie_content{
+    font-size: 1.1rem;
+    padding: 0rem 3rem 2rem 3rem;
+  }
+
+  .movie_content a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .pagination{
+    padding: 2rem 0px 1rem 0px;
+  }
+
+  .pagination a {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 3px 8px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .current_page {
+    background-color: rgb(190, 101, 50); 
+    border: 2px solid rgb(190, 101, 50); 
+    color: white;
+    border-radius: 30px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(190, 101, 50); 
+    color: white;
+    border-radius: 15px;
+  }
+
+  .movie_button{
+    text-align: right;
+    padding: 5rem 0.5rem 0px 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .movie_button a{
+    font-size: 1.4rem;
+    padding: 0.7rem 2.1rem;
+    background-color: rgb(52, 44, 46);
+    border: 1px solid rgb(52, 44, 46);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px)  {
+  .movie_image {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 80%;
+    height: auto;
+    border: 1px solid black;
   }
 
   .movie_col{
@@ -114,7 +189,7 @@
   }
 }
 
-@media (min-width: 993px) and (max-width: 1502px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .movie_image {
     display: block;
     margin-left: auto;
@@ -122,11 +197,6 @@
     width: 80%;
     height: auto;
     border: 1px solid black;
-  }
-
-  .mywork_image {
-    width: 60%;
-    height: 27rem;
   }
 
   .movie_col{
@@ -200,16 +270,11 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
   .movie_image {
     float: left; /* 이미지를 오른쪽으로 정렬합니다. */
     width: 100%;
     border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
-  }
-
-  .mywork_image {
-    width: 100%;
-    height: 24rem;
   }
 
   .movie_col{
@@ -284,16 +349,11 @@
   }
 }
 
-@media (min-width: 501px) and (max-width: 700px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
   .movie_image {
     float: left; /* 이미지를 오른쪽으로 정렬합니다. */
     width: 100%;
     border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
-  }
-
-  .mywork_image {
-    width: 100%;
-    height: 18rem;
   }
 
   .movie_col{
@@ -367,17 +427,12 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575.98px) {
   .movie_image {
     float: left; /* 이미지를 오른쪽으로 정렬합니다. */
     width: 100%;
     height: auto;
     border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
-  }
-
-  .mywork_image {
-    width: 100%;
-    height: 14rem;
   }
 
   .movie_col{
