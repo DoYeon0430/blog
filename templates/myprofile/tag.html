@@ -41,11 +41,11 @@
             <div>
                 <div class="detail_main " style="overflow-x: auto; white-space: nowrap; padding-bottom: 1.5rem; margin-top: 0.5rem;">
                     <a href="{% url 'myprofile:main' %}" style="display: inline-block; margin-right: 0.5rem;">#Doyeon0430</a>
-                    <a href="{% url 'mywork:main' %}" style="display: inline-block; margin-right: 0.5rem;">#영화 이야기 ({{reversed_mywork_count}})</a>
-                    <a href="{% url 'movie:main' %}" style="display: inline-block; margin-right: 0.5rem;">#영화 후기 ({{reversed_movie_count}})</a>
-                    <a href="{% url 'engineer:physics_main' %}" style="display: inline-block; margin-right: 0.5rem;">#물리학 ({{reversed_physics_count}})</a>
-                    <a href="{% url 'engineer:django_main' %}" style="display: inline-block; margin-right: 0.5rem;">#Django ({{reversed_django_count}})</a>
-                    <a href="{% url 'engineer:network_main' %}" style="display: inline-block; margin-right: 0.5rem;">#네트워크 ({{reversed_network_count}})</a>
+                    <a href="{% url 'mywork:main' %}" style="display: inline-block; margin-right: 0.5rem;">#영화 이야기 ({{mywork_content.count}})</a>
+                    <a href="{% url 'movie:main' %}" style="display: inline-block; margin-right: 0.5rem;">#영화 후기 ({{movie_content.count}})</a>
+                    <a href="{% url 'engineer:physics_main' %}" style="display: inline-block; margin-right: 0.5rem;">#물리학 ({{physics_content.count}})</a>
+                    <a href="{% url 'engineer:django_main' %}" style="display: inline-block; margin-right: 0.5rem;">#Django ({{django_content.count}})</a>
+                    <a href="{% url 'engineer:network_main' %}" style="display: inline-block; margin-right: 0.5rem;">#네트워크 ({{network_content.count}})</a>
                 </div>
             </div>
         </div>

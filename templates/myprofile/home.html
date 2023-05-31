@@ -45,23 +45,23 @@
 
     <div class="row">
         <div class="col-12 myprofile_form_div" id="myprofileFormDiv">
-            {% for item in reversed_movie_content %}
-            <div class="row mywork_text py-1" OnClick="location.href='{% url 'movie:detail' item.movie.id %}'">
+            {% for item in movie_content %}
+            <div class="row mywork_text py-1" OnClick="location.href='{% url 'movie:detail' item.id %}'">
                 <div class="col-12">
                     <div class="px-2">
-                        {% if item.movie.photo %}
-                        <img class="myprofile_image" src="{{ item.movie.photo.url }}" alt="{{ item.movie.subject }} 이미지">
+                        {% if item.photo %}
+                        <img class="myprofile_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
                         {% endif %}
                     </div>
                 </div>
                 <div class=" col-12">
                     <div class="mywork_col">
                         <h2 class="myprofile_title">
-                            [{{ item.movie.subject }}] 감상 후기
+                            [{{ item.subject }}] 감상 후기
                         </h2>
                         <div class="myprofile_date">
                             <a>
-                                {{ item.movie.genre }} | {{item.movie.create_date|date:"Y년 m월 d일"}}
+                                {{ item.genre }} | {{item.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
                     </div>
@@ -77,30 +77,30 @@
     </div>
     {% endif %}
 
-    {% for item in reversed_mywork_content %}
-            <div class="row mywork_text"  OnClick="location.href='{% url 'mywork:detail' item.mywork.id %}'">
+    {% for item in mywork_content %}
+            <div class="row mywork_text"  OnClick="location.href='{% url 'mywork:detail' item.id %}'">
                 <div class="col-12">
                     <div class="pt-3">
-                        {% if item.mywork.photo %}
-                        <img class="mywork_image" src="{{ item.mywork.photo.url }}" alt="{{ item.mywork.subject }} 이미지">
+                        {% if item.photo %}
+                        <img class="mywork_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
                         {% endif %}
                     </div>
                 </div>
                 <div class=" col-12">
                     <div class="home_mywork_col">
                         <h2 class="home_mywork_content">
-                            {% if item.mywork.content|length > 60 %}
-                                "{{ item.mywork.content|truncatechars:60 }}... 더보기"
+                            {% if item.content|length > 60 %}
+                                "{{ item.content|truncatechars:60 }}... 더보기"
                             {% else %}
-                                "{{ item.mywork.content }}"
+                                "{{ item.content }}"
                             {% endif %}
                         </h2>
                         <h2 class="home_mywork_title">
-                            {{ item.mywork.subject }}
+                            {{ item.subject }}
                         </h2>
                         <div class="home_mywork_date">
                             <a>
-                                영화 | {{item.mywork.create_date|date:"Y년 m월 d일"}}
+                                영화 | {{item.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
                         <div class="detail_main py-3">
@@ -111,30 +111,30 @@
             </div>
     {% endfor %}
 
-    {% for item in reversed_django_content %}
-            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:django" item.django.id %}'">
+    {% for item in django_content %}
+            <div class="row mywork_text pb-2" OnClick="location.href ='{% url "engineer:django" item.id %}'">
                 <div class="col-12">
                     <div class="pt-3">
-                        {% if item.django.photo %}
-                            <img class="django_image" src="{{ item.django.photo.url }}" alt="디장고 이미지">
+                        {% if item.photo %}
+                            <img class="django_image" src="{{ item.photo.url }}" alt="디장고 이미지">
                         {% endif %}
                     </div>
                 </div>
                 <div class=" col-12 mb-2">
                     <div class="mywork_col">
                         <h2 class="django_title">
-                            {{ item.django.subject }}
+                            {{ item.subject }}
                         </h2>
                         <h2 class="django_content">
-                            {% if item.django.content|length > 60 %}
-                                {{ item.django.content|truncatechars:60 }}... 더보기
+                            {% if item.content|length > 60 %}
+                                {{ item.content|truncatechars:60 }}... 더보기
                             {% else %}
-                                {{ item.django.content }} 
+                                {{ item.content }} 
                             {% endif %}
                         </h2>
                         <div class="django_date">
                             <a>
-                                Python | {{item.django.create_date|date:"Y년 m월 d일"}}
+                                Python | {{item.create_date|date:"Y년 m월 d일"}}
                             </a>
                         </div>
                         <div class="detail_main pt-3">
