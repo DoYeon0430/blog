@@ -6,6 +6,9 @@ from .forms import CommentForm
 from mywork.models import Mywork
 
 def main(request):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
+
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
     object_list = Movie.objects.all().order_by('-create_date')
@@ -21,7 +24,12 @@ def main(request):
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
 
-    return render(request, 'movie/main.html', {'page_obj': page_obj, 'page':page, 'kw':kw})
+    return render(request, 'movie/main.html', {
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
+        'page_obj': page_obj, 
+        'page':page, 
+        'kw':kw})
 
 def detail(request, movie_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')

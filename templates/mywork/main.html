@@ -14,91 +14,115 @@
 {% endblock %}
 {% load mywork_filter %}
 {% block content %}
-<div class="container background_design" >
-  <div class="container pt-3 pb-3">
+<div class="container">
+    <div class="row">
+        <div class="container col-lg-9 background_design" >
+        <div class="container pt-3 pb-3">
 
-    <div class="container">
-        <div class="row justify-content-end my-3">
-            <div class="col-8 col-sm-6 col-md-4 col-lg-3">
-                <div class="input-group">
-                    <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
-                    <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+            <div class="container">
+                <div class="row justify-content-end my-3">
+                    <div class="col-8 col-sm-6 col-md-4 col-lg-3">
+                        <div class="input-group">
+                            <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
+                            <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    {% for m in page_obj %}
-    <div class="row mywork_text py-2" OnClick="location.href ='{% url "mywork:detail" m.id %}'">
+            {% for m in page_obj %}
+            <div class="row mywork_text py-2" OnClick="location.href ='{% url "mywork:detail" m.id %}'">
 
-        <div class="col-xl-1">
-        </div>
+                <div class="col-xl-1">
+                </div>
 
-        <div class="col-xl-10 pt-2 col-12 {% if forloop.last %} mywork_border_last{% endif %} mywork_border">
-            <div class="mywork_col">
-                <h2 class="mywork_title">
-                    {{ m.subject }}
-                </h2>
-                <h3 class="mywork_content">
-                    {{ m.content }}
-                </h3>
-                <div class="mywork_date">
-                    <a>{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</a>
-                    <span>내용보기</span>
+                <div class="col-xl-10 pt-2 col-12 {% if forloop.last %} mywork_border_last{% endif %} mywork_border">
+                    <div class="mywork_col">
+                        <h2 class="mywork_title">
+                            {{ m.subject }}
+                        </h2>
+                        <h3 class="mywork_content">
+                            {{ m.content }}
+                        </h3>
+                        <div class="mywork_date">
+                            <a>{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</a>
+                            <span>내용보기</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
+
+        <div>
+            {% if page_obj.paginator.num_pages > 1 %}
+                <div class="pagination" style="display: block; text-align: center;">
+                    <span class="step-links">
+
+                        <!-- 이전 페이지 -->
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><</a>
+                        {% else %}
+                            <a class="disabled" style="pointer-events: none"><</a>
+                        {% endif %}
+
+                        <!-- 이전 페이지 -2 생성 -->
+                        {% if page_obj.has_next == 0 %}
+                        {% if page_obj.number != 2 %}
+                            <a href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
+                        {% endif %}
+                        {% endif %}
+
+                        <!-- 페이지 리스트 -->
+                        {% for page_number in page_obj.paginator.page_range %}
+                        {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
+                            {% if page_number == page_obj.number %}
+                            <a class="current_page" style="color:white">{{page_number}}</a>
+                            {% else %}
+                            <a href="?page={{ page_number }}">{{page_number}}</a>
+                            {% endif %}
+                        {% endif %}
+                        {% endfor %}
+
+                        <!-- 다음 페이지 +2 생성 -->
+                        {% if page_obj.has_previous == 0 %}
+                        {% if django_list.count >= 10 %}
+                            <a href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
+                        {% endif %}
+                        {% endif %}
+
+                        <!-- 다음 페이지 -->
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" id="prev-page-link">></a>
+                        {% else %}
+                            <a class="disabled" style="pointer-events: none">></a>
+                        {% endif %}
+                    </span>
+                </div>
+            {% endif %} 
         </div>
-    </div>
-    {% endfor %}
-
-  <div>
-    {% if page_obj.paginator.num_pages > 1 %}
-        <div class="pagination" style="display: block; text-align: center;">
-            <span class="step-links">
-
-                <!-- 이전 페이지 -->
-                {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><</a>
-                {% else %}
-                    <a class="disabled" style="pointer-events: none"><</a>
-                {% endif %}
-
-                <!-- 이전 페이지 -2 생성 -->
-                {% if page_obj.has_next == 0 %}
-                {% if page_obj.number != 2 %}
-                    <a href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
-                {% endif %}
-                {% endif %}
-
-                <!-- 페이지 리스트 -->
-                {% for page_number in page_obj.paginator.page_range %}
-                {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
-                    {% if page_number == page_obj.number %}
-                    <a class="current_page" style="color:white">{{page_number}}</a>
-                    {% else %}
-                    <a href="?page={{ page_number }}">{{page_number}}</a>
-                    {% endif %}
-                {% endif %}
+        </div>
+        </div>
+        <div class="col-lg-3 mb-3 sidebar_main">
+            <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
+              <div>
+                <a href="{% url 'myprofile:home' %}" class="sidebar_tag">총 게시글 : {{ movie_data.count|add:mywork_data.count }}개
+                </a>
+                <a href="{% url 'mywork:main' %}" class="sidebar_tag">영화 이야기 ({{mywork_data.count}})</a>   
+                {% for m in mywork_data %}
+                <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                  ·{{ m.subject }}
+                </a>
                 {% endfor %}
-
-                <!-- 다음 페이지 +2 생성 -->
-                {% if page_obj.has_previous == 0 %}
-                {% if django_list.count >= 10 %}
-                    <a href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
-                {% endif %}
-                {% endif %}
-
-                <!-- 다음 페이지 -->
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}" id="prev-page-link">></a>
-                {% else %}
-                    <a class="disabled" style="pointer-events: none">></a>
-                {% endif %}
-            </span>
-        </div>
-    {% endif %} 
-  </div>
-  </div>
+                <a href="{% url 'movie:main' %}" class="sidebar_tag">영화 후기 ({{movie_data.count}})</a>
+                {% for m in movie_data %}
+                <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                  · [{{ m.subject }}] 후기
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+</div>
 </div>
 
 <form id="searchForm" method="get" action="{% url 'mywork:main' %}">
