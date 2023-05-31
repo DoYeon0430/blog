@@ -76,11 +76,11 @@
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 1.2rem;
-    border: 0px;
   }
   
   .page-link.active {
     background-color: rgb(0, 0, 0);
+    border-color: black;
   }
   /* page 버튼 끝*/
 
@@ -147,11 +147,11 @@
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 1.3rem;
-    border: 0px;
   }
   
   .page-link.active {
     background-color: rgb(0, 0, 0);
+    border-color: black;
   }
   /* page 버튼 끝*/
 
@@ -218,11 +218,11 @@
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 1.2rem;
-    border: 0px;
   }
   
   .page-link.active {
     background-color: rgb(0, 0, 0);
+    border-color: black;
   }
   /* page 버튼 끝*/
 
@@ -286,11 +286,11 @@
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 1rem;
-    border: 0px;
   }
   
   .page-link.active {
     background-color: rgb(0, 0, 0);
+    border-color: black;
   }
   /* page 버튼 끝*/
 
@@ -355,11 +355,11 @@
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 1rem;
-    border: 0px;
   }
   
   .page-link.active {
     background-color: rgb(0, 0, 0);
+    border-color: black;
   }
   /* page 버튼 끝*/
 
@@ -425,11 +425,11 @@
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-size: 1rem;
-    border: 0px;
   }
   
   .page-link.active {
     background-color: rgb(0, 0, 0);
+    border-color: black;
   }
     /* page 버튼 끝*/
 
