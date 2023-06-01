@@ -164,48 +164,47 @@ body {
     height: auto;
     margin-top: 2px;
   }
-    .nav-links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
 
-    .nav_text{
-      display: none;
-    }
+  .nav_text{
+    display: none;
+  }
 
-    .nav-links li a:hover {
-      font-weight: 900;
-      padding-bottom: 0.3rem;
-      color: #c3cd56;
-      padding-top: 0.3rem;
-      border-top: 3px solid #c3cd56;
-      border-bottom: 3px solid #c3cd56;
-    }
-      
-      .nav-links li {
-        display: block;
-      }
-
-      .navbar ul {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      }
-      
-      .nav-links a {
-        font-weight: 600;
-        text-decoration: none;
-        color: #E1DCEA;
-        font-size: 1.2rem;
-        margin: 0 50px;
-        margin-right: 3.5rem;
-        padding: 3px 3px;
-      }
-      
-      .hamburger-menu {
-        display: none;
-      }
+  .nav-links li a:hover {
+    font-weight: 900;
+    padding-bottom: 0.3rem;
+    color: #c3cd56;
+    padding-top: 0.3rem;
+    border-top: 3px solid #c3cd56;
+    border-bottom: 3px solid #c3cd56;
+  }
     
+  .nav-links li {
+    display: block;
+  }
+
+  .navbar ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .nav-links a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #E1DCEA;
+    font-size: 1.2rem;
+    margin: 0 50px;
+    margin-right: 3.5rem;
+    padding: 3px 3px;
+  }
+  
+  .hamburger-menu {
+    display: none;
+  }
     
 }
 
@@ -241,177 +240,185 @@ body {
     background-color: #181717;
     position: relative;
   }
+
   .logo {
     padding: 0.8rem 0px;
     text-align: center;
   }
+
   .logo a img {
     width: 180px; 
     height: auto;
     margin-top: 2px;
   }
 
-    .nav-links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
 
-    .nav-links li a:hover {
-      font-weight: 600;
-      padding-bottom: 0.3rem;
-      color: #c3cd56;
-      padding-top: 0.3rem;
-      border-top: 3px solid #c3cd56;
-      border-bottom: 3px solid #c3cd56;
-    }
-      
-      .nav-links li {
-        display: block;
-      }
-
-      .navbar ul {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      }
-      .nav_text{
-        display: none;
-      }
-      
-      .nav-links a {
-        font-weight: 600;
-        text-decoration: none;
-        color: #E1DCEA;
-        font-size: 1.1rem;
-        margin: 0 20px;
-        padding: 3px 1.5rem;
-      }
-      
-      .hamburger-menu {
-        display: none;
-      }
+  .nav-links li a:hover {
+    font-weight: 600;
+    padding-bottom: 0.3rem;
+    color: #c3cd56;
+    padding-top: 0.3rem;
+    border-top: 3px solid #c3cd56;
+    border-bottom: 3px solid #c3cd56;
+  }
     
+  .nav-links li {
+    display: block;
+  }
+
+  .navbar ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav_text{
+    display: none;
+  }
+  
+  .nav-links a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #E1DCEA;
+    font-size: 1.1rem;
+    margin: 0 20px;
+    padding: 3px 1.5rem;
+  }
+  
+  .hamburger-menu {
+    display: none;
+  }
     
 }
 
 
 @media (max-width: 1100px) {
-    .home_bigtext {
-      text-align: left;
-      border-left: 5px solid #FF8868;
-      display: inline-block;
-      padding-bottom: 5px;
-      padding-left: 6px;
-      margin-bottom: 1rem;
-      color: #FF8868;
-      font-weight: 700;
-      font-size: 1.4rem;
-    }
-
-    .home_smalltext {
-      font-size: small;
-    }
-
-    .home_art {
-      width: 100%;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .logo {
-      padding: 0.9rem 0px;
-      text-align: center;
-    }
-    .logo a img {
-      width: 160px; 
-      height: auto;
-      margin-top: 2px;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-      padding: 0.9rem 20px;
-      background-color: #181717;
-      position: relative; /* 네비게이션을 relative 위치로 지정 */
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 0;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 20px;
-        width: 100%;
-        padding: 1px 0px;
-    }
-    .nav-links li a:hover {
-      font-weight: 800;
-      color: #cd5656;
-    }
-
-    .nav-links.show {
-        opacity: 0.9;
-        display: block;
-        margin-top: 3.5rem;
-        background-color: 	#EEEEEE;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-        pointer-events : none;
-    }
-    .nav-links li a {
-        font-size: 13px;
-        color: #000000;
-        font-weight: 800;
-        text-align: left;
-        display: block;
-        width: 100%;
-        text-decoration: none;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-        pointer-events : auto;
-        padding: 10px 0px 10px 0.5rem;
-    }
-
-    .nav-links li{
-      background-color: #EEEEEE;
-    }
-
-    .nav_text{
-      text-decoration: none;
-      color: #E1DCEA;
-      font-size: large;
-      font-weight: 700;
-      font-style: italic;
-    }
-      
-    .bar {
-        width: 30px;
-        height: 3px;
-        background-color: #ffffff;
-        margin: 8px 0;
-        border-radius: 1px;
-    }
-      
-    .hamburger-menu {
-      display: block;
-      position: absolute; /* 햄버거 버튼을 absolute 위치로 지정 */
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      cursor: pointer;
+  .home_bigtext {
+    text-align: left;
+    border-left: 5px solid #FF8868;
+    display: inline-block;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    margin-bottom: 1rem;
+    color: #FF8868;
+    font-weight: 700;
+    font-size: 1.4rem;
   }
-    .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: translateY(12px) rotate(45deg);
-    }
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-    }
+
+  .home_smalltext {
+    font-size: small;
+  }
+
+  .home_art {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logo {
+    padding: 0.9rem 0px;
+    text-align: center;
+  }
+
+  .logo a img {
+    width: 160px; 
+    height: auto;
+    margin-top: 2px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.9rem 20px;
+    background-color: #181717;
+    position: relative; /* 네비게이션을 relative 위치로 지정 */
+  }
+
+  .nav-links {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 20px;
+      width: 100%;
+      padding: 1px 0px;
+  }
+  
+  .nav-links li a:hover {
+    font-weight: 800;
+    color: #cd5656;
+  }
+
+  .nav-links.show {
+      opacity: 0.9;
+      display: block;
+      margin-top: 3.5rem;
+      background-color: 	#EEEEEE;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      pointer-events : none;
+  }
+
+  .nav-links li a {
+      font-size: 13px;
+      color: #000000;
+      font-weight: 800;
+      text-align: left;
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      pointer-events : auto;
+      padding: 10px 0px 10px 0.5rem;
+  }
+
+  .nav-links li{
+    background-color: #EEEEEE;
+  }
+
+  .nav_text{
+    text-decoration: none;
+    color: #E1DCEA;
+    font-size: large;
+    font-weight: 700;
+    font-style: italic;
+  }
     
+  .bar {
+      width: 30px;
+      height: 3px;
+      background-color: #ffffff;
+      margin: 8px 0;
+      border-radius: 1px;
+  }
+      
+  .hamburger-menu {
+    display: block;
+    position: absolute; /* 햄버거 버튼을 absolute 위치로 지정 */
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+      transform: translateY(12px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+  }
     
 }
