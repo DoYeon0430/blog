@@ -40,15 +40,15 @@
     font-weight: 600;
 }
 
-.sidebar_count{
-    padding-top: 2rem;
+.sidebar_count {
+    padding-top: 1.5rem;
+    text-align: right;
 }
+
 
 .sidebar_count div{
     color: rgb(160, 110, 110);
-    padding-bottom: 0.5rem;
-    font-size: 1rem;
-    font-style: italic;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 

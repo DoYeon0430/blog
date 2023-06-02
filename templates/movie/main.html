@@ -122,6 +122,9 @@
             </div>
         </div>
         <div class="col-lg-3 mb-3 sidebar_main">
+            <div class="sidebar_count">
+                <div>전체 방문자<span> : {{view.count}}명</span></div>
+            </div>
             <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
               <div>
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
@@ -168,11 +171,6 @@
                     </a>
                     {% endfor %}
                 </div>
-                </div>
-                <div class="sidebar_count">
-                    <div>Visitor<span> : {{view.count}}</span></div>
-                    <div>Today<span> : {% now "Y. n. j" %}</span></div>
-                    <div>E-mail<span> : kim73916@naver.com</span></div>
                 </div>
             </div>
         </div>
