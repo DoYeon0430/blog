@@ -45,10 +45,11 @@
 }
 
 .sidebar_count div{
-    color: rgb(143, 111, 133);
+    color: rgb(160, 110, 110);
     padding-bottom: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-style: italic;
+    font-weight: 600;
 }
 
 @media (max-width: 992px) {

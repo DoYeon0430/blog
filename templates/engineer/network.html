@@ -45,7 +45,9 @@
               <a href="{% url 'engineer:network_main' %}">#NETWORK</a>
           </div>
           <div class="text-center">
-              <img class="detail_img" src="{% static 'img/network.jpg' %}" alt="Network 이미지">
+              {% if network.photo %}
+                <img class="detail_img" src="{{ network.photo.url }}" alt="Network 이미지">
+              {% endif %}
           </div>
           {{network.htmlcontent|safe}}
     
