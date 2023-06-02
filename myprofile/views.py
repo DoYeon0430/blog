@@ -20,7 +20,7 @@ def home(request):
         expires = datetime.utcnow() + timedelta(days=1)
         expires = expires.strftime('%a, %d-%b-%Y %H:%M:%S GMT')
 
-        mywork_content = Mywork.objects.all().order_by('-create_date')
+        mywork_content = Mywork.objects.all().order_by('-create_date')[:5]
         movie_content = Movie.objects.all().order_by('-create_date')
 
         content = {
@@ -35,7 +35,7 @@ def home(request):
 
 
     if tag == '영화':
-        mywork_content = Mywork.objects.all().order_by('-create_date')
+        mywork_content = Mywork.objects.all().order_by('-create_date')[:5]
         movie_content = Movie.objects.all().order_by('-create_date')
 
         content = {
@@ -46,7 +46,7 @@ def home(request):
 
 
     elif tag == '파이썬':
-        django_content = Django.objects.all().order_by('-create_date')
+        django_content = Django.objects.all().order_by('-create_date')[:5]
 
         content = {
             'django_content': django_content,
@@ -55,7 +55,7 @@ def home(request):
         
 
     else:
-        mywork_content = Mywork.objects.all().order_by('-create_date')
+        mywork_content = Mywork.objects.all().order_by('-create_date')[:5]
         movie_content = Movie.objects.all().order_by('-create_date')
 
         content = {
