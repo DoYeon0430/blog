@@ -10,6 +10,9 @@ from datetime import date, datetime, timedelta
 import os
 from uuid import uuid4
 from django.db.models import Q
+from mywork.models import Mywork
+from movie.models import Movie
+from myprofile.models import Views
 
 def main(request):
     physics = Physics.objects.all()
@@ -19,9 +22,12 @@ def main(request):
     return render(request, 'engineer/main.html', context)
 
 def physics(request, study_id):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
     network_data = Network.objects.all().order_by('-create_date')
+    view = Views.objects.get(pk=3)
     
     physics = get_object_or_404(Physics, pk=study_id)
     comments = Comment_physics.objects.filter(physics=physics.pk)
@@ -51,9 +57,12 @@ def physics(request, study_id):
         form = Comment_physicsForm()
 
     context = {
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
         'physics_data':physics_data,
         'django_data':django_data,
         'network_data':network_data,
+        'view' : view,
         'physics':physics, 
         'comments':comments, 
         'form':form
@@ -78,9 +87,12 @@ def physics(request, study_id):
     return response
 
 def physics_main(request):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
     network_data = Network.objects.all().order_by('-create_date')
+    view = Views.objects.get(pk=3)
 
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
@@ -98,9 +110,12 @@ def physics_main(request):
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
     return render(request, 'engineer/physics_main.html', 
                   {
+                    'mywork_data':mywork_data, 
+                    'movie_data':movie_data, 
                     'physics_data':physics_data,
                     'django_data':django_data,
                     'network_data':network_data,
+                    'view' : view,
                     'page_obj': page_obj, 
                    'physics_list':physics_list, 
                    'page':page, 
@@ -110,9 +125,12 @@ def physics_main(request):
 
 
 def django(request, study_id):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
     network_data = Network.objects.all().order_by('-create_date')
+    view = Views.objects.get(pk=3)
 
     django = get_object_or_404(Django, pk=study_id)
     comments = Comment_django.objects.filter(django=django.pk)
@@ -142,9 +160,12 @@ def django(request, study_id):
         form = Comment_djangoForm()
 
     context = {
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
         'physics_data':physics_data,
         'django_data':django_data,
         'network_data':network_data,
+        'view' : view,
         'django':django, 
         'comments':comments, 
         'form':form
@@ -170,9 +191,12 @@ def django(request, study_id):
 
 
 def django_main(request):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
     network_data = Network.objects.all().order_by('-create_date')
+    view = Views.objects.get(pk=3)
 
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
@@ -190,9 +214,12 @@ def django_main(request):
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
 
     return render(request, 'engineer/django_main.html', {
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
         'physics_data':physics_data,
         'django_data':django_data,
         'network_data':network_data,
+        'view' : view,
         'page_obj': page_obj, 
         'django_list':django_list, 
         'page':page, 
@@ -201,9 +228,12 @@ def django_main(request):
 
 
 def network(request, study_id):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
     network_data = Network.objects.all().order_by('-create_date')
+    view = Views.objects.get(pk=3)
 
     network = get_object_or_404(Network, pk=study_id)
     comments = Comment_network.objects.filter(network=network.pk)
@@ -233,9 +263,12 @@ def network(request, study_id):
         form = Comment_networkForm()
 
     context = {
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
         'physics_data':physics_data,
         'django_data':django_data,
         'network_data':network_data,
+        'view' : view,
         'network': network, 
         'comments': comments, 
         'form': form
@@ -261,10 +294,12 @@ def network(request, study_id):
 
 
 def network_main(request):
+    mywork_data = Mywork.objects.all().order_by('-create_date')
+    movie_data = Movie.objects.all().order_by('-create_date')
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
     network_data = Network.objects.all().order_by('-create_date')
-
+    view = Views.objects.get(pk=3)
 
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
@@ -281,9 +316,12 @@ def network_main(request):
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
     return render(request, 'engineer/network_main.html', {
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
         'physics_data':physics_data,
         'django_data':django_data,
         'network_data':network_data,
+        'view' : view,
         'page_obj': page_obj, 
         'network_list':network_list, 
         'page':page, 

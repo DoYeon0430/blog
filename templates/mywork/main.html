@@ -111,23 +111,58 @@
         <div class="col-lg-3 mb-3 sidebar_main">
             <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
               <div>
-                <a href="{% url 'myprofile:home' %}" class="sidebar_tag">총 게시글 : {{ movie_data.count|add:mywork_data.count }}개
-                </a>
-                <a href="{% url 'mywork:main' %}" class="sidebar_tag">영화 이야기 ({{mywork_data.count}})</a>   
-                {% for m in mywork_data %}
-                <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
-                  ·{{ m.subject }}
-                </a>
-                {% endfor %}
-                <a href="{% url 'movie:main' %}" class="sidebar_tag">영화 후기 ({{movie_data.count}})</a>
-                {% for m in movie_data %}
-                <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
-                  · [{{ m.subject }}] 후기
-                </a>
-                {% endfor %}
-              </div>
+                <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
+                <div class="sidebar_js" style="display: block;">
+                    {% for m in mywork_data %}
+                    <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                        &raquo; {{ m.subject }}
+                    </a>
+                    {% endfor %}
+                </div>
+
+                <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 감상 후기 ({{movie_data.count}})</a>
+                <div class="sidebar_js" style="display: block;">
+                    {% for m in movie_data %}
+                    <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                        &raquo; [{{ m.subject }}] 후기
+                    </a>
+                    {% endfor %}
+                </div>
+
+                <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
+                <div class="sidebar_js">
+                    {% for m in physics_data %}
+                    <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for">
+                        &raquo; {{ m.subject}}
+                    </a>
+                    {% endfor %}
+                </div>
+
+                <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 프로그래밍 ({{django_data.count}})</a>
+                <div class="sidebar_js">
+                    {% for m in django_data %}
+                    <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                        &raquo; {{ m.subject}}
+                    </a>
+                    {% endfor %}
+                </div>
+
+                <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 네트워크 ({{network_data.count}})</a>
+                <div class="sidebar_js">
+                    {% for m in network_data %}
+                    <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+                        &raquo; {{ m.subject}}
+                    </a>
+                    {% endfor %}
+                </div>
+                </div>
+                <div class="sidebar_count">
+                    <div>Visitor<span> : {{view.count}}</span></div>
+                    <div>Today<span> : {% now "Y. n. j" %}</span></div>
+                    <div>E-mail<span> : kim73916@naver.com</span></div>
+                </div>
             </div>
-          </div>
+        </div>
 </div>
 </div>
 
