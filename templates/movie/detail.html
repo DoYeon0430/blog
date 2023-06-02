@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-<title>{{detail.content}}, {{ detail.subject }} 후기</title>
-<meta name="title" content="{{detail.content}}, {{ detail.subject }} 후기"/>
+<title>{{detail.content}}, <{{ detail.subject }}> 후기</title>
+<meta name="title" content="{{detail.content}}, <{{ detail.subject }}> 후기"/>
 <meta name="description" content="{{ detail.meta }}"/>
 <link rel="icon" href="{% static 'img/favicon.ico' %}"/>
 
-<meta property="og:title" content="{{detail.content}}, {{ detail.subject }} 후기"/> 
+<meta property="og:title" content="{{detail.content}}, <{{ detail.subject }}> 후기"/> 
 <meta property="og:url" content="https://www.doyeon0430.com{% url 'movie:detail' detail.id %}"/>
 <meta property="og:type" content="blog"/>
 <meta property="og:description" content="{{ detail.meta }}"/> 
