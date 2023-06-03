@@ -1,15 +1,8 @@
 from django.db import models
 from tinymce.models import HTMLField
 # Create your models here.
-class Engineer(models.Model):
-    id = models.AutoField(primary_key=True)
-
-    def __str__(self):
-        return str(self.id)
-    
 
 class Physics(models.Model):
-    engineerkey = models.OneToOneField(Engineer, on_delete=models.CASCADE)
     subject = models.CharField(max_length=200)
     content = models.CharField(max_length=200)
     meta = models.CharField(max_length=130)
@@ -36,7 +29,6 @@ class Comment_physics(models.Model):
 
 
 class Django(models.Model):
-    engineerkey = models.OneToOneField(Engineer, on_delete=models.CASCADE)
     subject = models.CharField(max_length=200)
     content = models.CharField(max_length=200)
     meta = models.CharField(max_length=130)
@@ -64,7 +56,6 @@ class Comment_django(models.Model):
 
 
 class Network(models.Model):
-    engineerkey = models.OneToOneField(Engineer, on_delete=models.CASCADE)
     subject = models.CharField(max_length=200)
     content = models.CharField(max_length=200)
     meta = models.CharField(max_length=130)
