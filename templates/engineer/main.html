@@ -14,7 +14,7 @@
 {% block content %}
 
 <div class="container background_design" >
-    <div class="pt-1 pb-3">
+    <div class="pt-1">
         <div class="row text-center">
             <div class="col-3 bar_menu bar_click" OnClick="location.href ='{% url "engineer:main" %}'">
                 <div>TOTAL</div>
@@ -29,56 +29,164 @@
                 <div>NETWORK</div>
             </div>
         </div>
+    </div>
 
-        <div class="row pt-1">
-            <div class="col-lg-4 text-center cols" OnClick="location.href ='{% url "engineer:physics_main" %}'">
-                <div class="mt-3 textimg">
-                    <img class="engineer_image" src="{% static 'img/physicsimg.jpg' %}" alt="물리학 이미지">
-                    <div  class="textsubject">
-                        <div>
-                            Physics Mechanics
+        <div class="row">
+            <div class="container col-lg-9 pt-3 pb-3 draggable">
+                <div class="row pt-1 justify-content-start">
+                    <div class="col-lg-6 text-center cols" OnClick="location.href ='{% url "engineer:physics_main" %}'">
+                        <div class="mt-3 textimg">
+                            <img class="engineer_image" src="{% static 'img/physicsimg.jpg' %}" alt="물리학 이미지">
+                            <div  class="textsubject">
+                                <div>
+                                    Physics Mechanics
+                                </div>
+                                <div class="text_content">아직은 1학년이라 대학교 전공이 안들어갔어요. 업로드는 2학년때부터 배우면 하겠습니다.</div>
+                                <div class="text_bottom">                             
+                                    <span>총 게시글 {{physics_data.count}}</span>
+                                    <a>자세히 보기</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text_content">아직은 1학년이라 대학교 전공이 안들어갔어요. 업로드는 2학년때부터 배우면 하겠습니다.</div>
-                        <div class="text_bottom">                             
-                            <span>총 게시글 {{physics.count}}</span>
-                            <a>자세히 보기</a>
+                    </div>
+
+                    <div class="col-lg-6 text-center cols" OnClick="location.href ='{% url "engineer:django_main" %}'">
+                        <div class="mt-3 textimg">
+                            <img class="engineer_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
+                            <div class="textsubject">
+                                <div>
+                                    Django 4.2.1 Framework
+                                </div>
+                                <div class="text_content">파이썬으로 만들어진 웹 프레임워크에요. Django는 취미로 사용해서 공부한거 정리해봤어요.</div>
+                                <div class="text_bottom">
+                                    <span>총 게시글 {{django_data.count}}</span>
+                                    <a>자세히 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-center cols" OnClick="location.href ='{% url "engineer:network_main" %}'">
+                        <div class="mt-3 textimg">
+                            <img class="engineer_image" src="{% static 'img/network.jpg' %}" alt="네트워크 이미지">
+                            <div class="textsubject">
+                                <div>
+                                    Network
+                                </div>
+                                <div class="text_content">네트워크 이론은 군복무 때 필요해서 공부했는데 웹 서버 제작에 도움 돼서 틈틈이 보고있어요.</div>
+                                <div class="text_bottom">                            
+                                    <span>총 게시글 {{network_data.count}}</span>
+                                    <a>자세히 보기</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 text-center cols" OnClick="location.href ='{% url "engineer:django_main" %}'">
-                <div class="mt-3 textimg">
-                    <img class="engineer_image" src="{% static 'img/django.webp' %}" alt="디장고 이미지">
-                    <div class="textsubject">
-                        <div>
-                            Django 4.2.1 Framework
+            <div class="col-lg-3 mb-3 sidebar_main" style="background-color: #ffffff;">
+                <div class="sidebar_count">
+                    <div>전체 방문자<span> : {{view.count}}명</span></div>
+                </div>
+                <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
+                  <div>
+                    <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
+                    <div class="sidebar_js">
+                        {% for m in mywork_data %}
+                        <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject }}
+                        </a>
+                        {% endfor %}
+                    </div>
+            
+                    <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 감상 후기 ({{movie_data.count}})</a>
+                    <div class="sidebar_js">
+                        <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 상업영화 ({{movie_count_one}})</a>
+                        <div class="sidebar_js">
+                            {% for m in movie_data %}
+                            {% if m.genre == '상업영화' %}
+                            <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                                &raquo; [{{ m.subject }}] 후기
+                            </a>
+                            {% endif %}
+                            {% endfor %}
                         </div>
-                        <div class="text_content">파이썬으로 만들어진 웹 프레임워크에요. Django는 취미로 사용해서 공부한거 정리해봤어요.</div>
-                        <div class="text_bottom">
-                            <span>총 게시글 {{django.count}}</span>
-                            <a>자세히 보기</a>
+                        <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 드라마 ({{movie_count_two}})</a>
+                        <div class="sidebar_js">
+                            {% for m in movie_data %}
+                            {% if m.genre == '드라마' %}
+                            <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                                &raquo; [{{ m.subject }}] 후기
+                            </a>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; OTT 오리지널 ({{movie_count_three}})</a>
+                        <div class="sidebar_js">
+                            {% for m in movie_data %}
+                            {% if m.genre == 'OTT 오리지널' %}
+                            <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                                &raquo; [{{ m.subject }}] 후기
+                            </a>
+                            {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 text-center cols" OnClick="location.href ='{% url "engineer:network_main" %}'">
-                <div class="mt-3 textimg">
-                    <img class="engineer_image" src="{% static 'img/network.jpg' %}" alt="네트워크 이미지">
-                    <div class="textsubject">
-                        <div>
-                            Network
+            
+                    <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in physics_data %}
+                        <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject}}
+                        </a>
+                        {% endfor %}
+                    </div>
+            
+                    <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 프로그래밍 ({{django_data.count}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 튜토리얼 ({{django_count_one}})</a>
+                        <div class="sidebar_js">
+                            {% for m in django_data %}
+                            {% if m.code == '튜토리얼' %}
+                            <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                                &raquo; {{ m.subject}}
+                            </a>
+                            {% endif %}
+                            {% endfor %}
                         </div>
-                        <div class="text_content">네트워크 이론은 군복무 때 필요해서 공부했는데 웹 서버 제작에 도움 돼서 틈틈이 보고있어요.</div>
-                        <div class="text_bottom">                            
-                            <span>총 게시글 {{network.count}}</span>
-                            <a>자세히 보기</a>
+                        <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 문법 ({{django_count_two}})</a>
+                        <div class="sidebar_js">
+                            {% for m in django_data %}
+                            {% if m.code == '문법' %}
+                            <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                                &raquo; {{ m.subject}}
+                            </a>
+                            {% endif %}
+                            {% endfor %}
                         </div>
+                        <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 템플릿 ({{django_count_three}})</a>
+                        <div class="sidebar_js">
+                            {% for m in django_data %}
+                            {% if m.code == '템플릿' %}
+                            <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                                &raquo; {{ m.subject}}
+                            </a>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+            
+                    <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 네트워크 ({{network_data.count}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in network_data %}
+                        <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject}}
+                        </a>
+                        {% endfor %}
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
+
 {% endblock %}
