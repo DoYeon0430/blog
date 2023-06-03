@@ -24,8 +24,14 @@ def main(request):
 def physics(request, study_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
     
@@ -59,8 +65,14 @@ def physics(request, study_id):
     context = {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
         'view' : view,
         'physics':physics, 
@@ -89,8 +101,14 @@ def physics(request, study_id):
 def physics_main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
@@ -108,27 +126,38 @@ def physics_main(request):
     paginator = Paginator(physics_list, 5) # 페이지당 5개의 객체를 보여줌
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
-    return render(request, 'engineer/physics_main.html', 
-                  {
-                    'mywork_data':mywork_data, 
-                    'movie_data':movie_data, 
-                    'physics_data':physics_data,
-                    'django_data':django_data,
-                    'network_data':network_data,
-                    'view' : view,
-                    'page_obj': page_obj, 
-                   'physics_list':physics_list, 
-                   'page':page, 
-                   'kw':kw}
-                   )
+    return render(request, 'engineer/physics_main.html',{
+        'mywork_data':mywork_data, 
+        'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
+        'physics_data':physics_data,
+        'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
+        'network_data':network_data,
+        'view' : view,
+        'page_obj': page_obj, 
+        'physics_list':physics_list, 
+        'page':page, 
+        'kw':kw
+        })
 
 
 
 def django(request, study_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
@@ -162,8 +191,14 @@ def django(request, study_id):
     context = {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
         'view' : view,
         'django':django, 
@@ -193,8 +228,14 @@ def django(request, study_id):
 def django_main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
@@ -216,22 +257,34 @@ def django_main(request):
     return render(request, 'engineer/django_main.html', {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
         'view' : view,
         'page_obj': page_obj, 
         'django_list':django_list, 
         'page':page, 
-        'kw':kw}
-        )
+        'kw':kw
+        })
 
 
 def network(request, study_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
@@ -265,8 +318,14 @@ def network(request, study_id):
     context = {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
         'view' : view,
         'network': network, 
@@ -296,8 +355,14 @@ def network(request, study_id):
 def network_main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
@@ -318,15 +383,21 @@ def network_main(request):
     return render(request, 'engineer/network_main.html', {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
         'view' : view,
         'page_obj': page_obj, 
         'network_list':network_list, 
         'page':page, 
-        'kw':kw}
-        )
+        'kw':kw
+        })
 
 @csrf_exempt
 def upload_image(request):

@@ -11,7 +11,21 @@
     color: rgb(70, 67, 67);
     padding-top: 1.5rem;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgb(223, 219, 219);
+    padding-bottom: 0.3rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.sidebar_tag_one{
+    cursor: pointer;
+    display: block;
+    color: rgb(70, 67, 67);
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
     border-bottom: 1px solid rgb(223, 219, 219);
     padding-bottom: 0.3rem;
     text-align: left;
@@ -20,19 +34,20 @@
 
 .sidebar_for{
     display:  block;
+    padding-left: 0.5rem;
     color: rgb(70, 67, 67);
     padding-top: 0.8rem;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .sidebar_js{
     display: none;
 }
+
 .sidebar_for:hover {
-    font-style: italic;
+    translate: 0.5rem;
     text-decoration:underline;
-    font-weight: 600;
 }
 
 .bar_check{

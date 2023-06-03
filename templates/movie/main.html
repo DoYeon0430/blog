@@ -128,7 +128,7 @@
             <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
               <div>
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
-                <div class="sidebar_js" style="display: block;">
+                <div class="sidebar_js">
                     {% for m in mywork_data %}
                     <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
                         &raquo; {{ m.subject }}
@@ -138,11 +138,36 @@
 
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 감상 후기 ({{movie_data.count}})</a>
                 <div class="sidebar_js" style="display: block;">
-                    {% for m in movie_data %}
-                    <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
-                        &raquo; [{{ m.subject }}] 후기
-                    </a>
-                    {% endfor %}
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 상업영화 ({{movie_count_one}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in movie_data %}
+                        {% if m.genre == '상업영화' %}
+                        <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                            &raquo; [{{ m.subject }}] 후기
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 드라마 ({{movie_count_two}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in movie_data %}
+                        {% if m.genre == '드라마' %}
+                        <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                            &raquo; [{{ m.subject }}] 후기
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; OTT 오리지널 ({{movie_count_three}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in movie_data %}
+                        {% if m.genre == 'OTT 오리지널' %}
+                        <a href="{% url 'movie:detail' m.id %}" class="sidebar_for">
+                            &raquo; [{{ m.subject }}] 후기
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
@@ -156,11 +181,36 @@
 
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 프로그래밍 ({{django_data.count}})</a>
                 <div class="sidebar_js">
-                    {% for m in django_data %}
-                    <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
-                        &raquo; {{ m.subject}}
-                    </a>
-                    {% endfor %}
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 튜토리얼 ({{django_count_one}})</a>
+                    <div class="sidebar_js">
+                        {% for m in django_data %}
+                        {% if m.code == '튜토리얼' %}
+                        <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject}}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 문법 ({{django_count_two}})</a>
+                    <div class="sidebar_js">
+                        {% for m in django_data %}
+                        {% if m.code == '문법' %}
+                        <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject}}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 템플릿 ({{django_count_three}})</a>
+                    <div class="sidebar_js">
+                        {% for m in django_data %}
+                        {% if m.code == '템플릿' %}
+                        <a href="{% url 'engineer:django' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject}}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 네트워크 ({{network_data.count}})</a>

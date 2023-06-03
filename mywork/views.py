@@ -10,8 +10,14 @@ from engineer.models import Physics, Django, Network
 def main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
@@ -33,8 +39,14 @@ def main(request):
     return render(request, 'mywork/main.html', {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
         'view' : view,
         'page_obj': page_obj, 
@@ -45,8 +57,14 @@ def main(request):
 def detail(request, mywork_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     movie_data = Movie.objects.all().order_by('-create_date')
+    movie_count_one = movie_data.filter(genre='상업영화').count()
+    movie_count_two = movie_data.filter(genre='드라마').count()
+    movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
     django_data = Django.objects.all().order_by('-create_date')
+    django_count_one = django_data.filter(code='튜토리얼').count()
+    django_count_two = django_data.filter(code='문법').count()
+    django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
     
@@ -80,11 +98,17 @@ def detail(request, mywork_id):
     context = {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
         'physics_data':physics_data,
         'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
         'network_data':network_data,
-        'detail': detail, 
         'view' : view,
+        'detail': detail, 
         'comments': comments, 
         'form': form
         }

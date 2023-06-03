@@ -44,6 +44,7 @@ class Django(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     hits = models.PositiveIntegerField(default=0)
     photo = models.ImageField(upload_to='django/')
+    code = models.CharField(max_length=20, choices=[('튜토리얼', '튜토리얼'), ('문법', '문법'), ('템플릿','템플릿')])
 
     def __str__(self):
         return self.subject
