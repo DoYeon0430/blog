@@ -21,7 +21,3 @@ for (let i = 0; i < sidebarTagones.length; i++) {
         }
     });
 }
-
-const countElement = document.getElementById("count");
-const countValue = parseInt("{{ view.count }}");
-countElement.textContent = countValue.toLocaleString();
