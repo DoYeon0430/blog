@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block title %}
 <title>{{network.subject}}</title>
 <meta name="title" content="{{network.subject}}"/>
@@ -132,7 +133,7 @@
       </div>
       <div class="col-lg-3 sidebar_main" style="background-color: #ffffff;">
         <div class="sidebar_count">
-            <div>전체 방문자<span> : {{view.count}}명</span></div>
+            <div>전체 방문자<span> : {{ view.count|intcomma }}명</span></div>
         </div>
         <div style="position: sticky; top: 2rem; padding: 0.6rem 0rem 0rem 0rem;">
           <div>
