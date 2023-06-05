@@ -311,6 +311,15 @@ body {
     width: 200px;
     text-decoration: none;
   }
+  .menu span {
+    position: absolute;
+    color: #4c4a4a;
+    bottom: 0;
+    right: 0;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    font-weight: 700;
+  }
   .menu a,
   .menu a::before,
   .menu a::after{
