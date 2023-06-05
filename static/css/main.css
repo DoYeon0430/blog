@@ -34,31 +34,11 @@ body {
   user-select:none
 }
 
-@media (min-width: 1798px)  {
-  .home_bigtext {
-    font-size: xx-large;
-    text-align: left;
-    border-left: 5px solid #FF8868;
-    display: inline-block;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    margin-bottom: 1rem;
-    color: #FF8868;
-    font-weight: 700;
-  }
+.input-group .btn {
+  z-index: 0;
+}
 
-  .home_smalltext {
-    font-size: medium;
-  }
-
-  .home_art {
-    width: 70%;
-    height: 55rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-
+@media (min-width: 1400px)  {
   .navbar {
     display: flex;
     justify-content: center; /* 가운데 정렬 */
@@ -78,74 +58,53 @@ body {
     height: auto;
     margin-top: 2px;
   }
-    .nav-links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
-    .nav_text{
-      display: none;
-    }
+  .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
 
-    .nav-links li a:hover {
-      font-weight: 900;
-      padding-bottom: 0.3rem;
-      color: #c3cd56;
-      padding-top: 0.3rem;
-      border-top: 3px solid #c3cd56;
-      border-bottom: 3px solid #c3cd56;
-    }
+  .nav_text{
+    display: none;
+  }
+
+  .nav-links li a:hover {
+    font-weight: 900;
+    padding-bottom: 0.3rem;
+    color: #c3cd56;
+    padding-top: 0.3rem;
+    border-top: 3px solid #c3cd56;
+    border-bottom: 3px solid #c3cd56;
+  }
     
+  .nav-links li {
+    display: block;
+  }
+
+  .navbar ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-links a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #E1DCEA;
+    font-size: 1.2rem;
+    margin: 0 50px;
+    padding: 3px 3rem;
+  }
       
-      .nav-links li {
-        display: block;
-      }
-
-      .navbar ul {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .nav-links a {
-        font-weight: 600;
-        text-decoration: none;
-        color: #E1DCEA;
-        font-size: 1.2rem;
-        margin: 0 50px;
-        padding: 3px 3rem;
-      }
-      
-      .hamburger-menu {
-        display: none;
-      }
-    
-    
+  .navbar-burger{
+    display: none;
+  }
+  .menu{
+    display: none;
+  }
 }
 
-@media (min-width: 1301px) and (max-width: 1799px) {
-  .home_bigtext {
-    text-align: left;
-    border-left: 5px solid #FF8868;
-    display: inline-block;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    margin-bottom: 1rem;
-    color: #FF8868;
-    font-weight: 700;
-  }
-
-  .home_smalltext {
-    font-size: small;
-  }
-
-  .home_art {
-    width: 70%;
-    height: 55rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+@media (min-width: 1200px) and (max-width: 1399.98px) {
   .navbar {
     display: flex;
     justify-content: center; /* 가운데 정렬 */
@@ -201,36 +160,17 @@ body {
     margin-right: 3.5rem;
     padding: 3px 3px;
   }
-  
-  .hamburger-menu {
+
+  .navbar-burger{
+    display: none;
+  }
+  .menu{
     display: none;
   }
     
 }
 
-@media (min-width: 1100px) and (max-width: 1300px) {
-  .home_bigtext {
-    text-align: left;
-    border-left: 5px solid #FF8868;
-    display: inline-block;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    margin-bottom: 1rem;
-    color: #FF8868;
-    font-weight: 700;
-  }
-
-  .home_smalltext {
-    font-size: small;
-  }
-
-  .home_art {
-    width: 70%;
-    height: 55rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .navbar {
     display: flex;
     justify-content: center; /* 가운데 정렬 */
@@ -241,21 +181,10 @@ body {
     position: relative;
   }
 
-  .logo {
-    padding: 0.8rem 0px;
-    text-align: center;
-  }
-
-  .logo a img {
-    width: 180px; 
-    height: auto;
-    margin-top: 2px;
-  }
-
   .nav-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .nav-links li a:hover {
@@ -279,7 +208,7 @@ body {
   .nav_text{
     display: none;
   }
-  
+
   .nav-links a {
     font-weight: 600;
     text-decoration: none;
@@ -288,41 +217,35 @@ body {
     margin: 0 20px;
     padding: 3px 1.5rem;
   }
-  
-  .hamburger-menu {
+
+  .logo {
+    padding: 0.8rem 0px;
+    text-align: center;
+  }
+
+  .logo a img {
+    width: 180px; 
+    height: auto;
+    margin-top: 2px;
+  }
+
+  .navbar-burger{
     display: none;
   }
-    
+  .menu{
+    display: none;
+  }
 }
 
 
-@media (max-width: 1099.98px) {
-  .home_bigtext {
-    text-align: left;
-    border-left: 5px solid #FF8868;
-    display: inline-block;
-    padding-bottom: 5px;
-    padding-left: 6px;
-    margin-bottom: 1rem;
-    color: #FF8868;
-    font-weight: 700;
-    font-size: 1.4rem;
-  }
-
-  .home_smalltext {
-    font-size: small;
-  }
-
-  .home_art {
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 991.98px) {
+  .navbar{
+    display: none;
   }
   
   .logo {
-    padding: 0.9rem 0px;
-    text-align: center;
+    padding: 0.9rem 1rem;
+    text-align: left;;
   }
 
   .logo a img {
@@ -331,94 +254,138 @@ body {
     margin-top: 2px;
   }
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    padding: 0.9rem 20px;
-    background-color: #181717;
-    position: relative; /* 네비게이션을 relative 위치로 지정 */
-  }
-
-  .nav-links {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 0;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 20px;
-      width: 100%;
-      padding: 1px 0px;
+  .navbar-burger {
+    position: fixed;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 66px;
+    background-image: url('/static/img/go.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   
-  .nav-links li a:hover {
-    font-weight: 800;
-    color: #cd5656;
+  .menu {
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      display: grid;
+      place-items: center;
+      width: 250px;
+      height: 100%;
+      background: #07030a;
+      translate: 100% 0;
+      transform: translateX(100%);
+      transition:
+        translate 0.375s
+        cubic-bezier(
+          0.175,
+          0.885,
+          0.32,
+          1
+        );
   }
-
-  .nav-links.show {
-      opacity: 0.9;
-      display: block;
-      margin-top: 3.5rem;
-      background-color: 	#EEEEEE;
-      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-      pointer-events : none;
+  .menu nav {opacity: 0;}
+  .menu nav:hover a {
+    opacity: 0.25;
   }
-
-  .nav-links li a {
-      font-size: 13px;
-      color: #000000;
-      font-weight: 800;
-      text-align: left;
-      display: block;
-      width: 100%;
-      text-decoration: none;
-      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-      pointer-events : auto;
-      padding: 10px 0px 10px 0.5rem;
+  .menu nav a:hover {
+    opacity: 1;
   }
-
-  .nav-links li{
-    background-color: #EEEEEE;
+  .menu nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-
-  .nav_text{
+  .menu a {
+    position: relative;
+    color: #f9f9f9;
+    font-size: 1.1rem;
+    padding: 20px 0;
+    width: 200px;
     text-decoration: none;
-    color: #E1DCEA;
-    font-size: large;
-    font-weight: 700;
-    font-style: italic;
   }
-    
-  .bar {
-      width: 30px;
-      height: 3px;
-      background-color: #ffffff;
-      margin: 8px 0;
-      border-radius: 1px;
+  .menu a,
+  .menu a::before,
+  .menu a::after{
+    transition: 0.4s;
   }
-      
-  .hamburger-menu {
-    display: block;
-    position: absolute; /* 햄버거 버튼을 absolute 위치로 지정 */
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
+  .menu a::before,
+  .menu a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    border: 10px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+  }
+  .menu a::before{
+    opacity: 0;
+    background: rgb(255, 255, 255 / 20%);
+  }
+  .menu a::after{
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    background:#f7f7f7;
+  }
+  .menu a:hover::before{
+    opacity: 1;
+  }
+  .menu a:hover::after{
+    transform: scaleX(1);
   }
 
-  .hamburger-menu.active .bar:nth-child(1) {
-      transform: translateY(12px) rotate(45deg);
+  .logo-container {
+    position: sticky;
+    top: 0;
+    height: auto; /* 적절한 높이 설정 */
+    background-color: rgb(253, 253, 253);
+  }
+  
+  body.open .menu{
+    opacity: 0.9;
+    visibility: visible;
+    translate: 0;
+    animation: menu-in 0.375s;
   }
 
-  .hamburger-menu.active .bar:nth-child(2) {
-      opacity: 0;
+  body.open .menu nav { opacity: 1;}
+
+  body.open .navbar-burger {
+    background-image: url('/static/img/back.png');
   }
 
-  .hamburger-menu.active .bar:nth-child(3) {
-      transform: translateY(-10px) rotate(-45deg);
+  body.open .menu a {
+    animation: appear 0.25s backwards;
   }
-    
+
+  @keyframes menu-in {
+    0% {
+      clip-path: ellipse(60% 60% at 100% 50%); /* 왼쪽으로 이동하도록 수정 */
+    }
+    100% {
+      clip-path: ellipse(120% 120% at 100% 50%); /* 왼쪽으로 이동하도록 수정 */
+    }
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0; translate: -30px 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 }

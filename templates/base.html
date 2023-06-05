@@ -21,28 +21,42 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
 </head>
 <body>
-<div class="logo container drag_prevent">
-    <a href="{% url 'myprofile:home' %}"><img src="{% static 'img/logotest.jpg' %}" alt="My Image"></a>
-</div>
-<nav class="navbar">
-    <ul class="nav-links drag_prevent">
-        <li><a href="{% url 'myprofile:main' %}">나의 소개</a></li>
-        <li><a href="{% url 'mywork:main' %}">영화 이야기</a></li>
-        <li><a href="{% url 'movie:main' %}">영화 감상 후기</a></li>
-        <li><a href="{% url 'engineer:main' %}">기초 공학 정리</a></li>
-    </ul>
-    <a href="{% url 'myprofile:home' %}" class="nav_text drag_prevent">My Movie Story</a>
-    <div class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+  <div class="logo-container" style="z-index: 1;">
+    <div class="logo">
+        <a href="{% url 'myprofile:home' %}">
+        <img src="{% static 'img/logotest.jpg' %}" alt="My Image">
+        </a>
     </div>
+</div>
+
+<nav class="navbar">
+  <ul class="nav-links drag_prevent">
+      <li><a href="{% url 'myprofile:main' %}">나의 소개</a></li>
+      <li><a href="{% url 'mywork:main' %}">영화 이야기</a></li>
+      <li><a href="{% url 'movie:main' %}">영화 감상 후기</a></li>
+      <li><a href="{% url 'engineer:main' %}">기초 공학 정리</a></li>
+  </ul>
 </nav>
+
+<button class="navbar-burger" onclick="toggleMenu()">
+</button>
+
+<div class="menu">
+    <nav>
+        <a href="{% url 'myprofile:main' %}" style="animation-delay: 0.3s;">나의 소개</a>
+        <a href="{% url 'mywork:main' %}" style="animation-delay: 0.2s;">영화 이야기</a>
+        <a href="{% url 'movie:main' %}" style="animation-delay: 0.2s;">영화 감상 후기</a>
+        <a href="{% url 'engineer:main' %}" style="animation-delay: 0.2s;">기초 공학 정리</a>
+    </nav>
+</div>
+
 <div id="slider" class="container">
     <img src="{% static 'img/movieimg5.jpg' %}" alt="My Image" class="home_img">
     <img src="{% static 'img/movieimg1.jpg' %}" alt="My Image" class="home_img">
     <img src="{% static 'img/movieimg3.jpg' %}" alt="My Image" class="home_img">
 </div>
+
+
 
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 {% block content %}
@@ -84,4 +98,40 @@
       }
     });
 </script>
+<script>
+  // 페이지가 로드되었을 때 실행되는 함수
+  window.addEventListener("load", function() {
+    // 클릭 이벤트를 body 요소에 추가
+    var body = document.querySelector("body");
+    body.addEventListener("click", handleBodyClick);
+  });
+
+  // body 클릭 이벤트 핸들러
+  function handleBodyClick(event) {
+    var target = event.target;
+    var body = document.querySelector("body");
+    var menu = document.querySelector(".menu");
+
+    // 클릭된 요소가 메뉴 토글 버튼이 아니고, 메뉴 영역 내부에 속하지 않는 경우 메뉴를 닫음
+    if (!target.classList.contains("navbar-burger") && !menu.contains(target)) {
+      body.classList.remove("open");
+      menu.style.transform = "translateX(100%)";
+    }
+  }
+
+  // 메뉴 토글 함수
+  function toggleMenu() {
+    var body = document.querySelector("body");
+    var menu = document.querySelector(".menu");
+
+    body.classList.toggle("open");
+
+    if (body.classList.contains("open")) {
+      menu.style.transform = "translateX(0)";
+    } else {
+      menu.style.transform = "translateX(100%)";
+    }
+  }
+</script>
+
 </html>
