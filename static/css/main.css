@@ -34,10 +34,6 @@ body {
   user-select:none
 }
 
-.input-group .btn {
-  z-index: 0;
-}
-
 @media (min-width: 1400px)  {
   .navbar {
     display: flex;
@@ -260,7 +256,7 @@ body {
     padding: 0;
     background: transparent;
     cursor: pointer;
-    z-index: 3;
+    z-index: 10;
     top: 0;
     right: 0;
     display: grid;
@@ -274,25 +270,25 @@ body {
   }
   
   .menu {
-      position: fixed;
-      z-index: 2;
-      top: 0;
-      right: 0;
-      display: grid;
-      place-items: center;
-      width: 250px;
-      height: 100%;
-      background: #07030a;
-      translate: 100% 0;
-      transform: translateX(100%);
-      transition:
-        translate 0.375s
-        cubic-bezier(
-          0.175,
-          0.885,
-          0.32,
-          1
-        );
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    width: 250px;
+    height: 100%;
+    background: #07030a;
+    translate: 100% 0;
+    transform: translateX(100%);
+    transition:
+      translate 0.375s
+      cubic-bezier(
+        0.175,
+        0.885,
+        0.32,
+        1
+      );
   }
   .menu nav {opacity: 0;}
   .menu nav:hover a {
@@ -347,6 +343,7 @@ body {
   }
 
   .logo-container {
+    z-index: 5;
     position: sticky;
     top: 0;
     height: auto; /* 적절한 높이 설정 */
@@ -354,6 +351,7 @@ body {
   }
   
   body.open .menu{
+    z-index: 10;
     opacity: 0.9;
     visibility: visible;
     translate: 0;
@@ -363,6 +361,7 @@ body {
   body.open .menu nav { opacity: 1;}
 
   body.open .navbar-burger {
+    z-index: 11;
     background-image: url('/static/img/back.png');
   }
 
