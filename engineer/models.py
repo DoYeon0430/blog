@@ -15,7 +15,7 @@ class Physics(models.Model):
         return self.subject
     
     def get_absolute_url(self):
-        return f'/physics/{self.pk}/'
+        return f'engineer/physics/{self.pk}/'
 
 class Comment_physics(models.Model):
     physics = models.ForeignKey(Physics, on_delete=models.CASCADE, related_name='comments')
@@ -42,7 +42,7 @@ class Django(models.Model):
         return self.subject
     
     def get_absolute_url(self):
-        return f'/django/{self.pk}/'
+        return f'engineer/django/{self.pk}/'
     
 class Comment_django(models.Model):
     django = models.ForeignKey(Django, on_delete=models.CASCADE, related_name='comments')
@@ -68,7 +68,7 @@ class Network(models.Model):
         return self.subject
     
     def get_absolute_url(self):
-        return f'/network/{self.pk}/'
+        return f'engineer/network/{self.pk}/'
 
 class Comment_network(models.Model):
     network = models.ForeignKey(Network, on_delete=models.CASCADE, related_name='comments')
