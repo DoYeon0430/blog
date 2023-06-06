@@ -384,7 +384,8 @@ body {
     position: sticky;
     top: 0;
     height: auto; /* 적절한 높이 설정 */
-    background-color: rgb(253, 253, 253);
+    background-color: #F2F2F2; 
+    border-bottom: 3px solid black;
   }
   
   body.open .menu{
