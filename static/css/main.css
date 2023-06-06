@@ -35,6 +35,13 @@ body {
 }
 
 @media (min-width: 1400px)  {
+  .home_art {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .navbar {
     display: flex;
     justify-content: center; /* 가운데 정렬 */
@@ -101,6 +108,13 @@ body {
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
+  .home_art {
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .navbar {
     display: flex;
     justify-content: center; /* 가운데 정렬 */
@@ -167,6 +181,13 @@ body {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .home_art {
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .navbar {
     display: flex;
     justify-content: center; /* 가운데 정렬 */
@@ -235,6 +256,13 @@ body {
 
 
 @media (max-width: 991.98px) {
+  .home_art {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .navbar{
     display: none;
   }
