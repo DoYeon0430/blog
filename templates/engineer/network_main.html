@@ -34,102 +34,95 @@
 
     <div class="row">
         <div class="container col-lg-9 pt-3 pb-3 draggable">
-            <div class="container px-3">
-                <div class="row justify-content-end my-3">
-                    <div class="col-8 col-sm-6 col-md-4 col-lg-3">
-                        <div class="input-group">
-                            <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
-                            <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+            <div class="container pt-3 pb-3">
+                <div class="container px-3">
+                    <div class="row justify-content-end my-3">
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-3">
+                            <div class="input-group">
+                                <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
+                                <button type="button" id="btn_search" class="btn btn-primary">검색</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            {% for m in page_obj %}
-            <div class="row mywork_text py-2" OnClick="location.href ='{% url "engineer:network" m.id %}'">
-
-                <div class="col-12">
-                    <div class="engineer_django_image_div {% if forloop.first %} pt-3 {% endif %}">
-                        {% if m.photo %}
-                            <img class="engineer_django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
-                        {% endif %}
-                    </div>
-                </div>
-
-                <div class=" col-12">
-                    <div class="mywork_col">
-                        <h2 class="django_title ">
-                            {{ m.subject }}
-                        </h2>
-                        <h3 class="django_content">                     
-                            {% if m.content|length > 55 %}
-                                {{ m.content|truncatechars:55 }} 더보기
-                            {% else %}
-                                {{ m.content }}
+                
+                {% for m in page_obj %}
+                <div class="row home_intro" OnClick="location.href ='{% url "engineer:network" m.id %}'" style="cursor:pointer;">
+                    <div class="col-4 django_col">
+                            {% if m.photo %}
+                                <img class="django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
                             {% endif %}
-                        </h3>
+                    </div>
+                    
+                    <div class="col-8 django_col">
+                        <h2 class="django_title">
+                            <span class="two_title">{{ m.subject }}</span>
+                        </h2>
+
                         <div class="django_date">
-                            <a>{{ m.create_date|date:"Y년 m월 d일" }} · 조회 {{m.hits}} · 
-                                {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글
-                            </a>
+                            <span>{{ m.create_date|date:"Y. m. d" }} · 조회 {{m.hits}} | {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글</span>
                         </div>
+                        
+                        <h2 class="django_content">
+                            <span class="two_content">{{ m.content }}</span>
+                        </h2>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
 
-            <div>
-            {% if page_obj.paginator.num_pages > 1 %}
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
+                <div>
+                {% if page_obj.paginator.num_pages > 1 %}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
 
-                    <!-- 이전 페이지 -->
-                    <li class="page-item">
-                    {% if page_obj.has_previous %}
-                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><span aria-hidden="true">&laquo;</span></a>
-                    {% else %}
-                        <a class="page-link disabled" style="pointer-events: none"><span aria-hidden="true">&laquo;</span></a>
-                    {% endif %}
-                    </li>
-
-                    <!-- <li class="page-item">
-                    이전 페이지 -2 생성
-                    {% if page_obj.has_next == 0 %}
-                        <a class="page-link" href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
-                    {% endif %}
-                    </li> -->
-
-                    <!-- 페이지 리스트 -->
-                    {% for page_number in page_obj.paginator.page_range %}
-                    <li class="page-item">
-                    {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
-                        {% if page_number == page_obj.number %}
-                        <a class="page-link active">{{page_number}}</a>
+                        <!-- 이전 페이지 -->
+                        <li class="page-item">
+                        {% if page_obj.has_previous %}
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><span aria-hidden="true">&laquo;</span></a>
                         {% else %}
-                        <a class="page-link" href="?page={{ page_number }}">{{page_number}}</a>
+                            <a class="page-link disabled" style="pointer-events: none"><span aria-hidden="true">&laquo;</span></a>
                         {% endif %}
-                    {% endif %}
-                    </li>
-                    {% endfor %}
+                        </li>
 
-                    <!-- <li class="page-item">
-                    다음 페이지 +2 생성
-                    {% if page_obj.has_previous == 0 %}
-                        <a class="page-link" href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
-                    {% endif %}
-                    </li> -->
+                        <!-- <li class="page-item">
+                        이전 페이지 -2 생성
+                        {% if page_obj.has_next == 0 %}
+                            <a class="page-link" href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
+                        {% endif %}
+                        </li> -->
 
-                    <li class="page-item">
-                    <!-- 다음 페이지 -->
-                    {% if page_obj.has_next %}
-                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" id="prev-page-link"><span aria-hidden="true">&raquo;</span></a>
-                    {% else %}
-                        <a class="page-link disabled" style="pointer-events: none"><span aria-hidden="true">&raquo;</span></a>
-                    {% endif %}
-                    </li>
-                </ul>
-            </nav>
-            {% endif %}
+                        <!-- 페이지 리스트 -->
+                        {% for page_number in page_obj.paginator.page_range %}
+                        <li class="page-item">
+                        {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
+                            {% if page_number == page_obj.number %}
+                            <a class="page-link active">{{page_number}}</a>
+                            {% else %}
+                            <a class="page-link" href="?page={{ page_number }}">{{page_number}}</a>
+                            {% endif %}
+                        {% endif %}
+                        </li>
+                        {% endfor %}
+
+                        <!-- <li class="page-item">
+                        다음 페이지 +2 생성
+                        {% if page_obj.has_previous == 0 %}
+                            <a class="page-link" href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
+                        {% endif %}
+                        </li> -->
+
+                        <li class="page-item">
+                        <!-- 다음 페이지 -->
+                        {% if page_obj.has_next %}
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" id="prev-page-link"><span aria-hidden="true">&raquo;</span></a>
+                        {% else %}
+                            <a class="page-link disabled" style="pointer-events: none"><span aria-hidden="true">&raquo;</span></a>
+                        {% endif %}
+                        </li>
+                    </ul>
+                </nav>
+                {% endif %}
+                </div>
             </div>
         </div>
         <div class="col-lg-3 sidebar_main" style="background-color: #ffffff;">

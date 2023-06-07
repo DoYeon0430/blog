@@ -46,7 +46,7 @@ def home(request):
 
 
     elif tag == '파이썬':
-        django_content = Django.objects.all().order_by('-create_date')[:5]
+        django_content = Django.objects.all().order_by('-create_date')[:8]
 
         content = {
             'django_content': django_content,
