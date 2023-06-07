@@ -113,14 +113,12 @@
       </form>
 
       <div style="display: flex;">
-          <div class="detail_url" style="flex: 1;">
-              <div>
-                  <a href="mailto:kim73916@naver.com"><img class="detail_url_img" src="{% static 'img/email_img.png' %}" alt="My Image"></a>
-                  <a href="https://www.instagram.com/doyeon0430/"><img class="detail_url_img"  src="{% static 'img/instagram_img.png' %}" alt="My Image"></a>
-                  <a href="https://github.com/DoYeon0430"><img class="detail_url_img" src="{% static 'img/github_img.png' %}" alt="My Image"></a>
-                  <a href="{% url 'myprofile:main' %}"><img class="detail_url_img" src="{% static 'img/home_img.png' %}" alt="My Image"></a>
-              </div>   
-          </div>
+        <div class="detail_url" style="flex: 1;">
+          <a href="mailto:kim73916@naver.com"><img class="detail_url_img" src="{% static 'img/email.svg' %}" alt="My Image"></a>
+          <a href="https://www.instagram.com/doyeon0430/"><img class="detail_url_img"  src="{% static 'img/instagram.svg' %}" alt="My Image"></a>
+          <a href="https://github.com/DoYeon0430"><img class="detail_url_img" src="{% static 'img/github.svg' %}" alt="My Image"></a>
+          <a href="{% url 'myprofile:main' %}"><img class="detail_url_img" src="{% static 'img/home.svg' %}" alt="My Image"></a>
+        </div>
           <div class="detail_border" style="flex: 1;">
               <a href="{% url 'engineer:physics_main' %}">
                   <div style="padding-top: 1rem; border-bottom: 1px solid black; ">
