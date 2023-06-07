@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="logo-container">
@@ -41,12 +41,21 @@
     </div>
 </div>
 
-<nav class="navbar">
-  <ul class="nav-links drag_prevent">
+<nav class="navbar draggable_off">
+  <ul class="nav-links">
       <li><a href="{% url 'myprofile:main' %}">나의 소개</a></li>
       <li><a href="{% url 'mywork:main' %}">영화 이야기</a></li>
       <li><a href="{% url 'movie:main' %}">영화 감상 후기</a></li>
-      <li><a href="{% url 'engineer:main' %}">기초 공학 정리</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          기초 공학 정리
+        </a>
+        <ul class="dropdown-menu bg-light py-3">
+          <li class="pb-1"><a class="text-dark" href="{% url 'engineer:physics_main' %}">물리학</a></li>
+          <li class="pb-1"><a class="text-dark" href="{% url 'engineer:django_main' %}">프로그래밍</a></li>
+          <li><a class="text-dark" href="{% url 'engineer:network_main' %}">네트워크</a></li>
+        </ul>
+      </li>
   </ul>
 </nav>
 
@@ -95,6 +104,8 @@
 <script type="text/javascript" src="/static/js/form.js"></script>
 <script type="text/javascript" src="/static/js/sidebar.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     // 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', function() {
