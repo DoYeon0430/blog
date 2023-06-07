@@ -111,8 +111,24 @@
         color: gray;
     }
 
-    .button_design{
-        width: 45px;
+    .button_design {
+        width: 40px;
+    }
+    
+    .button_left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -2rem;
+        cursor: pointer;
+    }
+    
+    .button_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2rem;
+        cursor: pointer;
     }
 }
 
@@ -222,8 +238,24 @@
         color: gray;
     }
 
-    .button_design{
-        width: 45px;
+    .button_design {
+        width: 40px;
+    }
+    
+    .button_left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -2rem;
+        cursor: pointer;
+    }
+    
+    .button_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2rem;
+        cursor: pointer;
     }
 }
 
@@ -333,8 +365,24 @@
         color: gray;
     }
 
-    .button_design{
-        width: 45px;
+    .button_design {
+        width: 40px;
+    }
+    
+    .button_left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -2rem;
+        cursor: pointer;
+    }
+    
+    .button_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2rem;
+        cursor: pointer;
     }
 }
 
@@ -443,8 +491,24 @@
         color: gray;
     }
 
-    .button_design{
-        width: 45px;
+    .button_design {
+        width: 35px;
+    }
+    
+    .button_left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -2rem;
+        cursor: pointer;
+    }
+    
+    .button_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2rem;
+        cursor: pointer;
     }
 
 }
@@ -556,9 +620,24 @@
         color: gray;
     }
 
-    .button_design{
-        display: none;
-        width: 40px;
+    .button_design {
+        width: 30px;
+    }
+    
+    .button_left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -1.7rem;
+        cursor: pointer;
+    }
+    
+    .button_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -1.7rem;
+        cursor: pointer;
     }
 }
 
@@ -668,8 +747,25 @@
         color: gray;
     }
 
-    .button_design{
+    .button_design {
+        width: 45px;
+    }
+    
+    .button_left {
         display: none;
-        width: 40px;
+    }
+    
+    .button_right {
+        display: none;
+    }
+    
+    .custom_row{
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-left: calc(-.5 * var(--bs-gutter-x));
     }
 }

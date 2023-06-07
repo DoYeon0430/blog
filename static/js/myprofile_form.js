@@ -22,7 +22,7 @@
     scrollButtongo.addEventListener('click', () => {
       myprofileFormDiv.scrollBy({
         top: 0,
-        left: 700,
+        left: 1000,
         behavior: 'smooth'
       });
     });
@@ -30,7 +30,7 @@
     scrollButtonback.addEventListener('click', () => {
         myprofileFormDiv.scrollBy({
           top: 0,
-          left: -700,
+          left: -1000,
           behavior: 'smooth'
         });
     });
