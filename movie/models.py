@@ -12,7 +12,7 @@ class Movie(models.Model):
     genre = models.CharField(max_length=20, choices=[('상업영화', '상업영화'), ('OTT 오리지널', 'OTT 오리지널'), ('드라마','드라마')])
 
     def __str__(self):
-        return self.subject
+        return f'{self.content}, <{self.subject}> 후기'
     
     def get_absolute_url(self):
         return f'/movie/{self.pk}/'
