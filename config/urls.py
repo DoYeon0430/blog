@@ -51,7 +51,7 @@ urlpatterns = [
     path('robots.txt',  TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 
-    #TINYMCE 이미지 업로드 시 보안문제 해결 url
+    #TINYMCE 이미지 업로드 시 해결 url
     *upload_image_patterns,
     path('admin/engineer/physics/add/upload_image',views.upload_image, name='upload_image'),
     path('admin/engineer/django/add/upload_image',views.upload_image, name='upload_image'),
