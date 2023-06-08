@@ -546,6 +546,7 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        padding: 0.1rem 0;
     }
     
     .django_content{
@@ -705,6 +706,7 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        padding: 0.1rem 0;
     }
     
     .django_content{
@@ -864,6 +866,7 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        padding: 0.1rem 0;
     }
     
     .django_content{
