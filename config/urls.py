@@ -28,6 +28,8 @@ from mywork import sitemaps
 from mywork.sitemaps import MyworkSitemap
 from movie.sitemaps import MovieSitemap
 from engineer.sitemaps import PhysicsSitemap, DjangoSitemap, NetworkSitemap
+from engineer.models import Django
+
 sitemaps = {
     'mywork': MyworkSitemap,
     'movie': MovieSitemap,
@@ -36,11 +38,21 @@ sitemaps = {
     'network': NetworkSitemap
 }
 
+last_django = Django.objects.last()
+last_django_id = last_django.id if last_django else 0
+
+upload_image_patterns = [
+    path(f'admin/engineer/django/{number}/change/upload_image', views.upload_image, name='upload_image')
+    for number in range(1, 1+last_django_id)
+]
+
+
 urlpatterns = [
     path('robots.txt',  TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 
     #TINYMCE 이미지 업로드 시 보안문제 해결 url
+    *upload_image_patterns,
     path('admin/engineer/physics/add/upload_image',views.upload_image, name='upload_image'),
     path('admin/engineer/django/add/upload_image',views.upload_image, name='upload_image'),
     path('admin/engineer/network/add/upload_image',views.upload_image, name='upload_image'),
@@ -57,8 +69,6 @@ urlpatterns = [
     path('engineer/', include('engineer.urls')), 
     path('tinymce/', include('tinymce.urls')),
     path('admin/filebrowser/', site.urls),
-    path('admin/engineer/django/2/change/upload_image', views.upload_image, name="upload_image"),
-    path('admin/engineer/physics/add/upload_image',views.upload_image, name='upload_image'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
