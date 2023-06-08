@@ -43,16 +43,7 @@
         <a href="?tag=파이썬" class="myprofile_main_div_a2" id="a2" >파이썬</a>
     </div>
 
-    <div class="custom_row" style="position: relative;">
-        {% if request.GET.tag != '파이썬' %}
-        <div class="py-3 button_left">
-            <img class="button_design" id="scrollButtonback" src="{% static 'img/left.svg' %}">
-        </div>
-        <div class="py-3 button_right">
-            <img class="button_design" id="scrollButtongo" src="{% static 'img/right.svg' %}">
-        </div>
-        {% endif %}
-        
+    <div class="row" style="position: relative;">
         <div class="col-12 myprofile_form_div" id="myprofileFormDiv">
             {% for item in movie_content %}
             <div class="row mywork_text py-1" OnClick="location.href='{% url 'movie:detail' item.id %}'">
@@ -79,6 +70,16 @@
             {% endfor %}
         </div>
     </div> 
+    {% if request.GET.tag != '파이썬' %}
+    <div class="button_container">
+        <div class="button_left px-1">
+            <img class="button_design" id="scrollButtonback" src="{% static 'img/left.svg' %}">
+        </div>
+        <div class="button_right px-1">
+            <img class="button_design" id="scrollButtongo" src="{% static 'img/right.svg' %}">
+        </div>
+    </div>
+    {% endif %}
 
     {% for item in mywork_content %}
             <div class="row mywork_text"  OnClick="location.href='{% url 'mywork:detail' item.id %}'">

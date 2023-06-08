@@ -115,21 +115,38 @@
         width: 40px;
     }
     
+    .button_container {
+        display: flex;
+        justify-content: right;
+        padding-top: 0.5rem;
+    }
+    
     .button_left {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -2rem;
         cursor: pointer;
     }
     
     .button_right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -2rem;
         cursor: pointer;
+    }    
+
+    /* 태그 css */
+    .tag_main{
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 1rem 0;
     }
+
+    .tag_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 0.5rem;
+    }
+    /* 태그 css 끝 */
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px)  {
@@ -238,25 +255,43 @@
         color: gray;
     }
 
+    /* scroll 버튼 */
     .button_design {
-        width: 40px;
+        width: 38px;
+    }
+
+    .button_container {
+        display: flex;
+        justify-content: right;
     }
     
     .button_left {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -2rem;
         cursor: pointer;
     }
     
     .button_right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -2rem;
         cursor: pointer;
+    }  
+    /* scroll 버튼  끝*/
+
+    /* 태그 css */
+    .tag_main{
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 1rem 0;
     }
+
+    .tag_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 0.5rem;
+    }
+    /* 태그 css 끝 */
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -365,25 +400,44 @@
         color: gray;
     }
 
+    /* scroll 버튼 */
     .button_design {
-        width: 40px;
+        width: 35px;
+    }
+
+    .button_container {
+        display: flex;
+        justify-content: right;
     }
     
     .button_left {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -2rem;
         cursor: pointer;
     }
     
     .button_right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -2rem;
         cursor: pointer;
+    }  
+    /* scroll 버튼  끝*/
+
+    /* 태그 css */
+    .tag_main{
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 1rem 0;
     }
+
+    .tag_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 0.5rem;
+    }
+    /* 태그 css 끝 */
+
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -491,25 +545,44 @@
         color: gray;
     }
 
+    /* scroll 버튼 */
     .button_design {
-        width: 35px;
+        width: 33px;
+    }
+
+    .button_container {
+        display: flex;
+        justify-content: right;
     }
     
     .button_left {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -2rem;
         cursor: pointer;
     }
     
     .button_right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -2rem;
         cursor: pointer;
+    }  
+    /* scroll 버튼  끝*/
+
+    /* 태그 css */
+    .tag_main{
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 1rem 0;
     }
+
+    .tag_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        font-size: 0.9rem;
+        display: inline-block; 
+        margin-right: 0.5rem;
+    }
+    /* 태그 css 끝 */
 
 }
 
@@ -620,25 +693,44 @@
         color: gray;
     }
 
+    /* scroll 버튼 */
     .button_design {
         width: 30px;
     }
+
+    .button_container {
+        display: flex;
+        justify-content: right;
+    }
     
     .button_left {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -1.7rem;
         cursor: pointer;
     }
     
     .button_right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -1.7rem;
         cursor: pointer;
+    }  
+    /* scroll 버튼  끝*/
+
+    /* 태그 css */
+    .tag_main{
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 1rem 0;
     }
+
+    .tag_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 1rem;
+        border: 1px solid gray;
+        font-size: 0.9rem;
+        display: inline-block; 
+        margin-right: 0.5rem;
+    }
+    /* 태그 css 끝 */
 }
 
 
@@ -747,25 +839,42 @@
         color: gray;
     }
 
+    /* scroll 버튼 */
     .button_design {
-        width: 45px;
+        width: 28px;
+    }
+
+    .button_container {
+        display: flex;
+        justify-content: right;
     }
     
     .button_left {
-        display: none;
+        cursor: pointer;
     }
     
     .button_right {
-        display: none;
+        cursor: pointer;
+    }  
+    /* scroll 버튼  끝*/
+
+    /* 태그 css */
+    .tag_main{
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 1rem 0;
     }
-    
-    .custom_row{
-        --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: calc(-1 * var(--bs-gutter-y));
-        margin-right: calc(-.5 * var(--bs-gutter-x));
-        margin-left: calc(-.5 * var(--bs-gutter-x));
+
+    .tag_main a{
+        text-decoration: none;
+        color: green;
+        font-weight: 600;
+        border-radius: 20px;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        border: 1px solid gray;
+        display: inline-block; 
+        margin-right: 0.5rem;
     }
+    /* 태그 css 끝 */
 }
