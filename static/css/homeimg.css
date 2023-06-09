@@ -18,7 +18,7 @@
   }
   
 #slider img {
-    float: center; /* 이미지를 왼쪽으로 배치 */
+    filter: brightness(0.8);
 }
 
 .background_design {
