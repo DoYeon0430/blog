@@ -52,6 +52,8 @@
 .sidebar_for:hover {
     translate: 0.5rem;
     text-decoration:underline;
+    white-space:normal;
+    overflow: visible;
 }
 
 .bar_check{
