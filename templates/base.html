@@ -152,9 +152,11 @@
     var target = event.target;
     var body = document.querySelector("body");
     var menu = document.querySelector(".menu");
+    var dropdownContent = document.querySelector(".dropdown-content");
 
     // 클릭된 요소가 메뉴 토글 버튼이 아니고, 메뉴 영역 내부에 속하지 않는 경우 메뉴를 닫음
     if (!target.classList.contains("navbar-burger") && !menu.contains(target)) {
+      dropdownContent.style.display = "none";
       body.classList.remove("open");
       menu.style.transform = "translateX(100%)";
     }
