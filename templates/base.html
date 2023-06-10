@@ -73,7 +73,11 @@
         <a class="bar_a" href="{% url 'myprofile:main' %}" style="animation-delay: 0.1s;">나의 소개</a>
         <a class="bar_a" href="{% url 'mywork:main' %}" style="animation-delay: 0.2s;">영화 이야기</a>
         <a class="bar_a" href="{% url 'movie:main' %}" style="animation-delay: 0.3s;">영화 감상 후기</a>
-        <a class="dropdown_bar bar_a" style="animation-delay: 0.4s;">기초 공학 정리</a>
+        <a class="dropdown_bar bar_a" style="animation-delay: 0.4s;">기초 공학 정리     
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+        </a>
         <div class="dropdown-content">
           <a class="bar_two" href="{% url 'engineer:physics_main' %}" style="animation-delay: 0.1s;">물리학</a>
           <a class="bar_two" href="{% url 'engineer:django_main' %}" style="animation-delay: 0.2s;">프로그래밍</a>
