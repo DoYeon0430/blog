@@ -115,6 +115,7 @@
 <script type="text/javascript" src="/static/js/myprofile_form.js"></script>
 <script type="text/javascript" src="/static/js/form.js"></script>
 <script type="text/javascript" src="/static/js/sidebar.js"></script>
+<script type="text/javascript" src="/static/js/dropdown.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -169,28 +170,4 @@
     }
   }
 </script>
-<script>
-  var dropdown = document.querySelector(".dropdown_bar");
-  var dropdownContent = document.querySelector(".dropdown-content");
-  var dropdown_toggle = document.querySelector(".dropdown_toggle");
-  var dropdown_toggleContent = document.querySelector(".dropdown_main");
-  
-  dropdown.addEventListener("click", function() {
-      if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-      } else {
-          dropdownContent.style.display = "block";
-      }
-  });
-
-  dropdown_toggle.addEventListener("click", function() {
-      if (dropdown_toggleContent.style.display === "block") {
-        dropdown_toggleContent.style.display = "none";
-      } else {
-        dropdown_toggleContent.style.display = "block";
-      }
-  });
-  
-</script>
-  
 </html>
