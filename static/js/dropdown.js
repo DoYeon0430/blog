@@ -21,7 +21,11 @@ dropdown.addEventListener("click", function() {
 dropdown_toggle.addEventListener("click", function() {
     if (dropdown_toggleContent.style.display === "block") {
       dropdown_toggleContent.style.display = "none";
+      drop_icon1.style.display = "inline-flex";
+      drop_icon2.style.display = "none";
     } else {
       dropdown_toggleContent.style.display = "block";
+      drop_icon1.style.display = "none";
+      drop_icon2.style.display = "inline-flex";
     }
 });
