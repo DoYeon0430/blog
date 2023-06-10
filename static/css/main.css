@@ -484,10 +484,11 @@ body {
   .dropdown-content {
       position: relative;
       display: none;
-      background-color: #1f1c22;
+      background-color: #524f52;
       min-width: 140px;
       z-index: 15;
       padding: 0 1rem;
+      border-radius: 5px;
   }
 
   .dropdown-content a {
