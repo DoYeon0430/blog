@@ -49,15 +49,18 @@
       <li><a href="{% url 'myprofile:main' %}">나의 소개</a></li>
       <li><a href="{% url 'mywork:main' %}">영화 이야기</a></li>
       <li><a href="{% url 'movie:main' %}">영화 감상 후기</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <li style="position: relative;">
+        <a href="#" class=" dropdown_toggle" >
           기초 공학 정리
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+          <div class="dropdown_main">
+            <a href="{% url 'engineer:physics_main' %}">물리학</a>
+            <a href="{% url 'engineer:django_main' %}">프로그래밍</a>
+            <a href="{% url 'engineer:network_main' %}">네트워크</a>
+          </div>
         </a>
-        <ul class="dropdown-menu bg-light py-3">
-          <li class="pb-1"><a class="text-dark" href="{% url 'engineer:physics_main' %}">물리학</a></li>
-          <li class="pb-1"><a class="text-dark" href="{% url 'engineer:django_main' %}">프로그래밍</a></li>
-          <li><a class="text-dark" href="{% url 'engineer:network_main' %}">네트워크</a></li>
-        </ul>
       </li>
   </ul>
 </nav>
@@ -67,10 +70,15 @@
 
 <div class="menu">
     <nav>
-        <a href="{% url 'myprofile:main' %}" style="animation-delay: 0.3s;">나의 소개</a>
-        <a href="{% url 'mywork:main' %}" style="animation-delay: 0.2s;">영화 이야기</a>
-        <a href="{% url 'movie:main' %}" style="animation-delay: 0.2s;">영화 감상 후기</a>
-        <a href="{% url 'engineer:main' %}" style="animation-delay: 0.2s;">기초 공학 정리</a>
+        <a class="bar_a" href="{% url 'myprofile:main' %}" style="animation-delay: 0.1s;">나의 소개</a>
+        <a class="bar_a" href="{% url 'mywork:main' %}" style="animation-delay: 0.2s;">영화 이야기</a>
+        <a class="bar_a" href="{% url 'movie:main' %}" style="animation-delay: 0.3s;">영화 감상 후기</a>
+        <a class="dropdown_bar bar_a" style="animation-delay: 0.4s;">기초 공학 정리</a>
+        <div class="dropdown-content">
+          <a class="bar_two" href="{% url 'engineer:physics_main' %}" style="animation-delay: 0.1s;">물리학</a>
+          <a class="bar_two" href="{% url 'engineer:django_main' %}" style="animation-delay: 0.2s;">프로그래밍</a>
+          <a class="bar_two" href="{% url 'engineer:network_main' %}" style="animation-delay: 0.3s;">네트워크</a>
+        </div>
     </nav>
     <span>Doyeon0430</span>
 </div>
@@ -161,4 +169,36 @@
     }
   }
 </script>
+<script>
+  var dropdown = document.querySelector(".dropdown_bar");
+  var dropdownContent = document.querySelector(".dropdown-content");
+  var dropdown_toggle = document.querySelector(".dropdown_toggle");
+  var dropdown_toggleContent = document.querySelector(".dropdown_main");
+  
+  dropdown.addEventListener("click", function() {
+      if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+      } else {
+          dropdownContent.style.display = "block";
+      }
+  });
+
+  dropdown_toggle.addEventListener("click", function() {
+      if (dropdown_toggleContent.style.display === "block") {
+        dropdown_toggleContent.style.display = "none";
+      } else {
+        dropdown_toggleContent.style.display = "block";
+      }
+  });
+  
+  document.addEventListener("click", function(event) {
+      if (!dropdown.contains(event.target)) {
+          dropdownContent.style.display = "none";
+      }
+      if (!dropdown_toggle.contains(event.target)) {
+          dropdown_toggleContent.style.display = "none";
+      }
+  });
+</script>
+  
 </html>
