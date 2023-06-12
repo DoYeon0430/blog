@@ -20,6 +20,7 @@ function showSlides() {
 }
 
 function copyToClipboard(text) {
+  var urlText = document.getElementById("urlText");
   const textarea = document.createElement('textarea');
   textarea.value = text;
   document.body.appendChild(textarea);
@@ -27,6 +28,7 @@ function copyToClipboard(text) {
   document.execCommand('copy');
   document.body.removeChild(textarea);
   alert('링크가 복사되었습니다.');
+  urlText.style.display = "none";
 }
 
 function toggleDisplay() {
