@@ -137,6 +137,7 @@ def physics_main(request):
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
+    tag = request.GET.get('tag','')
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
     physics_list = Physics.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
@@ -150,6 +151,9 @@ def physics_main(request):
     paginator = Paginator(physics_list, 5) # 페이지당 5개의 객체를 보여줌
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
+
+    url = reverse('engineer:network_main') + f'?kw={kw}&page={page}&tag={tag}'
+
     return render(request, 'engineer/physics_main.html',{
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
@@ -166,7 +170,8 @@ def physics_main(request):
         'page_obj': page_obj, 
         'physics_list':physics_list, 
         'page':page, 
-        'kw':kw
+        'kw':kw,
+        'url': url
         })
 
 
@@ -406,6 +411,7 @@ def network_main(request):
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
+    tag = request.GET.get('tag','')
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
     network_list = Network.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
@@ -419,6 +425,9 @@ def network_main(request):
     paginator = Paginator(network_list, 5) # 페이지당 5개의 객체를 보여줌
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
+
+    url = reverse('engineer:network_main') + f'?kw={kw}&page={page}&tag={tag}'
+
     return render(request, 'engineer/network_main.html', {
         'mywork_data':mywork_data, 
         'movie_data':movie_data, 
@@ -435,7 +444,8 @@ def network_main(request):
         'page_obj': page_obj, 
         'network_list':network_list, 
         'page':page, 
-        'kw':kw
+        'kw':kw,
+        'url': url
         })
 
 @csrf_exempt
