@@ -29,6 +29,7 @@ from mywork.sitemaps import MyworkSitemap
 from movie.sitemaps import MovieSitemap
 from engineer.sitemaps import PhysicsSitemap, DjangoSitemap, NetworkSitemap
 from engineer.models import Django
+from mywork.models import Mywork
 
 sitemaps = {
     'mywork': MyworkSitemap,
@@ -41,10 +42,15 @@ sitemaps = {
 last_django = Django.objects.last()
 last_django_id = last_django.id if last_django else 0
 
+last_mywork = Mywork.objects.last()
+last_mywork_id = last_mywork.id if last_mywork else 0
+
 upload_image_patterns = [
-    path(f'admin/engineer/django/{number}/change/upload_image', views.upload_image, name='upload_image'),
-    path(f'admin/mywork/mywork/{number}/change/upload_image', views.upload_image, name='upload_image')
-    for number in range(1, 1+last_django_id)
+    path(f'admin/engineer/django/{number_django}/change/upload_image', views.upload_image, name=f'upload_image_{number_django}')
+    for number_django in range(1, 1+last_django_id)
+] + [
+    path(f'admin/mywork/mywork/{number_mywork}/change/upload_image', views.upload_image, name=f'upload_image_{number_mywork}')
+    for number_mywork in range(1, 1+last_mywork_id)
 ]
 
 
