@@ -42,7 +42,8 @@ last_django = Django.objects.last()
 last_django_id = last_django.id if last_django else 0
 
 upload_image_patterns = [
-    path(f'admin/engineer/django/{number}/change/upload_image', views.upload_image, name='upload_image')
+    path(f'admin/engineer/django/{number}/change/upload_image', views.upload_image, name='upload_image'),
+    path(f'admin/mywork/mywork/{number}/change/upload_image', views.upload_image, name='upload_image')
     for number in range(1, 1+last_django_id)
 ]
 
