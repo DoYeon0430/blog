@@ -36,13 +36,21 @@
     <div class="row">
         <div class="container col-lg-9 pt-3 pb-3 draggable">
             <div class="container pt-3 pb-3">
-                <div class="container px-3">
-                    <div class="row justify-content-end my-3">
-                        <div class="col-8 col-sm-6 col-md-4 col-lg-3">
-                            <div class="input-group">
-                                <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
-                                <button type="button" id="btn_search" class="btn btn-primary">검색</button>
-                            </div>
+                <div class="row justify-content-between my-3">
+                    <div class="col-4 col-sm-3 col-md-2 col-lg-2">
+                        <select class="form_select form-select form-select-sm mt-1 border-2 border-gray" aria-label=".form-select-sm example" onchange="dropdownForm(this.value)">
+                            <option value="" {% if selected_value == '' %}selected{% endif %}>전체</option>
+                            <option value="튜토리얼" {% if selected_value == '튜토리얼' %}selected{% endif %}>튜토리얼</option>
+                            <option value="문법" {% if selected_value == '문법' %}selected{% endif %}>문법</option>
+                            <option value="템플릿" {% if selected_value == '템플릿' %}selected{% endif %}>템플릿</option>
+                        </select>                                                    
+                    </div>
+                    
+                    
+                    <div class="col-7 col-sm-6 col-md-4 col-lg-3">
+                        <div class="input-group">
+                            <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
+                            <button type="button" id="btn_search" class="btn btn-primary">검색</button>
                         </div>
                     </div>
                 </div>
@@ -71,51 +79,51 @@
                     </div>
                 {% endfor %}
 
-                <div>
+                <div style="cursor: pointer;">
                     {% if page_obj.paginator.num_pages > 1 %}
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
-
+                
                             <!-- 이전 페이지 -->
                             <li class="page-item">
                             {% if page_obj.has_previous %}
-                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" id="prev-page-link"><span aria-hidden="true">&laquo;</span></a>
+                                <a class="page-link" onclick="pageForm('{{page_obj.previous_page_number}}');" id="prev-page-link"><span aria-hidden="true">&laquo;</span></a>
                             {% else %}
                                 <a class="page-link disabled" style="pointer-events: none"><span aria-hidden="true">&laquo;</span></a>
                             {% endif %}
                             </li>
-
+                
                             <li class="page-item">
                             <!-- 이전 페이지 -2 생성 -->
                             {% if page_obj.has_next == 0 %}
-                                <a class="page-link" href="?page={{page_obj.number|add:-2}}">{{page_obj.number|add:-2}}</a>
+                                <a class="page-link" onclick="pageForm('{{page_obj.number|add:-2}}');">{{page_obj.number|add:-2}}</a>
                             {% endif %}
                             </li>
-
+                
                             <!-- 페이지 리스트 -->
                             {% for page_number in page_obj.paginator.page_range %}
                             <li class="page-item">
                             {% if page_number >= page_obj.number|add:-1 and page_number <= page_obj.number|add:1 %}
                                 {% if page_number == page_obj.number %}
-                                <a class="page-link active">{{page_number}}</a>
+                                <span class="page-link active" onclick="pageForm('{{page_number}}');">{{page_number}}</span>
                                 {% else %}
-                                <a class="page-link" href="?page={{ page_number }}">{{page_number}}</a>
+                                <span class="page-link" onclick="pageForm('{{page_number}}');" data-page="{{page_number}}">{{page_number}}</span>
                                 {% endif %}
                             {% endif %}
                             </li>
                             {% endfor %}
-
+                
                             <li class="page-item">
                             <!-- 다음 페이지 +2 생성 -->
                             {% if page_obj.has_previous == 0 %}
-                                <a class="page-link" href="?page={{page_obj.number|add:2}}">{{page_obj.number|add:2}}</a>
+                                <a class="page-link" onclick="pageForm('{{page_obj.number|add:2|safe}}');">{{page_obj.number|add:2}}</a>
                             {% endif %}
                             </li>
-
+                
                             <li class="page-item">
                             <!-- 다음 페이지 -->
                             {% if page_obj.has_next %}
-                                <a class="page-link" href="?page={{ page_obj.next_page_number }}" id="prev-page-link"><span aria-hidden="true">&raquo;</span></a>
+                                <a class="page-link" onclick="pageForm('{{page_obj.next_page_number}}');" id="prev-page-link"><span aria-hidden="true">&raquo;</span></a>
                             {% else %}
                                 <a class="page-link disabled" style="pointer-events: none"><span aria-hidden="true">&raquo;</span></a>
                             {% endif %}
@@ -235,15 +243,6 @@
 <form id="searchForm" method="get" action="{% url 'engineer:django_main' %}">
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
+    <input type="hidden" id="tag" name="tag" value="{{ tag|default_if_none:'' }}">
 </form>
-<script>
-    document.getElementById("search_kw").addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {  // Enter 키의 keyCode는 13입니다.
-            event.preventDefault();
-            document.getElementById("btn_search").click();  // 검색 버튼 클릭 이벤트 실행
-        }
-    });
-    var input = document.getElementById("search_kw");
-    input.value = null;
-</script> 
 {% endblock %}

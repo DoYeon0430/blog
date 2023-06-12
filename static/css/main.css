@@ -43,6 +43,16 @@ body {
   cursor: pointer;
 }
 
+.form_select, .form_select option{
+  font-weight: 500;
+}
+
+.form_select:active,
+.form_select:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
 @media (min-width: 1400px)  {
   .home_art {
     width: 50%;

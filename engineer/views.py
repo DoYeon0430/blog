@@ -13,6 +13,8 @@ from django.db.models import Q
 from mywork.models import Mywork
 from movie.models import Movie
 from myprofile.models import Views
+from django.urls import reverse
+
 
 def main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
@@ -261,10 +263,23 @@ def django_main(request):
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
+    tag = request.GET.get('tag','')
+    selected_value = tag
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
-    django_list = Django.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
 
+    django_list = Django.objects.none()
+    page_obj = None
+
+    if tag == '튜토리얼':
+        django_list = Django.objects.filter(code='튜토리얼').order_by('-create_date')
+    elif tag == '문법':
+        django_list = Django.objects.filter(code='문법').order_by('-create_date')
+    elif tag == '템플릿':
+        django_list = Django.objects.filter(code='템플릿').order_by('-create_date')
+    else:
+        django_list = Django.objects.order_by('-create_date')
+    
     if kw:
         django_list = django_list.filter(
             Q(subject__icontains=kw) |
@@ -274,6 +289,8 @@ def django_main(request):
     paginator = Paginator(django_list, 5) # 페이지당 5개의 객체를 보여줌
     page_number = request.GET.get('page') # 페이지 번호를 받아옴
     page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
+
+    url = reverse('engineer:django_main') + f'?kw={kw}&page={page}&tag={tag}'
 
     return render(request, 'engineer/django_main.html', {
         'mywork_data':mywork_data, 
@@ -291,7 +308,9 @@ def django_main(request):
         'page_obj': page_obj, 
         'django_list':django_list, 
         'page':page, 
-        'kw':kw
+        'kw':kw,
+        'url': url,
+        'selected_value':selected_value
         })
 
 

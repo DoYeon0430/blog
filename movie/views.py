@@ -6,6 +6,7 @@ from .forms import CommentForm
 from mywork.models import Mywork
 from myprofile.models import Views
 from engineer.models import Physics, Django, Network
+from django.urls import reverse
 
 def main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
@@ -21,35 +22,55 @@ def main(request):
     network_data = Network.objects.all().order_by('-create_date')
     view = Views.objects.get(pk=3)
 
-    page = request.GET.get('page','1')
-    kw = request.GET.get('kw','')
-    object_list = Movie.objects.all().order_by('-create_date')
+    tag = request.GET.get('tag','')
+    selected_value = tag
+    page = request.GET.get('page', '1')
+    kw = request.GET.get('kw', '')
+
+    object_list = Movie.objects.none()
+    page_obj = None
+
+    if tag == '상업영화':
+        object_list = Movie.objects.filter(genre='상업영화').order_by('-create_date')
+    elif tag == '드라마':
+        object_list = Movie.objects.filter(genre='드라마').order_by('-create_date')
+    elif tag == 'OTT':
+        object_list = Movie.objects.filter(genre='OTT 오리지널').order_by('-create_date')
+    else:
+        object_list = Movie.objects.order_by('-create_date')
 
     if kw:
         object_list = object_list.filter(
-            Q(subject__icontains=kw)
+            Q(subject__icontains=kw)    
         ).distinct()
 
-    paginator = Paginator(object_list, 5) # 페이지당 5개의 객체를 보여줌
-    page_number = request.GET.get('page') # 페이지 번호를 받아옴
-    page_obj = paginator.get_page(page_number) # 해당 페이지 번호의 객체들을 반환
+    paginator = Paginator(object_list, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
 
     return render(request, 'movie/main.html', {
-        'mywork_data':mywork_data, 
-        'movie_data':movie_data, 
-        'movie_count_one':movie_count_one,
-        'movie_count_two':movie_count_two,
-        'movie_count_three':movie_count_three,
-        'physics_data':physics_data,
-        'django_data':django_data,
-        'django_count_one':django_count_one,
-        'django_count_two':django_count_two,
-        'django_count_three':django_count_three,
-        'network_data':network_data,
-        'view' : view,
-        'page_obj': page_obj, 
-        'page':page, 
-        'kw':kw})
+        'mywork_data': mywork_data,
+        'movie_data': movie_data,
+        'movie_count_one': movie_count_one,
+        'movie_count_two': movie_count_two,
+        'movie_count_three': movie_count_three,
+        'physics_data': physics_data,
+        'django_data': django_data,
+        'django_count_one': django_count_one,
+        'django_count_two': django_count_two,
+        'django_count_three': django_count_three,
+        'network_data': network_data,
+        'view': view,
+        'page_obj': page_obj,
+        'page': page,
+        'kw': kw,
+        'url': url,
+        'selected_value':selected_value
+    })
+
+
 
 def detail(request, movie_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
