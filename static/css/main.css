@@ -96,9 +96,29 @@ body::before {
     padding-bottom: 1rem; 
   }
 
-  .nav_item a{
-    color:floralwhite; 
+  .nav_item a {
+    color: floralwhite;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nav_item a:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    width: 0;
+    height: 2px;
+    background-color: floralwhite;
+    transition: width 0.2s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  .nav_item a:hover:after {
+    width: 100%;
+  }
+  
   }
   /* navbar css end*/
 
