@@ -96,14 +96,14 @@ body::before {
     padding-bottom: 1rem; 
   }
 
-  .nav_item a {
+  .nav_item > a {
     color: floralwhite;
     text-decoration: none;
     position: relative;
     display: inline-block;
   }
   
-  .nav_item a:after {
+  .nav_item > a:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -115,10 +115,8 @@ body::before {
     transform: translateX(-50%);
   }
   
-  .nav_item a:hover:after {
+  .nav_item > a:hover:after {
     width: 100%;
-  }
-  
   }
   /* navbar css end*/
 
@@ -162,11 +160,6 @@ body::before {
   .dropdown_main div:hover {
     background-color: #c9cac9;
   }
-
-  .dropdown_main div:hover a {
-    color: rgb(36, 24, 100);
-    text-decoration: underline;
-  }  
   
   .dropdown_main div a {
     padding: 0.5rem 1rem 0.5rem 1rem;
@@ -176,8 +169,8 @@ body::before {
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
+    text-decoration: none;
   }
-  
 
   .navbar-burger{
     display: none;
@@ -186,7 +179,6 @@ body::before {
     display: none;
   }
 }
-
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   /* navbar css */
@@ -212,10 +204,29 @@ body::before {
     padding-bottom: 1rem; 
   }
 
-  .nav_item a{
-    color:floralwhite; 
+  .nav_item > a {
+    color: floralwhite;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
   }
+  
+  .nav_item > a:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    width: 0;
+    height: 2px;
+    background-color: floralwhite;
+    transition: width 0.2s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  .nav_item > a:hover:after {
+    width: 100%;
+  }
+  
   /* navbar css end*/
 
   .home_art {
@@ -229,7 +240,6 @@ body::before {
     display: none;
   }
   
-  /* dropdown css  끝*/
   .dropdown_main {
     margin: 0;
     display: block;
@@ -249,22 +259,18 @@ body::before {
     transform: translateY(-10px);
     transition: transform 0.3s;
   }
-
-  .dropdown_king:hover .dropdown_main{
+  
+  .dropdown_king:hover .dropdown_main {
     opacity: 1;
     visibility: visible;
-  }
-
-  .dropdown_main div:hover{
-    background-color: #c9cac9; 
-  }
-
-  .dropdown_main div:hover a {
-    color: rgb(36, 24, 100);
-    text-decoration: underline;
+    transform: translateY(0);
   }
   
-  .dropdown_main div a{
+  .dropdown_main div:hover {
+    background-color: #c9cac9;
+  }
+  
+  .dropdown_main div a {
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 0;
     display: inline-flex;
@@ -272,6 +278,7 @@ body::before {
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
+    text-decoration: none;
   }
   /* dropdown css  끝*/
 
@@ -281,7 +288,6 @@ body::before {
   .menu{
     display: none;
   }
-    
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -308,10 +314,29 @@ body::before {
     padding-bottom: 1rem; 
   }
 
-  .nav_item a{
-    color:floralwhite; 
+  .nav_item > a {
+    color: floralwhite;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
   }
+  
+  .nav_item > a:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    width: 0;
+    height: 2px;
+    background-color: floralwhite;
+    transition: width 0.2s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  .nav_item > a:hover:after {
+    width: 100%;
+  }
+  
   /* navbar css end*/
 
   .home_art {
@@ -325,7 +350,6 @@ body::before {
     display: none;
   }
   
-  /* dropdown css  끝*/
   .dropdown_main {
     margin: 0;
     display: block;
@@ -345,22 +369,18 @@ body::before {
     transform: translateY(-10px);
     transition: transform 0.3s;
   }
-
-  .dropdown_king:hover .dropdown_main{
+  
+  .dropdown_king:hover .dropdown_main {
     opacity: 1;
     visibility: visible;
-  }
-
-  .dropdown_main div:hover{
-    background-color: #c9cac9; 
-  }
-
-  .dropdown_main div:hover a {
-    color: rgb(36, 24, 100);
-    text-decoration: underline;
+    transform: translateY(0);
   }
   
-  .dropdown_main div a{
+  .dropdown_main div:hover {
+    background-color: #c9cac9;
+  }
+  
+  .dropdown_main div a {
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 0;
     display: inline-flex;
@@ -368,6 +388,7 @@ body::before {
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
+    text-decoration: none;
   }
   /* dropdown css  끝*/
 
@@ -378,7 +399,6 @@ body::before {
     display: none;
   }
 }
-
 
 @media (max-width: 991.98px) {
   .home_art {
