@@ -82,37 +82,27 @@
     {% endif %}
 
     {% for item in mywork_content %}
-            <div class="row mywork_text"  OnClick="location.href='{% url 'mywork:detail' item.id %}'">
-                <div class="col-12">
-                    <div class="pt-3">
-                        {% if item.photo %}
-                        <img class="mywork_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
-                        {% endif %}
-                    </div>
-                </div>
-                <div class=" col-12">
-                    <div class="home_mywork_col">
-                        <h2 class="home_mywork_content">
-                            {% if item.content|length > 60 %}
-                                "{{ item.content|truncatechars:60 }}... 더보기"
-                            {% else %}
-                                "{{ item.content }}"
-                            {% endif %}
-                        </h2>
-                        <h2 class="home_mywork_title">
-                            {{ item.subject }}
-                        </h2>
-                        <div class="home_mywork_date">
-                            <a>
-                                영화 | {{item.create_date|date:"Y년 m월 d일"}}
-                            </a>
-                        </div>
-                        <div class="detail_main py-3">
-                            <a href="{% url 'engineer:django_main' %}" style="margin-right: 0.5rem;">#영화 이야기</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="row px-2 home_intro" OnClick="location.href ='{% url "mywork:detail" item.id %}'" style="cursor:pointer;">
+            <div class="col-4 col-lg-3 django_col">
+                    {% if item.photo %}
+                        <img class="django_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
+                    {% endif %}
             </div>
+            
+            <div class="col-8 col-lg-9 django_col">
+                <h2 class="django_title">
+                    <span class="two_title">{{ item.subject }}</span>
+                </h2>
+
+                <div class="django_date">
+                    <span>영화 | {{ item.create_date|date:"Y년 m월 d일" }}</span>
+                </div>
+                
+                <h2 class="django_content">
+                    <span class="two_content">{{ item.content }}</span>
+                </h2>
+            </div>
+        </div>
     {% endfor %}
     {% for item in django_content %}
         <div class="row px-2 home_intro" OnClick="location.href ='{% url "engineer:django" item.id %}'" style="cursor:pointer;">

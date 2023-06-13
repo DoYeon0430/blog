@@ -18,24 +18,3 @@ function showSlides() {
   // 1초마다 이미지를 슬라이드로 이동
   setTimeout(showSlides, 3000);
 }
-
-function copyToClipboard(text) {
-  var urlText = document.getElementById("urlText");
-  const textarea = document.createElement('textarea');
-  textarea.value = text;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textarea);
-  alert('링크가 복사되었습니다.');
-  urlText.style.display = "none";
-}
-
-function toggleDisplay() {
-  var urlText = document.getElementById("urlText");
-  if (urlText.style.display === "" || urlText.style.display === "none") {
-    urlText.style.display = "block";
-  } else {
-    urlText.style.display = "none";
-  }
-}
