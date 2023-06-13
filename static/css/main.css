@@ -7,6 +7,24 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2018/11/08/11/34/milky-way-3802391_1280.jpg');
+  filter: blur(2.5px);
+  z-index: -1;
+}
+.background_design {
+  background-color: #F2F2F2; 
+  box-shadow: 3px 3px 3px rgba(10, 10, 10, 0.1), inset 0px -5px 10px rgba(10, 10, 10, 0.1);
+  border: 3px solid rgb(216, 216, 216);
+}
+
 .home_intro {
   border-bottom: 1px solid rgb(203, 199, 199);
 }
@@ -53,102 +71,89 @@ body {
     box-shadow: none;
 }
 
+
 @media (min-width: 1400px)  {
+  /* navbar css */
+  .nav_main {
+    font-weight: 900;
+    font-size: 1.1rem; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;  
+    padding-top: 2rem; 
+    padding-bottom: 1rem; 
+    padding-right: 3rem; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1;
+  }
+
+  .nav_item {
+    position: relative; 
+    flex: 0 0 auto; 
+    margin-right: 4.5rem;
+  }
+
+  .nav_item a{
+    color:floralwhite; 
+    text-decoration: none;
+  }
+  /* navbar css end*/
+
   .home_art {
     width: 50%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
   }
-
-  .navbar {
-    display: flex;
-    justify-content: center; /* 가운데 정렬 */
-    align-items: center;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    padding: 15px 30px;
-    background-color: #181717;
-    position: relative;
-  }
   
   .logo {
-    padding: 1.2rem 0px;
-    text-align: center;
-  }
-  .logo a img {
-    width: 220px; 
-    height: auto;
-    margin-top: 2px;
-  }
-
-  .nav-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  .nav_text{
     display: none;
   }
-
-  .nav-links li {
-    display: block;
-  }
-
-  .navbar ul {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .nav-links a {
-    font-weight: 600;
-    text-decoration: none;
-    color: #E1DCEA;
-    font-size: 1.2rem;
-    margin: 0 50px;
-    padding: 3px 3rem;
-  }
   
-  /* dropdown css  */
-  .dropdown_main{
+  .dropdown_main {
     margin: 0;
     padding: 1rem 0;
     display: block;
     position: absolute;
     z-index: 1;
-    background-color: #141313;
+    background-color: #fffafa;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    top: 2rem;
-    right: 5rem;
+    top: 1.7rem;
+    right: 0rem;
     width: 11rem;
     border: 1px solid rgb(99, 96, 96);
     box-shadow: 0 40px 40px rgb(0 0 0 /6%);
     opacity: 0;
     visibility: hidden;
-  }
-
-  .dropdown_king:hover .dropdown_main{
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dropdown_main div:hover{
-    background-color: #3f3e3e;
-    
+    transform: translateY(-10px);
+    transition: transform 0.3s;
   }
   
-  .dropdown_main div a{
+  .dropdown_king:hover .dropdown_main {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown_main div:hover {
+    background-color: #c9cac9;
+  }
+  
+  .dropdown_main div a {
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 0;
     display: inline-flex;
-    color: #cecece;
+    color: #000000;
     font-weight: 400;
-    font-size: 1.05rem;
+    font-size: 1rem;
     text-align: left;
   }
-  /* dropdown css  끝*/
+  
 
   .navbar-burger{
     display: none;
@@ -158,61 +163,48 @@ body {
   }
 }
 
+
 @media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* navbar css */
+  .nav_main {
+    font-weight: 900;
+    font-size: 1.1rem; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;  
+    padding-top: 2rem; 
+    padding-bottom: 1rem; 
+    padding-right: 3rem; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1;
+  }
+
+  .nav_item {
+    position: relative; 
+    flex: 0 0 auto; 
+    margin-right: 3.5rem;
+  }
+
+  .nav_item a{
+    color:floralwhite; 
+    text-decoration: none;
+  }
+  /* navbar css end*/
+
   .home_art {
-    width: 60%;
+    width: 50%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
   }
-
-  .navbar {
-    display: flex;
-    justify-content: center; /* 가운데 정렬 */
-    align-items: center;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    padding: 15px 30px;
-    background-color: #181717;
-    position: relative;
-  }
+  
   .logo {
-    padding: 0.9rem 0px;
-    text-align: center;
-  }
-  .logo a img {
-    width: 210px; 
-    height: auto;
-    margin-top: 2px;
-  }
-  .nav-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  .nav_text{
     display: none;
   }
-    
-  .nav-links li {
-    display: block;
-  }
-
-  .navbar ul {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
   
-  .nav-links a {
-    font-weight: 600;
-    text-decoration: none;
-    color: #E1DCEA;
-    font-size: 1.2rem;
-    margin: 0 50px;
-    margin-right: 3.5rem;
-    padding: 3px 3px;
-  }
-
   /* dropdown css  */
   .dropdown_main{
     margin: 0;
@@ -220,12 +212,12 @@ body {
     display: block;
     position: absolute;
     z-index: 1;
-    background-color: #141313;
+    background-color: #fffafa;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    top: 2rem;
-    right: 3rem;
+    top: 1.7rem;
+    right: 0rem;
     width: 11rem;
     border: 1px solid rgb(99, 96, 96);
     box-shadow: 0 40px 40px rgb(0 0 0 /6%);
@@ -239,7 +231,7 @@ body {
   }
 
   .dropdown_main div:hover{
-    background-color: #3f3e3e;
+    background-color: #c9cac9;
     
   }
   
@@ -247,9 +239,9 @@ body {
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 0;
     display: inline-flex;
-    color: #cecece;
+    color: #000000;
     font-weight: 400;
-    font-size: 1.05rem;
+    font-size: 1rem;
     text-align: left;
   }
   /* dropdown css  끝*/
@@ -264,62 +256,46 @@ body {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  /* navbar css */
+  .nav_main {
+    font-weight: 900;
+    font-size: 1.1rem; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;  
+    padding-top: 2rem; 
+    padding-bottom: 1rem; 
+    padding-right: 3rem; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1;
+  }
+
+  .nav_item {
+    position: relative; 
+    flex: 0 0 auto; 
+    margin-right: 2.5rem;
+  }
+
+  .nav_item a{
+    color:floralwhite; 
+    text-decoration: none;
+  }
+  /* navbar css end*/
+
   .home_art {
-    width: 70%;
+    width: 50%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
   }
-
-  .navbar {
-    display: flex;
-    justify-content: center; /* 가운데 정렬 */
-    align-items: center;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px 30px;
-    background-color: #181717;
-    position: relative;
-  }
-
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-    
-  .nav-links li {
-    display: block;
-  }
-
-  .navbar ul {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .nav_text{
+  
+  .logo {
     display: none;
   }
-
-  .nav-links a {
-    font-weight: 600;
-    text-decoration: none;
-    color: #E1DCEA;
-    font-size: 1.1rem;
-    margin: 0 20px;
-    padding: 3px 1.5rem;
-  }
-
-  .logo {
-    padding: 0.8rem 0px;
-    text-align: center;
-  }
-
-  .logo a img {
-    width: 180px; 
-    height: auto;
-    margin-top: 2px;
-  }
-
+  
   /* dropdown css  */
   .dropdown_main{
     margin: 0;
@@ -327,12 +303,12 @@ body {
     display: block;
     position: absolute;
     z-index: 1;
-    background-color: #141313;
+    background-color: #fffafa;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    top: 2rem;
-    right: 1.5rem;
+    top: 1.7rem;
+    right: 0rem;
     width: 11rem;
     border: 1px solid rgb(99, 96, 96);
     box-shadow: 0 40px 40px rgb(0 0 0 /6%);
@@ -346,7 +322,7 @@ body {
   }
 
   .dropdown_main div:hover{
-    background-color: #3f3e3e;
+    background-color: #c9cac9;
     
   }
   
@@ -354,9 +330,9 @@ body {
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 0;
     display: inline-flex;
-    color: #cecece;
+    color: #000000;
     font-weight: 400;
-    font-size: 1.05rem;
+    font-size: 1rem;
     text-align: left;
   }
   /* dropdown css  끝*/
@@ -378,8 +354,12 @@ body {
     margin-right: auto;
   }
 
-  .navbar{
+  .nav_main {
     display: none;
+  }
+
+  .background_design {
+    border: 0px solid rgb(189, 189, 189);
   }
   
   .logo {

@@ -8,26 +8,6 @@
     border-radius: 3px;
 }
 
-#slider {
-    overflow: hidden; /* 슬라이더 밖으로 이미지가 나가지 않도록 설정 */
-    margin: 0 auto; /* 중앙에 정렬 */
-    display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    padding: 0px 0px;
-  }
-  
-#slider img {
-    filter: brightness(0.8);
-}
-
-.background_design {
-    background-color: #F2F2F2; 
-    box-shadow: 3px 3px 3px rgba(10, 10, 10, 0.1), inset 0px -5px 10px rgba(10, 10, 10, 0.1);
-}
-
-
-
 @media (min-width: 1400px) {
     .home_img {
         height: 35rem;
