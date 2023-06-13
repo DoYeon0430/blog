@@ -64,19 +64,19 @@
         display: none;
         position: absolute;
         bottom: 3%;
-        right: 65px;
+        right: 5%;
         color: black;
         background-color: aliceblue;
         border-radius: 5px;
-        height: 35px;
-        width: 111px;
+        height: 41px;
+        width: 118px;
         text-align: center;
-        line-height: 35px;
+        line-height: 41px;
         font-weight: 600;
         opacity: 0;
-        font-size: 0.9rem;
-        text-decoration: underline;
+        font-size: 0.95rem;
         animation: slideIn 0.3s ease-in-out forwards;
+        padding: 0 0.5rem;
     }
     
     @keyframes slideIn {
@@ -125,19 +125,19 @@
         display: none;
         position: absolute;
         bottom: 3%;
-        right: 65px;
+        right: 5.5%;
         color: black;
         background-color: aliceblue;
         border-radius: 5px;
-        height: 35px;
-        width: 111px;
+        height: 41px;
+        width: 118px;
         text-align: center;
-        line-height: 35px;
+        line-height: 41px;
         font-weight: 600;
         opacity: 0;
-        font-size: 0.9rem;
-        text-decoration: underline;
+        font-size: 0.95rem;
         animation: slideIn 0.3s ease-in-out forwards;
+        padding: 0 0.5rem;
     }
     
     @keyframes slideIn {
@@ -185,19 +185,19 @@
         display: none;
         position: absolute;
         bottom: 3%;
-        right: 60px;
+        right: 6%;
         color: black;
         background-color: aliceblue;
         border-radius: 5px;
-        height: 35px;
-        width: 111px;
+        height: 41px;
+        width: 118px;
         text-align: center;
-        line-height: 35px;
+        line-height: 41px;
         font-weight: 600;
         opacity: 0;
-        font-size: 0.9rem;
-        text-decoration: underline;
+        font-size: 0.95rem;
         animation: slideIn 0.3s ease-in-out forwards;
+        padding: 0 0.5rem;
     }
     
     @keyframes slideIn {
@@ -246,19 +246,19 @@
         display: none;
         position: absolute;
         bottom: 5%;
-        right: 60px;
+        right: 8.5%;
         color: black;
         background-color: aliceblue;
         border-radius: 5px;
-        height: 35px;
-        width: 111px;
+        height: 41px;
+        width: 118px;
         text-align: center;
-        line-height: 35px;
+        line-height: 41px;
         font-weight: 600;
         opacity: 0;
-        font-size: 0.9rem;
-        text-decoration: underline;
+        font-size: 0.95rem;
         animation: slideIn 0.3s ease-in-out forwards;
+        padding: 0 0.5rem;
     }
     
     @keyframes slideIn {
@@ -302,19 +302,19 @@
         display: none;
         position: absolute;
         bottom: 5%;
-        right: 55px;
+        right: 10%;
         color: black;
         background-color: aliceblue;
         border-radius: 5px;
-        height: 35px;
-        width: 111px;
+        height: 41px;
+        width: 118px;
         text-align: center;
-        line-height: 35px;
+        line-height: 41px;
         font-weight: 600;
         opacity: 0;
-        font-size: 0.9rem;
-        text-decoration: underline;
+        font-size: 0.95rem;
         animation: slideIn 0.3s ease-in-out forwards;
+        padding: 0 0.5rem;
     }
     
     @keyframes slideIn {
@@ -359,19 +359,19 @@
         display: none;
         position: absolute;
         bottom: 5%;
-        right: 45px;
+        right: 47px;
         color: black;
         background-color: aliceblue;
         border-radius: 5px;
-        height: 30px;
-        width: 94px;
+        height: 41px;
+        width: 118px;
         text-align: center;
-        line-height: 30px;
+        line-height: 41px;
         font-weight: 600;
         opacity: 0;
-        font-size: 0.9rem;
-        text-decoration: underline;
+        font-size: 0.95rem;
         animation: slideIn 0.3s ease-in-out forwards;
+        padding: 0 0.5rem;
     }
     
     @keyframes slideIn {
