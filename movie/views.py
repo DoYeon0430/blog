@@ -10,6 +10,8 @@ from django.urls import reverse
 
 def main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
+    mywork_count_one = mywork_data.filter(content='현장이야기').count()
+    mywork_count_two = mywork_data.filter(content='영화연출').count()
     movie_data = Movie.objects.all().order_by('-create_date')
     movie_count_one = movie_data.filter(genre='상업영화').count()
     movie_count_two = movie_data.filter(genre='드라마').count()
@@ -52,6 +54,8 @@ def main(request):
 
     return render(request, 'movie/main.html', {
         'mywork_data': mywork_data,
+        'mywork_count_one' : mywork_count_one,
+        'mywork_count_two' : mywork_count_two,
         'movie_data': movie_data,
         'movie_count_one': movie_count_one,
         'movie_count_two': movie_count_two,
@@ -74,6 +78,8 @@ def main(request):
 
 def detail(request, movie_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
+    mywork_count_one = mywork_data.filter(content='현장이야기').count()
+    mywork_count_two = mywork_data.filter(content='영화연출').count()
     movie_data = Movie.objects.all().order_by('-create_date')
     movie_count_one = movie_data.filter(genre='상업영화').count()
     movie_count_two = movie_data.filter(genre='드라마').count()
@@ -115,6 +121,8 @@ def detail(request, movie_id):
 
     context = {
         'mywork_data':mywork_data, 
+        'mywork_count_one' : mywork_count_one,
+        'mywork_count_two' : mywork_count_two,
         'movie_data':movie_data, 
         'movie_count_one':movie_count_one,
         'movie_count_two':movie_count_two,

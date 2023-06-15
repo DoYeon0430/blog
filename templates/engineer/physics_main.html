@@ -125,21 +125,39 @@
                 </div>
         </div>
     </div>
-    <div class="col-lg-3 sidebar_main" style="background-color: #ffffff;">
+    <div class="col-lg-3 sidebar_main sidebar_background">
         <div class="sidebar_count">
+            <div>영화 & IT 개인 블로그</span></div>
+            <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>
             <div>전체 방문자<span> : {{ view.count|intcomma }}명</span></div>
+            <div>블로그 제작<span> : Django 3.11.4</span></div>
         </div>
         <div class="sidebar_position">
           <div>
             <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
             <div class="sidebar_js">
-                {% for m in mywork_data %}
-                <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
-                    &raquo; {{ m.subject }}
-                </a>
-                {% endfor %}
+                <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 현장이야기 ({{mywork_count_one}})</a>
+                <div class="sidebar_js">
+                    {% for m in mywork_data %}
+                    {% if m.content == '현장이야기' %}
+                    <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                        &raquo; {{ m.subject }}
+                    </a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 영화연출 ({{mywork_count_two}})</a>
+                <div class="sidebar_js">
+                    {% for m in mywork_data %}
+                    {% if m.content == '영화연출' %}
+                    <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                        &raquo; {{ m.subject }}
+                    </a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-    
+  
             <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 감상 후기 ({{movie_data.count}})</a>
             <div class="sidebar_js">
                 <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 상업영화 ({{movie_count_one}})</a>
@@ -173,7 +191,7 @@
                     {% endfor %}
                 </div>
             </div>
-    
+  
             <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
             <div class="sidebar_js" style="display: block;">
                 {% for m in physics_data %}
@@ -182,7 +200,7 @@
                 </a>
                 {% endfor %}
             </div>
-    
+  
             <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 프로그래밍 ({{django_data.count}})</a>
             <div class="sidebar_js">
                 <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; Django 튜토리얼 ({{django_count_one}})</a>
@@ -216,7 +234,7 @@
                     {% endfor %}
                 </div>
             </div>
-    
+  
             <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 네트워크 ({{network_data.count}})</a>
             <div class="sidebar_js">
                 {% for m in network_data %}

@@ -19,14 +19,20 @@
     <div class="row">
         <div class="container col-lg-9 background_design" >
         <div class="container pt-3 pb-3">
-
-            <div class="container">
-                <div class="row justify-content-end my-3">
-                    <div class="col-8 col-sm-6 col-md-4 col-lg-3">
-                        <div class="input-group">
-                            <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
-                            <button type="button" id="btn_search" class="btn btn-primary">검색</button>
-                        </div>
+            <div class="row justify-content-between my-3">
+                <div class="col-4 col-sm-3 col-md-2 col-lg-2">
+                    <select class="form_select form-select form-select-sm mt-1 border-2 border-gray" aria-label=".form-select-sm example" onchange="dropdownForm(this.value)">
+                        <option value="" {% if selected_value == '' %}selected{% endif %}>전체</option>
+                        <option value="현장이야기" {% if selected_value == '현장이야기' %}selected{% endif %}>현장이야기</option>
+                        <option value="영화연출" {% if selected_value == '영화연출' %}selected{% endif %}>영화연출</option>
+                    </select>                                                    
+                </div>
+                
+                
+                <div class="col-7 col-sm-6 col-md-4 col-lg-3">
+                    <div class="input-group">
+                        <input type="text" placeholder="제목 입력" style="border: 1px solid rgb(184, 184, 184);" id="search_kw" value="{{ kw|default_if_none:'' }}" class="form-control">
+                        <button type="button" id="btn_search" class="btn btn-primary">검색</button>
                     </div>
                 </div>
             </div>
@@ -43,7 +49,7 @@
                             {{ m.subject }}
                         </h2>
                         <h3 class="mywork_content">
-                            {{ m.content }}
+                            {{ m.meta }}
                         </h3>
                         <div class="mywork_date">
                             <a>{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</a>
@@ -110,19 +116,37 @@
 
             </div>
         </div>
-        <div class="col-lg-3 mb-3 sidebar_main" style="background-color: #ffffff;">
+        <div class="col-lg-3 mb-3 sidebar_main sidebar_background">
             <div class="sidebar_count">
+                <div>영화 & IT 개인 블로그</span></div>
+                <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>
                 <div>전체 방문자<span> : {{ view.count|intcomma }}명</span></div>
+                <div>블로그 제작<span> : Django 3.11.4</span></div>
             </div>
             <div class="sidebar_position">
               <div>
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
                 <div class="sidebar_js" style="display: block;">
-                    {% for m in mywork_data %}
-                    <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
-                        &raquo; {{ m.subject }}
-                    </a>
-                    {% endfor %}
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 현장이야기 ({{mywork_count_one}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in mywork_data %}
+                        {% if m.content == '현장이야기' %}
+                        <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject }}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 영화연출 ({{mywork_count_two}})</a>
+                    <div class="sidebar_js" style="display: block;">
+                        {% for m in mywork_data %}
+                        {% if m.content == '영화연출' %}
+                        <a href="{% url 'mywork:detail' m.id %}" class="sidebar_for">
+                            &raquo; {{ m.subject }}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 감상 후기 ({{movie_data.count}})</a>

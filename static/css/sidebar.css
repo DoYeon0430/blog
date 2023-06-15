@@ -18,6 +18,10 @@
     font-weight: bold;
 }
 
+.sidebar_tag:first-child{
+    padding-top: 0.5rem;
+}
+
 .sidebar_tag_one{
     cursor: pointer;
     display: block;
@@ -68,17 +72,27 @@
     text-align: right;
 }
 
+.sidebar_count > div:first-child {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(223, 219, 219);
+}
+
+
 
 .sidebar_count div{
     color: rgb(70, 67, 67);
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 500;
     padding-bottom: 0.5rem;
 }
 
 .sidebar_position {
     position: sticky;
-    top: 2rem;
+    top: 0.5rem;
+    bottom: 1rem;
     padding: 0.6rem 0.5rem 0rem 0rem;
     height: 100vh; /* Set the height of the parent container */
     overflow: auto; /* Add scrollbars if necessary */
@@ -93,6 +107,10 @@
     border-radius: 4px; /* Round the corners of the scrollbar thumb */
   }
   
+.sidebar_background {
+    background-color: #ffffff;
+}
+
 @media (max-width: 992px) {
     .sidebar_main{
         display: none;
