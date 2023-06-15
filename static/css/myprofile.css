@@ -98,13 +98,13 @@
 
     .myprofile_title{
         padding-top: 0.5rem;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         padding-left: 0.6rem;
         font-weight: 600;
     }
 
     .myprofile_date{
-        padding-left: 1.1rem;
+        padding-left: 1rem;
         padding-bottom: 0.3rem;
         color: gray;
         font-size: 1rem;
@@ -242,13 +242,13 @@
 
     .myprofile_title{
         padding-top: 0.5rem;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         padding-left: 0.6rem;
         font-weight: 600;
     }
 
     .myprofile_date{
-        padding-left: 1.1rem;
+        padding-left: 1rem;
         padding-bottom: 0.3rem;
         color: gray;
         font-size: 1rem;
@@ -387,7 +387,7 @@
 
     .myprofile_title{
         padding-top: 0.5rem;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         padding-left: 0.6rem;
         font-weight: 600;
     }
@@ -396,7 +396,7 @@
         padding-left: 1.1rem;
         padding-bottom: 0.3rem;
         color: gray;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: gray;
     }
 
@@ -532,7 +532,7 @@
     }
 
     .myprofile_title{
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         padding-top: 0.5rem;
         padding-left: 0.6rem;
         font-weight: 600;
