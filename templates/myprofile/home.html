@@ -95,7 +95,7 @@
                 </h2>
 
                 <div class="django_date">
-                    <span>영화 | {{ item.create_date|date:"Y년 m월 d일" }}</span>
+                    <span>{{ item.content }} | {{ item.create_date|date:"Y년 m월 d일" }}</span>
                 </div>
                 
                 <h2 class="django_content">
@@ -118,7 +118,7 @@
                 </h2>
 
                 <div class="django_date">
-                    <span>Django {{ item.code }} | {{ item.create_date|date:"Y. m. d" }} · 조회 {{item.hits}}</span>
+                    <span>Django {{ item.code }} | {{ item.create_date|date:"Y년 m월 d일" }}</span>
                 </div>
                 
                 <h2 class="django_content">
