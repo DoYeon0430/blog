@@ -61,18 +61,6 @@ body {
 
 
 @media (min-width: 1400px)  {
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://cdn.pixabay.com/photo/2018/11/08/11/34/milky-way-3802391_1280.jpg');
-    filter: blur(2.5px);
-    z-index: -1;
-  }
-
   /* navbar css */
   .nav_main {
     font-weight: 900;
@@ -182,18 +170,6 @@ body {
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://cdn.pixabay.com/photo/2018/11/08/11/34/milky-way-3802391_1280.jpg');
-    filter: blur(2.5px);
-    z-index: -1;
-  }
-
   /* navbar css */
   .nav_main {
     font-weight: 900;
