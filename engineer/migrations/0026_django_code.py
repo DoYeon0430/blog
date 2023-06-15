@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('engineer', '0025_alter_django_meta_alter_network_meta_and_more'),
+        ('engineer', '0024_alter_django_meta_alter_network_meta_and_more'),
     ]
 
     operations = [
