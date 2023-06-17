@@ -12,6 +12,8 @@
 <meta property="og:type" content="blog"/>
 <meta property="og:description" content="{{django.meta}}"/> 
 <meta property="og:image" content="https://www.doyeon0430.com{{ django.photo.url }}"/>
+<meta name="date" content="{{django.create_date|date:'Y-m-d'}}">
+<meta property="article:published_time" content="{{django.create_date|date:'Y-m-d\TH:i:s+00:00'}}">
 {% endblock %}
 {% block content %}
 <div class="container background_design">

@@ -12,14 +12,15 @@
 <meta property="og:type" content="blog"/>
 <meta property="og:description" content="{{ detail.meta }}"/> 
 <meta property="og:image" content="https://www.doyeon0430.com{{ detail.photo.url }}"/>
+<meta name="date" content="{{detail.create_date|date:'Y-m-d'}}">
+<meta property="article:published_time" content="{{detail.create_date|date:'Y-m-d\TH:i:s+00:00'}}">
 {% endblock %}
 {% block content %}
 <div class="container">
   <div class="row">
     <div class="container col-lg-9 px-3 pt-3 pb-3 draggable background_design">
-        <p class="text-end mywork_content px-1" style="color:#f05650">"{{detail.content}}"</p>
         <h1 class="detail_subject">
-           <{{ detail.genre }}> {{ detail.subject }} 후기    
+          {{detail.content}}, <{{ detail.subject }}>
         </h1>
         <div class="detail_date" >
             <a>

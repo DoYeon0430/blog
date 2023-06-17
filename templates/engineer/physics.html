@@ -12,6 +12,8 @@
 <meta property="og:type" content="blog"/>
 <meta property="og:description" content="{{physics.meta}}"/> 
 <meta property="og:image" content="https://www.doyeon0430.com{{ physics.photo.url }}"/>
+<meta name="date" content="{{physics.create_date|date:'Y-m-d'}}">
+<meta property="article:published_time" content="{{physics.create_date|date:'Y-m-d\TH:i:s+00:00'}}">
 {% endblock %}
 {% block content %}
 
