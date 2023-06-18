@@ -29,27 +29,15 @@
 
   <div class="row  mywork_name_table" style="border-top: 10px solid rgb(220, 218, 218);">
       <div class="container mywork_name_table px-3 py-3">
-
         <div>전공</div>
         <ul class="mywork_name_ul">
           <li>서울영상고등학교 영상콘텐츠전공</li>
           <li>경기대학교 기계공학전공</li>
         </ul>
-  
-        <div>작품</div>
-        <ul class="mywork_name_ul">
-          <li>상업영화 1편 참여</li>
-          <li>단편영화 2편 참여</li>
-          <li>드라마 1편 참여중 (크랭크인 연기)</li>
-          <li>시놉시스 제작중 (4개월째 진행)</li>
-          <li>사진&영상 공모전 수상 4회</li>
-        </ul>
-        
+        <div class="row py-3 mywork_name_table">
+          <img src="{% static 'img/home_art.png' %}" alt="My Image" class="home_art">
+        </div>
       </div>
   </div>
-
-    <div class="row py-3 mywork_name_table" style="border-top: 10px solid rgb(220, 218, 218);">
-      <img src="{% static 'img/home_art.png' %}" alt="My Image" class="home_art">
-    </div>
 </div>
 {% endblock %}
