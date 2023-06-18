@@ -5,7 +5,11 @@ from django.http import HttpResponse
 from mywork.models import Mywork
 from movie.models import Movie
 from engineer.models import Physics, Django, Network
+from django.http import HttpResponse
 
+
+def Ads(request):
+    return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
 
 # Create your views here.
 def home(request):
