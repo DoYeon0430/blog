@@ -591,6 +591,7 @@ body {
     display: grid;
     z-index: 15;
     background-image: url('/static/img/back.png');
+    animation: menu-in 0.375s;
   }
 
   body.open .menu a {
