@@ -566,15 +566,15 @@ body {
     align-items: center;
   }
   
-.logo {
-  display: flex;
-  align-items: center;
-}
+  .logo {
+    display: flex;
+    align-items: center;
+  }
 
-.logo a {
-  display: flex;
-  align-items: center;
-}
+  .logo a {
+    display: flex;
+    align-items: center;
+  }
   
   body.open .menu{
     z-index: 10;
