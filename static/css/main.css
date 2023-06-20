@@ -417,7 +417,27 @@ body {
   }
 
   .navbar-burger {
-    position: fixed;
+    position: sticky;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 66px;
+    height: 66px;
+    background-image: url('/static/img/go.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .navbar-burger_back{
+    position: sticky;
     border: 0;
     padding: 0;
     background: transparent;
@@ -425,11 +445,11 @@ body {
     z-index: 10;
     top: 0;
     right: 0;
-    display: grid;
+    display: none;
     place-items: center;
     width: 66px;
     height: 66px;
-    background-image: url('/static/img/go.png');
+    background-image: url('/static/img/back.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -541,7 +561,20 @@ body {
     height: auto; /* 적절한 높이 설정 */
     background-color: #F2F2F2; 
     border-bottom: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+  
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
   
   body.open .menu{
     z-index: 10;
@@ -553,9 +586,12 @@ body {
 
   body.open .menu nav { opacity: 1;}
 
-  body.open .navbar-burger {
-    z-index: 11;
+  body.open .navbar-burger_back {
+    position: fixed;
+    display: grid;
+    z-index: 15;
     background-image: url('/static/img/back.png');
+    animation: opacity 0.25s;
   }
 
   body.open .menu a {
@@ -592,6 +628,15 @@ body {
   @keyframes appear {
     0% {
       opacity: 0; translate: -30px 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
     }
     100% {
       opacity: 1;
