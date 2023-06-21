@@ -30,6 +30,9 @@ from movie.sitemaps import MovieSitemap
 from engineer.sitemaps import PhysicsSitemap, DjangoSitemap, NetworkSitemap
 from engineer.models import Django
 from mywork.models import Mywork
+from mywork.feeds import MyworkFeed
+from movie.feeds import MovieFeed
+from engineer.feeds import PhysicsFeed, DjangoFeed, NetworkFeed
 
 sitemaps = {
     'mywork': MyworkSitemap,
@@ -57,6 +60,13 @@ upload_image_patterns = [
 urlpatterns = [
     path('robots.txt',  TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+
+    #rss
+    path('mywork/feed/', MyworkFeed(), name='mywork_feeds'),
+    path('movie/feed/', MovieFeed(), name='movie_feeds'),
+    path('engineer/physics/feed/', PhysicsFeed(), name='physics_feeds'),
+    path('engineer/django/feed/', DjangoFeed(), name='django_feeds'),
+    path('engineer/network/feed/', NetworkFeed(), name='network_feeds'),
 
     #TINYMCE 이미지 업로드 시 해결 수정 url 
     *upload_image_patterns,
