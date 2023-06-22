@@ -32,6 +32,10 @@
             </a>
         </div>
       </div>
+      <div class="text-center">
+        <img class="detail_img" src="{% static 'img/physicsimg.jpg' %}" alt="Physics 이미지">
+      </div>
+      {{physics.htmlcontent|safe}}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
       crossorigin="anonymous"></script>
       <!-- 디플 수평형 -->
@@ -44,9 +48,6 @@
       <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-      <div style="padding-top: 1rem;">
-        {{physics.htmlcontent|safe}}
-      </div>
 
       <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
       <ul class="chat_sub_content"  id="comment-form">
