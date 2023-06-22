@@ -19,20 +19,32 @@
 <div class="container">
   <div class="row">
     <div class="container col-lg-9 px-3 pt-3 pb-3 draggable background_design">
+            <p class="detail_sup">
+              {{detail.content}} 포스팅
+            </p>
             <h1 class="detail_subject">
-                {{detail.subject}}    
+              {{ detail.subject }}
             </h1>
-            <div class="detail_date pb-1">
-                <a>
-                    <strong>Doyeon0430</strong> | {{detail.create_date|date:"Y년 m월 d일"}}
-                </a>
+            <div class="detail_date">
+              <a>
+                  Doyeon0430 |  {{detail.create_date|date:"Y년 m월 d일"}}
+              </a>
             </div>
-            <div class="text-center">
-                {% if detail.photo %}
-                    <img class="detail_img" src="{% static 'img/movieimg1.jpg' %}" alt="{{ detail.subject }} 이미지">
-                {% endif %}
-            </div>
+            <div style="padding-top: 1rem;">
             {{detail.htmlcontent|safe}}
+            </div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
+            crossorigin="anonymous"></script>
+            <!-- 디플 수평형 -->
+            <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-8497490320648322"
+                  data-ad-slot="9891704136"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+            <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
 
             <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
             <ul class="chat_sub_content"  id="comment-form">
