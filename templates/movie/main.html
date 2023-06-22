@@ -132,6 +132,12 @@
             </div>
         </div>
         <div class="col-lg-3 mb-3 sidebar_main sidebar_background">
+            <div class="sidebar_count">
+                <div>영화 & IT 개인 블로그</span></div>
+                <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>
+                <div>전체 방문자<span> : {{ view.count|intcomma }}명</span></div>
+                <div>블로그 제작<span> : Django 3.11.4</span></div>
+            </div>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
             crossorigin="anonymous"></script>
             <!-- 디플 사각형 -->
@@ -144,12 +150,6 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <div class="sidebar_count">
-                <div>영화 & IT 개인 블로그</span></div>
-                <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>
-                <div>전체 방문자<span> : {{ view.count|intcomma }}명</span></div>
-                <div>블로그 제작<span> : Django 3.11.4</span></div>
-            </div>
             <div class="sidebar_position">
               <div>
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 영화 이야기 ({{mywork_data.count}})</a>
