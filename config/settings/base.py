@@ -161,13 +161,13 @@ TINYMCE_DEFAULT_CONFIG = {
         advlist autolink lists link image charmap print preview hr anchor
         pagebreak searchreplace wordcount visualblocks visualchars code
         fullscreen insertdatetime media nonbreaking save table contextmenu
-        directionality emoticons template paste textcolor colorpicker textpattern codesample
+        directionality emoticons template paste textcolor colorpicker textpattern codesample removeformat
     ''',
     'toolbar1': '''
         fullscreen preview bold italic underline superscript | fontselect,
         fontsizeselect | forecolor backcolor | alignleft alignright |
         aligncenter alignjustify | indent outdent | bullist numlist table |
-        link image media | codesample
+        link image media | codesample| removeformat
     ''',
     'toolbar2': '''
         visualblocks visualchars | charmap emoticons | insertdatetime
