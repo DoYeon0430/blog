@@ -86,7 +86,7 @@
         <div class="row px-2 home_intro" OnClick="location.href ='{% url "mywork:detail" item.id %}'" style="cursor:pointer;">
             <div class="col-4 col-lg-3 django_col">
                     {% if item.photo %}
-                        <img class="django_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
+                        <img class="django_image" src="{{ item.photo.url }}" alt="영화이야기 이미지">
                     {% endif %}
             </div>
             
@@ -109,7 +109,7 @@
         <div class="row px-2 home_intro" OnClick="location.href ='{% url "engineer:django" item.id %}'" style="cursor:pointer;">
             <div class="col-4 col-lg-3 django_col">
                     {% if item.photo %}
-                        <img class="django_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
+                        <img class="django_image" src="{{ item.photo.url }}" alt="디장고 이미지">
                     {% endif %}
             </div>
             
