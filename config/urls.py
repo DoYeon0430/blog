@@ -28,8 +28,9 @@ from mywork import sitemaps
 from mywork.sitemaps import MyworkSitemap
 from movie.sitemaps import MovieSitemap
 from engineer.sitemaps import PhysicsSitemap, DjangoSitemap, NetworkSitemap
-from engineer.models import Django
+from engineer.models import Django, Physics, Network
 from mywork.models import Mywork
+from movie.models import Movie
 from mywork.feeds import MyworkFeed
 from movie.feeds import MovieFeed
 from engineer.feeds import PhysicsFeed, DjangoFeed, NetworkFeed
@@ -48,12 +49,31 @@ last_django_id = last_django.id if last_django else 0
 last_mywork = Mywork.objects.last()
 last_mywork_id = last_mywork.id if last_mywork else 0
 
+last_physics = Physics.objects.last()
+last_physics_id = last_physics.id if last_physics else 0
+
+last_network = Network.objects.last()
+last_network_id = last_network.id if last_network else 0
+
+last_movie = Movie.objects.last()
+last_movie_id = last_movie.id if last_movie else 0
+
+
 upload_image_patterns = [
     path(f'admin/engineer/django/{number_django}/change/upload_image', views.upload_image, name=f'upload_image_{number_django}')
     for number_django in range(1, 1+last_django_id)
 ] + [
     path(f'admin/mywork/mywork/{number_mywork}/change/upload_image', views.upload_image, name=f'upload_image_{number_mywork}')
     for number_mywork in range(1, 1+last_mywork_id)
+] + [
+    path(f'admin/engineer/physics/{last_physics}/change/upload_image', views.upload_image, name=f'upload_image_{last_physics}')
+    for last_physics in range(1, 1+last_physics_id)
+] + [
+    path(f'admin/engineer/network/{last_network}/change/upload_image', views.upload_image, name=f'upload_image_{last_network}')
+    for last_network in range(1, 1+last_network_id)
+] + [
+    path(f'admin/movie/movie/{last_movie}/change/upload_image', views.upload_image, name=f'upload_image_{last_movie}')
+    for last_movie in range(1, 1+last_movie_id)
 ]
 
 
