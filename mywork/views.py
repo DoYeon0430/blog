@@ -89,6 +89,8 @@ def detail(request, mywork_id):
     
     detail = get_object_or_404(Mywork, pk=mywork_id)
     comments = Comment.objects.filter(mywork=detail.pk)
+    next_post = Mywork.objects.filter(create_date__gt=detail.create_date).order_by('create_date').first()
+    previous_post = Mywork.objects.filter(create_date__lt=detail.create_date).order_by('-create_date').first()
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -131,7 +133,9 @@ def detail(request, mywork_id):
         'view' : view,
         'detail': detail, 
         'comments': comments, 
-        'form': form
+        'form': form,
+        'next_post': next_post,
+        'previous_post': previous_post,
         }
 
     return render(request, 'mywork/detail.html', context)
