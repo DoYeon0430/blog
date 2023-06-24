@@ -45,6 +45,8 @@ crossorigin="anonymous"></script>
                 {% endif %}
             </div>
             {{detail.htmlcontent|safe}}
+            <p>{% if next_post.subject %}<strong>다음글</strong> : <a href="{% url 'mywork:detail' next_post.pk %}">{{ next_post.subject }}</a>{% else %}{% endif %}</p>
+            <p>{% if previous_post.subject %}<strong>이전글</strong> : <a href="{% url 'mywork:detail' previous_post.pk %}">{{ previous_post.subject }}</a>{% else %}{% endif %}</p>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
             crossorigin="anonymous"></script>
             <ins class="adsbygoogle"
@@ -56,8 +58,6 @@ crossorigin="anonymous"></script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
 
-            <p>{% if next_post.subject %}다음글 : <a href="{% url 'mywork:detail' next_post.pk %}">{{ next_post.subject }}</a>{% else %}마지막 포스팅입니다.{% endif %}</p>
-            <p>{% if previous_post.subject %}이전글 : <a href="{% url 'mywork:detail' previous_post.pk %}">{{ previous_post.subject }}</a>{% else %}첫 번째 포스팅입니다.{% endif %}</p>
             <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
             <ul class="chat_sub_content"  id="comment-form">
               {% for comment in comments %}
