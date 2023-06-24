@@ -41,7 +41,7 @@ crossorigin="anonymous"></script>
             </div>
             <div class="text-center">
                 {% if detail.photo %}
-                    <img class="detail_img" src="{% static 'img/movieimg1.jpg' %}" alt="{{ detail.subject }} 이미지">
+                    <img class="detail_img" src="{% static 'img/movieimg1.jpg' %}" alt="영화이야기 이미지">
                 {% endif %}
             </div>
             {{detail.htmlcontent|safe}}
