@@ -4,7 +4,6 @@ from tinymce.models import HTMLField
 
 class Physics(models.Model):
     subject = models.CharField(max_length=200)
-    content = models.CharField(max_length=130)
     meta = models.CharField(max_length=130)
     htmlcontent = HTMLField()
     create_date = models.DateTimeField(auto_now_add=True)
@@ -30,7 +29,6 @@ class Comment_physics(models.Model):
 
 class Django(models.Model):
     subject = models.CharField(max_length=200)
-    content = models.CharField(max_length=130)
     meta = models.CharField(max_length=130)
     htmlcontent = HTMLField()
     create_date = models.DateTimeField(auto_now_add=True)
@@ -57,7 +55,6 @@ class Comment_django(models.Model):
 
 class Network(models.Model):
     subject = models.CharField(max_length=200)
-    content = models.CharField(max_length=130)
     meta = models.CharField(max_length=130)
     htmlcontent = HTMLField()
     create_date = models.DateTimeField(auto_now_add=True)
