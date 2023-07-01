@@ -13,16 +13,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='django',
             name='content',
-            field=models.CharField(max_length=130),
+            field=models.CharField(max_length=200),
         ),
         migrations.AlterField(
             model_name='network',
             name='content',
-            field=models.CharField(max_length=130),
+            field=models.CharField(max_length=200),
         ),
         migrations.AlterField(
             model_name='physics',
             name='content',
-            field=models.CharField(max_length=130),
+            field=models.CharField(max_length=200),
         ),
     ]
