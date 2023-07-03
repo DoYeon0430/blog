@@ -61,9 +61,9 @@
                             [{{ item.subject }}] 감상 후기
                         </h2>
                         <div class="myprofile_date">
-                            <a>
+                            <p style="margin: 0;">
                                 {{ item.genre }} | {{item.create_date|date:"Y년 m월 d일"}}
-                            </a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -74,10 +74,10 @@
     {% if request.GET.tag != '파이썬' %}
     <div class="button_container">
         <div class="button_left px-1">
-            <img class="button_design" id="scrollButtonback" src="{% static 'img/left.svg' %}">
+            <img class="button_design" id="scrollButtonback" src="{% static 'img/left.svg' %}" alt="왼쪽 이동 버튼">
         </div>
         <div class="button_right px-1">
-            <img class="button_design" id="scrollButtongo" src="{% static 'img/right.svg' %}">
+            <img class="button_design" id="scrollButtongo" src="{% static 'img/right.svg' %}"  alt="오른쪽 이동 버튼">
         </div>
     </div>
     {% endif %}
