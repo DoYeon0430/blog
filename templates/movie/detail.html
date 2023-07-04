@@ -35,9 +35,9 @@ crossorigin="anonymous"></script>
         {{detail.content}}, <{{ detail.subject }}> 후기
       </h1>
       <div class="detail_date" style="border-bottom: 0px;">
-        <a>
+        <p style="margin: 0;">
             Doyeon0430 |  {{detail.create_date|date:"Y년 m월 d일"}}
-        </a>
+        </p>
       </div>
       <div style="padding-top: 1rem;">
         {{detail.htmlcontent|safe}}

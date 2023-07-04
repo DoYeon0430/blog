@@ -64,9 +64,9 @@ crossorigin="anonymous"></script>
                                 <span>{{ m.create_date|date:"Y. m. d" }} · 조회 {{m.hits}} | {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글</span>
                             </div>
                             
-                            <h2 class="django_content">
+                            <h3 class="django_content">
                                 <span class="two_content">{{ m.meta }}</span>
-                            </h2>
+                            </h3>
                         </div>
                     </div>
                 {% endfor %}

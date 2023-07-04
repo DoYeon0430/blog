@@ -14,7 +14,7 @@
 {% endblock %}
 {% block content %}
 
-<div class="container background_design" >
+<div class="container background_design">
     <div class="container">
         <div class="mywork_name_name">Doyeon0430</div>
         <div class="mywork_name_content">어릴적부터 영화를 꿈꾸며 다양한 스토리를 창작하기 위해 물리학 이론과 공학계열 트렌드를 배우고 있어요. </div>
@@ -40,7 +40,7 @@
         <div>
             <div>
                 <div class="tag_main">
-                    <a href="{% url 'myprofile:main' %}">#Doyeon0430</a>
+                    <a href="{% url 'myprofile:home' %}">#전체글 ({{mywork_content.count|add:movie_content.count|add:physics_content.count|add:django_content.count|add:network_content.count}})</a>
                     <a href="{% url 'mywork:main' %}">#영화 이야기 ({{mywork_content.count}})</a>
                     <a href="{% url 'movie:main' %}">#영화 후기 ({{movie_content.count}})</a>
                     <a href="{% url 'engineer:physics_main' %}">#물리학 ({{physics_content.count}})</a>
@@ -52,5 +52,4 @@
         
     </div>
 </div>
-
 {% endblock %}

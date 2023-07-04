@@ -61,7 +61,7 @@ crossorigin="anonymous"></script>
                             {{ m.meta }}
                         </h3>
                         <div class="mywork_date">
-                            <a>{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</a>
+                            <p style="margin: 0;">{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</p>
                             <span>내용보기</span>
                         </div>
                     </div>
