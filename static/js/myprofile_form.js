@@ -8,7 +8,7 @@
         a1.classList.add('myprofile_main_div_js_1');
         a2.classList.add('myprofile_main_div_js_2');
         
-    } else if (tag === '파이썬') {
+    } else if (tag === '프로그래밍') {
         const a1 = document.getElementById('a1');
         const a2 = document.getElementById('a2');
         a1.classList.add('myprofile_main_div_js_2');

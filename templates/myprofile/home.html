@@ -41,7 +41,7 @@
 
     <div class="myprofile_main_div">
         <a href="?tag=영화" class="myprofile_main_div_a1" id="a1" >영화</a> ·
-        <a href="?tag=파이썬" class="myprofile_main_div_a2" id="a2" >파이썬</a>
+        <a href="?tag=프로그래밍" class="myprofile_main_div_a2" id="a2" >프로그래밍</a>
     </div>
 
     <div class="row" style="position: relative;">
@@ -71,7 +71,7 @@
             {% endfor %}
         </div>
     </div> 
-    {% if request.GET.tag != '파이썬' %}
+    {% if request.GET.tag != '프로그래밍' %}
     <div class="button_container">
         <div class="button_left px-1">
             <img class="button_design" id="scrollButtonback" src="{% static 'img/left.svg' %}" alt="왼쪽 이동 버튼">

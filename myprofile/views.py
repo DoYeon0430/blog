@@ -49,7 +49,7 @@ def home(request):
         }
 
 
-    elif tag == '파이썬':
+    elif tag == '프로그래밍':
         django_content = Django.objects.all().order_by('-create_date')[:8]
 
         content = {
