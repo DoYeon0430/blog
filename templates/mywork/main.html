@@ -24,9 +24,9 @@ crossorigin="anonymous"></script>
 {% endblock %}
 {% load mywork_filter %}
 {% block content %}
-<div class="container">
+<div class="container background_design">
     <div class="row">
-        <div class="container col-lg-9 background_design" >
+        <div class="container col-lg-9 pt-3 pb-3 draggable">
         <div class="container pt-3 pb-3">
             <div class="row justify-content-between my-3">
                 <div class="col-4 col-sm-3 col-md-2 col-lg-2">
@@ -47,28 +47,28 @@ crossorigin="anonymous"></script>
             </div>
 
             {% for m in page_obj %}
-            <div class="row mywork_text py-2" OnClick="location.href ='{% url "mywork:detail" m.id %}'">
-
-                <div class="col-xl-1">
+            <div class="row home_intro" OnClick="location.href ='{% url "mywork:detail" m.id %}'" style="cursor:pointer;">
+                <div class="col-4 django_col">
+                        {% if m.photo %}
+                            <img class="django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
+                        {% endif %}
                 </div>
+                
+                <div class="col-8 django_col">
+                    <h2 class="django_title">
+                        <span class="two_title">{{ m.subject }}</span>
+                    </h2>
 
-                <div class="col-xl-10 pt-2 col-12 {% if forloop.last %} mywork_border_last{% endif %} mywork_border">
-                    <div class="mywork_col">
-                        <h2 class="mywork_title">
-                            {{ m.subject }}
-                        </h2>
-                        <h3 class="mywork_content">
-                            {{ m.meta }}
-                        </h3>
-                        <div class="mywork_date">
-                            <p style="margin: 0;">{{ m.create_date|date:"Y년 m월 d일" }} | #{{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}</p>
-                            <span>내용보기</span>
-                        </div>
+                    <div class="django_date">
+                        <span>{{ m.create_date|date:"Y. m. d" }} | {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글</span>
                     </div>
+                    
+                    <h3 class="django_content">
+                        <span class="two_content">{{ m.meta }}</span>
+                    </h3>
                 </div>
             </div>
-            {% endfor %}
-
+        {% endfor %}
             <div style="cursor: pointer;">
                 {% if page_obj.paginator.num_pages > 1 %}
                 <nav aria-label="Page navigation example">
@@ -136,7 +136,7 @@ crossorigin="anonymous"></script>
 
             </div>
         </div>
-        <div class="col-lg-3 mb-3 sidebar_main sidebar_background">
+        <div class="col-lg-3 sidebar_main sidebar_background">
             <div class="sidebar_count">
                 <div>영화 & IT 개인 블로그</span></div>
                 <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>

@@ -53,7 +53,7 @@ crossorigin="anonymous"></script>
                         </h2>
 
                         <div class="django_date">
-                            <span>{{ m.create_date|date:"Y. m. d" }} · 조회 {{m.hits}} | {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글</span>
+                            <span>{{ m.create_date|date:"Y. m. d" }} | {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글</span>
                         </div>
                         
                         <h3 class="django_content">

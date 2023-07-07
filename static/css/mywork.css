@@ -28,45 +28,7 @@
 }
 
 @media (min-width: 1400px) {
-  .mywork_content{
-    font-size: 1rem;
-    text-decoration: none;
-    color: gray;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-  }
-
-  .mywork_image {
-    width: 60%;
-    height: 29rem;
-  }
-
-  .mywork_title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .mywork_date{
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 1rem;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    color: gray;
-  }
-
-  .mywork_date span{
-    font-size: 1rem;
-    border-bottom: 2px solid rgb(148, 19, 19);
-    font-weight: 600;
-    color: rgb(148, 19, 19);
-  }
-
+  /* 블로그 메인 CSS */
   .mywork_name_name{
     font-weight: 900;
     font-size: 2rem;
@@ -100,71 +62,11 @@
     font-size: 1.3rem;
     padding: 0.5rem 0rem 0.1rem 0.3rem;
   }
-
-  .mywork_col{
-    padding: 0rem 0px 0rem 0px;
-  }
-  
-  .home_mywork_title{
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-  }
-
-  .home_mywork_content{
-    font-size: 1.1rem;
-    margin: 0.5rem 0rem 0.5rem 0.1rem;
-    font-weight: 500;
-  }
-
-  .home_mywork_date{
-    padding: 0.3rem 0.5rem 0rem 0.5rem;
-    color: gray;
-    font-size: 1rem;
-    color: gray;
-  }
+   /* 블로그 메인 CSS 끝 */
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
-  .mywork_content{
-    font-size: 1rem;
-    text-decoration: none;
-    color: gray;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-  }
-
-  .mywork_image {
-    width: 60%;
-    height: 29rem;
-  }
-
-  .mywork_title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .mywork_date{
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 1rem;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    color: gray;
-  }
-
-  .mywork_date span{
-    font-size: 1rem;
-    border-bottom: 2px solid rgb(148, 19, 19);
-    font-weight: 600;
-    color: rgb(148, 19, 19);
-  }
-
+  /* 블로그 메인 CSS */
   .mywork_name_name{
     font-weight: 900;
     font-size: 2rem;
@@ -198,70 +100,11 @@
     font-size: 1.3rem;
     padding: 0.5rem 0rem 0.1rem 0.3rem;
   }
-
-  .mywork_col{
-    padding: 0rem 0px 0rem 0px;
-  }
-  
-  .home_mywork_title{
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .home_mywork_content{
-    font-size: 1.1rem;
-    margin: 0.5rem 0rem 0.5rem 0.1rem;
-    font-weight: 500;
-  }
-
-  .home_mywork_date{
-    padding: 0.3rem 0.5rem 0rem 0.5rem;
-    color: gray;
-    font-size: 1rem;
-    color: gray;
-  }
+  /* 블로그 메인 CSS 끝 */
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .mywork_content{
-    font-size: 0.9rem;
-    text-decoration: none;
-    color: gray;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-  }
-
-  .mywork_image {
-    width: 70%;
-    height: 29rem;
-  }
-
-  .mywork_title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .mywork_date{
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 0.9rem;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    color: gray;
-  }
-
-  .mywork_date span{
-    font-size: 1rem;
-    border-bottom: 2px solid rgb(148, 19, 19);
-    font-weight: 600;
-    color: rgb(148, 19, 19);
-  }
-
+  /* 블로그 메인 CSS */
   .mywork_name_name{
     font-weight: 900;
     font-size: 2rem;
@@ -295,70 +138,11 @@
     font-size: 1.1rem;
     padding: 0.5rem 0rem 0.1rem 0.3rem;
   }
-
-  .mywork_col{
-    padding: 0rem 0px 0rem 0px;
-  }
-
-  .home_mywork_title{
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .home_mywork_content{
-    font-size: 1.1rem;
-    margin: 0.5rem 0rem 0.5rem 0.1rem;
-    font-weight: 500;
-  }
-
-  .home_mywork_date{
-    padding: 0.3rem 0.5rem 0rem 0.5rem;
-    color: gray;
-    font-size: 1rem;
-    color: gray;
-  }
+  /* 블로그 메인 CSS 끝 */
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .mywork_content{
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: gray;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-  }
-  
-  .mywork_image {
-    width: 100%;
-    height: 28rem;
-  }
-
-  .mywork_title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .mywork_date{
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 0.8rem;
-    padding: 1rem 0.5rem 0rem 0.5rem;
-    color: gray;
-  }
-
-  .mywork_date span{
-    font-size: 0.8rem;
-    border-bottom: 2px solid rgb(148, 19, 19);
-    font-weight: 600;
-    color: rgb(148, 19, 19);
-  }
-
+  /* 블로그 메인 CSS */
   .mywork_name_name{
     font-weight: 900;
     font-size: 1.7rem;
@@ -392,72 +176,11 @@
     font-size: 1.1rem;
     padding: 0.5rem 0rem 0.1rem 0.3rem;
   }
-
-  .mywork_col{
-    padding: 0rem 0px 0.5rem 0px;
-  }
-
-  .home_mywork_title{
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-  }
-
-  .home_mywork_content{
-    font-size: 1rem;
-    margin: 0.3rem 0rem 0.3rem 0.1rem;
-    font-weight: 500;
-  }
-
-  .home_mywork_date{
-    padding: 0.3rem 0.5rem 0rem 0.5rem;
-    color: gray;
-    font-size: 0.9rem;
-    color: gray;
-  }
-  
+  /* 블로그 메인 CSS 끝 */  
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .mywork_content{
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: gray;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-  }
-
-  .mywork_image {
-    width: 100%;
-    height: 21rem;
-  }
-
-  .mywork_title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .mywork_date{
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 0.8rem;
-    padding: 1rem 0.5rem 0rem 0.5rem;
-    color: gray;
-  }
-
-  .mywork_date span{
-    font-size: 0.8rem;
-    border-bottom: 2px solid rgb(148, 19, 19);
-    font-weight: 600;
-    color: rgb(148, 19, 19);
-  }
-
+  /* 블로그 메인 CSS */
   .mywork_name_name{
     font-weight: 900;
     font-size: 1.7rem;
@@ -491,76 +214,11 @@
     font-size: 1.1rem;
     padding: 0.5rem 0rem 0.1rem 0.3rem;
   }
-
-  .mywork_col{
-    padding: 0rem 0px 0.5rem 0px;
-  }
-
-  .home_mywork_title{
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
-
-  .home_mywork_content{
-    font-size: 0.9rem;
-    margin: 0.3rem 0rem 0.3rem 0.1rem;
-    font-weight: 500;
-  }
-
-  .home_mywork_date{
-    padding: 0rem 0.5rem 0rem 0.5rem;
-    color: gray;
-    font-size: 1rem;
-    color: gray;
-  }
-  
-  .home_mywork_col{
-    padding: 0.3rem 0px 0.5rem 0px;
-  }
-  
+  /* 블로그 메인 CSS 끝 */
 }
 
 @media (max-width: 575.98px) {
-  .mywork_content{
-    padding: 0.3rem 0px;
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: gray;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-  }
-
-  .mywork_title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-  }
-
-  .mywork_image {
-    width: 100%;
-    height: auto;
-  }
-
-  .mywork_date{
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 0.8rem;
-    padding: 1rem 0.5rem 0rem 0.5rem;
-    color: gray;
-  }
-
-  .mywork_date span{
-    font-size: 0.8rem;
-    border-bottom: 2px solid rgb(148, 19, 19);
-    font-weight: 600;
-    color: rgb(148, 19, 19);
-  }
-
+  /* 블로그 메인 CSS */  
   .mywork_name_name{
     font-weight: 900;
     font-size: 1.7rem;
@@ -594,32 +252,7 @@
     font-size: 1.1rem;
     padding: 0.5rem 0rem 0.1rem 0.3rem;
   }
-
-  .mywork_col{
-    padding: 0.5rem 0px 0.5rem 0px;
-  }
-
-  .home_mywork_title{
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-
-  .home_mywork_content{
-    font-size: 0.8rem;
-    margin: 0.3rem 0rem 0.3rem 0.1rem;
-    font-weight: 500;
-  }
-
-  .home_mywork_date{
-    padding: 0rem 0.5rem 0rem 0.5rem;
-    color: gray;
-    font-size: 0.9rem;
-    color: gray;
-  }
-  
-  .home_mywork_col{
-    padding: 0.3rem 0px 0.5rem 0px;
-  }
+  /* 블로그 메인 CSS 끝 */
 }
   
   

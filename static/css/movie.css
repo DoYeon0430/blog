@@ -28,45 +28,6 @@
 }
 
 @media (min-width: 1400px) {
-  .movie_image {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    width: 80%;
-    height: auto;
-    border: 1px solid black;
-  }
-  
-  .movie_col{
-    padding: 0.5rem 0px;
-  }
-
-  .movie_title {
-    padding: 0rem 2rem;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .movie_date{
-    font-size: 1rem;
-    padding: 0px 2rem;
-  }
-
-  .movie_content{
-    font-size: 1.1rem;
-    padding: 0rem 3rem 2rem 3rem;
-  }
-
-  .movie_content a{
-    text-decoration: none;
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-  
-
   /* page 버튼 */
   .pagination{
     padding: 2rem 0px 0rem 0px;
@@ -100,44 +61,6 @@
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px)  {
-  .movie_image {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    width: 80%;
-    height: auto;
-    border: 1px solid black;
-  }
-
-  .movie_col{
-    padding: 0.5rem 0px;
-  }
-
-  .movie_title {
-    padding: 0rem 2rem;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .movie_date{
-    font-size: 1rem;
-    padding: 0px 2rem;
-  }
-
-  .movie_content{
-    font-size: 1.1rem;
-    padding: 0rem 3rem 0rem 3rem;
-  }
-
-  .movie_content a{
-    text-decoration: none;
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
    /* page 버튼 */ 
   .pagination{
     padding: 2rem 0px 0rem 0px;
@@ -171,44 +94,6 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .movie_image {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    width: 80%;
-    height: auto;
-    border: 1px solid black;
-  }
-
-  .movie_col{
-    padding: 0.5rem 0px;
-  }
-
-  .movie_title {
-    padding: 0rem 2rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .movie_date{
-    font-size: 0.9rem;
-    padding: 0px 2rem;
-  }
-
-  .movie_content{
-    font-size: 1rem;
-    padding: 0rem 2rem 0rem 3rem;
-  }
-
-  .movie_content a{
-    text-decoration: none;
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
    /* page 버튼 */ 
   .pagination{
     padding: 2rem 0px 0rem 0px;
@@ -242,41 +127,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .movie_image {
-    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
-    width: 100%;
-    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
-  }
-
-  .movie_col{
-    padding: 1rem 0px;
-  }
-
-  .movie_title {
-    padding: 0rem 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .movie_date{
-    font-size: 1.1rem;
-    padding: 0px 1rem;
-  }
-
-  .movie_content{
-    font-size: 1rem;
-    padding: 0rem 2rem 0rem 2rem;
-  }
-
-  .movie_content a{
-    text-decoration: none;
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
    /* page 버튼 */ 
   .pagination{
     padding: 2rem 0px 0rem 0px;
@@ -310,42 +160,6 @@
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .movie_image {
-    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
-    width: 100%;
-    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
-  }
-
-  .movie_col{
-    padding: 1rem 0px;
-  }
-
-  .movie_title {
-    padding: 0px 1rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .movie_date{
-    font-size: 1rem;
-    padding: 0px 1rem;
-  }
-
-  .movie_content{
-    display:none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .movie_content a{
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
    /* page 버튼 */ 
   .pagination{
     padding: 2rem 0px 0rem 0px;
@@ -379,43 +193,6 @@
 }
 
 @media (max-width: 575.98px) {
-  .movie_image {
-    float: left; /* 이미지를 오른쪽으로 정렬합니다. */
-    width: 100%;
-    height: auto;
-    border: 1px solid black; /* 이미지의 너비를 20%로 지정합니다. */
-  }
-
-  .movie_col{
-    padding: 1rem 0px 1rem 0px;
-  }
-
-  .movie_title {
-    padding-left: 0.9rem;
-    font-size: 1.1rem;
-    font-weight: 900;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: black;
-  }
-
-  .movie_date{
-    font-size: 0.9rem;
-    padding: 0px 1rem;
-  }
-  
-  .movie_content{
-    display: none;
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .movie_content a{
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
    /* page 버튼 */ 
   .pagination{
     padding: 2rem 0px 0rem 0px;

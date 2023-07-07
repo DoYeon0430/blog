@@ -22,10 +22,11 @@ crossorigin="anonymous"></script>
 <meta property="og:description" content="상업영화, 드라마 ,OTT 오리지널 시리즈 등 영화 리뷰를 하는 블로그입니다."/> 
 <meta property="og:image" content="https://www.doyeon0430.com/media/mywork/doyeon0430_logo.jpg"/>
 {% endblock %}
+{% load movie_filter %}
 {% block content %}
-<div class="container">
+<div class="container background_design">
     <div class="row">
-        <div class="container col-lg-9 background_design" >
+        <div class="container col-lg-9 pt-3 pb-3 draggable" >
             <div class="container pt-3 pb-3">
                 <div class="row justify-content-between my-3">
                     <div class="col-4 col-sm-3 col-md-2 col-lg-2">
@@ -47,36 +48,27 @@ crossorigin="anonymous"></script>
                 </div>
                 {% for m in page_obj %}
                     <div class="row home_intro" OnClick="location.href ='{% url "movie:detail" m.id %}'" style="cursor:pointer;">
-                        <div class="col-5 movie_col" >
-                            <div>
+                        <div class="col-4 django_col">
                                 {% if m.photo %}
-                                    <img class="movie_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
+                                    <img class="django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
                                 {% endif %}
-                            </div>
                         </div>
-
-                        <div class="col-7 movie_col">
-                            <h2 class="movie_title">
-                                [{{ m.subject }}] 후기
+                        
+                        <div class="col-8 django_col">
+                            <h2 class="django_title">
+                                <span class="two_title">{{ m.content}}, <{{ m.subject }}> 후기</span>
                             </h2>
 
-                            <h2 class="movie_content">
-                                {% if m.content|length > 60 %}
-                                    {{ m.content|truncatechars:60 }}... 더보기
-                                {% else %}
-                                    {{ m.content }}
-                                {% endif %}
-                            </h2>
-
-                            <div class="movie_date">
-                                · {{ m.genre }}
-                            </div>  
-                            <div class="movie_date">
-                                <span>· {{ m.create_date|date:"Y년 m월 d일" }}</span>
+                            <div class="django_date">
+                                <span>{{ m.create_date|date:"Y. m. d" }} | {{ page_obj.paginator.count|sub:page_obj.start_index|sub:forloop.counter0|add:1  }}번째 글</span>
                             </div>
+                            
+                            <h3 class="django_content">
+                                <span class="two_content">{{ m.meta }}</span>
+                            </h3>
                         </div>
                     </div>
-            {% endfor %}
+                {% endfor %}
             
             
                 
@@ -149,7 +141,7 @@ crossorigin="anonymous"></script>
             
             </div>
         </div>
-        <div class="col-lg-3 mb-3 sidebar_main sidebar_background">
+        <div class="col-lg-3 sidebar_main sidebar_background">
             <div class="sidebar_count">
                 <div>영화 & IT 개인 블로그</span></div>
                 <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>

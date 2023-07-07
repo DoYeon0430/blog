@@ -43,8 +43,10 @@ def main(request):
 
     if kw:
         object_list = object_list.filter(
-            Q(subject__icontains=kw)    
+            Q(subject__icontains=kw) |
+            Q(content__icontains=kw)
         ).distinct()
+
 
     paginator = Paginator(object_list, 5)
     page_number = request.GET.get('page')
