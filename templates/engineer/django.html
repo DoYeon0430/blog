@@ -25,21 +25,19 @@ crossorigin="anonymous"></script>
 <meta property="article:published_time" content="{{django.create_date|date:'Y-m-d\TH:i:s+00:00'}}">
 {% endblock %}
 {% block content %}
-<div class="container background_design">
+<div class="container">
   <div class="row">
-    <div class="container col-lg-9 pt-3 pb-3 draggable">
-      <div class="detail_bag">
-        <p class="detail_sup">
-            Django 포스팅
-        </p>
-        <h1 class="detail_subject">
-            {{django.subject}}
-        </h1>
-        <div class="detail_date">
-            <p style="margin: 0;">
-                Doyeon0430 |  {{django.create_date|date:"Y년 m월 d일"}}
-            </p>
-        </div>
+    <div class="container col-lg-9 px-3 pt-3 pb-3 draggable background_design">
+      <p class="detail_sup">
+          Django 포스팅
+      </p>
+      <h1 class="detail_subject">
+          {{django.subject}}
+      </h1>
+      <div class="detail_date">
+          <p style="margin: 0;">
+              Doyeon0430 |  {{django.create_date|date:"Y년 m월 d일"}}
+          </p>
       </div>
       <div class="text-center">
         <img class="detail_img" src="{% static 'img/django.webp' %}" alt="Django 이미지">

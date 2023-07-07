@@ -112,14 +112,10 @@
     /* detail홈페이지 CSS */
     .detail_sup{
         font-size: 1rem;
-        padding-left: 0rem;
         padding-bottom: 0.5rem;
         margin:0;
         color: rgb(218, 180, 180);
         font-weight: 600;
-    }
-    .detail_bag{
-        margin-bottom: 1rem;
     }
     .detail_subject{
         font-size: 1.8rem;
@@ -128,9 +124,10 @@
     }
 
     .detail_date{
-        color: #454444;
-        font-size: 0.9rem;
-        padding: 1rem 0rem 0rem 0.5rem;
+        color: #8c8c8c;
+        font-size: 1rem;
+        padding: 1rem 0;
+        font-weight: 600;
     }
 
     .detail_main{
@@ -148,7 +145,7 @@
 
     .detail_img{
         text-align: center;
-        padding: 1rem 0rem;
+        padding-bottom: 1rem;
         width: 100%;
         height: auto;
     }
@@ -282,19 +279,17 @@
         color: rgb(218, 180, 180);
         font-weight: 600;
     }
-    .detail_bag{
-        margin-bottom: 1rem;
-    }
     .detail_subject{
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 600;
         margin-bottom: 0rem;
     }
 
     .detail_date{
-        color: #454444;
-        font-size: 0.9rem;
-        padding: 1rem 0rem 0rem 0.5rem;
+        color: #8c8c8c;
+        font-size: 1rem;
+        padding: 1rem 0;
+        font-weight: 600;
     }
 
     .detail_main{
@@ -312,7 +307,7 @@
 
     .detail_img{
         text-align: center;
-        padding: 1rem 0rem;
+        padding-bottom: 1rem;
         width: 100%;
         height: auto;
     }
@@ -447,19 +442,17 @@
         color: rgb(218, 180, 180);
         font-weight: 600;
     }
-    .detail_bag{
-        margin-bottom: 1rem;
-    }
     .detail_subject{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin-bottom: 0rem;
     }
 
     .detail_date{
-        color: #454444;
+        color: #8c8c8c;
         font-size: 0.9rem;
-        padding: 0.8rem 0rem 0rem 0.5rem;
+        padding: 0.8rem 0;
+        font-weight: 600;
     }
 
     .detail_main{
@@ -477,7 +470,7 @@
 
     .detail_img{
         text-align: center;
-        padding: 1rem 0rem;
+        padding-bottom: 1rem;
         width: 100%;
         height: auto;
     }
@@ -620,19 +613,17 @@
         color: rgb(218, 180, 180);
         font-weight: 600;
     }
-    .detail_bag{
-        margin-bottom: 1rem;
-    }
     .detail_subject{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin-bottom: 0rem;
     }
 
     .detail_date{
-        color: #454444;
+        color: #8c8c8c;
         font-size: 0.9rem;
-        padding: 0.8rem 0rem 0rem 0.5rem;
+        padding: 0.8rem 0;
+        font-weight: 600;
     }
 
     .detail_main{
@@ -651,7 +642,7 @@
 
     .detail_img{
         text-align: center;
-        padding: 1rem 0rem;
+        padding-bottom: 1rem;
         width: 100%;
         height: auto;
     }
@@ -793,9 +784,6 @@
         color: rgb(218, 180, 180);
         font-weight: 600;
     }
-    .detail_bag{
-        margin-bottom: 1rem;
-    }
     .detail_subject{
         font-size: 1.4rem;
         font-weight: 600;
@@ -803,9 +791,10 @@
     }
 
     .detail_date{
-        color: #454444;
+        color: #8c8c8c;
         font-size: 0.9rem;
-        padding: 1rem 0rem 0rem 0.5rem;
+        padding: 0.8rem 0;
+        font-weight: 600;
     }
 
     .detail_main{
@@ -824,7 +813,7 @@
 
     .detail_img{
         text-align: center;
-        padding: 1rem 0rem;
+        padding-bottom: 1rem;
         width: 100%;
         height: auto;
     }
@@ -953,19 +942,17 @@
         color: rgb(218, 180, 180);
         font-weight: 600;
     }
-    .detail_bag{
-        margin-bottom: 1rem;
-    }
     .detail_subject{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin-bottom: 0rem;
     }
 
     .detail_date{
-        color: #454444;
+        color: #8c8c8c;
         font-size: 0.9rem;
-        padding: 1rem 0rem 0rem 0.5rem;
+        padding: 0.8rem 0;
+        font-weight: 600;
     }
 
     .detail_main{
@@ -984,7 +971,7 @@
 
     .detail_img{
         text-align: center;
-        padding: 1rem 0rem;
+        padding-bottom: 1rem;
         width: 100%;
         height: auto;
     }
