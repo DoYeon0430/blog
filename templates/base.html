@@ -105,12 +105,12 @@
       <img src="{% static 'img/doyeon0430.png' %}" alt="My Image">
     </a>
   </div>
-  <button class="navbar-burger" onclick="toggleMenu()" id="text">
+  <button class="navbar-burger" onclick="toggleMenu()" aria-label="navbar-burger">
   </button>
 </div>
 
 <div class="menu">
-  <button class="navbar-burger_back" onclick="toggleMenu()" id="text">
+  <button class="navbar-burger_back" onclick="toggleMenu()" aria-label="navbar-burger_back">
   </button>
     <nav>
         <a class="bar_one" href="{% url 'myprofile:main' %}" style="animation-delay: 0.1s;">나의 소개</a>
