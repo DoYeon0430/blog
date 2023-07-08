@@ -1,10 +1,11 @@
 .footer_a{
     font-weight: 600; 
-    font-size: 0.9rem;
-    color: rgb(103, 116, 104);
+    font-size: 0.95rem;
+    color: rgb(63, 63, 63);
 }
 
 .footer_p{
-    font-weight: 600; 
-    color: rgb(154, 153, 153);
+    font-weight: 800; 
+    font-size: 1.1rem;
+    color: rgb(46, 46, 46);
 }
