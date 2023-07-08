@@ -20,18 +20,53 @@
     const scrollButtonback = document.getElementById('scrollButtonback');
 
     scrollButtongo.addEventListener('click', () => {
+      let leftValue;
+    
+      if (window.innerWidth >= 1400) {
+        leftValue = 1314;
+      } else if (window.innerWidth >= 1200 && window.innerWidth <= 1399.98) {
+        leftValue = 1134;
+      } else if (window.innerWidth >= 992 && window.innerWidth <= 1199.98) {
+        leftValue = 954;
+      } else if (window.innerWidth >= 768 && window.innerWidth <= 991.98) {
+        leftValue = 720;
+      } else if (window.innerWidth >= 576 && window.innerWidth <= 767.98) {
+        leftValue = 540;
+      } else {
+        // 575.98px 이하일 경우 전체 너비로 설정
+        leftValue = window.innerWidth;
+      }
+    
       myprofileFormDiv.scrollBy({
         top: 0,
-        left: 1000,
+        left: leftValue,
         behavior: 'smooth'
       });
     });
-
+    
     scrollButtonback.addEventListener('click', () => {
-        myprofileFormDiv.scrollBy({
-          top: 0,
-          left: -1000,
-          behavior: 'smooth'
-        });
+      let leftValue;
+    
+      if (window.innerWidth >= 1400) {
+        leftValue = -1314;
+      } else if (window.innerWidth >= 1200 && window.innerWidth <= 1399.98) {
+        leftValue = -1134;
+      } else if (window.innerWidth >= 992 && window.innerWidth <= 1199.98) {
+        leftValue = -954;
+      } else if (window.innerWidth >= 768 && window.innerWidth <= 991.98) {
+        leftValue = -720;
+      } else if (window.innerWidth >= 576 && window.innerWidth <= 767.98) {
+        leftValue = -540;
+      } else {
+        // 575.98px 이하일 경우 전체 너비로 설정
+        leftValue = -window.innerWidth;
+      }
+    
+      myprofileFormDiv.scrollBy({
+        top: 0,
+        left: leftValue,
+        behavior: 'smooth'
+      });
     });
+    
     
