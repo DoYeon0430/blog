@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.doyeon0430.com/sitemap.xml
+
+#DaumWebMasterTool:0c269df7cb3463619774aab7b00895afa4988242e1ec8f6034981024cc5b7c93:dbmdCKHfuGEeflivYIbGmw==
