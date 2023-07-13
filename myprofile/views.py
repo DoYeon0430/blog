@@ -77,8 +77,16 @@ def main(request):
 
 
 def introduce(request):
+    mywork_count = Mywork.objects.count()
+    movie_count = Movie.objects.count()
+    physics_count = Physics.objects.count()
+    django_count = Django.objects.count()
+    network_count = Network.objects.count()
+
+    total_count = mywork_count + movie_count + physics_count + django_count + network_count
+
     main_view = Views.objects.get(pk=3)
-    introduce = {'main_view':main_view}
+    introduce = {'main_view':main_view, 'total_count': total_count}
     return render(request,'myprofile/introduce.html', introduce)
 
 

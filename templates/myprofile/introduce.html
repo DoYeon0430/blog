@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block title %}
 <title>Doyeon0430 블로그 정보</title>
 <meta name="title" content="Doyeon0430 블로그 정보"/>
@@ -47,17 +48,17 @@
             <li>서버 - AWS Lightsail</li>
             <li>데이터베이스 - PostgreSQL</li>
           </ul>
-          <div>블로그 방문자</div>
+          <div>총 게시글</div>
           <ul class="mywork_name_ul">
-            <li>총 {{main_view.count}}명</li>
+            <li>{{total_count}}개</li>
           </ul>
-          <div>서버 비용</div>
+          <div>전체 방문자</div>
+          <ul class="mywork_name_ul">
+            <li>{{main_view.count|intcomma}}명</li>
+          </ul>
+          <div>서버 유지 비용</div>
           <ul class="mywork_name_ul">
             <li>$5 USD (1 Month)</li>
-          </ul>
-          <div>기타</div>
-          <ul class="mywork_name_ul">
-            <li>깃허브에 오픈소스 올려놨어요. <br>코드 필요하신 분들 마음껏 사용하세요.</li>
           </ul>
         </div>
     </div>
