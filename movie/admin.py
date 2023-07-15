@@ -24,7 +24,7 @@ class MovieAdmin(admin.ModelAdmin):
 
     def display_meta(self, obj):
         return obj.meta[:60] if len(obj.meta) > 60 else obj.meta
-    display_meta.short_description = 'meta 태그'
+    display_meta.short_description = 'META 태그'
 
 
     def get_formatted_create_date(self, obj):
