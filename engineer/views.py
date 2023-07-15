@@ -119,20 +119,6 @@ def physics(request, study_id):
 
     response = render(request, 'engineer/physics.html', context)
 
-    expire_date, now = datetime.now(), datetime.now()
-    expire_date += timedelta(days=1)
-    expire_date = expire_date.replace(hour=0, minute=0, second=0, microsecond=0)
-    expire_date -= now
-    max_age = expire_date.total_seconds()
-
-    cookie_value = request.COOKIES.get('hitboard','_')
-
-    if f'_{study_id}_' not in cookie_value:
-        cookie_value += f'{study_id}_'
-        response.set_cookie('hitboard', value=cookie_value, max_age=max_age, httponly=True)
-        physics.hits += 1
-        physics.save()
-
     return response
 
 def physics_main(request):
@@ -260,20 +246,6 @@ def django(request, study_id):
         }
 
     response = render(request, 'engineer/django.html', context)
-
-    expire_date, now = datetime.now(), datetime.now()
-    expire_date += timedelta(days=1)
-    expire_date = expire_date.replace(hour=0, minute=0, second=0, microsecond=0)
-    expire_date -= now
-    max_age = expire_date.total_seconds()
-
-    cookie_value = request.COOKIES.get('hitboard','_')
-
-    if f'_{study_id}_' not in cookie_value:
-        cookie_value += f'{study_id}_'
-        response.set_cookie('hitboard', value=cookie_value, max_age=max_age, httponly=True)
-        django.hits += 1
-        django.save()
 
     return response
 
@@ -415,20 +387,6 @@ def network(request, study_id):
         }
 
     response = render(request, 'engineer/network.html', context)
-
-    expire_date, now = datetime.now(), datetime.now()
-    expire_date += timedelta(days=1)
-    expire_date = expire_date.replace(hour=0, minute=0, second=0, microsecond=0)
-    expire_date -= now
-    max_age = expire_date.total_seconds()
-
-    cookie_value = request.COOKIES.get('hitboard','_')
-
-    if f'_{study_id}_' not in cookie_value:
-        cookie_value += f'{study_id}_'
-        response.set_cookie('hitboard', value=cookie_value, max_age=max_age, httponly=True)
-        network.hits += 1
-        network.save()
 
     return response
 

@@ -5,3 +5,6 @@ class Views(models.Model):
 
     def __str__(self):
         return "전체 조회수"
+    
+    class Meta:
+        verbose_name_plural = '전체 조회수'

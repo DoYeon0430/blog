@@ -16,6 +16,9 @@ class Movie(models.Model):
     def get_absolute_url(self):
         return f'/movie/{self.pk}/'
     
+    class Meta:
+        verbose_name_plural = '1. 영화 후기 포스팅'
+    
 class Comment(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='comments')
     username = models.CharField(max_length=200)
@@ -25,3 +28,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'[{self.movie.pk}. {self.movie.subject}] {self.username}님'
+    
+    class Meta:
+        verbose_name_plural = '2. 댓글'

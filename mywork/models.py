@@ -15,6 +15,9 @@ class Mywork(models.Model):
     def get_absolute_url(self):
         return f'/mywork/{self.pk}/'
     
+    class Meta:
+        verbose_name_plural = '1. 영화 이야기 포스팅'
+    
 class Comment(models.Model):
     mywork = models.ForeignKey(Mywork, on_delete=models.CASCADE, related_name='comments')
     username = models.CharField(max_length=200)
@@ -24,3 +27,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'[{self.mywork.pk}. {self.mywork.subject}] {self.username}님'
+    
+    class Meta:
+        verbose_name_plural = '2. 댓글'
