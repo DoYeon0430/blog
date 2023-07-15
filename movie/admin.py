@@ -8,7 +8,6 @@ class MovieAdmin(admin.ModelAdmin):
     actions = ['delete_selected']
     search_fields = ['subject', 'content']
     list_filter = ('create_date', 'genre')
-    list_per_page = 15
 
     def get_subject(self, obj):
         return obj.subject
