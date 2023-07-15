@@ -25,7 +25,7 @@ def home(request):
         expires = expires.strftime('%a, %d-%b-%Y %H:%M:%S GMT')
 
         mywork_content = Mywork.objects.all().order_by('-create_date')[:5]
-        movie_content = Movie.objects.all().order_by('-create_date')
+        movie_content = Movie.objects.all().order_by('-create_date')[:15]
 
         content = {
             'mywork_content': mywork_content,
@@ -40,7 +40,7 @@ def home(request):
 
     if tag == '영화':
         mywork_content = Mywork.objects.all().order_by('-create_date')[:5]
-        movie_content = Movie.objects.all().order_by('-create_date')
+        movie_content = Movie.objects.all().order_by('-create_date')[:15]
 
         content = {
             'mywork_content': mywork_content,
@@ -60,7 +60,7 @@ def home(request):
 
     else:
         mywork_content = Mywork.objects.all().order_by('-create_date')[:5]
-        movie_content = Movie.objects.all().order_by('-create_date')
+        movie_content = Movie.objects.all().order_by('-create_date')[:15]
 
         content = {
             'mywork_content': mywork_content,
