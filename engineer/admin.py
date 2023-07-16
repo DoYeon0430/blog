@@ -7,7 +7,7 @@ from django.utils.html import strip_tags
 # Post 클래스는 해당하는 Photo 객체를 리스트로 관리하는 한다. 
 class PhysicsAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
-    search_fields = ['subject', 'content']
+    search_fields = ['subject']
     list_filter = ('create_date',)
     
     def get_subject(self, obj):
@@ -30,7 +30,7 @@ class PhysicsAdmin(admin.ModelAdmin):
 
 class DjangoAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
-    search_fields = ['subject', 'content']
+    search_fields = ['subject']
     list_filter = ('create_date',)
 
     def get_subject(self, obj):
@@ -53,7 +53,7 @@ class DjangoAdmin(admin.ModelAdmin):
 
 class NetworkAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
-    search_fields = ['subject', 'content']
+    search_fields = ['subject']
     list_filter = ('create_date',)
 
     def get_subject(self, obj):
