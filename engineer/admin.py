@@ -8,7 +8,7 @@ from django.utils.html import strip_tags
 class PhysicsAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
     search_fields = ['subject', 'content']
-    list_filter = ('create_date', 'content')
+    list_filter = ('create_date',)
     
     def get_subject(self, obj):
         return obj.subject
@@ -31,7 +31,7 @@ class PhysicsAdmin(admin.ModelAdmin):
 class DjangoAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
     search_fields = ['subject', 'content']
-    list_filter = ('create_date', 'content')
+    list_filter = ('create_date',)
 
     def get_subject(self, obj):
         return obj.subject
@@ -54,8 +54,8 @@ class DjangoAdmin(admin.ModelAdmin):
 class NetworkAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
     search_fields = ['subject', 'content']
-    list_filter = ('create_date', 'content')
-    
+    list_filter = ('create_date',)
+
     def get_subject(self, obj):
         return obj.subject
     get_subject.short_description = '제목'
