@@ -40,7 +40,7 @@ crossorigin="anonymous"></script>
           </p>
       </div>
       <div class="text-center">
-        <img class="detail_img" src="{% static 'img/django.webp' %}" alt="Django 이미지">
+        <img class="detail_img" src="{{ django.photo.url }}" alt="Django 이미지">
       </div>
       {{django.htmlcontent|safe}}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
