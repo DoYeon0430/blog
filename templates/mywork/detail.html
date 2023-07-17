@@ -20,7 +20,7 @@ crossorigin="anonymous"></script>
 <meta property="og:url" content="https://www.doyeon0430.com{% url 'mywork:detail' detail.id %}"/>
 <meta property="og:type" content="blog"/>
 <meta property="og:description" content="{{ detail.meta }}"/> 
-<meta property="og:image" content="https://www.doyeon0430.com/media/mywork/doyeon0430_logo.jpg"/>
+<meta property="og:image" content="https://www.doyeon0430.com{{ detail.photo.url }}"/>
 <meta name="date" content="{{detail.create_date|date:'Y-m-d'}}">
 <meta property="article:published_time" content="{{detail.create_date|date:'Y-m-d\TH:i:s+00:00'}}">
 {% endblock %}
@@ -41,7 +41,7 @@ crossorigin="anonymous"></script>
         </div>
         <div class="text-center">
             {% if detail.photo %}
-                <img class="detail_img" src="{% static 'img/movieimg1.jpg' %}" alt="영화이야기 이미지">
+                <img class="detail_img" src="{{ detail.photo.url }}" alt="영화이야기 이미지">
             {% endif %}
         </div>
         {{detail.htmlcontent|safe}}
