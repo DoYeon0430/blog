@@ -7,7 +7,7 @@ class Mywork(models.Model):
     htmlcontent = HTMLField()
     photo = models.ImageField(upload_to='mywork/')
     create_date = models.DateTimeField(auto_now_add=True)
-    content = models.CharField(choices=[('현장이야기', '현장이야기'), ('영화연출', '영화연출')])
+    content = models.CharField(choices=[('영화연출', '영화연출'), ('영화추천', '영화추천'), ('현장이야기', '현장이야기')])
 
     def __str__(self):
         return self.subject
