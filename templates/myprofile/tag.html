@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block title %}
 <title>Doyeon0430 블로그 태그</title>
 <meta name="title" content="Doyeon0430 블로그 태그"/>
@@ -37,19 +38,32 @@
                 <div>소개</div>
             </div>
         </div>
-        <div>
-            <div>
-                <div class="tag_main">
-                    <a href="{% url 'myprofile:home' %}">#전체글 ({{mywork_content.count|add:movie_content.count|add:physics_content.count|add:django_content.count|add:network_content.count}})</a>
-                    <a href="{% url 'mywork:main' %}">#영화 이야기 ({{mywork_content.count}})</a>
-                    <a href="{% url 'movie:main' %}">#영화 후기 ({{movie_content.count}})</a>
-                    <a href="{% url 'engineer:physics_main' %}">#물리학 ({{physics_content.count}})</a>
-                    <a href="{% url 'engineer:django_main' %}">#Django ({{django_content.count}})</a>
-                    <a href="{% url 'engineer:network_main' %}">#네트워크 ({{network_content.count}})</a>
-                </div>
-            </div>
+        <div class="tag_main">
+            <a href="{% url 'myprofile:home' %}">#전체글 ({{mywork_content.count|add:movie_content.count|add:physics_content.count|add:django_content.count|add:network_content.count}})</a>
+            <a href="{% url 'mywork:main' %}">#영화 이야기 ({{mywork_content.count}})</a>
+            <a href="{% url 'movie:main' %}">#영화 후기 ({{movie_content.count}})</a>
+            <a href="{% url 'engineer:physics_main' %}">#물리학 ({{physics_content.count}})</a>
+            <a href="{% url 'engineer:django_main' %}">#Django ({{django_content.count}})</a>
+            <a href="{% url 'engineer:network_main' %}">#네트워크 ({{network_content.count}})</a>
         </div>
         
+        <div class="tag_cap">대한민국 일별 박스오피스</div>
+        <table class="container tag_table">
+            <caption>영화진흥위원회 API ({{ yesterday_str }} 기준)</caption>
+            <thead>
+                <th colspan="2">영화 제목</th>
+                <th>개봉일</th>
+                <th>누적 관객수</th>
+            </thead>
+            {% for movie in movie_list %}
+            <tbody>
+                <td style="font-weight: bold;">{{ movie.rank }}</td>
+                <td style="text-align: left;">{{ movie.movieNm }}</td>
+                <td>{{ movie.openDt }}</td>
+                <td>{{ movie.audiAcc|intcomma }}명</td>
+            </tbody>
+            {% endfor %}
+        </table>
     </div>
 </div>
 {% endblock %}

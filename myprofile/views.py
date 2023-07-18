@@ -6,7 +6,11 @@ from mywork.models import Mywork
 from movie.models import Movie
 from engineer.models import Physics, Django, Network
 from django.http import HttpResponse
-
+from bs4 import BeautifulSoup
+import requests
+import os, environ
+env = environ.Env()
+environ.Env.read_env()
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
@@ -91,19 +95,49 @@ def introduce(request):
 
 
 def tag(request):
+    # 어제 날짜 XML 형식 변경
+    today = datetime.today()
+    yesterday = today - timedelta(days=1)
+    target_date = yesterday.strftime("%Y%m%d")
+    yesterday_str  = yesterday.strftime("%Y-%m-%d")
+
+    # API URL 생성
+    key = env('API_KEY')
+    url = f"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key={key}&targetDt={target_date}"
+
+
+    # XML 데이터를 가져옴
+    response = requests.get(url)
+    xml_data = response.content
+
+    # BeautifulSoup를 사용하여 XML 파싱
+    soup = BeautifulSoup(xml_data, 'xml')
+
+    # 영화 정보 추출
+    movies = soup.find_all('dailyBoxOffice')
+    movie_list = []
+    for movie in movies:
+        rank = movie.find('rank').text
+        movieNm = movie.find('movieNm').text
+        openDt = movie.find('openDt').text
+        audiAcc = movie.find('audiAcc').text
+        movie_list.append({'rank': rank, 'movieNm': movieNm,'openDt': openDt, 'audiAcc': audiAcc})
+
+    # 기존 데이터 가져오기
     mywork_content = Mywork.objects.all()
     movie_content = Movie.objects.all()
     physics_content = Physics.objects.all()
     django_content = Django.objects.all()
     network_content = Network.objects.all()
 
-    content = { 
-            'mywork_content': mywork_content,
-            'movie_content': movie_content,
-            'physics_content': physics_content,
-            'django_content': django_content,
-            'network_content': network_content,
-            }
-    
-    return render(request,'myprofile/tag.html', content)
+    content = {
+        'mywork_content': mywork_content,
+        'movie_content': movie_content,
+        'physics_content': physics_content,
+        'django_content': django_content,
+        'network_content': network_content,
+        'movie_list': movie_list,
+        'yesterday_str': yesterday_str,
+    }
 
+    return render(request, 'myprofile/tag.html', content)
