@@ -11,6 +11,7 @@ import requests
 import os, environ
 env = environ.Env()
 environ.Env.read_env()
+from django.core.cache import cache
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
@@ -122,6 +123,17 @@ def tag(request):
         openDt = movie.find('openDt').text
         audiAcc = movie.find('audiAcc').text
         movie_list.append({'rank': rank, 'movieNm': movieNm,'openDt': openDt, 'audiAcc': audiAcc})
+
+    # 데이터를 캐시에서 조회
+    cached_data = cache.get('box_office_data')
+
+    if cached_data:
+        # 캐시된 데이터가 있으면 캐시된 데이터를 사용
+        movie_list = cached_data['movie_list']
+    else:
+        # 캐시된 데이터가 없으면 API에서 데이터를 가져옴
+        cache.set('box_office_data', {'movie_list': movie_list}, 300)
+
 
     # 기존 데이터 가져오기
     mywork_content = Mywork.objects.all()
