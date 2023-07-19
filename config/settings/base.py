@@ -185,3 +185,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 1000,
     "images_upload_url": "upload_image",
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache'),  # 캐시 파일이 저장될 폴더 경로
+    }
+}
