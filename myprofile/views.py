@@ -12,6 +12,7 @@ import os, environ
 env = environ.Env()
 environ.Env.read_env()
 from django.core.cache import cache
+import sys
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
@@ -128,10 +129,13 @@ def tag(request):
     cached_data = cache.get('box_office_data')
 
     if cached_data:
+        print("캐시 데이터가 존재합니다.")
+        print(sys.getsizeof(cache.get(cached_data)))
         # 캐시된 데이터가 있으면 캐시된 데이터를 사용
         movie_list = cached_data['movie_list']
     else:
         # 캐시된 데이터가 없으면 API에서 데이터를 가져옴
+        print("캐시 데이터가 존재하지 않습니다. 새로운 데이터를 캐시하거나 다시 시도하세요.")
         cache.set('box_office_data', {'movie_list': movie_list}, 300)
 
 
