@@ -3,7 +3,6 @@ from .models import Physics, Django, Network ,Comment_physics, Comment_django, C
 from django.core.paginator import Paginator
 from .forms import Comment_physicsForm, Comment_djangoForm, Comment_networkForm
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from django.http import JsonResponse
 from datetime import date, datetime, timedelta
@@ -52,6 +51,8 @@ def main(request):
         }
     return render(request, 'engineer/main.html', context)
 
+
+@csrf_exempt
 def physics(request, study_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     mywork_count_one = mywork_data.filter(content='현장이야기').count()
@@ -73,6 +74,8 @@ def physics(request, study_id):
     comments = Comment_physics.objects.filter(physics=physics.pk)
     next_post = Physics.objects.filter(create_date__gt=physics.create_date).order_by('create_date').first()
     previous_post = Physics.objects.filter(create_date__lt=physics.create_date).order_by('-create_date').first()
+    comment_limit_time = datetime.now() - timedelta(days=1)
+    comment_count = Comment_physics.objects.filter(physics=physics, create_date__gte=comment_limit_time).count()
 
     if request.method == 'POST':
         form = Comment_physicsForm(request.POST)
@@ -80,11 +83,12 @@ def physics(request, study_id):
         comment_id = request.POST.get('comment_id')
 
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.physics = physics
-            comment.save()
-            form = Comment_physicsForm()  # Clear the form after saving the comment
-            return redirect('engineer:physics', study_id=study_id)  # Redirect to GET view
+            if comment_count < 3:
+                comment = form.save(commit=False)
+                comment.physics = physics
+                comment.save()
+                form = Comment_physicsForm()  # Clear the form after saving the comment
+                return redirect('engineer:physics', study_id=study_id)  # Redirect to GET view
         
         try:
             comment = Comment_physics.objects.get(pk=comment_id)
@@ -119,6 +123,7 @@ def physics(request, study_id):
         'form':form,
         'next_post': next_post,
         'previous_post': previous_post,
+        'comment_count': comment_count,
         }
 
     response = render(request, 'engineer/physics.html', context)
@@ -182,7 +187,7 @@ def physics_main(request):
         })
 
 
-
+@csrf_exempt
 def django(request, study_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     mywork_count_one = mywork_data.filter(content='현장이야기').count()
@@ -204,6 +209,8 @@ def django(request, study_id):
     comments = Comment_django.objects.filter(django=django.pk)
     next_post = Django.objects.filter(create_date__gt=django.create_date).order_by('create_date').first()
     previous_post = Django.objects.filter(create_date__lt=django.create_date).order_by('-create_date').first()
+    comment_limit_time = datetime.now() - timedelta(days=1)
+    comment_count = Comment_django.objects.filter(django=django, create_date__gte=comment_limit_time).count()
     
     if request.method == 'POST':
         form = Comment_djangoForm(request.POST)
@@ -211,11 +218,12 @@ def django(request, study_id):
         comment_id = request.POST.get('comment_id')
 
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.django = django
-            comment.save()
-            form = Comment_djangoForm()  # Clear the form after saving the comment
-            return redirect('engineer:django', study_id=study_id)  # Redirect to GET view
+            if comment_count < 3:
+                comment = form.save(commit=False)
+                comment.django = django
+                comment.save()
+                form = Comment_djangoForm()  # Clear the form after saving the comment
+                return redirect('engineer:django', study_id=study_id)  # Redirect to GET view
         
         try:
             comment = Comment_django.objects.get(pk=comment_id)
@@ -250,6 +258,7 @@ def django(request, study_id):
         'form':form,
         'next_post': next_post,
         'previous_post': previous_post,
+        'comment_count': comment_count,
         }
 
     response = render(request, 'engineer/django.html', context)
@@ -327,6 +336,7 @@ def django_main(request):
         })
 
 
+@csrf_exempt
 def network(request, study_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     mywork_count_one = mywork_data.filter(content='현장이야기').count()
@@ -348,6 +358,8 @@ def network(request, study_id):
     comments = Comment_network.objects.filter(network=network.pk)
     next_post = Network.objects.filter(create_date__gt=network.create_date).order_by('create_date').first()
     previous_post = Network.objects.filter(create_date__lt=network.create_date).order_by('-create_date').first()
+    comment_limit_time = datetime.now() - timedelta(days=1)
+    comment_count = Comment_network.objects.filter(network=network, create_date__gte=comment_limit_time).count()
 
     if request.method == 'POST':
         form = Comment_networkForm(request.POST)
@@ -355,11 +367,12 @@ def network(request, study_id):
         comment_id = request.POST.get('comment_id')
 
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.network = network
-            comment.save()
-            form = Comment_networkForm()  # Clear the form after saving the comment
-            return redirect('engineer:network', study_id=study_id)  # Redirect to GET view
+            if comment_count < 3:
+                comment = form.save(commit=False)
+                comment.network = network
+                comment.save()
+                form = Comment_networkForm()  # Clear the form after saving the comment
+                return redirect('engineer:network', study_id=study_id)  # Redirect to GET view
         
         try:
             comment = Comment_network.objects.get(pk=comment_id)
@@ -394,6 +407,7 @@ def network(request, study_id):
         'form': form,
         'next_post': next_post,
         'previous_post': previous_post,
+        'comment_count': comment_count,
         }
 
     response = render(request, 'engineer/network.html', context)

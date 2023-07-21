@@ -106,11 +106,18 @@ crossorigin="anonymous"></script>
               <textarea name="content" id="content" 
                 class="form-control" 
                 rows="3" style="resize: none;"
-                placeholder="내용을 입력하세요."
+                {% if comment_count >= 3 %}
+                  placeholder="커뮤니티 정책으로 하루에 3개의 댓글만 허용합니다."
+                  readonly
+                {% else %}
+                  placeholder="내용을 입력하세요."
+                {% endif %}
               >{{ form.content.value|default_if_none:'' }}</textarea>
         
               <div class="text-end pt-3">
-                <button type="submit" class="btn btn-dark px-3 bg-success">댓글 작성</button>
+                <button type="submit" class="btn btn-dark px-3 bg-success"
+                {% if comment_count >= 3 %}disabled{% endif %}
+                >댓글 작성</button>
               </div>
             </div>
           </div>

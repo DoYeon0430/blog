@@ -7,6 +7,8 @@ from mywork.models import Mywork
 from myprofile.models import Views
 from engineer.models import Physics, Django, Network
 from django.urls import reverse
+from datetime import datetime, timedelta
+from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
     mywork_data = Mywork.objects.all().order_by('-create_date')
@@ -79,7 +81,7 @@ def main(request):
     })
 
 
-
+@csrf_exempt
 def detail(request, movie_id):
     mywork_data = Mywork.objects.all().order_by('-create_date')
     mywork_count_one = mywork_data.filter(content='현장이야기').count()
@@ -101,18 +103,21 @@ def detail(request, movie_id):
     comments = Comment.objects.filter(movie=detail.pk)
     next_post = Movie.objects.filter(create_date__gt=detail.create_date).order_by('create_date').first()
     previous_post = Movie.objects.filter(create_date__lt=detail.create_date).order_by('-create_date').first()
-
+    comment_limit_time = datetime.now() - timedelta(days=1)
+    comment_count = Comment.objects.filter(movie=detail, create_date__gte=comment_limit_time).count()
+    
     if request.method == 'POST':
         form = CommentForm(request.POST)
         password = request.POST.get('password')
         comment_id = request.POST.get('comment_id')
 
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.movie = detail
-            comment.save()
-            form = CommentForm()  # Clear the form after saving the comment
-            return redirect('movie:detail', movie_id=movie_id)  # Redirect to GET view
+            if comment_count < 3:
+                comment = form.save(commit=False)
+                comment.movie = detail
+                comment.save()
+                form = CommentForm()  # Clear the form after saving the comment
+                return redirect('movie:detail', movie_id=movie_id)  # Redirect to GET view
         
         try:
             comment = Comment.objects.get(pk=comment_id)
@@ -147,6 +152,7 @@ def detail(request, movie_id):
         'form': form,
         'next_post': next_post,
         'previous_post': previous_post,
+        'comment_count': comment_count,
         }
 
     return render(request, 'movie/detail.html',context)
