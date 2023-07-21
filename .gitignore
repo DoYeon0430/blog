@@ -1,5 +1,9 @@
 .env
 media
 __pycache__
-**/__pycache__/
+config/__pycache__
+mywork/__pycache__
+myprofile/__pycache__
+movie/__pycache__
+engineer/__pycache__
 cache
