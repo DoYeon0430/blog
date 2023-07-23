@@ -7,7 +7,7 @@ Django 웹 프레임워크를 사용하여 제작된 블로그입니다.<br>
 <br>
 
 # 주요 기능
-### ● postgreSQL
+### ● postgreSQL 데이터베이스 연동
 
 ```
 DATABASES = {
@@ -25,7 +25,7 @@ DATABASES = {
 대량의 데이터를 처리하고 저장하기 위해 postgreSQL 데이터베이스를 연동하여 사용합니다.<br> 
 <br> 
 
-### ● url 쿼리 파라미터
+### ● url 쿼리 파라미터 사용
 
 ```
 url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
