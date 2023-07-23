@@ -70,7 +70,7 @@ soup=BeautifulSoup(xml_data,'xml')
 파이썬 웹 크롤링 라이브러리인 BeautifulSoup를 사용해 데이터를 추출했습니다.<br>
 <br>
 
-### ● 캐시를 활용하여 서버 최적화
+### ● 캐시를 활용한 서버 최적화
 
 ```
 cached_data = cache.get('box_office_data')
