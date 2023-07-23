@@ -101,42 +101,37 @@ def tag(request):
     today = datetime.today()
     yesterday = today - timedelta(days=1)
     target_date = yesterday.strftime("%Y%m%d")
-    yesterday_str  = yesterday.strftime("%Y-%m-%d")
+    yesterday_str = yesterday.strftime("%Y-%m-%d")
 
-    # API URL 생성
-    key = env('API_KEY')
-    url = f"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key={key}&targetDt={target_date}"
-
-
-    # XML 데이터를 가져옴
-    response = requests.get(url)
-    xml_data = response.content
-
-    # BeautifulSoup를 사용하여 XML 파싱
-    soup = BeautifulSoup(xml_data, 'xml')
-
-    # 영화 정보 추출
-    movies = soup.find_all('dailyBoxOffice')
-    movie_list = []
-    for movie in movies:
-        rank = movie.find('rank').text
-        movieNm = movie.find('movieNm').text
-        openDt = movie.find('openDt').text
-        audiAcc = movie.find('audiAcc').text
-        movie_list.append({'rank': rank, 'movieNm': movieNm,'openDt': openDt, 'audiAcc': audiAcc})
-
-    # 데이터를 캐시에서 조회
     cached_data = cache.get('box_office_data')
-
     if cached_data:
         print("캐시 데이터가 존재합니다.")
-        print(sys.getsizeof(cache.get(cached_data)))
-        # 캐시된 데이터가 있으면 캐시된 데이터를 사용
         movie_list = cached_data['movie_list']
     else:
-        # 캐시된 데이터가 없으면 API에서 데이터를 가져옴
-        print("캐시 데이터가 존재하지 않습니다. 새로운 데이터를 캐시하거나 다시 시도하세요.")
-        cache.set('box_office_data', {'movie_list': movie_list}, 300)
+        # API URL 생성
+        key = env('API_KEY')
+        url = f"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key={key}&targetDt={target_date}"
+
+        # XML 데이터를 가져옴
+        response = requests.get(url)
+        xml_data = response.content
+
+        # BeautifulSoup를 사용하여 XML 파싱
+        soup = BeautifulSoup(xml_data, 'xml')
+
+        # 영화 정보 추출
+        movies = soup.find_all('dailyBoxOffice')
+        movie_list = []
+        for movie in movies:
+            rank = movie.find('rank').text
+            movieNm = movie.find('movieNm').text
+            openDt = movie.find('openDt').text
+            audiAcc = movie.find('audiAcc').text
+            movie_list.append({'rank': rank, 'movieNm': movieNm, 'openDt': openDt, 'audiAcc': audiAcc})
+
+        # 데이터를 캐시에 저장
+        print("캐시 데이터가 존재하지 않습니다.")
+        cache.set('box_office_data', {'movie_list': movie_list}, 3600)  # 1시간(3600초) 동안 캐시 유지
 
 
     # 기존 데이터 가져오기
