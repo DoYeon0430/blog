@@ -8,10 +8,29 @@ Django 웹 프레임워크를 사용하여 제작된 블로그입니다.<br>
 
 # 주요 기능
 ### ● postgreSQL
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': env("DB_PORT"),
+    }
+}
+```
+
 대량의 데이터를 처리하고 저장하기 위해 postgreSQL 데이터베이스를 연동하여 사용합니다.<br> 
 <br> 
 
 ### ● url 쿼리 파라미터
+
+```
+url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
+```
+
 검색 기능과 드롭다운 메뉴바, 페이지 번호를 관리하고자 URL 쿼리 파라미터를 활용합니다.<br> 
 <br> 
 
