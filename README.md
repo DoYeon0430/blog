@@ -37,6 +37,8 @@ url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
 ### ● 댓글 작성 및 댓글 차단
 
 ```
+comment_count = Comment.objects.filter(movie=detail, create_date__gte=comment_limit_time).count()
+
 if comment_count<3:
   comment=form.save(commit=False)
   comment.movie=detail
@@ -46,7 +48,8 @@ if comment_count<3:
 ```
 사용자가 로그인 없이도 댓글을 추가하고 삭제할 수 있도록 CRUD 기능을 구현했습니다.<br>
 또한 악의적인 댓글 행동을 방지하기 위해 댓글 차단 기능을 추가하며<br> 
-하루에 3번 이상 댓글을 작성하는 경우 댓글 작성을 일시적으로 막습니다.<br> 
+하루에 3번 이상 댓글을 작성하는 경우 댓글 작성을 일시적으로 막습니다.<br>
+모든 데이터들은 Django에서 제공하는 @csrf_exempt으로 보호되고 있습니다.<br>
 <br> 
 
 ### ● 영화진흥위원회 오픈 API
