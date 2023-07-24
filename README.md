@@ -6,7 +6,7 @@ Django 웹 프레임워크를 사용해 제작한 블로그입니다.<br>
 <br>
 
 # 주요 기능
-### · postgreSQL 데이터베이스 연동
+### postgreSQL 데이터베이스 연동
 
 ```
 DATABASES = {
@@ -24,7 +24,7 @@ DATABASES = {
 대량의 데이터를 처리하고 저장하기 위해 postgreSQL 데이터베이스를 연동하여 사용합니다.<br> 
 <br> 
 
-### · url 쿼리 파라미터 사용
+### url 쿼리 파라미터 사용
 
 ```
 url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
@@ -33,7 +33,7 @@ url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
 검색 기능과 드롭다운 메뉴바, 페이지 번호를 관리하고자 URL 쿼리 파라미터를 활용합니다.<br> 
 <br> 
 
-### · 댓글 작성 및 댓글 차단
+### 댓글 작성 및 댓글 차단
 
 ```
 comment_count = Comment.objects.filter(movie=detail, create_date__gte=comment_limit_time).count()
@@ -51,7 +51,7 @@ if comment_count<3:
 모든 데이터들은 Django에서 제공하는 @csrf_exempt으로 보호되고 있습니다.<br>
 <br> 
 
-### · 영화진흥위원회 오픈 API
+### 영화진흥위원회 오픈 API
 
 ```
 #API URL 생성
@@ -69,7 +69,7 @@ soup=BeautifulSoup(xml_data,'xml')
 그리고 파이썬 웹 크롤링 라이브러리인 BeautifulSoup를 사용하며 데이터를 추출합니다.<br>
 <br>
 
-### · 캐시를 활용한 서버 최적화
+### 캐시를 활용한 서버 최적화
 
 ```
 cached_data = cache.get('box_office_data')
@@ -85,7 +85,7 @@ API를 웹 서버에 가져올 때 서버 부하를 줄이기 위해 캐시 기�
 데이터를 1시간에 한 번만 가져오도록 설정하고 캐시 파일은 프로젝트 루트 디렉터리에 저장시켰습니다.<br>
 <br>
 
-### · 쿠키 설정으로 방문자 조회
+### 쿠키 설정으로 방문자 조회
 
 ```
 cookie_name=f'main_'
