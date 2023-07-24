@@ -1,6 +1,10 @@
-.language-markup{
-    background-color: #E2E2E2;
-    color: #70196F;
-    padding: 1rem 1rem;
-    font-size: 1.1rem;
+.language-markup {
+    background-color: #e3e2e2;
+    color: #333333;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
 }

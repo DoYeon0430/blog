@@ -94,17 +94,17 @@
     top: 0.5rem;
     bottom: 1rem;
     padding: 0.6rem 0.5rem 0rem 0rem;
-    height: 100vh; /* Set the height of the parent container */
-    overflow: auto; /* Add scrollbars if necessary */
+    height: 100vh; 
+    overflow: auto; 
   }
   
   .sidebar_position::-webkit-scrollbar {
-    width: 6px; /* Set the width of the scrollbar */
+    width: 6px;
   }
   
   .sidebar_position::-webkit-scrollbar-thumb {
-    background-color: rgb(222, 221, 221); /* Set the color of the scrollbar thumb */
-    border-radius: 4px; /* Round the corners of the scrollbar thumb */
+    background-color: rgb(222, 221, 221); 
+    border-radius: 4px; 
   }
   
 .sidebar_background {

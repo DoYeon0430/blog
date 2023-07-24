@@ -25,9 +25,9 @@ crossorigin="anonymous"></script>
 <meta property="article:published_time" content="{{detail.create_date|date:'Y-m-d\TH:i:s+00:00'}}">
 {% endblock %}
 {% block content %}
-<div class="container">
+<div class="container background_design">
   <div class="row">
-    <div class="container col-lg-9 px-3 pt-3 pb-3 draggable background_design">
+    <div class="container col-lg-9 px-3 pt-3 pb-3 draggable">
       <p class="detail_sup">
         영화 리뷰 포스팅
       </p>
@@ -141,7 +141,7 @@ crossorigin="anonymous"></script>
         </div>
 
     </div>
-    <div class="col-lg-3 mb-3 sidebar_main sidebar_background">
+    <div class="col-lg-3 sidebar_main sidebar_background">
       <div class="sidebar_count">
           <div>영화 & IT 개인 블로그</span></div>
           <div>총 게시글 <span> : {{mywork_data.count|add:movie_data.count|add:physics_data.count|add:django_data.count|add:network_data.count}}개</span></div>
