@@ -59,10 +59,6 @@ body {
     box-shadow: none;
 }
 
-.btn-primary {
-  --bs-btn-active-bg: #000000;
-}
-
 .pagination {
   --bs-pagination-hover-color: #000000;
 }
