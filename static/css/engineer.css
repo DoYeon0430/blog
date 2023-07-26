@@ -68,7 +68,11 @@
     transform: scale(1.1);
 }
 
-
+.text_htmlcontent h2{
+    font-size: 22pt; 
+    font-weight: bold; 
+    margin-bottom: 1.5rem;
+}
 
 @media (min-width: 1400px) {
     .engineer_image {
