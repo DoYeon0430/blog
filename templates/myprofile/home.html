@@ -47,7 +47,7 @@
     <div class="row" style="position: relative;">
         <div class="col-12 myprofile_form_div" id="myprofileFormDiv">
             {% for item in movie_content %}
-            <div class="row mywork_text py-1" OnClick="location.href='{% url 'movie:detail' item.id %}'">
+            <a class="row myprofile_a py-1" href="{% url 'movie:detail' item.id %}">
                 <div class="col-12">
                     <div class="px-2">
                         {% if item.photo %}
@@ -55,7 +55,7 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class=" col-12">
+                <div class="col-12">
                     <div>
                         <h2 class="myprofile_title">
                             [{{ item.subject }}] 감상 후기
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div> 
@@ -83,7 +83,7 @@
     {% endif %}
 
     {% for item in mywork_content %}
-        <div class="row px-2 home_intro" OnClick="location.href ='{% url "mywork:detail" item.id %}'" style="cursor:pointer;">
+        <a class="row px-2 home_intro" href ='{% url "mywork:detail" item.id %}'>
             <div class="col-4 col-lg-3 django_col">
                     {% if item.photo %}
                         <img class="django_image" src="{{ item.photo.url }}" alt="영화이야기 이미지">
@@ -103,10 +103,10 @@
                     <span class="two_content">{{ item.meta }}</span>
                 </h3>
             </div>
-        </div>
+        </a>
     {% endfor %}
     {% for item in django_content %}
-        <div class="row px-2 home_intro" OnClick="location.href ='{% url "engineer:django" item.id %}'" style="cursor:pointer;">
+        <a class="row px-2 home_intro" href ='{% url "engineer:django" item.id %}'>
             <div class="col-4 col-lg-3 django_col">
                     {% if item.photo %}
                         <img class="django_image" src="{{ item.photo.url }}" alt="디장고 이미지">
@@ -126,7 +126,7 @@
                     <span class="two_content">{{ item.meta }}</span>
                 </h3>
             </div>
-        </div>
+        </a>
     {% endfor %}
     <ins class="adsbygoogle"
         style="display:block"
