@@ -1,9 +1,27 @@
-# 소개
-Django 웹 프레임워크를 사용해 제작한 블로그입니다.<br>
-블로그에는 다양한 기능이 구현되어 있으며 데이터베이스와 연동하여 많은 데이터를 효율적으로 관리하고 있습니다.<br>
+<h1 align="center">
+  <a href="https://www.studiobeast.co.kr"><img src="https://github.com/DoYeon0430/blog/assets/104174838/d25c26ca-e96b-4131-a6d8-2fd59689b811" alt="KAT" width="150"></a>
+  <br>
+  Doyeon0430 블로그
+  <br>
+</h1>
 
-블로그 주소 : www.doyeon0430.com<br>
-<br>
+<p align="center">
+Django 웹 프레임워크를 사용해 제작한 블로그입니다.<br>
+블로그에는 장고에서 제공하는 다양한 기능이 구현되어 있습니다.<br> 
+또한 데이터베이스와 연동하여 많은 데이터를 효율적으로 관리하고 있습니다.<br>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=#1572B6"/>
+  <img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=#092E20"/>
+  <img src="https://img.shields.io/badge/nginx-009639?style=flat-square&logo=nginx&logoColor=##009639"/>
+</p>
+
+<p align="center">
+  <a href="https://www.doyeon0430.com">www.doyeon0430.com</a>
+</p>
+
+![Doyeon0430블로그 UI](https://github.com/DoYeon0430/blog/assets/104174838/b1df3d93-50a0-4ea7-8a6d-73d0135d31be)
 
 # 주요 기능
 ### postgreSQL 데이터베이스 연동
