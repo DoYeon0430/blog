@@ -14,6 +14,7 @@ from pathlib import Path
 import os, environ
 env = environ.Env()
 environ.Env.read_env()
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -199,3 +200,9 @@ CACHES = {
 
 CELERY_BROKER_URL = 'redis://54.225.71.199:6379/0'
 CELERY_RESULT_BACKEND = 'redis://54.225.71.199:6379/0'
+CELERY_BEAT_SCHEDULE = {
+    'update_cache_task': {
+        'task': 'myprofile.tasks.update_cache',
+        'schedule': timedelta(hours=1),  # 1시간에 한 번씩 업데이트
+    },
+}
