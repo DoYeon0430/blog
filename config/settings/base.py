@@ -197,8 +197,5 @@ CACHES = {
     }
 }
 
-# mysite/settings.py
-
-# Celery 설정
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Redis URL (Redis가 설치되어 있어야 함)
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Celery 결과를 저장하는 Redis URL
+CELERY_BROKER_URL = 'redis://54.225.71.199:6379/0'
+CELERY_RESULT_BACKEND = 'redis://54.225.71.199:6379/0'
