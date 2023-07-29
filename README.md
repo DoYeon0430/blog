@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://www.doyeon0430.com"><img src="https://github.com/DoYeon0430/blog/assets/104174838/d25c26ca-e96b-4131-a6d8-2fd59689b811" alt="KAT" width="150"></a>
+  <a href="https://www.doyeon0430.com"><img src="https://github.com/DoYeon0430/blog/assets/104174838/7a4bb75e-87db-495e-86e3-8463cdde85e5" alt="Doyeon0430 블로그" width="150"></a>
   <br>
   Doyeon0430 블로그
   <br>
