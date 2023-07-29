@@ -34,6 +34,10 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
+    'celery',
+    'rest_framework',
+    'django_celery_beat',
+    'django_celery_results',
     'myprofile.apps.MyprofileConfig',
     'mywork.apps.MyworkConfig',
     'tinymce',
@@ -192,3 +196,9 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'cache'),  # 캐시 파일이 저장될 폴더 경로
     }
 }
+
+# mysite/settings.py
+
+# Celery 설정
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Redis URL (Redis가 설치되어 있어야 함)
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Celery 결과를 저장하는 Redis URL
