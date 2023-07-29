@@ -127,9 +127,6 @@ def introduce(request):
 
 
 def tag(request):
-
-    update_cache.delay()
-    
     # 어제 날짜 XML 형식 변경
     today = datetime.today()
     yesterday = today - timedelta(days=1)
