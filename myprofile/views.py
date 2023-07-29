@@ -17,11 +17,11 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from rest_framework import views
 from rest_framework.response import Response
-from myprofile.tasks import test_task
+from myprofile.tasks import add
 
 class Test(views.APIView):
     def get(self, request: HttpRequest):
-        test_task.delay(2, 5)
+        add.delay(2, 5)
         return Response("Celery Task Running")
     
 def Ads(request):
