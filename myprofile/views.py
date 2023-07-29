@@ -14,15 +14,6 @@ environ.Env.read_env()
 from django.core.cache import cache
 import calendar
 from django.shortcuts import render
-from django.http import HttpRequest
-from rest_framework import views
-from rest_framework.response import Response
-from myprofile.tasks import add
-
-class Test(views.APIView):
-    def get(self, request: HttpRequest):
-        add.delay(2, 5)
-        return Response("Celery Task Running")
     
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
