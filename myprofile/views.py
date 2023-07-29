@@ -14,7 +14,8 @@ environ.Env.read_env()
 from django.core.cache import cache
 import calendar
 from django.shortcuts import render
-    
+from .tasks import update_cache
+
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
 
@@ -126,6 +127,9 @@ def introduce(request):
 
 
 def tag(request):
+
+    update_cache.delay()
+    
     # 어제 날짜 XML 형식 변경
     today = datetime.today()
     yesterday = today - timedelta(days=1)
