@@ -15,7 +15,7 @@ CELERY_RESULT_BACKEND = 'redis://54.225.71.199:6379/0'
 CELERY_BEAT_SCHEDULE = {
     'update_cache_task': {
         'task': 'myprofile.tasks.update_cache',
-        'schedule': timedelta(minutes=1),  # 1분에 한 번씩 업데이트
+        'schedule': timedelta(hours=1),  # 1분에 한 번씩 업데이트
     },
 }
 
