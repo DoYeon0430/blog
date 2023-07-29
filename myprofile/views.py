@@ -12,7 +12,8 @@ import os, environ
 env = environ.Env()
 environ.Env.read_env()
 from django.core.cache import cache
-import sys
+import calendar
+from django.shortcuts import render
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
@@ -92,8 +93,36 @@ def introduce(request):
     total_count = mywork_count + movie_count + physics_count + django_count + network_count
 
     main_view = Views.objects.get(pk=3)
-    introduce = {'main_view':main_view, 'total_count': total_count}
-    return render(request,'myprofile/introduce.html', introduce)
+    introduce_data = {'main_view': main_view, 'total_count': total_count}
+
+    # Get the current month and year
+    today = datetime.today()
+    month = today.month
+    year = today.year
+    introduce_data['today'] = today
+    introduce_data['month'] = month
+    introduce_data['year'] = year
+
+    # Create the calendar data
+    cal = calendar.monthcalendar(year, month)
+    cal_data = []
+    for week in cal:
+        week_data = []
+        for day in week:
+            if day == 0:
+                week_data.append((None, None))
+            else:
+                movie = Movie.objects.filter(create_date__year=year, create_date__month=month, create_date__day=day).count()
+                mywork = Mywork.objects.filter(create_date__year=year, create_date__month=month, create_date__day=day).count()
+                physics = Physics.objects.filter(create_date__year=year, create_date__month=month, create_date__day=day).count()
+                django = Django.objects.filter(create_date__year=year, create_date__month=month, create_date__day=day).count()
+                network = Network.objects.filter(create_date__year=year, create_date__month=month, create_date__day=day).count()
+                count = movie+mywork+physics+django+network
+                week_data.append((day, count))
+        cal_data.append(week_data)
+    introduce_data['cal_data'] = cal_data
+
+    return render(request, 'myprofile/introduce.html', introduce_data)
 
 
 def tag(request):

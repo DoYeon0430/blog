@@ -10,6 +10,14 @@
     border: 2px solid rgb(158, 158, 158);
 }
 
+.calendar_day:hover {
+    background-color: #f8f8f8;
+}
+
+.calendar_header th:hover {
+    background-color: #f8f8f8;
+}
+
 @media (min-width: 1400px) {
     .myprofile_home {
         font-size: large;
@@ -177,6 +185,51 @@
         text-align: end;
     }
     /* 태그 css 끝 */
+
+    /* 포스팅 활동량 시작  */
+    .calendar {
+        width: 70%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1rem auto;
+        background-color: #ffffff;
+    }
+
+    .calendar_title {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .calendar_header th {
+        text-align: center;
+        border: 2px solid #c9c9c9;
+        padding: 8px;
+    }
+
+    .calendar_day {
+        text-align: center;
+        height: 5rem;
+        border: 2px solid #c9c9c9;
+        position: relative; /* Add position relative */
+    }
+
+    .calendar_day .date {
+        font-size: 1rem;
+        font-weight: bold;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    .calendar_day .count {
+        color: #ad2929;
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    /* 포스팅 활동량 끝  */
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px)  {
@@ -347,6 +400,51 @@
         text-align: end;
     }
     /* 태그 css 끝 */
+
+    /* 포스팅 활동량 시작  */
+    .calendar {
+        width: 70%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1rem auto;
+        background-color: #ffffff;
+    }
+
+    .calendar_title {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .calendar_header th {
+        text-align: center;
+        border: 2px solid #c9c9c9;
+        padding: 8px;
+    }
+
+    .calendar_day {
+        text-align: center;
+        height: 5rem;
+        border: 2px solid #c9c9c9;
+        position: relative; /* Add position relative */
+    }
+
+    .calendar_day .date {
+        font-size: 1rem;
+        font-weight: bold;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    .calendar_day .count {
+        color: #ad2929;
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    /* 포스팅 활동량 끝  */
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -517,6 +615,51 @@
         text-align: end;
     }
     /* 태그 css 끝 */
+
+    /* 포스팅 활동량 시작  */
+    .calendar {
+        width: 70%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1rem auto;
+        background-color: #ffffff;
+    }
+
+    .calendar_title {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .calendar_header th {
+        text-align: center;
+        border: 2px solid #c9c9c9;
+        padding: 8px;
+    }
+
+    .calendar_day {
+        text-align: center;
+        height: 5rem;
+        border: 2px solid #c9c9c9;
+        position: relative; /* Add position relative */
+    }
+
+    .calendar_day .date {
+        font-size: 1rem;
+        font-weight: bold;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    .calendar_day .count {
+        color: #ad2929;
+        font-size: 1rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    /* 포스팅 활동량 끝  */
 
 }
 
@@ -689,6 +832,50 @@
     }
     /* 태그 css 끝 */
 
+    /* 포스팅 활동량 시작  */
+    .calendar {
+        width: 90%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1rem auto;
+        background-color: #ffffff;
+    }
+
+    .calendar_title {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .calendar_header th {
+        text-align: center;
+        border: 2px solid #c9c9c9;
+        padding: 8px;
+    }
+
+    .calendar_day {
+        text-align: center;
+        height: 4rem;
+        border: 2px solid #c9c9c9;
+        position: relative; /* Add position relative */
+    }
+
+    .calendar_day .date {
+        font-size: 0.9rem;
+        font-weight: bold;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+    }
+
+    .calendar_day .count {
+        color: #ad2929;
+        font-size: 1rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    /* 포스팅 활동량 끝  */
 }
 
 
@@ -861,6 +1048,51 @@
         text-align: end;
     }
     /* 태그 css 끝 */
+
+    /* 포스팅 활동량 시작  */
+    .calendar {
+        width: 90%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1rem auto;
+        background-color: #ffffff;
+    }
+
+    .calendar_title {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .calendar_header th {
+        text-align: center;
+        border: 2px solid #c9c9c9;
+        padding: 8px;
+    }
+
+    .calendar_day {
+        text-align: center;
+        height: 4rem;
+        border: 2px solid #c9c9c9;
+        position: relative; /* Add position relative */
+    }
+
+    .calendar_day .date {
+        font-size: 0.9rem;
+        font-weight: bold;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+    }
+
+    .calendar_day .count {
+        color: #ad2929;
+        font-size: 1rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+    /* 포스팅 활동량 끝  */
 }
 
 
@@ -1040,4 +1272,56 @@
         text-align: end;
     }
     /* 태그 css 끝 */
+
+    /* 포스팅 활동량 시작  */
+    .calendar {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1rem auto;
+        background-color: #ffffff;
+    }
+
+    .calendar_title {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .calendar_header th {
+        text-align: center;
+        border: 1px solid #c9c9c9;
+        padding: 8px;
+    }
+
+    .calendar_day {
+        text-align: center;
+        height: 3.5rem;
+        border: 1px solid #c9c9c9;
+        position: relative; /* Add position relative */
+    }
+
+    .calendar_day .date {
+        font-size: 0.9rem;
+        font-weight: bold;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+    }
+
+    .calendar_day .count {
+        color: #ad2929;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 50%; 
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+    
+    
+    /* 포스팅 활동량 끝  */
 }
