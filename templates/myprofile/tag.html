@@ -79,19 +79,16 @@
     const apiurl = '{{ key }}';
     const day = '{{ target_date }}';
 
-    // Function to show the loading spinner
     function showLoadingSpinner() {
         const loadingSpinner = document.getElementById('loadingSpinner');
         loadingSpinner.style.display = 'block';
     }
 
-    // Function to hide the loading spinner
     function hideLoadingSpinner() {
         const loadingSpinner = document.getElementById('loadingSpinner');
         loadingSpinner.style.display = 'none';
     }
 
-    // Function to render the movie list in the table
     function renderMovieList(movieList) {
     for (const [index, movie] of movieList.entries()) {
         const rankCell = document.getElementById(`rank${index + 1}`);
@@ -104,11 +101,11 @@
         openDtCell.innerText = movie.openDt;
         audiAccCell.innerText = `${movie.audiAcc}명`;
     }
-}
+    }
 
 
     function fetchMovieData() {
-        showLoadingSpinner(); // Show the loading spinner
+        showLoadingSpinner(); // 로딩창 시작
 
         fetch(`https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=${apiurl}&targetDt=${day}`)
             .then(response => response.text())
@@ -138,7 +135,7 @@
                 console.error('영화 데이터를 가져오는 중 에러 발생:', error);
             })
             .finally(() => {
-                hideLoadingSpinner(); // Hide the loading spinner after fetching data
+                hideLoadingSpinner(); // 로딩창 끝
             });
     }
 
