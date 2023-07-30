@@ -47,8 +47,9 @@
             <a href="{% url 'engineer:network_main' %}">#네트워크 ({{network_content.count}})</a>
         </div>
         
+        <!-- 기존 내용 생략 -->
         <div class="tag_cap">대한민국 일별 박스오피스</div>
-        <table class="container tag_table">
+        <table class="container tag_table" id="movieTable">
             <caption>제공 : 영화진흥위원회 API</caption>
             <caption style="text-align: left; caption-side: top; font-weight: bold;">[{{ yesterday_str }} 기준]</caption>
             <thead>
@@ -56,15 +57,73 @@
                 <th>개봉일</th>
                 <th>누적 관객수</th>
             </thead>
-            {% for movie in movie_list %}
-            <tbody>
-                <td style="font-weight: bold;">{{ movie.rank }}</td>
-                <td style="text-align: left;">{{ movie.movieNm }}</td>
-                <td>{{ movie.openDt }}</td>
-                <td>{{ movie.audiAcc|intcomma }}명</td>
+            <tbody id="movieTableBody">
+                {% for movie in movie_list %}
+                <tr>
+                    <td style="font-weight: bold;">{{ movie.rank }}</td>
+                    <td style="text-align: left;">{{ movie.movieNm }}</td>
+                    <td>{{ movie.openDt }}</td>
+                    <td>{{ movie.audiAcc|intcomma }}명</td>
+                </tr>
+                {% endfor %}
             </tbody>
-            {% endfor %}
         </table>
+        
     </div>
 </div>
+
+<script>
+    const apiurl = '{{ key }}';
+    const day = '{{target_date}}';
+    // Function to render the movie list in the table
+    function renderMovieList(movieList) {
+        const tbody = document.getElementById('movieTableBody');
+
+        for (const movie of movieList) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td style="font-weight: bold;">${movie.rank}</td>
+                <td style="text-align: left;">${movie.movieNm}</td>
+                <td>${movie.openDt}</td>
+                <td>${movie.audiAcc}명</td>
+            `;
+            tbody.appendChild(row);
+        }
+    }
+
+    function fetchMovieData() {
+        fetch(`https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=${apiurl}&targetDt=${day}`)
+            .then(response => response.text())
+            .then(data => {
+                // XML 데이터를 파싱합니다.
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+                const movies = xmlDoc.getElementsByTagName('dailyBoxOffice');
+
+                // 영화 데이터를 담을 배열
+                const movieList = [];
+
+                // 영화 데이터를 반복하면서 배열에 데이터를 추가합니다.
+                for (let i = 0; i < movies.length; i++) {
+                    const movie = movies[i];
+                    const rank = movie.querySelector('rank').textContent;
+                    const movieNm = movie.querySelector('movieNm').textContent;
+                    const openDt = movie.querySelector('openDt').textContent;
+                    const audiAcc = parseInt(movie.getElementsByTagName('audiAcc')[0].textContent).toLocaleString();
+
+                    movieList.push({ rank, movieNm, openDt, audiAcc });
+                }
+                renderMovieList(movieList);
+                localStorage.setItem('box_office_data', JSON.stringify({ 'movie_list': movieList }));
+            })
+            .catch(error => {
+                console.error('영화 데이터를 가져오는 중 에러 발생:', error);
+            });
+    }
+
+    window.onload = function () {
+        fetchMovieData();
+    };
+</script>
+        
 {% endblock %}
