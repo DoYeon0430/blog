@@ -71,10 +71,25 @@
         
     </div>
 </div>
-
+<div id="loadingOverlay">
+    <div id="loadingSpinner"></div>
+</div>
 <script>
     const apiurl = '{{ key }}';
-    const day = '{{target_date}}';
+    const day = '{{ target_date }}';
+
+    // Function to show the loading overlay
+    function showLoadingOverlay() {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        loadingOverlay.style.display = 'flex';
+    }
+
+    // Function to hide the loading overlay
+    function hideLoadingOverlay() {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        loadingOverlay.style.display = 'none';
+    }
+
     // Function to render the movie list in the table
     function renderMovieList(movieList) {
         const tbody = document.getElementById('movieTableBody');
@@ -92,6 +107,8 @@
     }
 
     function fetchMovieData() {
+        showLoadingOverlay(); // Show the loading overlay
+
         fetch(`https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=${apiurl}&targetDt=${day}`)
             .then(response => response.text())
             .then(data => {
@@ -118,6 +135,9 @@
             })
             .catch(error => {
                 console.error('영화 데이터를 가져오는 중 에러 발생:', error);
+            })
+            .finally(() => {
+                hideLoadingOverlay(); // Hide the loading overlay after fetching data
             });
     }
 
@@ -125,5 +145,6 @@
         fetchMovieData();
     };
 </script>
+
         
 {% endblock %}
