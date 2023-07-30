@@ -72,35 +72,43 @@ if comment_count<3:
 ### 영화진흥위원회 오픈 API
 
 ```
-#API URL 생성
-key=env('API_KEY')
-url=f"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key={key}&targetDt={target_date}"
+function fetchMovieData() {
+    showLoadingSpinner(); // 로딩창 시작
 
-#XML 데이터를 가져옴
-response=requests.get(url)
-xml_data=response.content
+    fetch(`https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=${apiurl}&targetDt=${day}`)
+        .then(response => response.text())
+        .then(data => {
+            // XML 데이터를 파싱합니다.
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, 'text/xml');
+            const movies = xmlDoc.getElementsByTagName('dailyBoxOffice');
 
-#BeautifulSoup를 사용하여 XML 파싱
-soup=BeautifulSoup(xml_data,'xml')
+            // 영화 데이터를 담을 배열
+            const movieList = [];
+
+            // 영화 데이터를 반복하면서 배열에 데이터를 추가합니다.
+            for (let i = 0; i < movies.length; i++) {
+                const movie = movies[i];
+                const rank = movie.querySelector('rank').textContent;
+                const movieNm = movie.querySelector('movieNm').textContent;
+                const openDt = movie.querySelector('openDt').textContent;
+                const audiAcc = parseInt(movie.getElementsByTagName('audiAcc')[0].textContent).toLocaleString();
+
+                movieList.push({ rank, movieNm, openDt, audiAcc });
+            }
+            renderMovieList(movieList);
+            localStorage.setItem('box_office_data', JSON.stringify({ 'movie_list': movieList }));
+        })
+        .catch(error => {
+            console.error('영화 데이터를 가져오는 중 에러 발생:', error);
+        })
+        .finally(() => {
+            hideLoadingSpinner(); // 로딩창 끝
+        });
+}
 ```
 영화진흥위원회에서 제공하는 일별 박스오피스 API를 활용해 실시간으로 변하는 데이터를 XML 형식으로 받아옵니다.<br> 
-그리고 파이썬 웹 크롤링 라이브러리인 BeautifulSoup를 사용하며 데이터를 추출합니다.<br>
-<br>
-
-### 캐시를 활용한 서버 최적화
-
-```
-cached_data = cache.get('box_office_data')
-
-if cached_data:
-  print("캐시 데이터가 존재합니다.")
-  movie_list = cached_data['movie_list']
-else:
-  print("캐시 데이터가 존재하지 않습니다.")
-  cache.set('box_office_data', {'movie_list': movie_list}, 3600) 
-```
-API를 웹 서버에 가져올 때 서버 부하를 줄이기 위해 캐시 기능을 추가했습니다.<br> 
-데이터를 1시간에 한 번만 가져오도록 설정하고 캐시 파일은 프로젝트 루트 디렉터리에 저장시켰습니다.<br>
+또한 데이터를 가져오는 동안 로딩 스피너를 보여주고, 데이터가 렌더링된 후에는 로딩 스피너를 숨깁니다.<br> 
 <br>
 
 ### 쿠키 설정으로 방문자 조회
