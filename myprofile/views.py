@@ -132,37 +132,11 @@ def tag(request):
     yesterday = today - timedelta(days=1)
     target_date = yesterday.strftime("%Y%m%d")
     yesterday_str = yesterday.strftime("%Y-%m-%d")
+
     # API URL 생성
     key = env('API_KEY')
-    # url = f"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key={key}&targetDt={target_date}"
 
-    # cached_data = cache.get('box_office_data')
-
-    # if cached_data:
-    #     print("캐시 데이터가 존재합니다.")
-    #     movie_list = cached_data['movie_list']
-    # else:
-    #     # XML 데이터를 가져옴
-    #     response = requests.get(url)
-    #     xml_data = response.content
-
-    #     # BeautifulSoup를 사용하여 XML 파싱
-    #     soup = BeautifulSoup(xml_data, 'xml')
-
-    #     # 영화 정보 추출
-    #     movies = soup.find_all('dailyBoxOffice')
-    #     movie_list = []
-    #     for movie in movies:
-    #         rank = movie.find('rank').text
-    #         movieNm = movie.find('movieNm').text
-    #         openDt = movie.find('openDt').text
-    #         audiAcc = movie.find('audiAcc').text
-    #         movie_list.append({'rank': rank, 'movieNm': movieNm, 'openDt': openDt, 'audiAcc': audiAcc})
-
-    #     # 데이터를 캐시에 저장
-    #     print("캐시 데이터가 존재하지 않습니다.")
-    #     cache.set('box_office_data', {'movie_list': movie_list}, 3600)  # 1시간(3600초) 동안 캐시 유지
-
+    numbers = range(1, 11)
 
     # 기존 데이터 가져오기
     mywork_content = Mywork.objects.all()
@@ -181,6 +155,7 @@ def tag(request):
         'yesterday_str': yesterday_str,
         'key':key,
         'target_date':target_date,
+        'numbers': numbers
     }
 
     return render(request, 'myprofile/tag.html', content)
