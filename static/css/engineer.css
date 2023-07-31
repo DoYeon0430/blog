@@ -50,6 +50,8 @@
     font-size: 1rem;
 }
 
+/* 사진 hover 모션 시작 */
+
 .cols {
     position: relative;
 }
@@ -81,6 +83,16 @@
 .home_intro:hover .django_image {
     transform: scale(1.1);
 }
+
+.myprofile_image {
+    transition: transform 0.3s ease;
+}
+
+.myprofile_a:hover .myprofile_image {
+    transform: scale(1.1);
+}
+
+/* 사진 hover 모션 끝 */
 
 @media (min-width: 1400px) {
     .engineer_image {

@@ -49,9 +49,11 @@
             <a class="row myprofile_a py-1" href="{% url 'movie:detail' item.id %}">
                 <div class="col-12">
                     <div class="px-2">
-                        {% if item.photo %}
-                        <img class="myprofile_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
-                        {% endif %}
+                        <div class="django_img">
+                            {% if item.photo %}
+                                <img class="myprofile_image" src="{{ item.photo.url }}" alt="{{ item.subject }} 이미지">
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
                 <div class="col-12">
