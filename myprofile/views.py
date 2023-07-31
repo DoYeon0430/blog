@@ -14,7 +14,6 @@ environ.Env.read_env()
 from django.core.cache import cache
 import calendar
 from django.shortcuts import render
-from myprofile.tasks import add
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
@@ -94,8 +93,7 @@ def introduce(request):
     total_count = mywork_count + movie_count + physics_count + django_count + network_count
 
     main_view = Views.objects.get(pk=3)
-    result = add.delay(4, 3)
-    introduce_data = {'main_view': main_view, 'total_count': total_count, 'result':result}
+    introduce_data = {'main_view': main_view, 'total_count': total_count}
 
     # Get the current month and year
     today = datetime.today()
