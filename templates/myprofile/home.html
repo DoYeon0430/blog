@@ -26,16 +26,15 @@
           <a href="{% url 'myprofile:main' %}"><img class="mywork_name_url_img" src="{% static 'img/home.svg' %}" alt="My Image"></a>
         </div> 
     </div>
-    <div class="home_intro">
-        <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
-            <div class="col-4 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
-                <div>최신글</div>
-            </div>
-            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:tag" %}'">
-                <div>태그</div>
-            </div>
-            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:introduce" %}'">
-                <div>소개</div>
+    <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
+        <div class="col-4 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
+            <div>최신글</div>
+        </div>
+        <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:tag" %}'">
+            <div>태그</div>
+        </div>
+        <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:introduce" %}'">
+            <div>소개</div>
         </div>
     </div>
 
@@ -85,9 +84,11 @@
     {% for item in mywork_content %}
         <a class="row px-2 home_intro" href ='{% url "mywork:detail" item.id %}'>
             <div class="col-4 col-lg-3 django_col">
+                <div class="django_img">
                     {% if item.photo %}
                         <img class="django_image" src="{{ item.photo.url }}" alt="영화이야기 이미지">
                     {% endif %}
+                </div>
             </div>
             
             <div class="col-8 col-lg-9 django_col">
@@ -108,9 +109,11 @@
     {% for item in django_content %}
         <a class="row px-2 home_intro" href ='{% url "engineer:django" item.id %}'>
             <div class="col-4 col-lg-3 django_col">
+                <div class="django_img">
                     {% if item.photo %}
                         <img class="django_image" src="{{ item.photo.url }}" alt="디장고 이미지">
                     {% endif %}
+                </div>
             </div>
             
             <div class="col-8 col-lg-9 django_col">
@@ -136,7 +139,6 @@
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    </div>
 </div>
 
 <script type="text/javascript" src="/static/js/myprofile_form.js"></script>

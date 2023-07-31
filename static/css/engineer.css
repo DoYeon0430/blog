@@ -68,6 +68,20 @@
     transform: scale(1.1);
 }
 
+.django_img {
+    overflow: hidden;
+}
+
+.django_image {
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    width: 100%;
+}
+
+.home_intro:hover .django_image {
+    transform: scale(1.1);
+}
+
 @media (min-width: 1400px) {
     .engineer_image {
         height: 17rem;

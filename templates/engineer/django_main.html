@@ -50,9 +50,11 @@ crossorigin="anonymous"></script>
                 {% for m in page_obj %}
                     <a class="row home_intro" href ='{% url "engineer:django" m.id %}'>
                         <div class="col-4 django_col">
+                            <div class="django_img">
                                 {% if m.photo %}
                                     <img class="django_image" src="{{ m.photo.url }}" alt="{{ m.subject }} 이미지">
                                 {% endif %}
+                            </div>
                         </div>
                         
                         <div class="col-8 django_col">
