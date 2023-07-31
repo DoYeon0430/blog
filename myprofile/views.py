@@ -94,7 +94,7 @@ def introduce(request):
 
     main_view = Views.objects.get(pk=3)
     result = add.delay(4, 3)
-    introduce_data = {'main_view': main_view, 'total_count': total_count,'result': result.get()}
+    introduce_data = {'main_view': main_view, 'total_count': total_count,'result': result}
 
     # Get the current month and year
     today = datetime.today()
