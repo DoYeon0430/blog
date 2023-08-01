@@ -31,7 +31,7 @@ class PhysicsAdmin(admin.ModelAdmin):
 class DjangoAdmin(admin.ModelAdmin):
     list_display = ('get_subject','display_htmlcontent', 'display_meta', 'get_formatted_create_date')
     search_fields = ['subject']
-    list_filter = ('create_date', 'content')
+    list_filter = ('create_date', 'code')
 
     def get_subject(self, obj):
         return obj.subject
