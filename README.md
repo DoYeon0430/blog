@@ -45,7 +45,30 @@ DATABASES = {
 ### url 쿼리 파라미터 사용
 
 ```
-url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
+kw = request.GET.get('kw', '')
+page = request.GET.get('page', '1')
+tag = request.GET.get('tag', '')
+object_list = Mywork.objects.all().order_by('-create_date')
+
+if tag == '현장이야기':
+    object_list = Mywork.objects.filter(content='현장이야기').order_by('-create_date')
+elif tag == '영화연출':
+    object_list = Mywork.objects.filter(content='영화연출').order_by('-create_date')
+elif tag == '영화추천':
+    object_list = Mywork.objects.filter(content='영화추천').order_by('-create_date')
+else:
+    object_list = Mywork.objects.order_by('-create_date')
+
+if kw:
+    object_list = object_list.filter(
+        Q(subject__icontains=kw)
+    ).distinct()
+
+paginator = Paginator(object_list, 5)
+page_number = request.GET.get('page')
+page_obj = paginator.get_page(page_number)
+
+url = reverse('mywork:main') + f'?kw={kw}&page={page}&tag={tag}'
 ```
 
 검색 기능과 드롭다운 메뉴바, 페이지 번호를 관리하고자 URL 쿼리 파라미터를 활용합니다.<br> 
