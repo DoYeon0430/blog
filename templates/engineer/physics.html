@@ -42,7 +42,9 @@ crossorigin="anonymous"></script>
       <div class="text-center">
         <img class="detail_img" src="{{ physics.photo.url }}" alt="Physics 이미지">
       </div>
-      {{physics.htmlcontent|safe}}
+      <div class="text_htmlcontent">
+        {{physics.htmlcontent|safe}}
+      </div>
       <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
       crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
