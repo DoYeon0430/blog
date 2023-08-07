@@ -23,7 +23,11 @@ Django 웹 프레임워크를 사용해 제작한 블로그입니다.<br>
 
 ![Doyeon0430블로그 UI](https://github.com/DoYeon0430/blog/assets/104174838/b1df3d93-50a0-4ea7-8a6d-73d0135d31be)
 
-# 주요 기능
+## 프로젝트 정보
+- 검색 엔진 등록: Google, Naver, Daum, Bing
+- 제작 기간 : 2023년 5월 10일 ~ 2023년 5월 19일
+
+## 사용 기술
 ### postgreSQL 데이터베이스 연동
 
 ```
