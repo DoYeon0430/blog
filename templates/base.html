@@ -51,15 +51,15 @@
       </svg>
     </a>
     <div class="dropdown_main">
-      <div onclick="location.href='{% url 'mywork:main' %}?kw=&page=1&tag=영화연출'">
-        <a href="#">영화연출</a>
-      </div>
-      <div onclick="location.href='{% url 'mywork:main' %}?kw=&page=1&tag=영화추천'">
-        <a href="#">영화추천</a>
-      </div>
-      <div onclick="location.href='{% url 'mywork:main' %}?kw=&page=1&tag=현장이야기'">
-        <a href="#">현장이야기</a>
-      </div>                       
+      <a href="{% url 'mywork:main' %}?kw=&page=1&tag=영화연출">
+        <div>영화연출</div>
+      </a>
+      <a href="{% url 'mywork:main' %}?kw=&page=1&tag=영화추천">
+        <div>영화추천</div>
+      </a>
+      <a href="{% url 'mywork:main' %}?kw=&page=1&tag=현장이야기">
+        <div>현장이야기</div>
+      </a>                     
     </div>
   </div>
   <div class="item dropdown_king nav_item">
@@ -70,15 +70,15 @@
         </svg>
       </a>
       <div class="dropdown_main">
-        <div onclick="location.href='{% url 'movie:main' %}?kw=&page=1&tag=상업영화'">
-          <a href="#">상업영화</a>
-        </div>          
-        <div onclick="location.href='{% url 'movie:main' %}?kw=&page=1&tag=드라마'">
-          <a href="#">드라마</a>
-        </div>          
-        <div onclick="location.href='{% url 'movie:main' %}?kw=&page=1&tag=OTT'">
-          <a href="#">OTT 오리지널</a>
-        </div>          
+        <a href="{% url 'movie:main' %}?kw=&page=1&tag=상업영화">
+          <div>상업영화</div>
+        </a>
+        <a href="{% url 'movie:main' %}?kw=&page=1&tag=드라마">
+          <div>드라마</div>
+        </a>
+        <a href="{% url 'movie:main' %}?kw=&page=1&tag=OTT">
+          <div>OTT</div>
+        </a>
       </div>
   </div>
   <div class="item dropdown_king nav_item" style="margin-right: 0;">
@@ -89,15 +89,15 @@
           </svg>
         </a>
         <div class="dropdown_main">
-          <div OnClick="location.href ='{% url 'engineer:physics_main' %}'">
-            <a href="#">물리학</a>
-          </div>
-          <div OnClick="location.href ='{% url 'engineer:django_main' %}'">
-            <a href="#">프로그래밍</a>
-          </div>
-          <div OnClick="location.href ='{% url 'engineer:network_main' %}'">
-            <a href="#">네트워크</a>
-          </div>
+          <a href="{% url 'engineer:physics_main' %}">
+            <div>물리학</div>
+          </a>
+          <a href="{% url 'engineer:django_main' %}">
+            <div>프로그래밍</div>
+          </a>
+          <a href="{% url 'engineer:network_main' %}">
+            <div>네트워크</div>
+          </a>
         </div>
   </div>
 </div>

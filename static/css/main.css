@@ -154,15 +154,17 @@ body {
     background-color: #c9cac9;
   }
   
-  .dropdown_main div a {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    margin: 0;
-    display: inline-flex;
+  .dropdown_main a {
+    display: block;
     color: #000000;
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
     text-decoration: none;
+  }
+  
+  .dropdown_main a div{
+    padding: 0.5rem 0rem 0.5rem 1rem;
   }
 
   .navbar-burger{
@@ -263,15 +265,17 @@ body {
     background-color: #c9cac9;
   }
   
-  .dropdown_main div a {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    margin: 0;
-    display: inline-flex;
+  .dropdown_main a {
+    display: block;
     color: #000000;
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
     text-decoration: none;
+  }
+  
+  .dropdown_main a div{
+    padding: 0.5rem 0rem 0.5rem 1rem;
   }
   /* dropdown css  끝*/
 
@@ -373,15 +377,17 @@ body {
     background-color: #c9cac9;
   }
   
-  .dropdown_main div a {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    margin: 0;
-    display: inline-flex;
+  .dropdown_main a {
+    display: block;
     color: #000000;
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
     text-decoration: none;
+  }
+  
+  .dropdown_main a div{
+    padding: 0.5rem 0rem 0.5rem 1rem;
   }
   /* dropdown css  끝*/
 
