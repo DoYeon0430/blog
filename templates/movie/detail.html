@@ -11,12 +11,12 @@ crossorigin="anonymous"></script>
     overlays: {bottom: true}
   });
 </script>
-<title>{{detail.content}}, <{{ detail.subject }}> 후기</title>
-<meta name="title" content="{{detail.content}}, <{{ detail.subject }}> 후기"/>
+<title>{{detail.content}}, <{{ detail.subject }}> 리뷰</title>
+<meta name="title" content="{{detail.content}}, <{{ detail.subject }}> 리뷰"/>
 <meta name="description" content="{{ detail.meta }}"/>
 <link rel="icon" href="{% static 'img/favicon.ico' %}"/>
 
-<meta property="og:title" content="{{detail.content}}, <{{ detail.subject }}> 후기"/> 
+<meta property="og:title" content="{{detail.content}}, <{{ detail.subject }}> 리뷰"/> 
 <meta property="og:url" content="https://www.doyeon0430.com{% url 'movie:detail' detail.id %}"/>
 <meta property="og:type" content="blog"/>
 <meta property="og:description" content="{{ detail.meta }}"/> 
@@ -28,12 +28,8 @@ crossorigin="anonymous"></script>
 <div class="container background_design">
   <div class="row">
     <div class="container col-lg-9 px-3 pt-3 pb-3 draggable">
-      <p class="detail_sup">
-        영화 리뷰 포스팅
-      </p>
-      <h1 class="detail_subject">
-        {{detail.content}}, <{{ detail.subject }}> 후기
-      </h1>
+      <p class="detail_sup">영화 리뷰 포스팅</p>
+      <h1 class="detail_subject">{{detail.content}}, <{{ detail.subject }}> 리뷰</h1>
       <div class="detail_date" style="border-bottom: 0px;">
         <p style="margin: 0;">
             Doyeon0430 |  {{detail.create_date|date:"Y년 m월 d일"}}
@@ -51,8 +47,8 @@ crossorigin="anonymous"></script>
             (adsbygoogle = window.adsbygoogle || []).push({});
       </script> -->
       <div class="pt-3">
-        <p>{% if next_post.subject %}<strong>다음글</strong> : <a href="{% url 'movie:detail' next_post.pk %}">{{next_post.content}}, <{{ next_post.subject }}> 후기</a>{% else %}{% endif %}</p>
-        <p>{% if previous_post.subject %}<strong>이전글</strong> : <a href="{% url 'movie:detail' previous_post.pk %}">{{previous_post.content}}, <{{ previous_post.subject }}> 후기</a>{% else %}{% endif %}</p>
+        <p>{% if next_post.subject %}<strong>다음글</strong> : <a href="{% url 'movie:detail' next_post.pk %}">{{next_post.content}}, <{{ next_post.subject }}> 리뷰</a>{% else %}{% endif %}</p>
+        <p>{% if previous_post.subject %}<strong>이전글</strong> : <a href="{% url 'movie:detail' previous_post.pk %}">{{previous_post.content}}, <{{ previous_post.subject }}> 리뷰</a>{% else %}{% endif %}</p>
       </div>
 
         <p class="chat_subejct pt-3">댓글 ({{ comments.count }})</p>
