@@ -26,7 +26,7 @@
             <a href="{% url 'myprofile:main' %}"><img class="mywork_name_url_img" src="{% static 'img/home.svg' %}" alt="My Image"></a>
           </div>
     </div>
-    <div class="home_intro">
+    <div>
         <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
             <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
                 <div>최신글</div>
@@ -71,7 +71,7 @@
                 {% endfor %}
             </tbody>                     
         </table>
-    </div>
+        </div>
     </div>
 </div>
 

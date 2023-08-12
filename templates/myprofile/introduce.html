@@ -15,90 +15,91 @@
 {% endblock %}
 {% block content %}
 
-<div class="container background_design" >
-    <div class="container">
-        <div class="mywork_name_name">Doyeon0430</div>
-        <div class="mywork_name_content">영화 관련 이야기와 감상 후기를 남기고 프로그래밍을 공부하는 블로그입니다.</div>
-        <div class="mywork_name_url">
+<div class="container background_design">
+  <div class="container">
+      <div class="mywork_name_name">Doyeon0430</div>
+      <div class="mywork_name_content">영화 관련 이야기와 감상 후기를 남기고 프로그래밍을 공부하는 블로그입니다.</div>
+      <div class="mywork_name_url">
           <a href="mailto:kim73916@naver.com"><img class="mywork_name_url_img" src="{% static 'img/email.svg' %}" alt="My Image"></a>
-          <a href="https://www.instagram.com/doyeon0430/"><img class="mywork_name_url_img"  src="{% static 'img/instagram.svg' %}" alt="My Image"></a>
+          <a href="https://www.instagram.com/doyeon0430/"><img class="mywork_name_url_img" src="{% static 'img/instagram.svg' %}" alt="My Image"></a>
           <a href="https://github.com/DoYeon0430"><img class="mywork_name_url_img" src="{% static 'img/github.svg' %}" alt="My Image"></a>
           <a href="{% url 'myprofile:main' %}"><img class="mywork_name_url_img" src="{% static 'img/home.svg' %}" alt="My Image"></a>
-        </div> 
-    </div>
-    <div class="home_intro">
-        <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
-            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:home" %}'">
-                <div>최신글</div>
-            </div>
-            <div class="col-4 bar_menu drag_prevent" OnClick="location.href ='{% url "myprofile:tag" %}'">
-                <div>태그</div>
-            </div>
-            <div class="col-4 bar_menu bar_click drag_prevent" OnClick="location.href ='{% url "myprofile:introduce" %}'">
-                <div>소개</div>
-            </div>
-        </div>
+      </div>
+  </div>
+  
+  <div>
+      <div class="row text-center" style="border-top: 10px solid rgb(220, 218, 218);">
+          <div class="col-4 bar_menu drag_prevent" onclick="location.href='{% url "myprofile:home" %}'">
+              <div>최신글</div>
+          </div>
+          <div class="col-4 bar_menu drag_prevent" onclick="location.href='{% url "myprofile:tag" %}'">
+              <div>태그</div>
+          </div>
+          <div class="col-4 bar_menu bar_click drag_prevent" onclick="location.href='{% url "myprofile:introduce" %}'">
+              <div>소개</div>
+          </div>
+      </div>
+  </div>
 
-    <div class="row  mywork_name_table">
-        <div class="container mywork_name_table px-3 py-3">
+  <div class="row mywork_name_table">
+      <div class="container mywork_name_table px-3 py-3">
           <div>블로그 정보</div>
           <ul class="mywork_name_ul">
-            <li>언어 - 파이썬</li>
-            <li>운영체제 - Ubuntu</li>
-            <li>서버 - Amazon Lightsail</li>
-            <li>데이터베이스 - PostgreSQL</li>
+              <li>언어 - 파이썬</li>
+              <li>운영체제 - Ubuntu</li>
+              <li>서버 - Amazon Lightsail</li>
+              <li>데이터베이스 - PostgreSQL</li>
           </ul>
           <div>총 게시글</div>
           <ul class="mywork_name_ul">
-            <li>{{total_count}}개</li>
+              <li>{{total_count}}개</li>
           </ul>
           <div>전체 방문자</div>
           <ul class="mywork_name_ul">
-            <li>{{main_view.count|intcomma}}명</li>
+              <li>{{main_view.count|intcomma}}명</li>
           </ul>
           <div>서버 유지 비용</div>
           <ul class="mywork_name_ul">
-            <li>$5 USD (1 Month)</li>
+              <li>$5 USD (1 Month)</li>
           </ul>
           <div>Celery 테스트</div>
           <ul class="mywork_name_ul">
-            <li>결과 : {{ result }}</li>
+              <li>결과 : {{ result }}</li>
           </ul>
-        </div>
-    </div>
-    
-    <h2 class="calendar_title">포스팅 활동량 [{{ year }}년 {{ month }}월 기준]</h2>
-    <table class="calendar">
+      </div>
+  </div>
+
+  <h2 class="calendar_title">포스팅 활동량 [{{ year }}년 {{ month }}월 기준]</h2>
+  <table class="calendar">
       <thead>
-        <tr class="calendar_header">
-          <th>월</th>
-          <th>화</th>
-          <th>수</th>
-          <th>목</th>
-          <th>금</th>
-          <th>토</th>
-          <th>일</th>
-        </tr>
+          <tr class="calendar_header">
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+              <th>토</th>
+              <th>일</th>
+          </tr>
       </thead>
       <tbody>
-        {% for week in cal_data %}
-        <tr>
-            {% for day, count in week %}
-            <td class="calendar_day" {% if day == today.day %} style="background-color: rgb(240, 225, 149);"{% endif %}>
-                {% if day %}
-                <div class="date">{{ day }}</div>
-                {% if day <= today.day %}
-                <div class="count">{{ count }}개</div>
-                {% endif %}
-                {% endif %}
-            </td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </tbody>    
-    </table>
-    
-  </div>
+          {% for week in cal_data %}
+          <tr>
+              {% for day, count in week %}
+              <td class="calendar_day" {% if day == today.day %} style="background-color: rgb(240, 225, 149);" {% endif %}>
+                  {% if day %}
+                  <div class="date">{{ day }}</div>
+                  {% if day <= today.day %}
+                  <div class="count">{{ count }}개</div>
+                  {% endif %}
+                  {% endif %}
+              </td>
+              {% endfor %}
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
 </div>
+
 
 {% endblock %}
