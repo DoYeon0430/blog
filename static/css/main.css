@@ -53,6 +53,7 @@ body {
 
 .form_select, .form_select option{
   font-weight: 500;
+  cursor: pointer;
 }
 
 .form_select:active,
