@@ -40,7 +40,7 @@
 
 .text_htmlcontent .table a {
     display: block;
-    text-align: center;
+    text-align: left;
     padding: 0.6em 5vw;
     color: #000;
     text-decoration: none;
