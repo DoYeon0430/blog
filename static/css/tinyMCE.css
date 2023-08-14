@@ -10,9 +10,13 @@
 }
 
 .text_htmlcontent h2{
-    font-size: 20pt;
+    font-size: 18pt;
     font-weight: bold;
     margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 3px 3px 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .text_htmlcontent h3{
