@@ -10,7 +10,7 @@ class MovieAdmin(admin.ModelAdmin):
     list_filter = ('create_date', 'genre')
 
     def get_subject_with_content(self, obj):
-        return f"{obj.content}, <{obj.subject}> 후기"
+        return f"{obj.content}, <{obj.subject}> 리뷰"
     get_subject_with_content.short_description = '제목'
 
     def display_meta(self, obj):
