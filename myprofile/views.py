@@ -16,7 +16,7 @@ import calendar
 from django.shortcuts import render
 
 def Ads(request):
-    return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0")
+    return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0", content_type='text/plain')
 
 # Create your views here.
 def home(request):
