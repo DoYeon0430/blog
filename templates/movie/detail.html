@@ -35,7 +35,9 @@ crossorigin="anonymous"></script>
             Doyeon0430 |  {{detail.create_date|date:"Y년 m월 d일"}}
         </p>
       </div>
-      {{detail.htmlcontent|safe}}
+      <div class="text_htmlcontent">
+        {{detail.htmlcontent|safe}}
+      </div>
       <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8497490320648322"
       crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
