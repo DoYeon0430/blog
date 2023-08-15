@@ -15,8 +15,14 @@
     margin-bottom: 1rem;
     background-color: #f9f9f9;
     box-shadow: 3px 3px 3px;
-    padding: 0.7rem 1rem;
+    padding: 0.7rem;
     cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+    .text_htmlcontent h2{
+        font-size: 14pt;
+    }
 }
 
 .text_htmlcontent h3{
