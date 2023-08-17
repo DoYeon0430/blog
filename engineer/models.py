@@ -8,6 +8,7 @@ class Physics(models.Model):
     htmlcontent = HTMLField()
     create_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to='physics/')
+    code = models.CharField(max_length=20, choices=[('ROS', 'ROS'), ('이론', '이론'), ('대학교','대학교')])
 
     def __str__(self):
         return self.subject
