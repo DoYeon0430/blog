@@ -69,8 +69,7 @@ class Network(models.Model):
     htmlcontent = HTMLField()
     create_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to='network/')
-    code = models.CharField(max_length=20, choices=[('공군', '공군'), ('네트워크', '네트워크'), ('자격증','자격증')])
-
+    
     def __str__(self):
         return self.subject
     
