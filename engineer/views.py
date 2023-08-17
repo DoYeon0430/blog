@@ -433,21 +433,9 @@ def network_main(request):
     view = Views.objects.get(pk=3)
 
     tag = request.GET.get('tag','')
-    selected_value = tag
     page = request.GET.get('page','1')
     kw = request.GET.get('kw','')
-
-    network_list = Network.objects.none()
-    page_obj = None
-
-    if tag == '공군':
-        network_list = Network.objects.filter(code='공군').order_by('-create_date')
-    elif tag == '네트워크':
-        network_list = Network.objects.filter(code='네트워크').order_by('-create_date')
-    elif tag == '자격증':
-        network_list = Network.objects.filter(code='자격증').order_by('-create_date')
-    else:
-        network_list = Network.objects.order_by('-create_date')
+    network_list = Network.objects.all().order_by('-create_date') # 최신순으로 정렬하여 가져옴
 
     if kw:
         network_list = network_list.filter(
@@ -480,8 +468,7 @@ def network_main(request):
         'network_list':network_list, 
         'page':page, 
         'kw':kw,
-        'url': url,
-        'selected_value':selected_value
+        'url': url
         })
 
 @csrf_exempt
