@@ -232,14 +232,45 @@ crossorigin="anonymous"></script>
 
         <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
         <div class="sidebar_js" style="display: block;">
-            {% for m in physics_data %}
-            <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for
-            {% if physics.id == m.id %} 
-            bar_check
-            {% endif %}">
-                &raquo; {{ m.subject}}
-            </a>
-            {% endfor %}
+          <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 로봇 운영체제 ({{physics_count_one}})</a>
+          <div class="sidebar_js" style="display: block;">
+              {% for m in physics_data %}
+              {% if m.code == 'ROS' %}
+              <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for
+              {% if physics.id == m.id %} 
+              bar_check
+              {% endif %}">
+                  &raquo; {{ m.subject}}
+              </a>
+              {% endif %}
+              {% endfor %}
+          </div>
+          <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 4대 역학 ({{physics_count_two}})</a>
+          <div class="sidebar_js" style="display: block;">
+              {% for m in physics_data %}
+              {% if m.code == '이론' %}
+              <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for
+              {% if physics.id == m.id %} 
+              bar_check
+              {% endif %}">
+                  &raquo; {{ m.subject}}
+              </a>
+              {% endif %}
+              {% endfor %}
+          </div>
+          <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 대학교 생활 ({{physics_count_three}})</a>
+          <div class="sidebar_js" style="display: block;">
+              {% for m in physics_data %}
+              {% if m.code == '대학교' %}
+              <a href="{% url 'engineer:physics' m.id %}" class="sidebar_for
+              {% if physics.id == m.id %} 
+              bar_check
+              {% endif %}">
+                  &raquo; {{ m.subject}}
+              </a>
+              {% endif %}
+              {% endfor %}
+          </div>
         </div>
 
         <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 프로그래밍 ({{django_data.count}})</a>
@@ -278,12 +309,38 @@ crossorigin="anonymous"></script>
 
         <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 네트워크 ({{network_data.count}})</a>
         <div class="sidebar_js">
-            {% for m in network_data %}
-            <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
-                &raquo; {{ m.subject}}
-            </a>
-            {% endfor %}
+            <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 공군 이야기 ({{network_count_one}})</a>
+            <div class="sidebar_js">
+                {% for m in network_data %}
+                {% if m.code == '공군' %}
+                <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+                    &raquo; {{ m.subject}}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; IT 자격증 ({{network_count_two}})</a>
+            <div class="sidebar_js">
+                {% for m in network_data %}
+                {% if m.code == '자격증' %}
+                <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+                    &raquo; {{ m.subject}}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 각종 네트워크 ({{network_count_three}})</a>
+            <div class="sidebar_js">
+                {% for m in network_data %}
+                {% if m.code == '네트워크' %}
+                <a href="{% url 'engineer:network' m.id %}" class="sidebar_for">
+                    &raquo; {{ m.subject}}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
+
         </div>
     </div>
 </div>

@@ -20,11 +20,17 @@ def main(request):
     movie_count_two = movie_data.filter(genre='드라마').count()
     movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
+    physics_count_one = physics_data.filter(code='ROS').count()
+    physics_count_two = physics_data.filter(code='이론').count()
+    physics_count_three = physics_data.filter(code='대학교').count()
     django_data = Django.objects.all().order_by('-create_date')
     django_count_one = django_data.filter(code='튜토리얼').count()
     django_count_two = django_data.filter(code='문법').count()
     django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
+    network_count_one = network_data.filter(code='공군').count()
+    network_count_two = network_data.filter(code='자격증').count()
+    network_count_three = network_data.filter(code='네트워크').count()
     view = Views.objects.get(pk=3)
 
     tag = request.GET.get('tag','')
@@ -58,20 +64,26 @@ def main(request):
     url = reverse('movie:main') + f'?kw={kw}&page={page}&tag={tag}'
 
     return render(request, 'movie/main.html', {
-        'mywork_data': mywork_data,
+        'mywork_data':mywork_data, 
         'mywork_count_one' : mywork_count_one,
         'mywork_count_two' : mywork_count_two,
         'mywork_count_three' : mywork_count_three,
-        'movie_data': movie_data,
-        'movie_count_one': movie_count_one,
-        'movie_count_two': movie_count_two,
-        'movie_count_three': movie_count_three,
-        'physics_data': physics_data,
-        'django_data': django_data,
-        'django_count_one': django_count_one,
-        'django_count_two': django_count_two,
-        'django_count_three': django_count_three,
-        'network_data': network_data,
+        'movie_data':movie_data, 
+        'movie_count_one':movie_count_one,
+        'movie_count_two':movie_count_two,
+        'movie_count_three':movie_count_three,
+        'physics_data':physics_data,
+        'physics_count_one':physics_count_one,
+        'physics_count_two':physics_count_two,
+        'physics_count_three':physics_count_three,
+        'django_data':django_data,
+        'django_count_one':django_count_one,
+        'django_count_two':django_count_two,
+        'django_count_three':django_count_three,
+        'network_data':network_data,
+        'network_count_one':network_count_one,
+        'network_count_two':network_count_two,
+        'network_count_three':network_count_three,
         'view': view,
         'page_obj': page_obj,
         'page': page,
@@ -92,11 +104,17 @@ def detail(request, movie_id):
     movie_count_two = movie_data.filter(genre='드라마').count()
     movie_count_three = movie_data.filter(genre='OTT 오리지널').count()
     physics_data = Physics.objects.all().order_by('-create_date')
+    physics_count_one = physics_data.filter(code='ROS').count()
+    physics_count_two = physics_data.filter(code='이론').count()
+    physics_count_three = physics_data.filter(code='대학교').count()
     django_data = Django.objects.all().order_by('-create_date')
     django_count_one = django_data.filter(code='튜토리얼').count()
     django_count_two = django_data.filter(code='문법').count()
     django_count_three = django_data.filter(code='템플릿').count()
     network_data = Network.objects.all().order_by('-create_date')
+    network_count_one = network_data.filter(code='공군').count()
+    network_count_two = network_data.filter(code='자격증').count()
+    network_count_three = network_data.filter(code='네트워크').count()
     view = Views.objects.get(pk=3)
     
     detail = get_object_or_404(Movie, pk=movie_id)
@@ -141,11 +159,17 @@ def detail(request, movie_id):
         'movie_count_two':movie_count_two,
         'movie_count_three':movie_count_three,
         'physics_data':physics_data,
+        'physics_count_one':physics_count_one,
+        'physics_count_two':physics_count_two,
+        'physics_count_three':physics_count_three,
         'django_data':django_data,
         'django_count_one':django_count_one,
         'django_count_two':django_count_two,
         'django_count_three':django_count_three,
         'network_data':network_data,
+        'network_count_one':network_count_one,
+        'network_count_two':network_count_two,
+        'network_count_three':network_count_three,
         'view' : view,
         'detail': detail, 
         'comments': comments, 
