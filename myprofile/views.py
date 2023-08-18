@@ -151,7 +151,6 @@ def tag(request):
         'physics_content': physics_content,
         'django_content': django_content,
         'network_content': network_content,
-        # 'movie_list': movie_list,
         'yesterday_str': yesterday_str,
         'key':key,
         'target_date':target_date,

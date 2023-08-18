@@ -86,7 +86,7 @@
           {% for week in cal_data %}
           <tr>
               {% for day, count in week %}
-              <td class="calendar_day" {% if day == today.day %} style="background-color: rgb(240, 225, 149);" {% endif %}>
+              <td class="calendar_day" {% if day == today.day %} style="background-color: rgb(252 241 202);" {% endif %}>
                   {% if day %}
                   <div class="date">{{ day }}</div>
                   {% if day <= today.day %}
