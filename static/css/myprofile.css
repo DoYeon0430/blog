@@ -1337,7 +1337,7 @@
     }
 
     .calendar_day .date {
-        font-size: 1rem;
+        font-size: 0.8rem;
         position: absolute;
         top: 5%;
         right: 5%;
@@ -1349,7 +1349,7 @@
         font-weight: 600;
         display: inline-block;
         position: absolute;
-        bottom: 0;
+        bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
