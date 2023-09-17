@@ -170,7 +170,7 @@ TINYMCE_DEFAULT_CONFIG = {
         directionality emoticons template paste textcolor colorpicker textpattern codesample removeformat
     ''',
     'toolbar1': '''
-        fullscreen preview bold italic underline superscript | fontselect,
+        fullscreen preview bold italic underline superscript subscript | fontselect,
         fontsizeselect | forecolor backcolor | alignleft alignright |
         aligncenter alignjustify | indent outdent | bullist numlist table |
         link image media | codesample

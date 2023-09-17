@@ -2,71 +2,78 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REFWQD4D6H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REFWQD4D6H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'G-REFWQD4D6H');
-    </script>
-    {% block title %}
-    {% endblock %}
-    <meta name="naver-site-verification" content="cb5cab04c27969e7801ed54220c0debd386a23ef" />
-    <!-- Required meta tags --> 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- 부트스트랩 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/movie.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/homeimg.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mywork.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/engineer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/tinyMCE.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    gtag('config', 'G-REFWQD4D6H');
+  </script>
+  {% block title %}
+  {% endblock %}
+  <meta name="naver-site-verification" content="cb5cab04c27969e7801ed54220c0debd386a23ef" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- 부트스트랩 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/movie.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/homeimg.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/mywork.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/engineer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/tinyMCE.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
 </head>
-<body>
 
-  
-<div class="container nav_main">
-  <div class="item nav_item" style="margin-right: auto; margin-left: 2rem; padding-top: 1.6rem; font-size: 1.5rem;">
-    <a href="{% url 'myprofile:home' %}" style="position: static;">Doyeon0430</a>
-  </div>  
-  <div class="item nav_item">
-    <a href="{% url 'myprofile:main' %}" >나의 소개</a>
-  </div>
-  <div class="item dropdown_king nav_item">
-    <a href="{% url 'mywork:main' %}" class="dropdown_toggle">
-      영화 이야기
-      <svg class="drop_toggle_icon1" style="display: inline-flex;  justify-content: center; align-items: center;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-      </svg>
-    </a>
-    <div class="dropdown_main">
-      <a href="{% url 'mywork:main' %}?kw=&page=1&tag=영화연출">
-        <div>영화 연출</div>
-      </a>
-      <a href="{% url 'mywork:main' %}?kw=&page=1&tag=영화추천">
-        <div>영화 추천</div>
-      </a>
-      <a href="{% url 'mywork:main' %}?kw=&page=1&tag=현장이야기">
-        <div>영화 현장</div>
-      </a>                     
+<body>
+  <div class="container nav_main">
+    <div class="item nav_item" style="margin-right: auto; margin-left: 2rem; padding-top: 1.6rem; font-size: 1.5rem;">
+      <a href="{% url 'myprofile:home' %}" style="position: static;">Doyeon0430</a>
     </div>
-  </div>
-  <div class="item dropdown_king nav_item">
-    <a href="{% url 'movie:main' %}" class="dropdown_toggle" >
-      영화 감상 후기
-        <svg class="drop_toggle_icon1" style="display: inline-flex;  justify-content: center; align-items: center;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+    <div class="item nav_item">
+      <a href="{% url 'myprofile:main' %}">나의 소개</a>
+    </div>
+    <div class="item dropdown_king nav_item">
+      <a href="{% url 'mywork:main' %}" class="dropdown_toggle">
+        영화 이야기
+        <svg class="drop_toggle_icon1" style="display: inline-flex;  justify-content: center; align-items: center;"
+          xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+        </svg>
+      </a>
+      <div class="dropdown_main">
+        <a href="{% url 'mywork:main' %}?kw=&page=1&tag=영화연출">
+          <div>영화 연출</div>
+        </a>
+        <a href="{% url 'mywork:main' %}?kw=&page=1&tag=영화추천">
+          <div>영화 추천</div>
+        </a>
+        <a href="{% url 'mywork:main' %}?kw=&page=1&tag=현장이야기">
+          <div>영화 현장</div>
+        </a>
+      </div>
+    </div>
+    <div class="item dropdown_king nav_item">
+      <a href="{% url 'movie:main' %}" class="dropdown_toggle">
+        영화 감상 후기
+        <svg class="drop_toggle_icon1" style="display: inline-flex;  justify-content: center; align-items: center;"
+          xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
         </svg>
       </a>
       <div class="dropdown_main">
@@ -80,143 +87,104 @@
           <div>OTT</div>
         </a>
       </div>
-  </div>
-  <div class="item dropdown_king nav_item" style="margin-right: 0;">
+    </div>
+    <div class="item dropdown_king nav_item" style="margin-right: 0;">
       <a href="{% url 'engineer:main' %}" class="dropdown_toggle" rel="nosublink">
         기초 공학 정리
-          <svg class="drop_toggle_icon1" style="display: inline-flex;  justify-content: center; align-items: center;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-          </svg>
+        <svg class="drop_toggle_icon1" style="display: inline-flex;  justify-content: center; align-items: center;"
+          xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+        </svg>
+      </a>
+      <div class="dropdown_main">
+        <a href="{% url 'engineer:physics_main' %}">
+          <div>물리학</div>
         </a>
-        <div class="dropdown_main">
-          <a href="{% url 'engineer:physics_main' %}">
-            <div>물리학</div>
-          </a>
-          <a href="{% url 'engineer:django_main' %}">
-            <div>프로그래밍</div>
-          </a>
-          <a href="{% url 'engineer:network_main' %}">
-            <div>네트워크</div>
-          </a>
-        </div>
+        <a href="{% url 'engineer:django_main' %}">
+          <div>프로그래밍</div>
+        </a>
+        <a href="{% url 'engineer:network_main' %}">
+          <div>네트워크</div>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
-  
-<div class="logo-container">
-  <div class="logo">
-    <a href="{% url 'myprofile:home' %}">
-      <img src="{% static 'img/doyeon0430.png' %}" alt="My Image">
-    </a>
-  </div>
-  <button class="navbar-burger" onclick="toggleMenu()" aria-label="navbar-burger">
-  </button>
-</div>
 
-<div class="menu">
-  <button class="navbar-burger_back" onclick="toggleMenu()" aria-label="navbar-burger_back">
-  </button>
+  <div class="logo-container">
+    <div class="logo">
+      <a href="{% url 'myprofile:home' %}">
+        <img src="{% static 'img/doyeon0430.png' %}" alt="My Image">
+      </a>
+    </div>
+    <button class="navbar-burger" onclick="toggleMenu()" aria-label="navbar-burger">
+    </button>
+  </div>
+
+  <div class="menu">
+    <button class="navbar-burger_back" onclick="toggleMenu()" aria-label="navbar-burger_back">
+    </button>
     <nav>
-        <a class="bar_one" href="{% url 'myprofile:main' %}" style="animation-delay: 0.1s;">나의 소개</a>
-        <a class="bar_one" href="{% url 'mywork:main' %}" style="animation-delay: 0.2s;">영화 이야기</a>
-        <a class="bar_one" href="{% url 'movie:main' %}" style="animation-delay: 0.3s;">영화 감상 후기</a>
-        <a class="dropdown_bar bar_one" style="animation-delay: 0.4s; justify-content: center; align-items: center;" href="#">기초 공학 정리     
-          <svg class="drop_icon1" style="display: inline-flex;  justify-content: center; align-items: center;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-          </svg>
-          <svg class="drop_icon2" style="display: none;  justify-content: center; align-items: center;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-          </svg>
-        </a>
-        <div class="dropdown-content">
-          <a class="bar_two" href="{% url 'engineer:physics_main' %}" style="animation-delay: 0.1s;">· 물리학</a>
-          <a class="bar_two" href="{% url 'engineer:django_main' %}" style="animation-delay: 0.2s;">· 프로그래밍</a>
-          <a class="bar_two" href="{% url 'engineer:network_main' %}" style="animation-delay: 0.3s;">· 네트워크</a>
-        </div>
+      <a class="bar_one" href="{% url 'myprofile:main' %}" style="animation-delay: 0.1s;">나의 소개</a>
+      <a class="bar_one" href="{% url 'mywork:main' %}" style="animation-delay: 0.2s;">영화 이야기</a>
+      <a class="bar_one" href="{% url 'movie:main' %}" style="animation-delay: 0.3s;">영화 감상 후기</a>
+      <a class="dropdown_bar bar_one" style="animation-delay: 0.4s; justify-content: center; align-items: center;"
+        href="#">기초 공학 정리
+        <svg class="drop_icon1" style="display: inline-flex;  justify-content: center; align-items: center;"
+          xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-down-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+        </svg>
+        <svg class="drop_icon2" style="display: none;  justify-content: center; align-items: center;"
+          xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-caret-up-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+        </svg>
+      </a>
+      <div class="dropdown-content">
+        <a class="bar_two" href="{% url 'engineer:physics_main' %}" style="animation-delay: 0.1s;">· 물리학</a>
+        <a class="bar_two" href="{% url 'engineer:django_main' %}" style="animation-delay: 0.2s;">· 프로그래밍</a>
+        <a class="bar_two" href="{% url 'engineer:network_main' %}" style="animation-delay: 0.3s;">· 네트워크</a>
+      </div>
     </nav>
     <span>Doyeon0430</span>
-</div>
+  </div>
 
-<div id="slider" class="container">
+  <div id="slider" class="container">
     <img src="{% static 'img/mainimg.webp' %}" alt="My Image" class="home_img">
-</div>
+  </div>
 
+  <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+  {% block content %}
+  {% endblock %}
+  <!-- 기본 템플릿 안에 삽입될 내용 End -->
+  <div style="background-color: rgb(215, 215, 215);">
+    <footer class="py-2 container">
+      <ul class="nav justify-content-center border-bottom pt-1 pb-2 mb-3">
+        <li class="nav-item"><a href="/" class="footer_a nav-link px-2">HOME</a></li>
+        <li class="nav-item"><a href="{% url 'mywork:main' %}" class="footer_a nav-link px-2">영화 이야기</a></li>
+        <li class="nav-item"><a href="{% url 'movie:main' %}" class="footer_a nav-link px-2">영화 감상 후기</a></li>
+        <li class="nav-item"><a href="{% url 'engineer:main' %}" class="footer_a nav-link px-2" rel="nosublink">기초 공학 정리</a></li>
+        <li class="nav-item"><a href="/admin" class="footer_a nav-link px-2" rel="nosublink">DATABASE</a></li>
+      </ul>
+      <p class="text-center footer_p">Copyright © 2023 by Doyeon0430</p>
+    </footer>
+  </div>
 
-<!-- 기본 템플릿 안에 삽입될 내용 Start -->
-{% block content %}
-{% endblock %}
-<!-- 기본 템플릿 안에 삽입될 내용 End -->
-<div style="background-color: rgb(215, 215, 215);">
-  <footer class="py-2 container">
-    <ul class="nav justify-content-center border-bottom pt-1 pb-2 mb-3">
-      <li class="nav-item"><a href="/" class="footer_a nav-link px-2">HOME</a></li>
-      <li class="nav-item"><a href="{% url 'mywork:main' %}" class="footer_a nav-link px-2">영화 이야기</a></li>
-      <li class="nav-item"><a href="{% url 'movie:main' %}" class="footer_a nav-link px-2">영화 감상 후기</a></li>
-      <li class="nav-item"><a href="{% url 'engineer:main' %}" class="footer_a nav-link px-2" rel="nosublink">기초 공학 정리</a></li>
-      <li class="nav-item"><a href="/admin" class="footer_a nav-link px-2" rel="nosublink">DATABASE</a></li>
-    </ul>
-    <p class="text-center footer_p">Copyright © 2023 by Doyeon0430</p>
-  </footer>
-</div>
-
-<a class="draggable_off" id="scrollTopLink" href="#" style="position: fixed; bottom: 1.5rem; right: 1.5rem; display: none;"><img style="width: 35px; height: 35px; opacity: 0.7;" src="{% static 'img/top.svg' %}" alt="My Image"></a>
+  <a class="draggable_off" id="scrollTopLink" href="#" style="position: fixed; bottom: 1.5rem; right: 1.5rem; display: none;">
+    <img style="width: 35px; height: 35px; opacity: 0.7;" src="{% static 'img/top.svg' %}" alt="My Image">
+  </a>
 </body>
 <script type="text/javascript" src="/static/js/imgslider.js"></script>
 <script type="text/javascript" src="/static/js/sidebar.js"></script>
 <script type="text/javascript" src="/static/js/dropdown.js"></script>
+<script type="text/javascript" src="/static/js/scroll.js"></script>
+<script type="text/javascript" src="/static/js/navbar.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    // 스크롤 이벤트 리스너 추가
-    window.addEventListener('scroll', function() {
-      // 현재 스크롤 위치
-      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  
-      // 스크롤이 1px 이상 내려갔을 때
-      if (scrollPosition > 0) {
-        // 링크 보이기
-        document.getElementById("scrollTopLink").style.display = "block";
-      } else {
-        // 링크 숨기기
-        document.getElementById("scrollTopLink").style.display = "none";
-      }
-    });
-</script>
-<script>
-  // 페이지가 로드되었을 때 실행되는 함수
-  window.addEventListener("load", function() {
-    // 클릭 이벤트를 body 요소에 추가
-    var body = document.querySelector("body");
-    body.addEventListener("click", handleBodyClick);
-  });
 
-  // body 클릭 이벤트 핸들러
-  function handleBodyClick(event) {
-    var target = event.target;
-    var body = document.querySelector("body");
-    var menu = document.querySelector(".menu");
-    var dropdownContent = document.querySelector(".dropdown-content");
-
-    // 클릭된 요소가 메뉴 토글 버튼이 아니고, 메뉴 영역 내부에 속하지 않는 경우 메뉴를 닫음
-    if (!target.classList.contains("navbar-burger") && !menu.contains(target)) {
-      dropdownContent.style.display = "none";
-      body.classList.remove("open");
-      menu.style.transform = "translateX(100%)";
-    }
-  }
-
-  // 메뉴 토글 함수
-  function toggleMenu() {
-    var body = document.querySelector("body");
-    var menu = document.querySelector(".menu");
-
-    body.classList.toggle("open");
-
-    if (body.classList.contains("open")) {
-      menu.style.transform = "translateX(0)";
-    } else {
-      menu.style.transform = "translateX(100%)";
-    }
-  }
-</script>
 </html>
