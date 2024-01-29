@@ -32,9 +32,9 @@ crossorigin="anonymous"></script>
                     <div class="col-4 col-sm-3 col-md-2 col-lg-2">
                         <select class="form_select form-select form-select-sm mt-1 border-2 border-gray" aria-label=".form-select-sm example" onchange="dropdownForm(this.value)">
                             <option value="" {% if selected_value == '' %}selected{% endif %}>전체</option>
-                            <option value="튜토리얼" {% if selected_value == '튜토리얼' %}selected{% endif %}>튜토리얼</option>
-                            <option value="문법" {% if selected_value == '문법' %}selected{% endif %}>문법</option>
-                            <option value="템플릿" {% if selected_value == '템플릿' %}selected{% endif %}>템플릿</option>
+                            <option value="튜토리얼" {% if selected_value == '튜토리얼' %}selected{% endif %}>Django 튜토리얼</option>
+                            <option value="문법" {% if selected_value == '문법' %}selected{% endif %}>Django 문법</option>
+                            <option value="템플릿" {% if selected_value == '템플릿' %}selected{% endif %}>Django 템플릿</option>
                         </select>                                                    
                     </div>
                     
@@ -230,7 +230,7 @@ crossorigin="anonymous"></script>
       
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
                 <div class="sidebar_js" style="display: block;">
-                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 로봇 운영체제 ({{physics_count_one}})</a>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 대학교 소프트웨어 ({{physics_count_one}})</a>
                     <div class="sidebar_js">
                         {% for m in physics_data %}
                         {% if m.code == 'ROS' %}
@@ -240,7 +240,7 @@ crossorigin="anonymous"></script>
                         {% endif %}
                         {% endfor %}
                     </div>
-                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 4대 역학 ({{physics_count_two}})</a>
+                    <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 대학교 전공 ({{physics_count_two}})</a>
                     <div class="sidebar_js">
                         {% for m in physics_data %}
                         {% if m.code == '이론' %}

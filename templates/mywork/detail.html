@@ -242,7 +242,7 @@ crossorigin="anonymous"></script>
 
                 <a class="sidebar_tag" onclick="toggleSidebarFor(event)">&#43; 물리학 ({{physics_data.count}})</a>   
                 <div class="sidebar_js">
-                  <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 로봇 운영체제 ({{physics_count_one}})</a>
+                  <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 대학교 소프트웨어 ({{physics_count_one}})</a>
                   <div class="sidebar_js">
                       {% for m in physics_data %}
                       {% if m.code == 'ROS' %}
@@ -252,7 +252,7 @@ crossorigin="anonymous"></script>
                       {% endif %}
                       {% endfor %}
                   </div>
-                  <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 4대 역학 ({{physics_count_two}})</a>
+                  <a class="sidebar_tag_one" onclick="toggleSidebarFor(event)">&#43; 대학교 전공 ({{physics_count_two}})</a>
                   <div class="sidebar_js">
                       {% for m in physics_data %}
                       {% if m.code == '이론' %}
