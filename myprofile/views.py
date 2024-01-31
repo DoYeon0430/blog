@@ -177,5 +177,9 @@ def secret(request):
 
 def secret_view(request, secret_id):
     meeting_date = get_object_or_404(MeetingDate, id=secret_id)
-    
+
+    if request.method == 'POST' and 'delete' in request.POST:
+        meeting_date.delete()
+        return redirect('myprofile:secret')
+
     return render(request, 'mywork/secret_detail.html', {'meeting_date': meeting_date})
