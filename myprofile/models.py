@@ -8,3 +8,11 @@ class Views(models.Model):
     
     class Meta:
         verbose_name_plural = '전체 조회수'
+
+class MeetingDate(models.Model):
+    date = models.DateField()
+    text = models.CharField(max_length=100)
+    details = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.date} - {self.text}"

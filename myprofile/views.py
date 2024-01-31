@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Views
 from datetime import datetime, timedelta
 from django.http import HttpResponse
@@ -14,6 +14,9 @@ environ.Env.read_env()
 from django.core.cache import cache
 import calendar
 from django.shortcuts import render
+from .models import MeetingDate
+from .forms import MeetingDateForm
+
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0", content_type='text/plain')
@@ -158,3 +161,21 @@ def tag(request):
     }
 
     return render(request, 'myprofile/tag.html', content)
+
+
+def secret(request):
+    if request.method == 'POST':
+        form = MeetingDateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('myprofile:secret')
+    else:
+        form = MeetingDateForm()
+
+    meeting_dates = MeetingDate.objects.all().order_by('date')
+    return render(request, 'mywork/secret.html', {'form': form, 'meeting_dates': meeting_dates})
+
+def secret_view(request, secret_id):
+    meeting_date = get_object_or_404(MeetingDate, id=secret_id)
+    
+    return render(request, 'mywork/secret_detail.html', {'meeting_date': meeting_date})
