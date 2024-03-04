@@ -16,7 +16,8 @@ import calendar
 from django.shortcuts import render
 from .models import MeetingDate
 from .forms import MeetingDateForm
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from collections import Counter
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0", content_type='text/plain')
@@ -161,7 +162,6 @@ def tag(request):
     }
 
     return render(request, 'myprofile/tag.html', content)
-from collections import Counter
 
 def secret(request):
     total_count = MeetingDate.objects.count()
@@ -181,11 +181,27 @@ def secret(request):
         form = MeetingDateForm()
 
     meeting_dates = MeetingDate.objects.all().order_by('date')
-    
-    return render(request, 'mywork/secret.html', {'form': form, 
-                                                  'meeting_dates': meeting_dates, 
-                                                  'character_counts': sentence_counts_list, 
-                                                  'total_count':total_count})
+
+    # Calculate the page range for pagination
+    page = request.GET.get('page', 1)
+    paginator = Paginator(meeting_dates, 10)  # 5 items per page, adjust as needed
+
+    try:
+        current_page = paginator.page(page)
+    except PageNotAnInteger:
+        current_page = paginator.page(1)
+    except EmptyPage:
+        current_page = paginator.page(paginator.num_pages)
+
+    total_pages = paginator.num_pages
+    page_range = range(max(current_page.number - 2, 1), min(current_page.number + 2, total_pages) + 1)
+
+    return render(request, 'mywork/secret.html', {'form': form,
+                                                  'meeting_dates': current_page,
+                                                  'character_counts': sentence_counts_list,
+                                                  'total_count': total_count,
+                                                  'page_range': page_range
+                                                  })
 
 def secret_view(request, secret_id):
     meeting_date = get_object_or_404(MeetingDate, id=secret_id)
