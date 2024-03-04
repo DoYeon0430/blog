@@ -216,8 +216,14 @@ def secret(request):
 def secret_view(request, secret_id):
     meeting_date = get_object_or_404(MeetingDate, id=secret_id)
 
-    if request.method == 'POST' and 'delete' in request.POST:
-        meeting_date.delete()
-        return redirect('myprofile:secret')
+    if request.method == 'POST':
+        correct_password = str(Views.objects.get(pk=1).count)
+        entered_password = request.POST.get('password', '')
+
+        if entered_password == correct_password:
+            meeting_date.delete()
+            return redirect('myprofile:secret')
+        else:
+            return redirect('myprofile:secret_view', secret_id=secret_id)
 
     return render(request, 'mywork/secret_detail.html', {'meeting_date': meeting_date})
