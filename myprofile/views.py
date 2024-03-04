@@ -178,6 +178,7 @@ def secret(request):
     # Convert the Counter object to a list of tuples for better rendering in the template
     sentence_counts_list = [(sentence, count) for sentence, count in sentence_counts.items()]
 
+    sentence_counts_list.sort(key=lambda x: x[1], reverse=True)
 
     if request.method == 'POST':
         form = MeetingDateForm(request.POST)
