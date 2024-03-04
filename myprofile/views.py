@@ -161,9 +161,24 @@ def tag(request):
     }
 
     return render(request, 'myprofile/tag.html', content)
-
+from collections import Counter
 
 def secret(request):
+    meetings = MeetingDate.objects.all()
+
+    # Extract sentences from the text field of each MeetingDate
+    sentences = [' '.join(meeting.text.split()) for meeting in meetings]
+
+    # Print sentences to the console for debugging
+    print(sentences)
+
+    # Calculate sentence statistics
+    sentence_counts = Counter(sentences)
+
+    # Convert the Counter object to a list of tuples for better rendering in the template
+    sentence_counts_list = [(sentence, count) for sentence, count in sentence_counts.items()]
+
+
     if request.method == 'POST':
         form = MeetingDateForm(request.POST)
         if form.is_valid():
@@ -173,7 +188,8 @@ def secret(request):
         form = MeetingDateForm()
 
     meeting_dates = MeetingDate.objects.all().order_by('date')
-    return render(request, 'mywork/secret.html', {'form': form, 'meeting_dates': meeting_dates})
+    
+    return render(request, 'mywork/secret.html', {'form': form, 'meeting_dates': meeting_dates, 'character_counts': sentence_counts_list})
 
 def secret_view(request, secret_id):
     meeting_date = get_object_or_404(MeetingDate, id=secret_id)
