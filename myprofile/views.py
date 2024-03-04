@@ -180,7 +180,7 @@ def secret(request):
     else:
         form = MeetingDateForm()
 
-    meeting_dates = MeetingDate.objects.all().order_by('date')
+    meeting_dates = MeetingDate.objects.all().order_by('-date')
 
     # Calculate the page range for pagination
     page = request.GET.get('page', 1)
