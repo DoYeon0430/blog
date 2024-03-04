@@ -18,6 +18,7 @@ from .models import MeetingDate
 from .forms import MeetingDateForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from collections import Counter
+from django.contrib import messages
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0", content_type='text/plain')
@@ -172,19 +173,10 @@ def secret(request):
     sentence_counts_list = [(sentence, count) for sentence, count in sentence_counts.items()]
     sentence_counts_list.sort(key=lambda x: x[1], reverse=True)
 
-    if request.method == 'POST':
-        form = MeetingDateForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('myprofile:secret')
-    else:
-        form = MeetingDateForm()
-
     meeting_dates = MeetingDate.objects.all().order_by('-date')
 
-    # Calculate the page range for pagination
     page = request.GET.get('page', 1)
-    paginator = Paginator(meeting_dates, 10)  # 5 items per page, adjust as needed
+    paginator = Paginator(meeting_dates, 10)
 
     try:
         current_page = paginator.page(page)
@@ -195,6 +187,23 @@ def secret(request):
 
     total_pages = paginator.num_pages
     page_range = range(max(current_page.number - 2, 1), min(current_page.number + 2, total_pages) + 1)
+
+    form = MeetingDateForm()
+
+    if request.method == 'POST':
+        password_instance = Views.objects.get(pk=1)
+        correct_password = str(password_instance.count)
+        entered_password = request.POST.get('password', '')
+
+        if entered_password == correct_password:
+            form = MeetingDateForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(request, '날짜가 추가되었습니다!')
+                return redirect('myprofile:secret')
+        else:
+            form = MeetingDateForm()
+            messages.error(request, '비밀번호가 일치하지 않습니다.')
 
     return render(request, 'mywork/secret.html', {'form': form,
                                                   'meeting_dates': current_page,
