@@ -89,7 +89,7 @@ def physics(request, study_id):
     view = Views.objects.get(pk=3)
     
     physics = get_object_or_404(Physics, pk=study_id)
-    comments = Comment_physics.objects.filter(physics=physics.pk)
+    comments = Comment_physics.objects.filter(physics=physics.pk).order_by('-create_date')
     next_post = Physics.objects.filter(create_date__gt=physics.create_date).order_by('create_date').first()
     previous_post = Physics.objects.filter(create_date__lt=physics.create_date).order_by('-create_date').first()
     comment_limit_time = datetime.now() - timedelta(days=1)
@@ -261,7 +261,7 @@ def django(request, study_id):
     view = Views.objects.get(pk=3)
 
     django = get_object_or_404(Django, pk=study_id)
-    comments = Comment_django.objects.filter(django=django.pk)
+    comments = Comment_django.objects.filter(django=django.pk).order_by('-create_date')
     next_post = Django.objects.filter(create_date__gt=django.create_date).order_by('create_date').first()
     previous_post = Django.objects.filter(create_date__lt=django.create_date).order_by('-create_date').first()
     comment_limit_time = datetime.now() - timedelta(days=1)
@@ -434,7 +434,7 @@ def network(request, study_id):
     view = Views.objects.get(pk=3)
 
     network = get_object_or_404(Network, pk=study_id)
-    comments = Comment_network.objects.filter(network=network.pk)
+    comments = Comment_network.objects.filter(network=network.pk).order_by('-create_date')
     next_post = Network.objects.filter(create_date__gt=network.create_date).order_by('create_date').first()
     previous_post = Network.objects.filter(create_date__lt=network.create_date).order_by('-create_date').first()
     comment_limit_time = datetime.now() - timedelta(days=1)

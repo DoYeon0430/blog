@@ -118,7 +118,7 @@ def detail(request, movie_id):
     view = Views.objects.get(pk=3)
     
     detail = get_object_or_404(Movie, pk=movie_id)
-    comments = Comment.objects.filter(movie=detail.pk)
+    comments = Comment.objects.filter(movie=detail.pk).order_by('-create_date')
     next_post = Movie.objects.filter(create_date__gt=detail.create_date).order_by('create_date').first()
     previous_post = Movie.objects.filter(create_date__lt=detail.create_date).order_by('-create_date').first()
     comment_limit_time = datetime.now() - timedelta(days=1)
