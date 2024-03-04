@@ -204,6 +204,7 @@ def secret(request):
         else:
             form = MeetingDateForm()
             messages.error(request, '비밀번호가 일치하지 않습니다.')
+            return redirect('myprofile:secret')
 
     return render(request, 'mywork/secret.html', {'form': form,
                                                   'meeting_dates': current_page,
