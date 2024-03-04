@@ -114,7 +114,7 @@ def detail(request, mywork_id):
     view = Views.objects.get(pk=3)
     
     detail = get_object_or_404(Mywork, pk=mywork_id)
-    comments = Comment.objects.filter(mywork=detail.pk).order_by('-create_date')
+    comments = Comment.objects.filter(mywork=detail.pk).order_by('create_date')
     next_post = Mywork.objects.filter(create_date__gt=detail.create_date).order_by('create_date').first()
     previous_post = Mywork.objects.filter(create_date__lt=detail.create_date).order_by('-create_date').first()
     comment_limit_time = datetime.now() - timedelta(days=1)
