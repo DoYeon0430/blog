@@ -212,18 +212,35 @@ def secret(request):
                                                   'total_count': total_count,
                                                   'page_range': page_range
                                                   })
+from .forms import ImageForm
 
 def secret_view(request, secret_id):
     meeting_date = get_object_or_404(MeetingDate, id=secret_id)
+    meeting_form = ImageForm(instance=meeting_date)
+
+    # Form for uploading and displaying images
+    image_form = ImageForm(request.POST, request.FILES, instance=meeting_date)
 
     if request.method == 'POST':
-        correct_password = str(Views.objects.get(pk=1).count)
-        entered_password = request.POST.get('password', '')
+        action = request.POST.get('action', '')
 
-        if entered_password == correct_password:
-            meeting_date.delete()
-            return redirect('myprofile:secret')
-        else:
+        if action == 'add_image':
+            correct_password = str(Views.objects.get(pk=1).count)
+            entered_password = request.POST.get('password', '')
+            if entered_password == correct_password and image_form.is_valid():
+                image_form.save()
+                return redirect('myprofile:secret_view', secret_id=secret_id)
             return redirect('myprofile:secret_view', secret_id=secret_id)
 
-    return render(request, 'mywork/secret_detail.html', {'meeting_date': meeting_date})
+        else:
+            correct_password = str(Views.objects.get(pk=1).count)
+            entered_password = request.POST.get('password', '')
+
+            if entered_password == correct_password:
+                meeting_date.delete()
+                return redirect('myprofile:secret')
+            else:
+                return redirect('myprofile:secret_view', secret_id=secret_id)
+            
+    context = {'meeting_date': meeting_date, 'meeting_form': meeting_form, 'image_form': image_form}
+    return render(request, 'mywork/secret_detail.html', context)
