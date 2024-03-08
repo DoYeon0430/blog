@@ -196,7 +196,7 @@ def secret(request):
         entered_password = request.POST.get('password', '')
 
         if entered_password == correct_password:
-            form = MeetingDateForm(request.POST)
+            form = MeetingDateForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
                 messages.success(request, '날짜가 추가되었습니다!')
@@ -212,24 +212,27 @@ def secret(request):
                                                   'total_count': total_count,
                                                   'page_range': page_range
                                                   })
-from .forms import ImageForm
 
 def secret_view(request, secret_id):
     meeting_date = get_object_or_404(MeetingDate, id=secret_id)
-    meeting_form = ImageForm(instance=meeting_date)
-
-    # Form for uploading and displaying images
-    image_form = ImageForm(request.POST, request.FILES, instance=meeting_date)
+    form = MeetingDateForm(request.POST or None, instance=meeting_date)
 
     if request.method == 'POST':
         action = request.POST.get('action', '')
-
-        if action == 'add_image':
+        if action == 'edit':
             correct_password = str(Views.objects.get(pk=1).count)
-            entered_password = request.POST.get('password', '')
-            if entered_password == correct_password and image_form.is_valid():
-                image_form.save()
+            entered_password = request.POST.get('password_edit', '')
+            if entered_password == correct_password and form.is_valid():
+                form = MeetingDateForm(request.POST, request.FILES, instance=meeting_date)
+                remove_photo = request.POST.get('remove_photo', False)
+                if remove_photo == 'true':
+                    meeting_date.photo.delete()
+                    form.save()
+                else:
+                    form.save()
+                messages.success(request, '날짜가 수정되었습니다!')
                 return redirect('myprofile:secret_view', secret_id=secret_id)
+            messages.error(request, '비밀번호가 일치하지 않습니다.')
             return redirect('myprofile:secret_view', secret_id=secret_id)
 
         else:
@@ -242,5 +245,5 @@ def secret_view(request, secret_id):
             else:
                 return redirect('myprofile:secret_view', secret_id=secret_id)
             
-    context = {'meeting_date': meeting_date, 'meeting_form': meeting_form, 'image_form': image_form}
+    context = {'meeting_date': meeting_date, 'form':form}
     return render(request, 'mywork/secret_detail.html', context)
