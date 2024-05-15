@@ -1,0 +1,268 @@
+{% load static %}
+{% load myprofile_filter %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="특별한 순간들을 기억하고 공유하세요.">
+    <meta name="og:url" content="https://doyeon0430.com/secret/" />
+    <meta name="author" content="Doyeon0430">
+
+
+    <meta property="og:title" content="우리의 디데이">
+    <meta property="og:description" content="특별한 순간들을 기억하고 공유하세요.">
+    <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/06/20/11/wedding-2595862_1280.jpg">
+
+    <title>우리의 디데이</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    h1 {
+        display: inline-block;
+        font-size: 24px;
+        margin: 0;
+    }
+
+    section {
+        /* display: none; */
+        background-color: #fff;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .section_main {
+        max-width: 600px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .form-group {
+        margin: 20px 0px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .image-form {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        min-width: 50px;
+    }
+
+    input[type="text"],
+    .password {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    textarea {
+        flex: 1;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        height: 100px;
+        resize: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        overflow-x: auto;
+        max-width: 100%;
+        font-family: Arial, sans-serif;
+    }
+
+    .button_design {
+        background-color: #000000;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 45px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .btn-add-image {
+        color: #007bff;
+        font-weight: bold;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .messages {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .messages li {
+        position: relative;
+        margin: 0;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding-right: 20px;
+    }
+
+    .messages li {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-right: 20px;
+        /* Space for the close button */
+    }
+
+    .close {
+        font-size: 20px;
+        margin-left: auto;
+        /* Push the close button to the right */
+        cursor: pointer;
+    }
+
+    .error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+</style>
+<body>
+    <header>
+        <a href="{% url 'myprofile:secret' %}">
+            <h1>우리의 디데이</h1>
+        </a>
+    </header>
+    <div class="section_main">
+        <section class="dates">
+            <h2>
+                📋 게시물 생성
+            </h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ image_formset.management_form }}
+                <input type="hidden" id="create-button" name="create_button" value="0">
+                <input type="hidden" id="add-image-flag" name="add_image_flag" value="0">
+                <input type="hidden" id="form-count" name="form_count" value="{{ image_formset.forms|length }}">
+
+                <p style="text-align: right; color: #cd2121; font-size: 12px; font-weight: bold;">별표(*)는 필수로 입력</p>
+                <div class="form-group">
+                    <label for="id_subject">제목 <span style="color: #cd2121;">*</span></label>
+                    {{ post_form.subject }}
+                </div>                
+                <div class="form-group">
+                    <label for="id_username">이름 <span style="color: #cd2121;">*</span></label>
+                    {{ post_form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="id_content">내용</label>
+                    {{ post_form.content }}
+                </div>                
+                <div>
+                    <label for="id_image">이미지</label>
+                    <button type="button" id="add-image" class="btn-add-image">(파일 추가)</button>
+                    {% for form in image_formset.forms %}
+                    <div class="image-form">
+                        <div>
+                            {{ form.image }}
+                        </div>
+                        {% if form.image.errors %}
+                        <span class="error">{{ form.image.errors }}</span>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="id_password">암호 <span style="color: #cd2121;">*</span></label>
+                    <input type="password" name="password" id="id_password" class="password" placeholder="비밀번호를 입력하세요."
+                        maxlength="6" oninput="validateInput(this)">
+                </div>
+                
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                        {{ message }}
+                        <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+                        </li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div style="display: block; text-align: right; margin: 20px 0 0 0;">
+                    <button type="submit" id="create-post-button" class="button_design">
+                        추가
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+</body>
+
+<script>
+function validateInput(input) {
+    if (input.value.length > 6) {
+        input.value = input.value.slice(0, 6);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addButton = document.getElementById('add-image');
+    const createPostButton = document.getElementById('create-post-button');
+
+    const addImageFlag = document.getElementById('add-image-flag');
+    const form_count = document.getElementById('form-count')
+    const create_button = document.getElementById('create-button');
+    console.log(form_count)
+    
+    addButton.addEventListener('click', function() {
+        create_button.value = '0';
+        addImageFlag.value = form_count.value;
+        document.querySelector('form').submit();
+    });
+
+    createPostButton.addEventListener('click', function() {
+        create_button.value = '1';
+        addImageFlag.value = form_count.value;
+        document.querySelector('form').submit();
+    });
+});
+</script>

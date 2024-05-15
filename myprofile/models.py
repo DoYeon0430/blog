@@ -21,3 +21,19 @@ class MeetingDate(models.Model):
     
     class Meta:
         verbose_name_plural = '우리의 디데이'
+
+class Post(models.Model):
+    subject = models.CharField(max_length=200)
+    username = models.CharField(max_length=200)
+    content = models.TextField(blank=True, null=True)
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subject
+    
+class PostImage(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='posts/', blank=True, null=True)
+
+    def __str__(self):
+        return f"Image for {self.post.subject}"

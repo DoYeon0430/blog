@@ -19,6 +19,9 @@ from .forms import MeetingDateForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from collections import Counter
 from django.contrib import messages
+from .models import Post, PostImage
+from .forms import PostForm, PostImageForm, PostImageFormSet
+from django.forms import inlineformset_factory, formset_factory
 
 def Ads(request):
     return HttpResponse("google.com, pub-8497490320648322, DIRECT, f08c47fec0942fa0", content_type='text/plain')
@@ -173,20 +176,37 @@ def secret(request):
     sentence_counts_list = [(sentence, count) for sentence, count in sentence_counts.items()]
     sentence_counts_list.sort(key=lambda x: x[1], reverse=True)
 
+    # MeetingDate 모델에 대한 페이지네이션 설정
     meeting_dates = MeetingDate.objects.all().order_by('-date')
-
-    page = request.GET.get('page', 1)
-    paginator = Paginator(meeting_dates, 10)
+    meeting_page = request.GET.get('meeting_page', 1)
+    meeting_paginator = Paginator(meeting_dates, 10)
 
     try:
-        current_page = paginator.page(page)
+        current_page = meeting_paginator.page(meeting_page)
     except PageNotAnInteger:
-        current_page = paginator.page(1)
+        current_page = meeting_paginator.page(1)
     except EmptyPage:
-        current_page = paginator.page(paginator.num_pages)
+        current_page = meeting_paginator.page(meeting_paginator.num_pages)
 
-    total_pages = paginator.num_pages
+    total_pages = meeting_paginator.num_pages
     page_range = range(max(current_page.number - 2, 1), min(current_page.number + 2, total_pages) + 1)
+
+    # Post 모델에 대한 페이지네이션 설정
+    posts = Post.objects.all().order_by('-create_date')
+    post_page = request.GET.get('post_page', 1)
+    post_paginator = Paginator(posts, 4)
+
+    try:
+        post_current_page = post_paginator.page(post_page)
+    except PageNotAnInteger:
+        post_current_page = post_paginator.page(1)
+    except EmptyPage:
+        post_current_page = post_paginator.page(post_paginator.num_pages)
+
+    post_total_pages = post_paginator.num_pages
+    post_page_range = range(max(post_current_page.number - 2, 1), min(post_current_page.number + 2, post_total_pages) + 1)
+
+
 
     form = MeetingDateForm()
 
@@ -208,9 +228,12 @@ def secret(request):
 
     return render(request, 'mywork/secret.html', {'form': form,
                                                   'meeting_dates': current_page,
+                                                  'posts': post_current_page,
+                                                  'all_posts':posts,
                                                   'character_counts': sentence_counts_list,
                                                   'total_count': total_count,
-                                                  'page_range': page_range
+                                                  'page_range': page_range,
+                                                  'post_page_range':post_page_range,
                                                   })
 
 def secret_view(request, secret_id):
@@ -247,3 +270,56 @@ def secret_view(request, secret_id):
             
     context = {'meeting_date': meeting_date, 'form':form}
     return render(request, 'mywork/secret_detail.html', context)
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    correct_password = str(Views.objects.get(pk=1).count)
+    entered_password = request.POST.get('password', '')
+    if entered_password == correct_password:
+        post.delete()
+        return redirect('myprofile:secret')
+    else:
+        return render(request, 'mywork/post_detail.html', {'post': post})
+
+
+def create_post(request):
+    extra_value = 1
+    PostImageFormSet = inlineformset_factory(Post, PostImage, form=PostImageForm, extra=extra_value, max_num=5)
+    if request.method == 'POST':
+        correct_password = str(Views.objects.get(pk=1).count)
+        entered_password = request.POST.get('password', '')
+        post_form = PostForm(request.POST)
+        image_formset = PostImageFormSet(request.POST, request.FILES)
+        create_button = request.POST.get('create_button')
+
+        if create_button == '1':
+
+            if post_form.is_valid() and image_formset.is_valid():
+                if entered_password == correct_password:
+                    post = post_form.save()
+                    image_formset.instance = post
+                    image_formset.save()
+                    return redirect('myprofile:secret')
+                else:
+                    messages.error(request, '비밀번호가 일치하지 않습니다.')
+                    add_image_flag = int(request.POST.get('add_image_flag'))
+                    PostImageFormSet = inlineformset_factory(Post, PostImage, form=PostImageForm, extra=add_image_flag, max_num=5)
+                    image_formset = PostImageFormSet()
+                    return render(request, 'mywork/create_post.html', {'post_form': post_form, 'image_formset': image_formset})
+            else:
+                add_image_flag = int(request.POST.get('add_image_flag'))
+                PostImageFormSet = inlineformset_factory(Post, PostImage, form=PostImageForm, extra=add_image_flag, max_num=5)
+                image_formset = PostImageFormSet()
+                return render(request, 'mywork/create_post.html', {'post_form': post_form, 'image_formset': image_formset})
+
+        else:
+            add_image_flag = int(request.POST.get('add_image_flag'))+1
+            PostImageFormSet = inlineformset_factory(Post, PostImage, form=PostImageForm, extra=add_image_flag, max_num=5)
+            image_formset = PostImageFormSet()
+            return render(request, 'mywork/create_post.html', {'post_form': post_form, 'image_formset': image_formset})
+        
+    else:
+        post_form = PostForm()
+        image_formset = PostImageFormSet(queryset=PostImage.objects.none())
+
+    return render(request, 'mywork/create_post.html', {'post_form': post_form, 'image_formset': image_formset})
