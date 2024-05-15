@@ -18,6 +18,11 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['subject', 'username', 'content']
+        widgets = {
+            'subject': forms.TextInput(attrs={'placeholder': '제목을 입력하세요.'}),
+            'username': forms.TextInput(attrs={'placeholder': '이름을 입력하세요.'}),
+            'content': forms.Textarea(attrs={'placeholder': '내용을 작성하세요.'}),
+        }
 
 
 class PostImageForm(forms.ModelForm):
