@@ -121,19 +121,19 @@
     }
 
     .post_detail h2 {
-        font-size: 18px!important;
+        font-size: 20px!important;
         margin-bottom: 10px;
     }
 
     .post_detail .one {
-        font-size: 12px!important;
+        font-size: 14px!important;
         margin: 15px 0;
         text-align: end;
         color: #333;
     }
 
     .post_detail .two {
-        font-size: 14px!important;
+        font-size: 16px!important;
         margin-bottom: 10px;
         white-space: pre-line;
     }
@@ -178,7 +178,7 @@
                     {% csrf_token %}
                     <input type="hidden" name="password" id="passwordInput">
                     <a href="javascript:;" onclick="confirmDelete();"
-                        style="text-decoration: none; color: red; font-size: 16px;">(삭제)</a>
+                        style="text-decoration: none; color: red; font-size: 14px;">(삭제)</a>
                 </form>
             </h2>
             <p class="one"><strong>작성자 </strong> {{ post.username }} | <strong>작성일 </strong> {{ post.create_date|date:"Y.m.d" }}</p>
