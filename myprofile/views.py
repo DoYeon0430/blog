@@ -194,7 +194,7 @@ def secret(request):
     # Post 모델에 대한 페이지네이션 설정
     posts = Post.objects.all().order_by('-create_date')
     post_page = request.GET.get('post_page', 1)
-    post_paginator = Paginator(posts, 4)
+    post_paginator = Paginator(posts, 5)
 
     try:
         post_current_page = post_paginator.page(post_page)

@@ -121,18 +121,19 @@
     }
 
     .post_detail h2 {
-        font-size: 24px;
+        font-size: 24px!important;
         margin-bottom: 10px;
     }
 
     .post_detail .one {
+        font-size: 14px!important;
         margin: 15px 0;
         text-align: end;
         color: #333;
-        font-size: 14px;
     }
 
     .post_detail .two {
+        font-size: 16px!important;
         margin-bottom: 10px;
         white-space: pre-line;
     }
@@ -141,6 +142,13 @@
         max-width: 100%;
         height: auto;
         margin-bottom: 10px;
+    }
+
+    .create-post-link {
+        color: black;
+        border-bottom: 2px solid black;
+        text-decoration: none;
+        font-weight: bold;
     }
 
     .back-button {
@@ -180,8 +188,8 @@
                 {% endfor %}
             </div>
             <p class="two">{{ post.content }}</p>
-            <div style="display: block; text-align: right; margin-top: 20px;">
-                <a href="{% url 'myprofile:secret' %}" class="back-button">메인</a>
+            <div style="text-align: right; margin: 10px 0;">
+                <a href="{% url 'myprofile:secret' %}" class="create-post-link">뒤로가기</a>
             </div>
     </div>
 <script>
