@@ -12,9 +12,13 @@
     <meta name="author" content="Doyeon0430">
 
 
-    <meta property="og:title" content="우리의 디데이">
+    <meta property="og:title" content="📋 {{ post.subject }}">
     <meta property="og:description" content="특별한 순간들을 기억하고 공유하세요.">
-    <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/06/20/11/wedding-2595862_1280.jpg">
+    {% if post.images.exists %}
+        <meta property="og:image" content="https://www.doyeon0430.com{{ post.images.first.image.url }}">
+    {% else %}
+        <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/06/20/11/wedding-2595862_1280.jpg">
+    {% endif %}
 
     <title>우리의 디데이</title>
 </head>
