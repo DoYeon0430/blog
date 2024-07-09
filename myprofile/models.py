@@ -37,3 +37,12 @@ class PostImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.post.subject}"
+    
+class PostChat(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='chats')
+    username = models.CharField(max_length=200)
+    message = models.TextField()
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Chat by {self.username} on {self.post.subject}"

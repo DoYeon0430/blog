@@ -19,8 +19,8 @@ from .forms import MeetingDateForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from collections import Counter
 from django.contrib import messages
-from .models import Post, PostImage
-from .forms import PostForm, PostImageForm, PostImageFormSet
+from .models import Post, PostImage, PostChat
+from .forms import PostForm, PostImageForm, PostImageFormSet, PostChatForm
 from django.forms import inlineformset_factory, formset_factory
 
 def Ads(request):
@@ -273,13 +273,36 @@ def secret_view(request, secret_id):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    correct_password = str(Views.objects.get(pk=1).count)
-    entered_password = request.POST.get('password', '')
-    if entered_password == correct_password:
-        post.delete()
-        return redirect('myprofile:secret')
-    else:
-        return render(request, 'mywork/post_detail.html', {'post': post})
+    form = PostChatForm(request.POST or None)
+
+    if request.method == 'POST':
+        action = request.POST.get('action', '')
+        if action == 'edit':
+            correct_password = str(Views.objects.get(pk=1).count)
+            entered_password = request.POST.get('password_edit', '')
+            if entered_password == correct_password:
+                # 댓글 추가 기능
+                if 'add_comment' in request.POST:
+                    if form.is_valid():
+                        chat = form.save(commit=False)
+                        chat.post = post
+                        chat.save()
+                        return redirect('myprofile:post_detail', pk=post.pk)
+                # 댓글 삭제 기능
+                if 'delete_comment' in request.POST:
+                    comment_id = request.POST.get('comment_id')
+                    comment = PostChat.objects.get(id=comment_id, post=post)
+                    comment.delete()
+                    return redirect('myprofile:post_detail', pk=post.pk)
+        else:
+            # 게시글 삭제 기능
+            correct_password = str(Views.objects.get(pk=1).count)
+            entered_password = request.POST.get('password', '')
+            if entered_password == correct_password:
+                post.delete()
+                return redirect('myprofile:secret')
+
+    return render(request, 'mywork/post_detail.html', {'post': post, 'form': form})
 
 
 def create_post(request):

@@ -167,6 +167,95 @@
         margin-left: auto;
         cursor: pointer;
     }
+
+    .chat_comment_main {
+        padding: 10px;
+    }
+
+    .chat_comment_main:not(:first-child) {
+        border-top: 1px solid #ccc;
+    }
+
+    .chat_comment_main:last-child {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .chat_comment_main p {
+        margin: 5px 0;
+        line-height: 1.2; /* 줄 간격 조절 */
+    }
+
+    .chat_comment_main strong {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .everytime_img {
+        margin: 5px 0px!important;
+        padding: 0px!important;
+        border-radius: 4px;
+        box-shadow: 0px 0px 0px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .everytime_content {
+        display: inline-block; /* 텍스트를 인라인 블록 요소로 설정 */
+        vertical-align: middle; /* 텍스트를 수직 중앙 정렬 */
+    }
+
+    .button_comment {
+        background: none;
+        border: none;
+        color: #007bff; /* 버튼 텍스트 색상 */
+        text-decoration: underline; /* 텍스트에 밑줄 추가 */
+        cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 모양으로 */
+        padding: 0; /* 내부 여백 제거 */
+        font: inherit; /* 기본 글꼴 사용 */
+    }
+
+    .comment-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .comment-field {
+        width: calc(50% - 5px); /* Adjust width to fit your design */
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+
+    .comment-password {
+        width: calc(50% - 5px); /* Adjust width to fit your design */
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+
+    .comment-submit {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .comment-submit:hover {
+        background-color: #45a049;
+    }
+
 </style>
 <body>
     <header>
@@ -181,7 +270,7 @@
                 style="display: inline;">
                     {% csrf_token %}
                     <input type="hidden" name="password" id="passwordInput">
-                    <a href="javascript:;" onclick="confirmDelete();"
+                    <a href="javascript:void(0);" onclick="confirmDelete();"
                         style="text-decoration: none; color: red; font-size: 14px;">(삭제)</a>
                 </form>
             </h2>
@@ -192,10 +281,64 @@
                 {% endfor %}
             </div>
             <p class="two">{{ post.content }}</p>
+            
             <div style="text-align: right; margin: 10px 0;">
                 <a href="{% url 'myprofile:secret' %}" class="create-post-link">뒤로가기</a>
             </div>
+        </section>
+        <section class="post_detail">
+            <h2>💬 댓글</h2>
+            {% if post.chats.all %}
+                {% for chat in post.chats.all %}
+                <div class="chat_comment_main">
+                    <div>
+                        <img class="everytime_img" style="width: 30px; height: 30px;" src="https://cf-fpi.everytime.kr/0.png">
+                        <strong class="everytime_content">{{ chat.username }}</strong>
+                        <form method="post" id="deleteForm_comment" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="edit">
+                            <input type="hidden" name="comment_id" id="comment_id" value="{{ chat.id }}">
+                            <input type="hidden" id="passwordInput_comment" name="password_edit">
+                            <a href="javascript:void(0);" onclick="return confirmDelete_comment('{{ chat.id }}');" style="vertical-align: sub; font-weight: bold; text-decoration: none; color: red; font-size: 12px;">(삭제)</a>
+                            <input type="hidden" name="delete_comment">
+                        </form>                              
+                    </div>
+                    <p>{{ chat.message }}</p>
+                    <p style="color: #a6a6a6;">{{ chat.create_date|date:"m/d H:i" }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p style="padding-top: 5px; font-size: 16px; color: #737373;">아직 댓글이 하나도 없습니다.</p>
+            {% endif %}
+        </section>
+        <section class="post_detail">
+
+            <form method="post" class="comment-form">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="edit">
+                <h2>🚀 새로운 댓글 작성</h2>
+                <p style="text-align: right; color: #cd2121; font-size: 12px; font-weight: bold;">별표(*)는 필수로 입력</p>
+                <div class="form-group">
+                    <label for="id_username">이름 <span style="color: #cd2121;">*</span></label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="id_message">댓글 <span style="color: #cd2121;">*</span></label>
+                    {{ form.message }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password_edit">암호 <span style="color: #cd2121;">*</span></label>
+                    <input type="password" name="password_edit" id="id_password_edit" class="password"
+                        placeholder="비밀번호를 입력하세요." maxlength="6" oninput="validateInput(this)">
+                </div>
+                <div style="display: block; text-align: right; margin: 20px 0 0 0;">
+                    <button type="submit" name="add_comment" class="button_design">추가</button>
+                </div>
+            </form>
+        </section>
     </div>
+    
+
 <script>
     function confirmDelete() {
         var enteredPassword = prompt('비밀번호를 입력하세요:');
@@ -203,6 +346,17 @@
         if (enteredPassword !== null && enteredPassword !== '') {
             document.getElementById('passwordInput').value = enteredPassword;
             document.getElementById('deleteForm').submit();
+        }
+
+        return false;
+    }
+    function confirmDelete_comment(comment_id) {
+        var enteredPassword_comment = prompt('비밀번호를 입력하세요:');
+
+        if (enteredPassword_comment !== null && enteredPassword_comment !== '') {
+            document.getElementById('passwordInput_comment').value = enteredPassword_comment;
+            document.getElementById('comment_id').value = comment_id;
+            document.getElementById('deleteForm_comment').submit();
         }
 
         return false;

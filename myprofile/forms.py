@@ -1,6 +1,6 @@
 from django import forms
 from .models import MeetingDate
-from .models import Post, PostImage
+from .models import Post, PostImage, PostChat
 
 class MeetingDateForm(forms.ModelForm):
     class Meta:
@@ -31,3 +31,12 @@ class PostImageForm(forms.ModelForm):
         fields = ['image']
 
 PostImageFormSet = forms.inlineformset_factory(Post, PostImage, form=PostImageForm, extra=1, max_num=5)
+
+class PostChatForm(forms.ModelForm):
+    class Meta:
+        model = PostChat
+        fields = ['username', 'message']
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': '이름을 입력하세요.'}),
+            'message': forms.Textarea(attrs={'placeholder': '내용을 작성하세요.'}),
+        }
