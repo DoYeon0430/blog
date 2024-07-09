@@ -169,7 +169,7 @@
     }
 
     .chat_comment_main {
-        padding: 10px;
+        padding: 8px;
     }
 
     .chat_comment_main:not(:first-child) {
@@ -304,7 +304,7 @@
                         </form>                              
                     </div>
                     <p>{{ chat.message }}</p>
-                    <p style="color: #a6a6a6;">{{ chat.create_date|date:"m/d H:i" }}</p>
+                    <p style="color: #a6a6a6; font-size: 14px;">{{ chat.create_date|date:"m/d H:i" }}</p>
                 </div>
                 {% endfor %}
             {% else %}
