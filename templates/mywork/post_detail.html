@@ -289,7 +289,7 @@
         <section class="post_detail">
             <h2>💬 댓글</h2>
             {% if post.chats.all %}
-                {% for chat in post.chats.all %}
+                {% for chat in post.chats.all|dictsortreversed:"create_date" %}
                 <div class="chat_comment_main">
                     <div>
                         <img class="everytime_img" style="width: 30px; height: 30px;" src="https://cf-fpi.everytime.kr/0.png">
