@@ -125,21 +125,23 @@
     }
 
     .post_detail h2 {
-        font-size: 20px!important;
+        font-size: 20px !important;
         margin-bottom: 10px;
     }
 
     .post_detail .one {
-        font-size: 14px!important;
-        margin: 15px 0;
-        text-align: end;
-        color: #333;
+        font-size: 14px !important;
+        padding-bottom: 10px;
+        margin: 5px 0px 10px 0px;
+        text-align: right;
+        color: #737373;
+        font-weight: 100;
     }
 
     .post_detail .two {
         font-size: 16px!important;
-        margin-bottom: 10px;
         white-space: pre-line;
+        margin: 0px;
     }
 
     .post_detail img {
@@ -181,6 +183,7 @@
     }
 
     .chat_comment_main p {
+        font-size: 15px;
         margin: 5px 0;
         line-height: 1.2; /* 줄 간격 조절 */
     }
@@ -265,7 +268,7 @@
     </header>
     <div class="section_main">
         <section class="post_detail">
-            <h2>📋 {{ post.subject }}
+            <h2 style="margin: 10px 0px 10px 0px;">{{ post.subject }}
                 <form method="post" action="" id="deleteForm" onsubmit="return confirmDelete();"
                 style="display: inline;">
                     {% csrf_token %}
@@ -274,7 +277,21 @@
                         style="text-decoration: none; color: red; font-size: 14px;">(삭제)</a>
                 </form>
             </h2>
-            <p class="one"><strong>작성자 </strong> {{ post.username }} | <strong>작성일 </strong> {{ post.create_date|date:"Y.m.d" }}</p>
+            <p class="one">
+                <span style="padding-right: 3px;">
+                    <span style="color: black;">
+                    <strong>작성자 </strong> 
+                    </span>
+                    {{ post.username }}
+                </span> 
+                | 
+                <span style="padding-left: 3px;">
+                    <span style="color: black;">
+                    <strong>작성일 </strong> 
+                    </span>
+                    {{ post.create_date|date:"Y.m.d" }}
+                </span>
+            </p>
             <div>
                 {% for image in post.images.all %}
                 <img src="{{ image.image.url }}" alt="Post image">
@@ -289,7 +306,7 @@
         <section class="post_detail">
             <h2>💬 댓글</h2>
             {% if post.chats.all %}
-                {% for chat in post.chats.all|dictsortreversed:"create_date" %}
+                {% for chat in post.chats.all|dictsort:"create_date" %}
                 <div class="chat_comment_main">
                     <div>
                         <img class="everytime_img" style="width: 30px; height: 30px;" src="https://cf-fpi.everytime.kr/0.png">
